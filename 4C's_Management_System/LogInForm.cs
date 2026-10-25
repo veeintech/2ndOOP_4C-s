@@ -16,5 +16,15 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
