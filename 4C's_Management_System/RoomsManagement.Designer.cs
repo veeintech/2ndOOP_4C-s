@@ -54,12 +54,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
@@ -74,6 +76,7 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -301,11 +304,11 @@
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.Transparent;
+            guna2Button3.FillColor = Color.FromArgb(225, 178, 72);
             guna2Button3.Font = new Font("Baskerville Old Face", 12F);
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.HoverState.FillColor = Color.FromArgb(225, 178, 72);
-            guna2Button3.HoverState.ForeColor = Color.FromArgb(89, 45, 0);
+            guna2Button3.HoverState.FillColor = Color.FromArgb(101, 0, 28);
+            guna2Button3.HoverState.ForeColor = Color.WhiteSmoke;
             guna2Button3.Location = new Point(10, 217);
             guna2Button3.MaximumSize = new Size(232, 47);
             guna2Button3.MinimumSize = new Size(232, 47);
@@ -378,10 +381,11 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            guna2CustomGradientPanel1.Controls.Add(guna2CustomGradientPanel3);
             guna2CustomGradientPanel1.Controls.Add(guna2Button13);
             guna2CustomGradientPanel1.Controls.Add(guna2Button12);
             guna2CustomGradientPanel1.Controls.Add(guna2HtmlLabel1);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges31;
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges33;
             guna2CustomGradientPanel1.Dock = DockStyle.Fill;
             guna2CustomGradientPanel1.FillColor = Color.FromArgb(248, 245, 240);
             guna2CustomGradientPanel1.FillColor2 = Color.Cornsilk;
@@ -391,25 +395,34 @@
             guna2CustomGradientPanel1.MaximumSize = new Size(925, 713);
             guna2CustomGradientPanel1.MinimumSize = new Size(925, 713);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges34;
             guna2CustomGradientPanel1.Size = new Size(925, 713);
             guna2CustomGradientPanel1.TabIndex = 1;
+            // 
+            // guna2CustomGradientPanel3
+            // 
+            guna2CustomGradientPanel3.CustomizableEdges = customizableEdges27;
+            guna2CustomGradientPanel3.Location = new Point(41, 107);
+            guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
+            guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2CustomGradientPanel3.Size = new Size(849, 569);
+            guna2CustomGradientPanel3.TabIndex = 3;
             // 
             // guna2Button13
             // 
             guna2Button13.BackColor = Color.Transparent;
             guna2Button13.BorderRadius = 6;
-            guna2Button13.CustomizableEdges = customizableEdges27;
+            guna2Button13.CustomizableEdges = customizableEdges29;
             guna2Button13.DisabledState.BorderColor = Color.DarkGray;
             guna2Button13.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button13.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button13.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button13.FillColor = Color.Maroon;
-            guna2Button13.Font = new Font("Segoe UI", 9F);
+            guna2Button13.Font = new Font("Baskerville Old Face", 10.2F);
             guna2Button13.ForeColor = Color.White;
             guna2Button13.Location = new Point(749, 48);
             guna2Button13.Name = "guna2Button13";
-            guna2Button13.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2Button13.ShadowDecoration.CustomizableEdges = customizableEdges30;
             guna2Button13.Size = new Size(141, 35);
             guna2Button13.TabIndex = 2;
             guna2Button13.Text = "Back";
@@ -418,29 +431,31 @@
             // 
             guna2Button12.BackColor = Color.Transparent;
             guna2Button12.BorderRadius = 6;
-            guna2Button12.CustomizableEdges = customizableEdges29;
+            guna2Button12.CustomizableEdges = customizableEdges31;
             guna2Button12.DisabledState.BorderColor = Color.DarkGray;
             guna2Button12.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button12.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button12.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button12.Font = new Font("Segoe UI", 9F);
-            guna2Button12.ForeColor = Color.White;
+            guna2Button12.FillColor = Color.Goldenrod;
+            guna2Button12.Font = new Font("Baskerville Old Face", 10.2F);
+            guna2Button12.ForeColor = Color.Black;
             guna2Button12.Location = new Point(563, 48);
             guna2Button12.Name = "guna2Button12";
-            guna2Button12.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2Button12.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2Button12.Size = new Size(180, 35);
             guna2Button12.TabIndex = 1;
-            guna2Button12.Text = "guna2Button12";
+            guna2Button12.Text = " Add Room Type";
             // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(55, 48);
+            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Location = new Point(28, 48);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(132, 28);
+            guna2HtmlLabel1.Size = new Size(171, 36);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "Room Types";
+            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click_1;
             // 
             // RoomsManagementForm
             // 
@@ -479,5 +494,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button13;
         private Guna.UI2.WinForms.Guna2Button guna2Button12;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
     }
 }
