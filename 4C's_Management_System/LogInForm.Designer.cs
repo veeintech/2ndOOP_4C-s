@@ -31,6 +31,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -53,6 +54,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -60,10 +65,6 @@
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -77,10 +78,10 @@
             label1 = new Label();
             pblogo = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2CustomGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pblogo).BeginInit();
@@ -88,6 +89,10 @@
             // 
             // guna2CustomGradientPanel2
             // 
+            guna2CustomGradientPanel2.Controls.Add(guna2HtmlLabel2);
+            guna2CustomGradientPanel2.Controls.Add(guna2PictureBox9);
+            guna2CustomGradientPanel2.Controls.Add(guna2HtmlLabel5);
+            guna2CustomGradientPanel2.Controls.Add(guna2PictureBox8);
             guna2CustomGradientPanel2.Controls.Add(guna2Button2);
             guna2CustomGradientPanel2.Controls.Add(guna2CheckBox1);
             guna2CustomGradientPanel2.Controls.Add(guna2HtmlLabel6);
@@ -95,10 +100,6 @@
             guna2CustomGradientPanel2.Controls.Add(guna2PictureBox5);
             guna2CustomGradientPanel2.Controls.Add(guna2PictureBox4);
             guna2CustomGradientPanel2.Controls.Add(guna2HtmlLabel4);
-            guna2CustomGradientPanel2.Controls.Add(guna2HtmlLabel3);
-            guna2CustomGradientPanel2.Controls.Add(guna2HtmlLabel2);
-            guna2CustomGradientPanel2.Controls.Add(guna2PictureBox3);
-            guna2CustomGradientPanel2.Controls.Add(guna2PictureBox1);
             guna2CustomGradientPanel2.Controls.Add(guna2TextBox2);
             guna2CustomGradientPanel2.Controls.Add(guna2TextBox1);
             guna2CustomGradientPanel2.Controls.Add(guna2HtmlLabel1);
@@ -113,12 +114,64 @@
             guna2CustomGradientPanel2.Size = new Size(610, 713);
             guna2CustomGradientPanel2.TabIndex = 1;
             // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel2.ForeColor = Color.FromArgb(74, 14, 14);
+            guna2HtmlLabel2.Location = new Point(108, 335);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(88, 28);
+            guna2HtmlLabel2.TabIndex = 27;
+            guna2HtmlLabel2.Text = "Password";
+            // 
+            // guna2PictureBox9
+            // 
+            guna2PictureBox9.BackColor = Color.Transparent;
+            guna2PictureBox9.CustomizableEdges = customizableEdges1;
+            guna2PictureBox9.FillColor = Color.Transparent;
+            guna2PictureBox9.Image = (Image)resources.GetObject("guna2PictureBox9.Image");
+            guna2PictureBox9.ImageRotate = 0F;
+            guna2PictureBox9.Location = new Point(77, 333);
+            guna2PictureBox9.Name = "guna2PictureBox9";
+            guna2PictureBox9.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2PictureBox9.Size = new Size(25, 29);
+            guna2PictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox9.TabIndex = 26;
+            guna2PictureBox9.TabStop = false;
+            // 
+            // guna2HtmlLabel5
+            // 
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel5.ForeColor = Color.FromArgb(74, 14, 14);
+            guna2HtmlLabel5.Location = new Point(108, 236);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(96, 28);
+            guna2HtmlLabel5.TabIndex = 25;
+            guna2HtmlLabel5.Text = "Username";
+            // 
+            // guna2PictureBox8
+            // 
+            guna2PictureBox8.BackColor = Color.Transparent;
+            guna2PictureBox8.CustomizableEdges = customizableEdges3;
+            guna2PictureBox8.FillColor = Color.Transparent;
+            guna2PictureBox8.Image = Properties.Resources.buser;
+            guna2PictureBox8.ImageRotate = 0F;
+            guna2PictureBox8.Location = new Point(79, 234);
+            guna2PictureBox8.Name = "guna2PictureBox8";
+            guna2PictureBox8.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox8.Size = new Size(25, 29);
+            guna2PictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox8.TabIndex = 24;
+            guna2PictureBox8.TabStop = false;
+            // 
             // guna2Button2
             // 
             guna2Button2.BackColor = Color.Transparent;
             guna2Button2.BorderRadius = 15;
             guna2Button2.BorderThickness = 1;
-            guna2Button2.CustomizableEdges = customizableEdges1;
+            guna2Button2.CustomizableEdges = customizableEdges5;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -130,9 +183,9 @@
             guna2Button2.HoverState.FillColor = Color.PaleGoldenrod;
             guna2Button2.HoverState.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2Button2.HoverState.ForeColor = Color.DarkRed;
-            guna2Button2.Location = new Point(140, 537);
+            guna2Button2.Location = new Point(140, 546);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button2.Size = new Size(379, 40);
             guna2Button2.TabIndex = 14;
             guna2Button2.Text = "Sign Up";
@@ -147,7 +200,7 @@
             guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             guna2CheckBox1.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2CheckBox1.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2CheckBox1.Location = new Point(81, 435);
+            guna2CheckBox1.Location = new Point(79, 437);
             guna2CheckBox1.Name = "guna2CheckBox1";
             guna2CheckBox1.Size = new Size(274, 23);
             guna2CheckBox1.TabIndex = 13;
@@ -163,7 +216,7 @@
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Underline, GraphicsUnit.Point, 0);
             guna2HtmlLabel6.ForeColor = Color.FromArgb(139, 0, 21);
-            guna2HtmlLabel6.Location = new Point(267, 587);
+            guna2HtmlLabel6.Location = new Point(267, 598);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new Size(127, 23);
             guna2HtmlLabel6.TabIndex = 12;
@@ -174,7 +227,7 @@
             guna2Button1.BackColor = Color.Transparent;
             guna2Button1.BorderRadius = 15;
             guna2Button1.BorderThickness = 1;
-            guna2Button1.CustomizableEdges = customizableEdges3;
+            guna2Button1.CustomizableEdges = customizableEdges7;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -186,9 +239,9 @@
             guna2Button1.HoverState.FillColor = Color.FromArgb(192, 0, 0);
             guna2Button1.HoverState.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2Button1.HoverState.ForeColor = Color.White;
-            guna2Button1.Location = new Point(140, 491);
+            guna2Button1.Location = new Point(140, 494);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button1.Size = new Size(379, 40);
             guna2Button1.TabIndex = 10;
             guna2Button1.Text = "Login";
@@ -196,13 +249,13 @@
             // guna2PictureBox5
             // 
             guna2PictureBox5.BackColor = Color.White;
-            guna2PictureBox5.CustomizableEdges = customizableEdges5;
+            guna2PictureBox5.CustomizableEdges = customizableEdges9;
             guna2PictureBox5.FillColor = Color.Transparent;
             guna2PictureBox5.Image = Properties.Resources.akar_icons__eye;
             guna2PictureBox5.ImageRotate = 0F;
-            guna2PictureBox5.Location = new Point(475, 391);
+            guna2PictureBox5.Location = new Point(477, 381);
             guna2PictureBox5.Name = "guna2PictureBox5";
-            guna2PictureBox5.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2PictureBox5.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2PictureBox5.Size = new Size(89, 27);
             guna2PictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox5.TabIndex = 9;
@@ -212,13 +265,13 @@
             // guna2PictureBox4
             // 
             guna2PictureBox4.BackColor = Color.White;
-            guna2PictureBox4.CustomizableEdges = customizableEdges7;
+            guna2PictureBox4.CustomizableEdges = customizableEdges11;
             guna2PictureBox4.FillColor = Color.Transparent;
             guna2PictureBox4.Image = Properties.Resources.akar_icons__eye_closed;
             guna2PictureBox4.ImageRotate = 0F;
-            guna2PictureBox4.Location = new Point(475, 391);
+            guna2PictureBox4.Location = new Point(477, 381);
             guna2PictureBox4.Name = "guna2PictureBox4";
-            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2PictureBox4.Size = new Size(89, 27);
             guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox4.TabIndex = 8;
@@ -230,63 +283,11 @@
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel4.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2HtmlLabel4.Location = new Point(215, 166);
+            guna2HtmlLabel4.Location = new Point(221, 166);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(195, 21);
             guna2HtmlLabel4.TabIndex = 7;
             guna2HtmlLabel4.Text = "Please log in to your account";
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Baskerville Old Face", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2HtmlLabel3.Location = new Point(119, 336);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(96, 30);
-            guna2HtmlLabel3.TabIndex = 6;
-            guna2HtmlLabel3.Text = "Password";
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Baskerville Old Face", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2HtmlLabel2.Location = new Point(109, 237);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(106, 30);
-            guna2HtmlLabel2.TabIndex = 5;
-            guna2HtmlLabel2.Text = "Username";
-            // 
-            // guna2PictureBox3
-            // 
-            guna2PictureBox3.BackColor = Color.Transparent;
-            guna2PictureBox3.CustomizableEdges = customizableEdges9;
-            guna2PictureBox3.FillColor = Color.Transparent;
-            guna2PictureBox3.Image = Properties.Resources.lockers;
-            guna2PictureBox3.ImageRotate = 0F;
-            guna2PictureBox3.Location = new Point(68, 334);
-            guna2PictureBox3.Name = "guna2PictureBox3";
-            guna2PictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2PictureBox3.Size = new Size(61, 32);
-            guna2PictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            guna2PictureBox3.TabIndex = 4;
-            guna2PictureBox3.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            guna2PictureBox1.BackColor = Color.Transparent;
-            guna2PictureBox1.CustomizableEdges = customizableEdges11;
-            guna2PictureBox1.FillColor = Color.Transparent;
-            guna2PictureBox1.Image = Properties.Resources.buser;
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(52, 240);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2PictureBox1.Size = new Size(77, 24);
-            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            guna2PictureBox1.TabIndex = 3;
-            guna2PictureBox1.TabStop = false;
             // 
             // guna2TextBox2
             // 
@@ -304,7 +305,7 @@
             guna2TextBox2.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2TextBox2.ForeColor = Color.Black;
             guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(77, 380);
+            guna2TextBox2.Location = new Point(79, 370);
             guna2TextBox2.Margin = new Padding(4);
             guna2TextBox2.Name = "guna2TextBox2";
             guna2TextBox2.PlaceholderText = "123**";
@@ -369,7 +370,7 @@
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2CustomGradientPanel1.Size = new Size(575, 713);
-            guna2CustomGradientPanel1.TabIndex = 0;
+            guna2CustomGradientPanel1.TabIndex = 2;
             // 
             // label4
             // 
@@ -388,13 +389,13 @@
             guna2PictureBox2.BackColor = Color.Transparent;
             guna2PictureBox2.CustomizableEdges = customizableEdges19;
             guna2PictureBox2.FillColor = Color.Transparent;
-            guna2PictureBox2.Image = Properties.Resources.bed;
+            guna2PictureBox2.Image = (Image)resources.GetObject("guna2PictureBox2.Image");
             guna2PictureBox2.ImageRotate = 0F;
-            guna2PictureBox2.Location = new Point(-3, 369);
+            guna2PictureBox2.Location = new Point(-1, 380);
             guna2PictureBox2.Name = "guna2PictureBox2";
             guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2PictureBox2.Size = new Size(575, 344);
-            guna2PictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            guna2PictureBox2.Size = new Size(572, 344);
+            guna2PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox2.TabIndex = 17;
             guna2PictureBox2.TabStop = false;
             // 
@@ -402,18 +403,18 @@
             // 
             guna2Separator2.BackColor = Color.Transparent;
             guna2Separator2.FillColor = Color.FromArgb(242, 115, 22);
-            guna2Separator2.Location = new Point(359, 347);
+            guna2Separator2.Location = new Point(369, 346);
             guna2Separator2.Name = "guna2Separator2";
-            guna2Separator2.Size = new Size(70, 16);
+            guna2Separator2.Size = new Size(77, 16);
             guna2Separator2.TabIndex = 16;
             // 
             // guna2Separator1
             // 
             guna2Separator1.BackColor = Color.Transparent;
             guna2Separator1.FillColor = Color.FromArgb(242, 115, 22);
-            guna2Separator1.Location = new Point(96, 347);
+            guna2Separator1.Location = new Point(101, 347);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(70, 16);
+            guna2Separator1.Size = new Size(65, 16);
             guna2Separator1.TabIndex = 15;
             // 
             // label3
@@ -422,7 +423,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Baskerville Old Face", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Transparent;
-            label3.Location = new Point(172, 346);
+            label3.Location = new Point(180, 346);
             label3.Name = "label3";
             label3.Size = new Size(177, 17);
             label3.TabIndex = 14;
@@ -472,8 +473,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1182, 713);
-            Controls.Add(guna2CustomGradientPanel2);
             Controls.Add(guna2CustomGradientPanel1);
+            Controls.Add(guna2CustomGradientPanel2);
             MaximizeBox = false;
             MaximumSize = new Size(1200, 760);
             MinimizeBox = false;
@@ -482,10 +483,10 @@
             Text = "LogInForm";
             guna2CustomGradientPanel2.ResumeLayout(false);
             guna2CustomGradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2CustomGradientPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
@@ -502,14 +503,9 @@
         private Label label2;
         private Label label1;
         private Label label4;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
@@ -518,5 +514,10 @@
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         private Guna.UI2.WinForms.Guna2PictureBox pblogo;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }
 }
