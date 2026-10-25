@@ -16,5 +16,10 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
