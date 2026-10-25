@@ -100,17 +100,17 @@
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dashboard_Panel_nav.SuspendLayout();
             guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
@@ -225,7 +225,7 @@
             guna2Button9.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button9.Size = new Size(232, 47);
             guna2Button9.TabIndex = 9;
-            guna2Button9.Text = "Users";
+            guna2Button9.Text = "Reservations";
             // 
             // guna2Button8
             // 
@@ -571,6 +571,16 @@
             guna2Panel4.Size = new Size(188, 139);
             guna2Panel4.TabIndex = 1;
             // 
+            // guna2HtmlLabel11
+            // 
+            guna2HtmlLabel11.BackColor = Color.Transparent;
+            guna2HtmlLabel11.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel11.Location = new Point(23, 89);
+            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            guna2HtmlLabel11.Size = new Size(118, 40);
+            guna2HtmlLabel11.TabIndex = 21;
+            guna2HtmlLabel11.Text = "P 8, 500";
+            // 
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
@@ -598,6 +608,16 @@
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges42;
             guna2Panel3.Size = new Size(188, 139);
             guna2Panel3.TabIndex = 1;
+            // 
+            // guna2HtmlLabel10
+            // 
+            guna2HtmlLabel10.BackColor = Color.Transparent;
+            guna2HtmlLabel10.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel10.Location = new Point(23, 89);
+            guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            guna2HtmlLabel10.Size = new Size(37, 40);
+            guna2HtmlLabel10.TabIndex = 20;
+            guna2HtmlLabel10.Text = "14";
             // 
             // guna2HtmlLabel7
             // 
@@ -627,6 +647,16 @@
             guna2Panel2.Size = new Size(188, 139);
             guna2Panel2.TabIndex = 1;
             // 
+            // guna2HtmlLabel9
+            // 
+            guna2HtmlLabel9.BackColor = Color.Transparent;
+            guna2HtmlLabel9.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel9.Location = new Point(24, 89);
+            guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            guna2HtmlLabel9.Size = new Size(37, 40);
+            guna2HtmlLabel9.TabIndex = 19;
+            guna2HtmlLabel9.Text = "10";
+            // 
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
@@ -655,16 +685,6 @@
             guna2Panel1.Size = new Size(188, 139);
             guna2Panel1.TabIndex = 0;
             // 
-            // guna2HtmlLabel9
-            // 
-            guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel9.Location = new Point(24, 89);
-            guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(37, 40);
-            guna2HtmlLabel9.TabIndex = 19;
-            guna2HtmlLabel9.Text = "10";
-            // 
             // guna2HtmlLabel5
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
@@ -684,26 +704,6 @@
             guna2HtmlLabel4.Size = new Size(96, 23);
             guna2HtmlLabel4.TabIndex = 18;
             guna2HtmlLabel4.Text = "Total Rooms";
-            // 
-            // guna2HtmlLabel10
-            // 
-            guna2HtmlLabel10.BackColor = Color.Transparent;
-            guna2HtmlLabel10.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel10.Location = new Point(23, 89);
-            guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            guna2HtmlLabel10.Size = new Size(37, 40);
-            guna2HtmlLabel10.TabIndex = 20;
-            guna2HtmlLabel10.Text = "14";
-            // 
-            // guna2HtmlLabel11
-            // 
-            guna2HtmlLabel11.BackColor = Color.Transparent;
-            guna2HtmlLabel11.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel11.Location = new Point(23, 89);
-            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            guna2HtmlLabel11.Size = new Size(118, 40);
-            guna2HtmlLabel11.TabIndex = 21;
-            guna2HtmlLabel11.Text = "P 8, 500";
             // 
             // DashboardForm
             // 

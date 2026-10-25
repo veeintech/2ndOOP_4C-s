@@ -178,7 +178,7 @@
             guna2Button9.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button9.Size = new Size(232, 47);
             guna2Button9.TabIndex = 9;
-            guna2Button9.Text = "Users";
+            guna2Button9.Text = "Reservations";
             // 
             // guna2Button8
             // 
