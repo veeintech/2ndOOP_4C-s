@@ -456,6 +456,10 @@
             ClientSize = new Size(1182, 713);
             Controls.Add(guna2CustomGradientPanel2);
             Controls.Add(guna2CustomGradientPanel1);
+            MaximizeBox = false;
+            MaximumSize = new Size(1200, 760);
+            MinimizeBox = false;
+            MinimumSize = new Size(1200, 760);
             Name = "LogInForm";
             Text = "LogInForm";
             guna2CustomGradientPanel2.ResumeLayout(false);
