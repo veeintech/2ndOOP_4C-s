@@ -139,5 +139,25 @@ namespace _4C_s_Management_System.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogSign_Panel_removebg_preview_2_ {
+            get {
+                object obj = ResourceManager.GetObject("LogSign_Panel-removebg-preview(2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogSignpanel_LineArt_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("LogSignpanel_LineArt-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
