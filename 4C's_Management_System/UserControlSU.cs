@@ -10,26 +10,16 @@ using System.Windows.Forms;
 
 namespace _4C_s_Management_System
 {
-    public partial class SignUp : Form
+    public partial class UserControlSU : UserControl
     {
-        public SignUp()
+        public UserControlSU()
         {
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        private void guna2HtmlLabel6_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Separator2_Click(object sender, EventArgs e)
-        {
-
+            ((LogInForm)this.FindForm()).ShowLogin();
         }
     }
 }

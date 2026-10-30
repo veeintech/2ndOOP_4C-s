@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace _4C_s_Management_System
 {
-    public partial class UserControl1 : UserControl
+    public partial class UserControlLI : UserControl
     {
-        public UserControl1()
+        public UserControlLI()
         {
             InitializeComponent();
         }
+
+        private void LOGIN_signupbtn_Click(object sender, EventArgs e)
+        {
+            ((LogInForm)this.FindForm()).ShowSignup();
+        }
     }
+
+
 }

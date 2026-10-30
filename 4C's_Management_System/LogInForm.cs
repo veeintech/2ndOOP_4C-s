@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,27 @@ namespace _4C_s_Management_System
         private void guna2PictureBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+            userControlsu1.Hide();
+            userControlli1.Show();
+            userControlli1.BringToFront();
+        }
+
+        public void ShowLogin()
+        {
+            userControlli1.Show();
+            userControlli1.BringToFront();
+            userControlsu1.Hide();
+        }
+
+        public void ShowSignup()
+        {
+            userControlsu1.Show();
+            userControlsu1.BringToFront();
+            userControlli1.Hide();
         }
     }
 }

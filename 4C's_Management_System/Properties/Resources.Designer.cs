@@ -103,6 +103,16 @@ namespace _4C_s_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_yelloworangegold {
+            get {
+                object obj = ResourceManager.GetObject("bg yelloworangegold", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buser {
             get {
                 object obj = ResourceManager.GetObject("buser", resourceCulture);
