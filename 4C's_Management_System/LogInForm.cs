@@ -30,9 +30,7 @@ namespace _4C_s_Management_System
 
         private void LogInForm_Load(object sender, EventArgs e)
         {
-            userControlsu1.Hide();
-            userControlli1.Show();
-            userControlli1.BringToFront();
+
         }
 
         public void ShowLogin()
@@ -47,6 +45,21 @@ namespace _4C_s_Management_System
             userControlsu1.Show();
             userControlsu1.BringToFront();
             userControlli1.Hide();
+        }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void userControlsu1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogInForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

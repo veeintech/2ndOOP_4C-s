@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2PictureBox10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="guna2PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAHHZJREFUeF7t
         3W2oJNlZB/CJigjC7tw6NTtRg6yC67uiIggqKCoKvkWMigpmNYhE8IOY7HT1huwiCPpFSdA1RjS+ENCA
@@ -245,7 +245,7 @@
         AAAAUBG3tQGwKAsP7MnBA3v7f73TSNK1oHSbAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="guna2PictureBox9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="guna2PictureBox11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAHHZJREFUeF7t
         3W2oJNlZB/CJigjC7tw6NTtRg6yC67uiIggqKCoKvkWMigpmNYhE8IOY7HT1huwiCPpFSdA1RjS+ENCA
@@ -372,7 +372,7 @@
         AAAAUBG3tQGwKAsP7MnBA3v7f73TSNK1oHSbAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="guna2PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="guna2PictureBox13.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAKuBJREFUeF7t
         3Qu0ZFV95/FqQBHJ7Xtr/3f1bZs2tqYTRccZHd+P8REZ42vwBT7xNSqKiAo09+59bmtfoqKguBAREZeP

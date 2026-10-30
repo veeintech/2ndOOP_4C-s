@@ -21,5 +21,20 @@ namespace _4C_s_Management_System
         {
             ((LogInForm)this.FindForm()).ShowLogin();
         }
+
+        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UserControlSU_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LOGIN_lblsignupclk(object sender, EventArgs e)
+        {
+            ((LogInForm)this.FindForm()).ShowLogin();
+        }
     }
 }
