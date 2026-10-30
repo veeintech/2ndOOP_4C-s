@@ -16,5 +16,30 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
