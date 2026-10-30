@@ -304,7 +304,7 @@
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.FromArgb(225, 178, 72);
+            guna2Button3.FillColor = Color.Transparent;
             guna2Button3.Font = new Font("Baskerville Old Face", 12F);
             guna2Button3.ForeColor = Color.White;
             guna2Button3.HoverState.FillColor = Color.FromArgb(101, 0, 28);
@@ -455,7 +455,6 @@
             guna2HtmlLabel1.Size = new Size(171, 36);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "Room Types";
-            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click_1;
             // 
             // RoomsManagementForm
             // 

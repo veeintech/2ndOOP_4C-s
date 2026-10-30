@@ -1,6 +1,6 @@
 ﻿namespace _4C_s_Management_System
 {
-    partial class Room
+    partial class RoomRoomManagementForm
     {
         /// <summary>
         /// Required designer variable.

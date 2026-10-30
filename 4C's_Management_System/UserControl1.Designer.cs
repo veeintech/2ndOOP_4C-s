@@ -518,7 +518,6 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            BackgroundImage = Properties.Resources.bg_yelloworangegold;
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2PictureBox9);
