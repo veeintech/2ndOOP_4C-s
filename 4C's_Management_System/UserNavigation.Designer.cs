@@ -397,11 +397,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.White;
-            guna2HtmlLabel1.Location = new Point(18, 12);
+            guna2HtmlLabel1.Location = new Point(15, 11);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(337, 40);
+            guna2HtmlLabel1.Size = new Size(359, 40);
             guna2HtmlLabel1.TabIndex = 12;
             guna2HtmlLabel1.Text = "4C's Management System";
             // 
