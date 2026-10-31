@@ -193,6 +193,16 @@ namespace _4C_s_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hotel_room {
+            get {
+                object obj = ResourceManager.GetObject("hotel room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lockers {
             get {
                 object obj = ResourceManager.GetObject("lockers", resourceCulture);
@@ -236,6 +246,16 @@ namespace _4C_s_Management_System.Properties {
         internal static System.Drawing.Bitmap open_door {
             get {
                 object obj = ResourceManager.GetObject("open door", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap peso_sign {
+            get {
+                object obj = ResourceManager.GetObject("peso sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
