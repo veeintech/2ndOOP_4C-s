@@ -28,6 +28,8 @@ namespace _4C_s_Management_System
         {
             userNav_DashboardBtn.FillColor = Color.FromArgb(212, 167, 44);
             userNav_RoomsBtn.FillColor = Color.Transparent;
+            UserNav_ReservationBtn.FillColor = Color.Transparent;
+
             UserControlDB db = new UserControlDB();
             MainControlClass.ShowControl(db, UserNav_Panel_shift);
         }
@@ -36,6 +38,8 @@ namespace _4C_s_Management_System
         {
             userNav_RoomsBtn.FillColor = Color.FromArgb(212, 167, 44);
             userNav_DashboardBtn.FillColor = Color.Transparent;
+            UserNav_ReservationBtn.FillColor = Color.Transparent;
+
             UserControlRoom rm = new UserControlRoom();
             MainControlClass.ShowControl(rm, UserNav_Panel_shift);
         }
@@ -52,7 +56,12 @@ namespace _4C_s_Management_System
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
+            userNav_RoomsBtn.FillColor = Color.Transparent;
+            userNav_DashboardBtn.FillColor = Color.Transparent;
+            UserNav_ReservationBtn.FillColor = Color.FromArgb(212, 167, 44);
 
+            UserControlRoomReserv rs = new UserControlRoomReserv();
+            MainControlClass.ShowControl(rs, UserNav_Panel_shift);
         }
     }
 }

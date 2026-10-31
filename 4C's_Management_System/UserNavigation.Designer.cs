@@ -62,7 +62,7 @@
             guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            UserNav_ReservationBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -100,7 +100,7 @@
             // 
             guna2CustomGradientPanel2.Controls.Add(guna2Separator1);
             guna2CustomGradientPanel2.Controls.Add(guna2Button11);
-            guna2CustomGradientPanel2.Controls.Add(guna2Button9);
+            guna2CustomGradientPanel2.Controls.Add(UserNav_ReservationBtn);
             guna2CustomGradientPanel2.Controls.Add(guna2Button8);
             guna2CustomGradientPanel2.Controls.Add(guna2Button7);
             guna2CustomGradientPanel2.Controls.Add(guna2Button6);
@@ -152,29 +152,29 @@
             guna2Button11.Text = "Log Out";
             guna2Button11.TextAlign = HorizontalAlignment.Left;
             // 
-            // guna2Button9
+            // UserNav_ReservationBtn
             // 
-            guna2Button9.BackColor = Color.Transparent;
-            guna2Button9.BorderRadius = 5;
-            guna2Button9.CustomizableEdges = customizableEdges3;
-            guna2Button9.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button9.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button9.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button9.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button9.FillColor = Color.Transparent;
-            guna2Button9.Font = new Font("Rockwell", 12F);
-            guna2Button9.ForeColor = Color.White;
-            guna2Button9.HoverState.FillColor = Color.FromArgb(212, 167, 44);
-            guna2Button9.Location = new Point(50, 251);
-            guna2Button9.MaximumSize = new Size(191, 47);
-            guna2Button9.MinimumSize = new Size(191, 47);
-            guna2Button9.Name = "guna2Button9";
-            guna2Button9.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button9.Size = new Size(191, 47);
-            guna2Button9.TabIndex = 9;
-            guna2Button9.Text = "Reservations";
-            guna2Button9.TextAlign = HorizontalAlignment.Left;
-            guna2Button9.Click += guna2Button9_Click;
+            UserNav_ReservationBtn.BackColor = Color.Transparent;
+            UserNav_ReservationBtn.BorderRadius = 5;
+            UserNav_ReservationBtn.CustomizableEdges = customizableEdges3;
+            UserNav_ReservationBtn.DisabledState.BorderColor = Color.DarkGray;
+            UserNav_ReservationBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            UserNav_ReservationBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            UserNav_ReservationBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            UserNav_ReservationBtn.FillColor = Color.Transparent;
+            UserNav_ReservationBtn.Font = new Font("Rockwell", 12F);
+            UserNav_ReservationBtn.ForeColor = Color.White;
+            UserNav_ReservationBtn.HoverState.FillColor = Color.FromArgb(212, 167, 44);
+            UserNav_ReservationBtn.Location = new Point(50, 251);
+            UserNav_ReservationBtn.MaximumSize = new Size(191, 47);
+            UserNav_ReservationBtn.MinimumSize = new Size(191, 47);
+            UserNav_ReservationBtn.Name = "UserNav_ReservationBtn";
+            UserNav_ReservationBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            UserNav_ReservationBtn.Size = new Size(191, 47);
+            UserNav_ReservationBtn.TabIndex = 9;
+            UserNav_ReservationBtn.Text = "Reservations";
+            UserNav_ReservationBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_ReservationBtn.Click += guna2Button9_Click;
             // 
             // guna2Button8
             // 
@@ -448,7 +448,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button11;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button UserNav_ReservationBtn;
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
