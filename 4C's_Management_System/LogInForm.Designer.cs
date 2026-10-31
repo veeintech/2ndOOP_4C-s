@@ -196,6 +196,7 @@
             MinimizeBox = false;
             MinimumSize = new Size(1600, 900);
             Name = "LogInForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInForm";
             Load += LogInForm_Load_1;
             Design_Login.ResumeLayout(false);

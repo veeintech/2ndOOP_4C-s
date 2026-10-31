@@ -485,8 +485,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Transparent;
-            BackgroundImage = Properties.Resources.bg_yelloworangegold;
+            BackColor = Color.FromArgb(255, 249, 239);
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(LOGIN_lblsignup);
             Controls.Add(guna2HtmlLabel10);

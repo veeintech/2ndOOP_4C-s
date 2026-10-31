@@ -25,10 +25,16 @@ namespace _4C_s_Management_System
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            LogInForm log = new LogInForm();
+            Form? loginForm = FindForm();
             UserNavigation dash = new UserNavigation();
-            log.Hide();
+
+            if (loginForm != null)
+            {
+                dash.FormClosed += (_, _) => loginForm.Close();
+            }
+
             dash.Show();
+            loginForm?.Hide();
         }
     }
 
