@@ -40,6 +40,19 @@ namespace _4C_s_Management_System
             MainControlClass.ShowControl(rm, UserNav_Panel_shift);
         }
 
-        
+        private void dashboard_Panel_nav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
