@@ -61,5 +61,10 @@ namespace _4C_s_Management_System
             guna2ComboBox1.SelectedIndex = 0;
 
         }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

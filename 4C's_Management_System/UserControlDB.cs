@@ -41,5 +41,30 @@ namespace _4C_s_Management_System
         {
 
         }
+
+        private void guna2HtmlLabel18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ProgressBar3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel50_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel49_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
