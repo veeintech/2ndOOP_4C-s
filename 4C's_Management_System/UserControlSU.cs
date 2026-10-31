@@ -19,7 +19,7 @@ namespace _4C_s_Management_System
 
         private void guna2HtmlLabel6_Click(object sender, EventArgs e)
         {
-            ((LogInForm)this.FindForm()).ShowLogin();
+
         }
 
         private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
@@ -34,7 +34,8 @@ namespace _4C_s_Management_System
 
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
         {
-            ((LogInForm)this.FindForm()).ShowLogin();
+            UserControlLI li = new UserControlLI();
+            MainControlClass.ShowControl(li, this.Parent);
         }
     }
 }

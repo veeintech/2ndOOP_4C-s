@@ -35,8 +35,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
-            guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Design_Login = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label4 = new Label();
             guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
@@ -46,37 +47,36 @@
             pblogo = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2MouseStateHandler1 = new Guna.UI2.WinForms.Guna2MouseStateHandler(components);
-            userControlsu1 = new UserControlSU();
-            userControlli1 = new UserControlLI();
-            guna2CustomGradientPanel1.SuspendLayout();
+            LogInPanel_shift = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            Design_Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pblogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // guna2CustomGradientPanel1
+            // Design_Login
             // 
-            guna2CustomGradientPanel1.Controls.Add(label4);
-            guna2CustomGradientPanel1.Controls.Add(guna2Separator2);
-            guna2CustomGradientPanel1.Controls.Add(guna2Separator1);
-            guna2CustomGradientPanel1.Controls.Add(label3);
-            guna2CustomGradientPanel1.Controls.Add(label2);
-            guna2CustomGradientPanel1.Controls.Add(label1);
-            guna2CustomGradientPanel1.Controls.Add(pblogo);
-            guna2CustomGradientPanel1.Controls.Add(guna2PictureBox2);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges5;
-            guna2CustomGradientPanel1.Dock = DockStyle.Left;
-            guna2CustomGradientPanel1.FillColor = Color.FromArgb(92, 16, 35);
-            guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(255, 128, 128);
-            guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(128, 0, 32);
-            guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(128, 0, 32);
-            guna2CustomGradientPanel1.Location = new Point(0, 0);
-            guna2CustomGradientPanel1.MaximumSize = new Size(800, 853);
-            guna2CustomGradientPanel1.MinimumSize = new Size(800, 853);
-            guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2CustomGradientPanel1.Size = new Size(800, 853);
-            guna2CustomGradientPanel1.TabIndex = 2;
-            guna2CustomGradientPanel1.Paint += guna2CustomGradientPanel1_Paint;
+            Design_Login.Controls.Add(label4);
+            Design_Login.Controls.Add(guna2Separator2);
+            Design_Login.Controls.Add(guna2Separator1);
+            Design_Login.Controls.Add(label3);
+            Design_Login.Controls.Add(label2);
+            Design_Login.Controls.Add(label1);
+            Design_Login.Controls.Add(pblogo);
+            Design_Login.Controls.Add(guna2PictureBox2);
+            Design_Login.CustomizableEdges = customizableEdges5;
+            Design_Login.Dock = DockStyle.Left;
+            Design_Login.FillColor = Color.FromArgb(92, 16, 35);
+            Design_Login.FillColor2 = Color.FromArgb(255, 128, 128);
+            Design_Login.FillColor3 = Color.FromArgb(128, 0, 32);
+            Design_Login.FillColor4 = Color.FromArgb(128, 0, 32);
+            Design_Login.Location = new Point(0, 0);
+            Design_Login.MaximumSize = new Size(800, 853);
+            Design_Login.MinimumSize = new Size(800, 853);
+            Design_Login.Name = "Design_Login";
+            Design_Login.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Design_Login.Size = new Size(800, 853);
+            Design_Login.TabIndex = 2;
+            Design_Login.Paint += guna2CustomGradientPanel1_Paint;
             // 
             // label4
             // 
@@ -173,31 +173,15 @@
             guna2PictureBox2.TabIndex = 17;
             guna2PictureBox2.TabStop = false;
             // 
-            // userControlsu1
+            // LogInPanel_shift
             // 
-            userControlsu1.BackColor = Color.Transparent;
-            userControlsu1.BackgroundImage = (Image)resources.GetObject("userControlsu1.BackgroundImage");
-            userControlsu1.BackgroundImageLayout = ImageLayout.Stretch;
-            userControlsu1.Dock = DockStyle.Right;
-            userControlsu1.Location = new Point(782, 0);
-            userControlsu1.MaximumSize = new Size(800, 853);
-            userControlsu1.MinimumSize = new Size(800, 853);
-            userControlsu1.Name = "userControlsu1";
-            userControlsu1.Size = new Size(800, 853);
-            userControlsu1.TabIndex = 19;
-            userControlsu1.Load += userControlsu1_Load;
-            // 
-            // userControlli1
-            // 
-            userControlli1.BackColor = Color.Transparent;
-            userControlli1.BackgroundImage = (Image)resources.GetObject("userControlli1.BackgroundImage");
-            userControlli1.BackgroundImageLayout = ImageLayout.Stretch;
-            userControlli1.Location = new Point(782, 0);
-            userControlli1.MaximumSize = new Size(800, 853);
-            userControlli1.MinimumSize = new Size(800, 853);
-            userControlli1.Name = "userControlli1";
-            userControlli1.Size = new Size(800, 853);
-            userControlli1.TabIndex = 20;
+            LogInPanel_shift.CustomizableEdges = customizableEdges7;
+            LogInPanel_shift.Dock = DockStyle.Fill;
+            LogInPanel_shift.Location = new Point(800, 0);
+            LogInPanel_shift.Name = "LogInPanel_shift";
+            LogInPanel_shift.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            LogInPanel_shift.Size = new Size(782, 853);
+            LogInPanel_shift.TabIndex = 3;
             // 
             // LogInForm
             // 
@@ -205,9 +189,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1582, 853);
-            Controls.Add(userControlli1);
-            Controls.Add(userControlsu1);
-            Controls.Add(guna2CustomGradientPanel1);
+            Controls.Add(LogInPanel_shift);
+            Controls.Add(Design_Login);
             MaximizeBox = false;
             MaximumSize = new Size(1600, 900);
             MinimizeBox = false;
@@ -215,15 +198,15 @@
             Name = "LogInForm";
             Text = "LogInForm";
             Load += LogInForm_Load_1;
-            guna2CustomGradientPanel1.ResumeLayout(false);
-            guna2CustomGradientPanel1.PerformLayout();
+            Design_Login.ResumeLayout(false);
+            Design_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pblogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel Design_Login;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Label label3;
@@ -235,5 +218,6 @@
         private Guna.UI2.WinForms.Guna2MouseStateHandler guna2MouseStateHandler1;
         private UserControlSU userControlsu1;
         private UserControlLI userControlli1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel LogInPanel_shift;
     }
 }

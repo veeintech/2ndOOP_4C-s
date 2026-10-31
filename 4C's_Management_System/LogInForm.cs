@@ -59,7 +59,8 @@ namespace _4C_s_Management_System
 
         private void LogInForm_Load_1(object sender, EventArgs e)
         {
-
+            UserControlLI li = new UserControlLI();
+            MainControlClass.ShowControl(li, LogInPanel_shift);
         }
     }
 }

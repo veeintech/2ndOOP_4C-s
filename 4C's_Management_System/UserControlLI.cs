@@ -19,7 +19,16 @@ namespace _4C_s_Management_System
 
         private void LOGIN_signupbtn_Click(object sender, EventArgs e)
         {
-            ((LogInForm)this.FindForm()).ShowSignup();
+            UserControlSU su = new UserControlSU();
+            MainControlClass.ShowControl(su, this.Parent);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            LogInForm log = new LogInForm();
+            UserNavigation dash = new UserNavigation();
+            log.Hide();
+            dash.Show();
         }
     }
 
