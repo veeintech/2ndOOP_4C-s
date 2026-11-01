@@ -47,5 +47,10 @@ namespace _4C_s_Management_System
             lg.SignUp();
             lg.Show();
         }
+
+        private void FrontPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

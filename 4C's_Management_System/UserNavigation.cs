@@ -155,8 +155,15 @@ namespace _4C_s_Management_System
                 );
 
             FrontPage fp = new FrontPage();
+            Form? FrontPage = FindForm();
+
+            if (FrontPage != null)
+            {
+                fp.FormClosed += (_, _) => FrontPage.Close();
+            }
+
             fp.Show();
-            this.Hide();
+            FrontPage?.Hide();
         }
 
         private void UserNav_LogoutBtn_Click_1(object sender, EventArgs e)
@@ -174,8 +181,15 @@ namespace _4C_s_Management_System
                 );
 
             FrontPage fp = new FrontPage();
+            Form? FrontPage = FindForm();
+
+            if (FrontPage != null)
+            {
+                fp.FormClosed += (_, _) => FrontPage.Close();
+            }
+
             fp.Show();
-            this.Hide();
+            FrontPage?.Hide();
         }
 
         private void UserNav_LogoutBtn_Click_2(object sender, EventArgs e)
@@ -193,8 +207,15 @@ namespace _4C_s_Management_System
                 );
 
             FrontPage fp = new FrontPage();
+            Form? FrontPage = FindForm();
+
+            if (FrontPage != null)
+            {
+                fp.FormClosed += (_, _) => FrontPage.Close();
+            }
+
             fp.Show();
-            this.Hide();
+            FrontPage?.Hide();
         }
     }
 }
