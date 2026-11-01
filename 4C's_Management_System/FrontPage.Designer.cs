@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrontPage));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnLogIn = new Guna.UI2.WinForms.Guna2Button();
             btnSignUp = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -66,7 +66,7 @@
             // btnLogIn
             // 
             btnLogIn.BorderRadius = 9;
-            btnLogIn.CustomizableEdges = customizableEdges10;
+            btnLogIn.CustomizableEdges = customizableEdges1;
             btnLogIn.DisabledState.BorderColor = Color.DarkGray;
             btnLogIn.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLogIn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -77,15 +77,16 @@
             btnLogIn.Location = new Point(106, 504);
             btnLogIn.Margin = new Padding(3, 4, 3, 4);
             btnLogIn.Name = "btnLogIn";
-            btnLogIn.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            btnLogIn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnLogIn.Size = new Size(217, 68);
             btnLogIn.TabIndex = 0;
             btnLogIn.Text = "Log In";
+            btnLogIn.Click += btnLogIn_Click;
             // 
             // btnSignUp
             // 
             btnSignUp.BorderRadius = 9;
-            btnSignUp.CustomizableEdges = customizableEdges12;
+            btnSignUp.CustomizableEdges = customizableEdges3;
             btnSignUp.DisabledState.BorderColor = Color.DarkGray;
             btnSignUp.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSignUp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -96,22 +97,23 @@
             btnSignUp.Location = new Point(402, 504);
             btnSignUp.Margin = new Padding(3, 4, 3, 4);
             btnSignUp.Name = "btnSignUp";
-            btnSignUp.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            btnSignUp.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnSignUp.Size = new Size(217, 68);
             btnSignUp.TabIndex = 1;
             btnSignUp.Text = "Sign Up";
+            btnSignUp.Click += btnSignUp_Click;
             // 
             // guna2PictureBox1
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
             guna2PictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            guna2PictureBox1.CustomizableEdges = customizableEdges14;
+            guna2PictureBox1.CustomizableEdges = customizableEdges5;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(233, 81);
             guna2PictureBox1.Margin = new Padding(3, 4, 3, 4);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2PictureBox1.Size = new Size(245, 233);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox1.TabIndex = 2;
@@ -197,7 +199,7 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(111, 605);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(37, 39);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -232,7 +234,7 @@
             guna2CirclePictureBox2.ImageRotate = 0F;
             guna2CirclePictureBox2.Location = new Point(288, 605);
             guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox2.Size = new Size(37, 39);
             guna2CirclePictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -267,7 +269,7 @@
             guna2CirclePictureBox3.ImageRotate = 0F;
             guna2CirclePictureBox3.Location = new Point(466, 605);
             guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            guna2CirclePictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2CirclePictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges9;
             guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox3.Size = new Size(37, 39);
             guna2CirclePictureBox3.SizeMode = PictureBoxSizeMode.Zoom;

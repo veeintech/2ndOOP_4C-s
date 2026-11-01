@@ -18,6 +18,15 @@ namespace _4C_s_Management_System
             InitializeComponent();
         }
 
+        public void logIn()
+        {
+            MainControlClass.ShowControl(new UserControlLI(), LogInPanel_shift);
+        }
+        public void SignUp()
+        {
+            MainControlClass.ShowControl(new UserControlSU(), LogInPanel_shift);
+        }
+
         private void guna2PictureBox5_Click(object sender, EventArgs e)
         {
 
@@ -59,8 +68,6 @@ namespace _4C_s_Management_System
 
         private void LogInForm_Load_1(object sender, EventArgs e)
         {
-            UserControlLI li = new UserControlLI();
-            MainControlClass.ShowControl(li, LogInPanel_shift);
         }
     }
 }
