@@ -1,0 +1,14 @@
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\List.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\List.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\List.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\List.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\bin\Debug\net10.0\List.exe
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\bin\Debug\net10.0\List.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\bin\Debug\net10.0\List.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\bin\Debug\net10.0\List.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\bin\Debug\net10.0\List.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\List.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\refint\List.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\List.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\List.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\List\List\obj\Debug\net10.0\ref\List.dll

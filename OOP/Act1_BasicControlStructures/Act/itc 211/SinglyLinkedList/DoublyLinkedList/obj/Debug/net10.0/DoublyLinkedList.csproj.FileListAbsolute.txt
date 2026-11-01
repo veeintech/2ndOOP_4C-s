@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\bin\Debug\net10.0\DoublyLinkedList.exe
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\bin\Debug\net10.0\DoublyLinkedList.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\bin\Debug\net10.0\DoublyLinkedList.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\bin\Debug\net10.0\DoublyLinkedList.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\bin\Debug\net10.0\DoublyLinkedList.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLinkedList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLinkedList.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLinkedList.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLinkedList.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLinkedList.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\refint\DoublyLinkedList.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLinkedList.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLinkedList.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\ref\DoublyLinkedList.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\DoublyLinkedList\obj\Debug\net10.0\DoublyLi.A99C118E.Up2Date

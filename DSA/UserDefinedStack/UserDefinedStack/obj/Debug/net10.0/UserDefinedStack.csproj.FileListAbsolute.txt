@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefinedStack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefinedStack.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefinedStack.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefinedStack.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\bin\Debug\net10.0\UserDefinedStack.exe
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\bin\Debug\net10.0\UserDefinedStack.deps.json
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\bin\Debug\net10.0\UserDefinedStack.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\bin\Debug\net10.0\UserDefinedStack.dll
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\bin\Debug\net10.0\UserDefinedStack.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefinedStack.dll
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\refint\UserDefinedStack.dll
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefinedStack.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefinedStack.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\ref\UserDefinedStack.dll
+C:\Users\Venice Calaluan\source\repos\DSA\UserDefinedStack\UserDefinedStack\obj\Debug\net10.0\UserDefi.A674B5D1.Up2Date
