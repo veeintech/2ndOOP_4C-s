@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\bin\Debug\net10.0\Vehicle_Management _System_Inheritance.exe
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\bin\Debug\net10.0\Vehicle_Management _System_Inheritance.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\bin\Debug\net10.0\Vehicle_Management _System_Inheritance.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\bin\Debug\net10.0\Vehicle_Management _System_Inheritance.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\bin\Debug\net10.0\Vehicle_Management _System_Inheritance.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_Management _System_Inheritance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_Management _System_Inheritance.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_Management _System_Inheritance.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_Management _System_Inheritance.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_Management _System_Inheritance.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\refint\Vehicle_Management _System_Inheritance.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_Management _System_Inheritance.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_Management _System_Inheritance.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\ref\Vehicle_Management _System_Inheritance.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Vehicle_Management _System_Inheritance\Vehicle_Management _System_Inheritance\obj\Debug\net10.0\Vehicle_.396758AB.Up2Date

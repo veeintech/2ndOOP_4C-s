@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\bin\Debug\net10.0\StackCollection.exe
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\bin\Debug\net10.0\StackCollection.deps.json
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\bin\Debug\net10.0\StackCollection.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\bin\Debug\net10.0\StackCollection.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\bin\Debug\net10.0\StackCollection.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCollection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCollection.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCollection.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCollection.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCollection.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\refint\StackCollection.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCollection.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCollection.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\ref\StackCollection.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackCollection\StackCollection\obj\Debug\net10.0\StackCol.B9CD99BF.Up2Date

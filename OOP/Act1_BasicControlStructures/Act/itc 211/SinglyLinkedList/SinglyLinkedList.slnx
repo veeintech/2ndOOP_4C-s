@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="../List/List/List.csproj" />
+  <Project Path="Doubly Dynamic/Doubly Dynamic.csproj" Id="eb608744-26e2-4431-b5a4-f1706e97c0be" />
+  <Project Path="DoublyDynamic/DoublyDynamic.csproj" Id="a0dadf1e-5572-475d-8e60-e3735dea6cb2" />
+  <Project Path="DoublyLinkedList/DoublyLinkedList.csproj" Id="be25a60a-4706-4081-a17b-a143dc90420d" />
+  <Project Path="SinglyLinkedList/SinglyLinkedList.csproj" />
+</Solution>

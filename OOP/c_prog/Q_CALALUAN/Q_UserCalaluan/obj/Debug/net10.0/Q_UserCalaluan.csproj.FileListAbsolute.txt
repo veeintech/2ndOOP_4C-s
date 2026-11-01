@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\bin\Debug\net10.0\Q_UserCalaluan.exe
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\bin\Debug\net10.0\Q_UserCalaluan.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\bin\Debug\net10.0\Q_UserCalaluan.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\bin\Debug\net10.0\Q_UserCalaluan.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\bin\Debug\net10.0\Q_UserCalaluan.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCalaluan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCalaluan.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCalaluan.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCalaluan.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCalaluan.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\refint\Q_UserCalaluan.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCalaluan.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCalaluan.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\ref\Q_UserCalaluan.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\Q_CALALUAN\Q_UserCalaluan\obj\Debug\net10.0\Q_UserCa.64DB313E.Up2Date
