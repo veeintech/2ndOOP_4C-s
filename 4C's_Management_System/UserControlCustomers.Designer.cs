@@ -871,6 +871,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             AutoScrollMinSize = new Size(0, 953);
             BackColor = Color.FromArgb(255, 249, 239);
             Controls.Add(guna2Panel2);
@@ -889,6 +890,7 @@
             Controls.Add(guna2Panel7);
             Name = "UserControlCustomers";
             Size = new Size(1332, 953);
+            Load += UserControlCustomers_Load;
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).EndInit();

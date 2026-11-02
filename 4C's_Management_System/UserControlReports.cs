@@ -16,5 +16,10 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        private void UserControlReports_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

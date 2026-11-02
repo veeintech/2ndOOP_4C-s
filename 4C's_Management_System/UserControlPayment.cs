@@ -17,24 +17,5 @@ namespace _4C_s_Management_System
             InitializeComponent();
         }
 
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel26_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -163,7 +163,6 @@
             label4.Size = new Size(516, 32);
             label4.TabIndex = 6;
             label4.Text = "Comfortable Stays. Hassle Free Management";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -175,7 +174,6 @@
             label5.Size = new Size(129, 23);
             label5.TabIndex = 7;
             label5.Text = "Quality Rooms";
-            label5.Click += label5_Click;
             // 
             // guna2Separator1
             // 
@@ -330,7 +328,6 @@
             Name = "FrontPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "4C's Management System";
-            Load += FrontPage_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();

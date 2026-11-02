@@ -36,6 +36,11 @@ namespace _4C_s_Management_System
             dash.Show();
             loginForm?.Hide();
         }
+
+        private void UserControlLI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

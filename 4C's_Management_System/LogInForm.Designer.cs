@@ -76,7 +76,6 @@
             Design_Login.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Design_Login.Size = new Size(800, 853);
             Design_Login.TabIndex = 2;
-            Design_Login.Paint += guna2CustomGradientPanel1_Paint;
             // 
             // label4
             // 
@@ -198,7 +197,6 @@
             Name = "LogInForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInForm";
-            Load += LogInForm_Load_1;
             Design_Login.ResumeLayout(false);
             Design_Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pblogo).EndInit();

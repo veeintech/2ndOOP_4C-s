@@ -16,5 +16,10 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        private void UserControlMaintenance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

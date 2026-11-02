@@ -385,6 +385,7 @@
             MinimumSize = new Size(800, 853);
             Name = "UserControlLI";
             Size = new Size(800, 853);
+            Load += UserControlLI_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).EndInit();

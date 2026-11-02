@@ -315,7 +315,6 @@
             guna2Button2.Size = new Size(153, 35);
             guna2Button2.TabIndex = 31;
             guna2Button2.Text = "Edit Payment";
-            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Panel6
             // 
@@ -631,7 +630,6 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges45;
             guna2Panel2.Size = new Size(347, 551);
             guna2Panel2.TabIndex = 18;
-            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // guna2HtmlLabel21
             // 
@@ -839,7 +837,6 @@
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             guna2CirclePictureBox1.TabIndex = 37;
             guna2CirclePictureBox1.TabStop = false;
-            guna2CirclePictureBox1.Click += guna2CirclePictureBox1_Click;
             // 
             // guna2HtmlLabel26
             // 
@@ -851,7 +848,6 @@
             guna2HtmlLabel26.Size = new Size(180, 19);
             guna2HtmlLabel26.TabIndex = 36;
             guna2HtmlLabel26.Text = "October 31, 2026 - 04:32 PM";
-            guna2HtmlLabel26.Click += guna2HtmlLabel26_Click;
             // 
             // guna2HtmlLabel25
             // 

@@ -238,7 +238,6 @@
             guna2HtmlLabel13.Size = new Size(56, 25);
             guna2HtmlLabel13.TabIndex = 76;
             guna2HtmlLabel13.Text = "Active";
-            guna2HtmlLabel13.Click += guna2HtmlLabel13_Click;
             // 
             // guna2HtmlLabel11
             // 
@@ -872,6 +871,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             AutoScrollMinSize = new Size(0, 953);
             BackColor = Color.FromArgb(255, 249, 239);
             Controls.Add(guna2Panel7);

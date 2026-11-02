@@ -446,7 +446,6 @@
             guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2ComboBox1.Size = new Size(270, 36);
             guna2ComboBox1.TabIndex = 22;
-            guna2ComboBox1.SelectedIndexChanged += guna2ComboBox1_SelectedIndexChanged;
             // 
             // guna2Panel2
             // 
@@ -555,7 +554,6 @@
             guna2HtmlLabel29.Size = new Size(87, 23);
             guna2HtmlLabel29.TabIndex = 15;
             guna2HtmlLabel29.Text = "Checked In";
-            guna2HtmlLabel29.Click += guna2HtmlLabel29_Click;
             // 
             // guna2HtmlLabel28
             // 
@@ -568,7 +566,6 @@
             guna2HtmlLabel28.Size = new Size(80, 31);
             guna2HtmlLabel28.TabIndex = 43;
             guna2HtmlLabel28.Text = "*******";
-            guna2HtmlLabel28.Click += guna2HtmlLabel28_Click;
             // 
             // guna2HtmlLabel27
             // 

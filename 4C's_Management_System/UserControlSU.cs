@@ -17,21 +17,6 @@ namespace _4C_s_Management_System
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void UserControlSU_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
         {
             UserControlLI li = new UserControlLI();

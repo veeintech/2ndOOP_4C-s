@@ -111,16 +111,6 @@ namespace _4C_s_Management_System
             }
         }
 
-        private void dashboard_Panel_nav_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Button9_Click(object sender, EventArgs e)
         {
             designBTN(
@@ -143,11 +133,6 @@ namespace _4C_s_Management_System
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-        }
-
-        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -175,16 +160,6 @@ namespace _4C_s_Management_System
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void UserNav_LogoutBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserNav_LogoutBtn_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void UserNav_LogoutBtn_Click_2(object sender, EventArgs e)

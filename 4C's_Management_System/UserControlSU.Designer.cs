@@ -515,7 +515,6 @@
             MinimumSize = new Size(800, 853);
             Name = "UserControlSU";
             Size = new Size(800, 853);
-            Load += UserControlSU_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox12).EndInit();

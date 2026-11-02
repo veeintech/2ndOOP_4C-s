@@ -186,7 +186,6 @@
             guna2HtmlLabel2.Size = new Size(296, 21);
             guna2HtmlLabel2.TabIndex = 4;
             guna2HtmlLabel2.Text = "Manage and monitor all room in the system";
-            guna2HtmlLabel2.Click += guna2HtmlLabel2_Click;
             // 
             // guna2Panel1
             // 
@@ -417,7 +416,6 @@
             guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges60;
             guna2TextBox2.Size = new Size(182, 93);
             guna2TextBox2.TabIndex = 25;
-            guna2TextBox2.TextChanged += guna2TextBox2_TextChanged;
             // 
             // guna2HtmlLabel20
             // 
@@ -615,7 +613,6 @@
             guna2HtmlLabel6.Size = new Size(89, 28);
             guna2HtmlLabel6.TabIndex = 22;
             guna2HtmlLabel6.Text = "Available";
-            guna2HtmlLabel6.Click += guna2HtmlLabel6_Click;
             // 
             // guna2Panel4
             // 
@@ -773,7 +770,6 @@
             guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges82;
             guna2ComboBox1.Size = new Size(259, 36);
             guna2ComboBox1.TabIndex = 10;
-            guna2ComboBox1.SelectedIndexChanged += guna2ComboBox1_SelectedIndexChanged;
             // 
             // guna2Panel6
             // 

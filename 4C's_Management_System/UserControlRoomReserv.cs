@@ -16,12 +16,6 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
-
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void UserControlRoomReserv_Load(object sender, EventArgs e)
         {
             guna2ComboBox1.Items.Clear();
@@ -33,16 +27,6 @@ namespace _4C_s_Management_System
             guna2ComboBox1.Items.Add("Cancelled");
 
             guna2ComboBox1.SelectedIndex = 0;
-        }
-
-        private void guna2HtmlLabel28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel29_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

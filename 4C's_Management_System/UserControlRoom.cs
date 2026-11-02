@@ -17,37 +17,6 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
-
-        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UserControlRoom_Load(object sender, EventArgs e)
         {
             guna2ComboBox1.Items.Clear();
@@ -59,11 +28,6 @@ namespace _4C_s_Management_System
             guna2ComboBox1.Items.Add("Reserved");
 
             guna2ComboBox1.SelectedIndex = 0;
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }
