@@ -16,5 +16,21 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        private void UCDash_NewReservationBtn_Click(object sender, EventArgs e)
+        {
+            UserNavigation? nav = FindForm() as UserNavigation;
+            Control? parent = Parent;
+
+            if (parent == null)
+            {
+                return;
+            }
+
+            UserControlRoomReserv rs = new UserControlRoomReserv();
+            MainControlClass.ShowControl(rs, parent);
+
+            nav?.reservationBTN();
+        }
     }
 }

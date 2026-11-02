@@ -210,7 +210,7 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
+            UCDash_NewReservationBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -1090,26 +1090,27 @@
             guna2PictureBox1.TabIndex = 19;
             guna2PictureBox1.TabStop = false;
             // 
-            // guna2Button12
+            // UCDash_NewReservationBtn
             // 
-            guna2Button12.BackColor = Color.Transparent;
-            guna2Button12.BorderRadius = 5;
-            guna2Button12.CustomizableEdges = customizableEdges34;
-            guna2Button12.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button12.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button12.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button12.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button12.FillColor = Color.FromArgb(138, 10, 46);
-            guna2Button12.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2Button12.ForeColor = Color.White;
-            guna2Button12.HoverState.FillColor = Color.IndianRed;
-            guna2Button12.Location = new Point(1079, 37);
-            guna2Button12.Margin = new Padding(4, 3, 4, 3);
-            guna2Button12.Name = "guna2Button12";
-            guna2Button12.ShadowDecoration.CustomizableEdges = customizableEdges35;
-            guna2Button12.Size = new Size(217, 45);
-            guna2Button12.TabIndex = 25;
-            guna2Button12.Text = "+ New Reservation";
+            UCDash_NewReservationBtn.BackColor = Color.Transparent;
+            UCDash_NewReservationBtn.BorderRadius = 5;
+            UCDash_NewReservationBtn.CustomizableEdges = customizableEdges34;
+            UCDash_NewReservationBtn.DisabledState.BorderColor = Color.DarkGray;
+            UCDash_NewReservationBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            UCDash_NewReservationBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            UCDash_NewReservationBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            UCDash_NewReservationBtn.FillColor = Color.FromArgb(138, 10, 46);
+            UCDash_NewReservationBtn.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            UCDash_NewReservationBtn.ForeColor = Color.White;
+            UCDash_NewReservationBtn.HoverState.FillColor = Color.IndianRed;
+            UCDash_NewReservationBtn.Location = new Point(1079, 37);
+            UCDash_NewReservationBtn.Margin = new Padding(4, 3, 4, 3);
+            UCDash_NewReservationBtn.Name = "UCDash_NewReservationBtn";
+            UCDash_NewReservationBtn.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            UCDash_NewReservationBtn.Size = new Size(217, 45);
+            UCDash_NewReservationBtn.TabIndex = 25;
+            UCDash_NewReservationBtn.Text = "+ New Reservation";
+            UCDash_NewReservationBtn.Click += UCDash_NewReservationBtn_Click;
             // 
             // guna2Panel8
             // 
@@ -1899,7 +1900,7 @@
             BackColor = Color.FromArgb(255, 249, 239);
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(guna2Panel15);
-            Controls.Add(guna2Button12);
+            Controls.Add(UCDash_NewReservationBtn);
             Controls.Add(guna2Panel14);
             Controls.Add(guna2Panel13);
             Controls.Add(guna2Panel12);
@@ -1995,7 +1996,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button12;
+        private Guna.UI2.WinForms.Guna2Button UCDash_NewReservationBtn;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;

@@ -35,6 +35,22 @@ namespace _4C_s_Management_System
             BWTC9.FillColor = Color.Transparent;
         }
 
+
+        public void reservationBTN()
+        {
+            designBTN(
+                UserNav_ReservationBtn,
+                userNav_DashboardBtn,
+                userNav_RoomsBtn,
+                UserNav_PaymentBtn,
+                UserNav_CustomerBtn,
+                UserNav_TenantsBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_ReportsBtn,
+                UserNav_LogoutBtn
+                );
+        }
+
         private void UserNavigation_Load(object sender, EventArgs e)
         {
 
@@ -111,7 +127,7 @@ namespace _4C_s_Management_System
             }
         }
 
-        private void guna2Button9_Click(object sender, EventArgs e)
+        public void guna2Button9_Click(object sender, EventArgs e)
         {
             designBTN(
                 UserNav_ReservationBtn,
