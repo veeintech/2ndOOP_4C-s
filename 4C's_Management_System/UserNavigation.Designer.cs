@@ -386,6 +386,7 @@
             UserNav_MaintenanceBtn.TabIndex = 8;
             UserNav_MaintenanceBtn.Text = "Maintenance";
             UserNav_MaintenanceBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_MaintenanceBtn.Click += UserNav_MaintenanceBtn_Click;
             // 
             // UserNav_ReportsBtn
             // 
@@ -410,6 +411,7 @@
             UserNav_ReportsBtn.TabIndex = 7;
             UserNav_ReportsBtn.Text = "Reports";
             UserNav_ReportsBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_ReportsBtn.Click += UserNav_ReportsBtn_Click;
             // 
             // UserNav_PaymentBtn
             // 
@@ -457,6 +459,7 @@
             UserNav_TenantsBtn.TabIndex = 5;
             UserNav_TenantsBtn.Text = "Tenants";
             UserNav_TenantsBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_TenantsBtn.Click += UserNav_TenantsBtn_Click;
             // 
             // UserNav_CustomerBtn
             // 
@@ -480,6 +483,7 @@
             UserNav_CustomerBtn.TabIndex = 4;
             UserNav_CustomerBtn.Text = "Customers";
             UserNav_CustomerBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_CustomerBtn.Click += UserNav_CustomerBtn_Click;
             // 
             // userNav_RoomsBtn
             // 

@@ -165,7 +165,7 @@ namespace _4C_s_Management_System
                 UserNav_LogoutBtn
                 );
 
-            
+
             try
             {
                 UserControlPayment py = new UserControlPayment();
@@ -221,6 +221,107 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while logging out: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UserNav_CustomerBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_TenantsBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_ReportsBtn
+                );
+
+            try
+            {
+                UserControlCustomers cr = new UserControlCustomers();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void UserNav_TenantsBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_ReportsBtn
+                );
+
+            try
+            {
+                UserControlTenants cr = new UserControlTenants();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UserNav_MaintenanceBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_ReportsBtn
+                );
+
+            try
+            {
+                UserControlMaintenance cr = new UserControlMaintenance();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UserNav_ReportsBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_ReportsBtn
+                );
+
+            try
+            {
+                UserControlReports cr = new UserControlReports();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
