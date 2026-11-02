@@ -66,5 +66,10 @@ namespace _4C_s_Management_System
         {
 
         }
+
+        private void gunaChart3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

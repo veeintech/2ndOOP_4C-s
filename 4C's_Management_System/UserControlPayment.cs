@@ -31,5 +31,10 @@ namespace _4C_s_Management_System
         {
 
         }
+
+        private void guna2HtmlLabel26_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
