@@ -278,6 +278,7 @@ namespace _4C_s_Management_System
         private void UserNav_MaintenanceBtn_Click(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_MaintenanceBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -285,7 +286,6 @@ namespace _4C_s_Management_System
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_MaintenanceBtn,
                 UserNav_ReportsBtn
                 );
 
@@ -303,6 +303,7 @@ namespace _4C_s_Management_System
         private void UserNav_ReportsBtn_Click(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_ReportsBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -310,8 +311,7 @@ namespace _4C_s_Management_System
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn
+                UserNav_MaintenanceBtn
                 );
 
             try
