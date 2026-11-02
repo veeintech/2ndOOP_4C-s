@@ -1,6 +1,0 @@
-<Solution>
-  <Project Path="Foreach_Loop/Foreach_Loop.csproj" />
-  <Project Path="For_Loop/For_Loop.csproj" />
-  <Project Path="Nested_If/Nested_If.csproj" />
-  <Project Path="While_Loop/While_Loop.csproj" />
-</Solution>

@@ -1,2 +1,0 @@
-﻿alter table TBLFaculty_Calaluan
-drop column LastName

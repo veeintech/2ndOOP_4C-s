@@ -1,8 +1,0 @@
-<Solution>
-  <Project Path="Act2/Act2.csproj" />
-  <Project Path="part2/part2.csproj" />
-  <Project Path="part3/part3.csproj" />
-  <Project Path="part4/part4.csproj" />
-  <Project Path="part5/part5.csproj" />
-  <Project Path="transverse/transverse.csproj" />
-</Solution>

@@ -1,1 +1,0 @@
-﻿select * from tblFaculty_Calalaun

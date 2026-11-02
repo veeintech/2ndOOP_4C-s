@@ -1,1 +1,0 @@
-﻿select distinct Price from TBL_Calaluan

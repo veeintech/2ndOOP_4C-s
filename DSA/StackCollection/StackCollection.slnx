@@ -1,8 +1,0 @@
-<Solution>
-  <Project Path="../Practice/Practice/Practice.csproj" Id="94d85751-9565-4b84-a864-78f567627e45" />
-  <Project Path="../Practice/StackAct2_prac3/StackAct2_prac3.csproj" Id="1815ea25-8762-45f2-93c3-d9c1032c1ce3" />
-  <Project Path="../PracticeStack/PracticeStack.csproj" />
-  <Project Path="../StackImplementation/prac2/prac2.csproj" />
-  <Project Path="../UserDefinedStack/UserDefinedStack/UserDefinedStack.csproj" />
-  <Project Path="StackCollection/StackCollection.csproj" />
-</Solution>

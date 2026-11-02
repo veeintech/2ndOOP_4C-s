@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="../StackCollection/StackCollection/StackCollection.csproj" />
-  <Project Path="UserDefinedStack/UserDefinedStack.csproj" />
-</Solution>
