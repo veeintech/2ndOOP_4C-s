@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\bin\Debug\net10.0\Step10Activity.exe
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\bin\Debug\net10.0\Step10Activity.deps.json
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\bin\Debug\net10.0\Step10Activity.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\bin\Debug\net10.0\Step10Activity.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\bin\Debug\net10.0\Step10Activity.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Activity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Activity.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Activity.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Activity.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Activity.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\refint\Step10Activity.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Activity.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Activity.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\ref\Step10Activity.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\Step10Activity\obj\Debug\net10.0\Step10Ac.76953E8D.Up2Date

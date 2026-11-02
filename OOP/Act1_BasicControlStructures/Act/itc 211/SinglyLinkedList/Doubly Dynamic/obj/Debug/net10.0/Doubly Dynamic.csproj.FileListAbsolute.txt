@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\bin\Debug\net10.0\Doubly Dynamic.exe
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\bin\Debug\net10.0\Doubly Dynamic.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\bin\Debug\net10.0\Doubly Dynamic.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\bin\Debug\net10.0\Doubly Dynamic.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\bin\Debug\net10.0\Doubly Dynamic.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly Dynamic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly Dynamic.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly Dynamic.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly Dynamic.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly Dynamic.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\refint\Doubly Dynamic.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly Dynamic.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly Dynamic.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\ref\Doubly Dynamic.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\itc 211\SinglyLinkedList\Doubly Dynamic\obj\Debug\net10.0\Doubly D.5A865781.Up2Date

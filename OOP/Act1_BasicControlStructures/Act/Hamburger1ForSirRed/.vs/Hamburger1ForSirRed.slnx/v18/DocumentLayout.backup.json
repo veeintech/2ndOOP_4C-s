@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Venice Calaluan\\source\\repos\\OOP\\Act1_BasicControlStructures\\Act\\Hamburger1ForSirRed\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA3404BF-1949-4B26-A4B9-249E78A4B596}|buger2\\buger2.csproj|c:\\users\\venice calaluan\\source\\repos\\oop\\act1_basiccontrolstructures\\act\\hamburger1forsirred\\buger2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA3404BF-1949-4B26-A4B9-249E78A4B596}|buger2\\buger2.csproj|solutionrelative:buger2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D816BA9-4448-442F-8EE5-B90D82EAFC62}|Hamburger1ForSirRed\\Hamburger1ForSirRed.csproj|c:\\users\\venice calaluan\\source\\repos\\oop\\act1_basiccontrolstructures\\act\\hamburger1forsirred\\hamburger1forsirred\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D816BA9-4448-442F-8EE5-B90D82EAFC62}|Hamburger1ForSirRed\\Hamburger1ForSirRed.csproj|solutionrelative:hamburger1forsirred\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D429C240-F428-4016-B85D-5FECEE7262AC}|For1\\For1.csproj|c:\\users\\venice calaluan\\source\\repos\\oop\\act1_basiccontrolstructures\\act\\hamburger1forsirred\\for1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D429C240-F428-4016-B85D-5FECEE7262AC}|For1\\For1.csproj|solutionrelative:for1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Venice Calaluan\\source\\repos\\OOP\\Act1_BasicControlStructures\\Act\\Hamburger1ForSirRed\\For1\\Program.cs",
+              "RelativeDocumentMoniker": "For1\\Program.cs",
+              "ToolTip": "C:\\Users\\Venice Calaluan\\source\\repos\\OOP\\Act1_BasicControlStructures\\Act\\Hamburger1ForSirRed\\For1\\Program.cs",
+              "RelativeToolTip": "For1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T02:41:32.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Venice Calaluan\\source\\repos\\OOP\\Act1_BasicControlStructures\\Act\\Hamburger1ForSirRed\\Hamburger1ForSirRed\\Program.cs",
+              "RelativeDocumentMoniker": "Hamburger1ForSirRed\\Program.cs",
+              "ToolTip": "C:\\Users\\Venice Calaluan\\source\\repos\\OOP\\Act1_BasicControlStructures\\Act\\Hamburger1ForSirRed\\Hamburger1ForSirRed\\Program.cs",
+              "RelativeToolTip": "Hamburger1ForSirRed\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T02:28:18.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Venice Calaluan\\source\\repos\\OOP\\Act1_BasicControlStructures\\Act\\Hamburger1ForSirRed\\buger2\\Program.cs",
+              "RelativeDocumentMoniker": "buger2\\Program.cs",
+              "ToolTip": "C:\\Users\\Venice Calaluan\\source\\repos\\OOP\\Act1_BasicControlStructures\\Act\\Hamburger1ForSirRed\\buger2\\Program.cs",
+              "RelativeToolTip": "buger2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T02:31:25.441Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

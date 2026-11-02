@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="../PracticeStack/PracticeStack.csproj" />
+  <Project Path="../StackCollection/StackCollection/StackCollection.csproj" />
+  <Project Path="../UserDefinedStack/UserDefinedStack/UserDefinedStack.csproj" />
+  <Project Path="prac2/prac2.csproj" />
+  <Project Path="StackImplementation/StackImplementation.csproj" />
+  <Project Path="Step10Activity/Step10Activity.csproj" Id="0e6b7246-663b-4f25-8be8-f5ec4ba72caa" />
+</Solution>

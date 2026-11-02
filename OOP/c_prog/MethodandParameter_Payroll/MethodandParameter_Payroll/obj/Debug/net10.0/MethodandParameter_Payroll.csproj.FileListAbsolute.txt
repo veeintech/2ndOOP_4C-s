@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\bin\Debug\net10.0\MethodandParameter_Payroll.exe
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\bin\Debug\net10.0\MethodandParameter_Payroll.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\bin\Debug\net10.0\MethodandParameter_Payroll.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\bin\Debug\net10.0\MethodandParameter_Payroll.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\bin\Debug\net10.0\MethodandParameter_Payroll.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\MethodandParameter_Payroll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\MethodandParameter_Payroll.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\MethodandParameter_Payroll.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\MethodandParameter_Payroll.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\MethodandParameter_Payroll.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\refint\MethodandParameter_Payroll.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\MethodandParameter_Payroll.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\MethodandParameter_Payroll.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\ref\MethodandParameter_Payroll.dll
+C:\Users\Venice Calaluan\source\repos\OOP\c_prog\MethodandParameter_Payroll\MethodandParameter_Payroll\obj\Debug\net10.0\Methodan.A7BFCCC0.Up2Date
