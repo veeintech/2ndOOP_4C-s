@@ -1,0 +1,15 @@
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\bin\Debug\net10.0\prac2.exe
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\bin\Debug\net10.0\prac2.deps.json
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\bin\Debug\net10.0\prac2.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\bin\Debug\net10.0\prac2.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\bin\Debug\net10.0\prac2.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\refint\prac2.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.pdb
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\ref\prac2.dll
+C:\Users\Venice Calaluan\source\repos\DSA\StackImplementation\prac2\obj\Debug\net10.0\prac2.csproj.Up2Date

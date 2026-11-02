@@ -1,0 +1,14 @@
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\bin\Debug\net10.0\Nested_If.exe
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\bin\Debug\net10.0\Nested_If.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\bin\Debug\net10.0\Nested_If.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\bin\Debug\net10.0\Nested_If.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\bin\Debug\net10.0\Nested_If.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\Nested_If.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\Nested_If.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\Nested_If.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\Nested_If.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\Nested_If.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\refint\Nested_If.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\Nested_If.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\Nested_If.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Nested_If\Nested_If\obj\Debug\net10.0\ref\Nested_If.dll

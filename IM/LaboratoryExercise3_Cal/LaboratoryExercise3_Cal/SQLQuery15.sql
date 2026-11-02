@@ -1,0 +1,2 @@
+﻿alter table TBLFaculty_Calaluan
+drop constraint check_salary 

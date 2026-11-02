@@ -1,0 +1,14 @@
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\bin\Debug\net10.0\buger2.exe
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\bin\Debug\net10.0\buger2.deps.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\bin\Debug\net10.0\buger2.runtimeconfig.json
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\bin\Debug\net10.0\buger2.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\bin\Debug\net10.0\buger2.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\buger2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\buger2.AssemblyInfoInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\buger2.AssemblyInfo.cs
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\buger2.csproj.CoreCompileInputs.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\buger2.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\refint\buger2.dll
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\buger2.pdb
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\buger2.genruntimeconfig.cache
+C:\Users\Venice Calaluan\source\repos\OOP\Act1_BasicControlStructures\Act\Hamburger1ForSirRed\buger2\obj\Debug\net10.0\ref\buger2.dll
