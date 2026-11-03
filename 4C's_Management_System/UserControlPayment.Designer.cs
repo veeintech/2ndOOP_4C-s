@@ -105,7 +105,7 @@
             guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            panelPaymentDetails = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -128,6 +128,7 @@
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel4.SuspendLayout();
@@ -138,7 +139,7 @@
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             guna2Panel7.SuspendLayout();
-            guna2Panel2.SuspendLayout();
+            panelPaymentDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
@@ -296,7 +297,8 @@
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Button1.Size = new Size(308, 35);
             guna2Button1.TabIndex = 32;
-            guna2Button1.Text = "View Reciept";
+            guna2Button1.Text = "Print Reciept";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2Button2
             // 
@@ -424,10 +426,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.FromArgb(138, 10, 46);
             guna2HtmlLabel1.Location = new Point(113, 29);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(295, 40);
+            guna2HtmlLabel1.Size = new Size(313, 40);
             guna2HtmlLabel1.TabIndex = 12;
             guna2HtmlLabel1.Text = "Payment Management";
             // 
@@ -591,45 +594,45 @@
             guna2HtmlLabel14.TabIndex = 15;
             guna2HtmlLabel14.Text = "Paid";
             // 
-            // guna2Panel2
+            // panelPaymentDetails
             // 
-            guna2Panel2.BackColor = Color.White;
-            guna2Panel2.BorderColor = Color.Silver;
-            guna2Panel2.BorderRadius = 15;
-            guna2Panel2.BorderThickness = 1;
-            guna2Panel2.Controls.Add(guna2HtmlLabel21);
-            guna2Panel2.Controls.Add(guna2TextBox2);
-            guna2Panel2.Controls.Add(guna2PictureBox7);
-            guna2Panel2.Controls.Add(guna2HtmlLabel20);
-            guna2Panel2.Controls.Add(guna2HtmlLabel12);
-            guna2Panel2.Controls.Add(guna2HtmlLabel19);
-            guna2Panel2.Controls.Add(guna2HtmlLabel18);
-            guna2Panel2.Controls.Add(guna2HtmlLabel15);
-            guna2Panel2.Controls.Add(guna2HtmlLabel16);
-            guna2Panel2.Controls.Add(guna2HtmlLabel17);
-            guna2Panel2.Controls.Add(guna2Separator2);
-            guna2Panel2.Controls.Add(guna2Separator1);
-            guna2Panel2.Controls.Add(guna2CirclePictureBox3);
-            guna2Panel2.Controls.Add(guna2HtmlLabel28);
-            guna2Panel2.Controls.Add(guna2CirclePictureBox2);
-            guna2Panel2.Controls.Add(guna2HtmlLabel27);
-            guna2Panel2.Controls.Add(guna2CirclePictureBox1);
-            guna2Panel2.Controls.Add(guna2HtmlLabel26);
-            guna2Panel2.Controls.Add(guna2HtmlLabel25);
-            guna2Panel2.Controls.Add(guna2PictureBox6);
-            guna2Panel2.Controls.Add(guna2Button3);
-            guna2Panel2.Controls.Add(guna2Button1);
-            guna2Panel2.Controls.Add(guna2Button2);
-            guna2Panel2.Controls.Add(guna2HtmlLabel22);
-            guna2Panel2.Controls.Add(guna2Panel7);
-            guna2Panel2.Controls.Add(guna2HtmlLabel13);
-            guna2Panel2.Controls.Add(guna2HtmlLabel11);
-            guna2Panel2.CustomizableEdges = customizableEdges44;
-            guna2Panel2.Location = new Point(940, 221);
-            guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges45;
-            guna2Panel2.Size = new Size(347, 551);
-            guna2Panel2.TabIndex = 18;
+            panelPaymentDetails.BackColor = Color.White;
+            panelPaymentDetails.BorderColor = Color.Silver;
+            panelPaymentDetails.BorderRadius = 15;
+            panelPaymentDetails.BorderThickness = 1;
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel21);
+            panelPaymentDetails.Controls.Add(guna2TextBox2);
+            panelPaymentDetails.Controls.Add(guna2PictureBox7);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel20);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel12);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel19);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel18);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel15);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel16);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel17);
+            panelPaymentDetails.Controls.Add(guna2Separator2);
+            panelPaymentDetails.Controls.Add(guna2Separator1);
+            panelPaymentDetails.Controls.Add(guna2CirclePictureBox3);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel28);
+            panelPaymentDetails.Controls.Add(guna2CirclePictureBox2);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel27);
+            panelPaymentDetails.Controls.Add(guna2CirclePictureBox1);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel26);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel25);
+            panelPaymentDetails.Controls.Add(guna2PictureBox6);
+            panelPaymentDetails.Controls.Add(guna2Button3);
+            panelPaymentDetails.Controls.Add(guna2Button1);
+            panelPaymentDetails.Controls.Add(guna2Button2);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel22);
+            panelPaymentDetails.Controls.Add(guna2Panel7);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel13);
+            panelPaymentDetails.Controls.Add(guna2HtmlLabel11);
+            panelPaymentDetails.CustomizableEdges = customizableEdges44;
+            panelPaymentDetails.Location = new Point(940, 221);
+            panelPaymentDetails.Name = "panelPaymentDetails";
+            panelPaymentDetails.ShadowDecoration.CustomizableEdges = customizableEdges45;
+            panelPaymentDetails.Size = new Size(347, 551);
+            panelPaymentDetails.TabIndex = 18;
             // 
             // guna2HtmlLabel21
             // 
@@ -919,7 +922,7 @@
             Controls.Add(guna2Button12);
             Controls.Add(guna2Panel1);
             Controls.Add(guna2ComboBox1);
-            Controls.Add(guna2Panel2);
+            Controls.Add(panelPaymentDetails);
             Font = new Font("Baskerville Old Face", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "UserControlPayment";
             Size = new Size(1332, 793);
@@ -938,8 +941,8 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             guna2Panel7.ResumeLayout(false);
             guna2Panel7.PerformLayout();
-            guna2Panel2.ResumeLayout(false);
-            guna2Panel2.PerformLayout();
+            panelPaymentDetails.ResumeLayout(false);
+            panelPaymentDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();
@@ -976,7 +979,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel panelPaymentDetails;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
@@ -1005,5 +1008,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

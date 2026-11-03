@@ -88,6 +88,8 @@
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
+            guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -111,10 +113,8 @@
             guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel4.SuspendLayout();
@@ -317,10 +317,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.FromArgb(138, 10, 46);
             guna2HtmlLabel1.Location = new Point(114, 32);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(245, 40);
+            guna2HtmlLabel1.Size = new Size(261, 40);
             guna2HtmlLabel1.TabIndex = 12;
             guna2HtmlLabel1.Text = "Room Reservation";
             // 
@@ -484,6 +485,22 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2Panel2.Size = new Size(345, 548);
             guna2Panel2.TabIndex = 24;
+            // 
+            // guna2Separator3
+            // 
+            guna2Separator3.FillThickness = 2;
+            guna2Separator3.Location = new Point(30, 114);
+            guna2Separator3.Name = "guna2Separator3";
+            guna2Separator3.Size = new Size(291, 12);
+            guna2Separator3.TabIndex = 49;
+            // 
+            // guna2Separator2
+            // 
+            guna2Separator2.FillThickness = 2;
+            guna2Separator2.Location = new Point(30, 45);
+            guna2Separator2.Name = "guna2Separator2";
+            guna2Separator2.Size = new Size(291, 12);
+            guna2Separator2.TabIndex = 48;
             // 
             // guna2Separator1
             // 
@@ -771,14 +788,6 @@
             guna2HtmlLabel11.TabIndex = 26;
             guna2HtmlLabel11.Text = "Reservation Details";
             // 
-            // guna2Separator2
-            // 
-            guna2Separator2.FillThickness = 2;
-            guna2Separator2.Location = new Point(30, 45);
-            guna2Separator2.Name = "guna2Separator2";
-            guna2Separator2.Size = new Size(291, 12);
-            guna2Separator2.TabIndex = 48;
-            // 
             // guna2PictureBox8
             // 
             guna2PictureBox8.BackColor = Color.Transparent;
@@ -816,14 +825,6 @@
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges36;
             guna2TextBox1.Size = new Size(536, 37);
             guna2TextBox1.TabIndex = 25;
-            // 
-            // guna2Separator3
-            // 
-            guna2Separator3.FillThickness = 2;
-            guna2Separator3.Location = new Point(30, 114);
-            guna2Separator3.Name = "guna2Separator3";
-            guna2Separator3.Size = new Size(291, 12);
-            guna2Separator3.TabIndex = 49;
             // 
             // UserControlRoomReserv
             // 

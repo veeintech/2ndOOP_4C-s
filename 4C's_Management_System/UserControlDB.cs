@@ -52,5 +52,15 @@ namespace _4C_s_Management_System
         {
 
         }
+
+        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaChart1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
