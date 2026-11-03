@@ -836,10 +836,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.FromArgb(138, 10, 46);
             guna2HtmlLabel1.Location = new Point(112, 23);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(276, 40);
+            guna2HtmlLabel1.Size = new Size(293, 40);
             guna2HtmlLabel1.TabIndex = 57;
             guna2HtmlLabel1.Text = "Tenant Management";
             // 

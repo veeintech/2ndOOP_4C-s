@@ -32,5 +32,25 @@ namespace _4C_s_Management_System
 
             nav?.reservationBTN();
         }
+
+        private void UserControlDB_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
