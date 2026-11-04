@@ -193,12 +193,12 @@
             guna2Panel1.BackColor = Color.Transparent;
             guna2Panel1.BorderColor = Color.Silver;
             guna2Panel1.BorderRadius = 15;
-            guna2Panel1.BorderThickness = 1;
+            guna2Panel1.BorderThickness = 2;
             guna2Panel1.Controls.Add(guna2HtmlLabel5);
             guna2Panel1.Controls.Add(guna2HtmlLabel4);
             guna2Panel1.Controls.Add(guna2PictureBox2);
             guna2Panel1.CustomizableEdges = customizableEdges7;
-            guna2Panel1.FillColor = Color.FromArgb(49, 91, 133);
+            guna2Panel1.FillColor = Color.WhiteSmoke;
             guna2Panel1.ForeColor = Color.Black;
             guna2Panel1.Location = new Point(60, 134);
             guna2Panel1.Name = "guna2Panel1";
@@ -210,8 +210,8 @@
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel5.ForeColor = SystemColors.ControlLightLight;
-            guna2HtmlLabel5.Location = new Point(98, 42);
+            guna2HtmlLabel5.ForeColor = Color.FromArgb(23, 50, 77);
+            guna2HtmlLabel5.Location = new Point(79, 42);
             guna2HtmlLabel5.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(37, 40);
@@ -222,7 +222,7 @@
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel4.ForeColor = SystemColors.ControlLightLight;
+            guna2HtmlLabel4.ForeColor = Color.FromArgb(23, 50, 77);
             guna2HtmlLabel4.Location = new Point(76, 14);
             guna2HtmlLabel4.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
@@ -252,7 +252,7 @@
             guna2Panel2.BackColor = Color.White;
             guna2Panel2.BorderColor = Color.Silver;
             guna2Panel2.BorderRadius = 15;
-            guna2Panel2.BorderThickness = 1;
+            guna2Panel2.BorderThickness = 2;
             guna2Panel2.Controls.Add(guna2Button3);
             guna2Panel2.Controls.Add(guna2Button1);
             guna2Panel2.Controls.Add(guna2Button2);
@@ -562,12 +562,12 @@
             // 
             guna2Panel3.BorderColor = Color.Silver;
             guna2Panel3.BorderRadius = 15;
-            guna2Panel3.BorderThickness = 1;
+            guna2Panel3.BorderThickness = 2;
             guna2Panel3.Controls.Add(guna2HtmlLabel3);
             guna2Panel3.Controls.Add(guna2PictureBox3);
             guna2Panel3.Controls.Add(guna2HtmlLabel6);
             guna2Panel3.CustomizableEdges = customizableEdges27;
-            guna2Panel3.FillColor = Color.FromArgb(71, 122, 88);
+            guna2Panel3.FillColor = Color.WhiteSmoke;
             guna2Panel3.Location = new Point(271, 134);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges28;
@@ -578,8 +578,8 @@
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold);
-            guna2HtmlLabel3.ForeColor = SystemColors.ControlLightLight;
-            guna2HtmlLabel3.Location = new Point(102, 43);
+            guna2HtmlLabel3.ForeColor = Color.FromArgb(25, 72, 39);
+            guna2HtmlLabel3.Location = new Point(79, 43);
             guna2HtmlLabel3.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(37, 40);
@@ -607,7 +607,7 @@
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel6.ForeColor = SystemColors.ControlLightLight;
+            guna2HtmlLabel6.ForeColor = Color.FromArgb(25, 72, 39);
             guna2HtmlLabel6.Location = new Point(79, 15);
             guna2HtmlLabel6.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
@@ -619,12 +619,12 @@
             // 
             guna2Panel4.BorderColor = Color.Silver;
             guna2Panel4.BorderRadius = 15;
-            guna2Panel4.BorderThickness = 1;
+            guna2Panel4.BorderThickness = 2;
             guna2Panel4.Controls.Add(guna2HtmlLabel9);
             guna2Panel4.Controls.Add(guna2PictureBox5);
             guna2Panel4.Controls.Add(guna2HtmlLabel10);
             guna2Panel4.CustomizableEdges = customizableEdges31;
-            guna2Panel4.FillColor = Color.FromArgb(169, 79, 70);
+            guna2Panel4.FillColor = Color.WhiteSmoke;
             guna2Panel4.Font = new Font("Microsoft Sans Serif", 8.25F);
             guna2Panel4.Location = new Point(709, 134);
             guna2Panel4.Name = "guna2Panel4";
@@ -636,8 +636,8 @@
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
             guna2HtmlLabel9.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold);
-            guna2HtmlLabel9.ForeColor = SystemColors.ControlLightLight;
-            guna2HtmlLabel9.Location = new Point(115, 43);
+            guna2HtmlLabel9.ForeColor = Color.FromArgb(94, 27, 21);
+            guna2HtmlLabel9.Location = new Point(71, 43);
             guna2HtmlLabel9.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(20, 40);
@@ -665,7 +665,7 @@
             // 
             guna2HtmlLabel10.BackColor = Color.Transparent;
             guna2HtmlLabel10.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel10.ForeColor = SystemColors.ControlLightLight;
+            guna2HtmlLabel10.ForeColor = Color.FromArgb(94, 27, 21);
             guna2HtmlLabel10.Location = new Point(67, 12);
             guna2HtmlLabel10.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
@@ -677,12 +677,12 @@
             // 
             guna2Panel5.BorderColor = Color.Silver;
             guna2Panel5.BorderRadius = 15;
-            guna2Panel5.BorderThickness = 1;
+            guna2Panel5.BorderThickness = 2;
             guna2Panel5.Controls.Add(guna2HtmlLabel7);
             guna2Panel5.Controls.Add(guna2PictureBox4);
             guna2Panel5.Controls.Add(guna2HtmlLabel8);
             guna2Panel5.CustomizableEdges = customizableEdges35;
-            guna2Panel5.FillColor = Color.FromArgb(183, 122, 50);
+            guna2Panel5.FillColor = Color.WhiteSmoke;
             guna2Panel5.Location = new Point(495, 134);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges36;
@@ -693,8 +693,8 @@
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold);
-            guna2HtmlLabel7.ForeColor = SystemColors.ControlLightLight;
-            guna2HtmlLabel7.Location = new Point(106, 43);
+            guna2HtmlLabel7.ForeColor = Color.FromArgb(62, 41, 17);
+            guna2HtmlLabel7.Location = new Point(84, 43);
             guna2HtmlLabel7.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(37, 40);
@@ -722,7 +722,7 @@
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel8.ForeColor = SystemColors.ControlLightLight;
+            guna2HtmlLabel8.ForeColor = Color.FromArgb(62, 41, 17);
             guna2HtmlLabel8.Location = new Point(81, 15);
             guna2HtmlLabel8.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
@@ -777,7 +777,7 @@
             guna2Panel6.BackColor = Color.White;
             guna2Panel6.BorderColor = Color.Silver;
             guna2Panel6.BorderRadius = 15;
-            guna2Panel6.BorderThickness = 1;
+            guna2Panel6.BorderThickness = 2;
             guna2Panel6.CustomizableEdges = customizableEdges41;
             guna2Panel6.Location = new Point(49, 319);
             guna2Panel6.Name = "guna2Panel6";

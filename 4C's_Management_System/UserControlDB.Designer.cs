@@ -395,13 +395,14 @@
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(3, 2);
             guna2HtmlLabel2.TabIndex = 27;
+            guna2HtmlLabel2.Text = null;
             // 
             // guna2Panel7
             // 
             guna2Panel7.BackColor = Color.White;
             guna2Panel7.BorderColor = Color.Silver;
             guna2Panel7.BorderRadius = 15;
-            guna2Panel7.BorderThickness = 1;
+            guna2Panel7.BorderThickness = 2;
             guna2Panel7.Controls.Add(gunaChart3);
             guna2Panel7.Controls.Add(guna2HtmlLabel18);
             guna2Panel7.CustomBorderColor = Color.Silver;
@@ -489,7 +490,7 @@
             guna2Panel6.BackColor = Color.White;
             guna2Panel6.BorderColor = Color.Silver;
             guna2Panel6.BorderRadius = 15;
-            guna2Panel6.BorderThickness = 1;
+            guna2Panel6.BorderThickness = 2;
             guna2Panel6.Controls.Add(guna2HtmlLabel47);
             guna2Panel6.Controls.Add(guna2HtmlLabel46);
             guna2Panel6.Controls.Add(guna2HtmlLabel45);
@@ -692,7 +693,7 @@
             guna2Panel5.BackColor = Color.Transparent;
             guna2Panel5.BorderColor = Color.Silver;
             guna2Panel5.BorderRadius = 15;
-            guna2Panel5.BorderThickness = 1;
+            guna2Panel5.BorderThickness = 2;
             guna2Panel5.Controls.Add(guna2HtmlLabel55);
             guna2Panel5.Controls.Add(guna2HtmlLabel53);
             guna2Panel5.Controls.Add(guna2CirclePictureBox3);
@@ -716,7 +717,7 @@
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges15;
             guna2Panel5.Size = new Size(402, 327);
             guna2Panel5.TabIndex = 19;
-            guna2Panel5.Paint += this.guna2Panel5_Paint;
+            guna2Panel5.Paint += guna2Panel5_Paint;
             // 
             // guna2HtmlLabel55
             // 
@@ -919,7 +920,7 @@
             guna2Panel4.BackColor = Color.White;
             guna2Panel4.BorderColor = Color.Silver;
             guna2Panel4.BorderRadius = 15;
-            guna2Panel4.BorderThickness = 1;
+            guna2Panel4.BorderThickness = 2;
             guna2Panel4.Controls.Add(guna2PictureBox8);
             guna2Panel4.Controls.Add(guna2HtmlLabel11);
             guna2Panel4.Controls.Add(guna2HtmlLabel8);
@@ -967,7 +968,7 @@
             guna2Panel3.BackColor = Color.White;
             guna2Panel3.BorderColor = Color.Silver;
             guna2Panel3.BorderRadius = 15;
-            guna2Panel3.BorderThickness = 1;
+            guna2Panel3.BorderThickness = 2;
             guna2Panel3.Controls.Add(guna2PictureBox5);
             guna2Panel3.Controls.Add(guna2HtmlLabel10);
             guna2Panel3.Controls.Add(guna2HtmlLabel7);
@@ -1004,7 +1005,7 @@
             guna2Panel2.BackColor = Color.White;
             guna2Panel2.BorderColor = Color.Silver;
             guna2Panel2.BorderRadius = 15;
-            guna2Panel2.BorderThickness = 1;
+            guna2Panel2.BorderThickness = 2;
             guna2Panel2.Controls.Add(guna2PictureBox4);
             guna2Panel2.Controls.Add(guna2HtmlLabel9);
             guna2Panel2.Controls.Add(guna2HtmlLabel6);
@@ -1042,7 +1043,7 @@
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.BorderColor = Color.Silver;
             guna2Panel1.BorderRadius = 15;
-            guna2Panel1.BorderThickness = 1;
+            guna2Panel1.BorderThickness = 2;
             guna2Panel1.Controls.Add(guna2HtmlLabel4);
             guna2Panel1.Controls.Add(guna2PictureBox3);
             guna2Panel1.Controls.Add(guna2PictureBox1);
@@ -1113,7 +1114,7 @@
             guna2Panel8.BackColor = Color.White;
             guna2Panel8.BorderColor = Color.Silver;
             guna2Panel8.BorderRadius = 15;
-            guna2Panel8.BorderThickness = 1;
+            guna2Panel8.BorderThickness = 2;
             guna2Panel8.Controls.Add(guna2PictureBox6);
             guna2Panel8.Controls.Add(guna2HtmlLabel12);
             guna2Panel8.Controls.Add(guna2HtmlLabel13);
@@ -1172,7 +1173,7 @@
             guna2Panel9.BackColor = Color.White;
             guna2Panel9.BorderColor = Color.Silver;
             guna2Panel9.BorderRadius = 15;
-            guna2Panel9.BorderThickness = 1;
+            guna2Panel9.BorderThickness = 2;
             guna2Panel9.Controls.Add(guna2PictureBox7);
             guna2Panel9.Controls.Add(guna2HtmlLabel14);
             guna2Panel9.Controls.Add(guna2HtmlLabel15);
@@ -1231,7 +1232,7 @@
             guna2Panel10.BackColor = Color.Transparent;
             guna2Panel10.BorderColor = Color.Silver;
             guna2Panel10.BorderRadius = 15;
-            guna2Panel10.BorderThickness = 1;
+            guna2Panel10.BorderThickness = 2;
             guna2Panel10.Controls.Add(guna2HtmlLabel19);
             guna2Panel10.CustomBorderColor = Color.Silver;
             guna2Panel10.CustomBorderThickness = new Padding(0, 0, 3, 3);
@@ -1261,7 +1262,7 @@
             guna2Panel11.BackColor = Color.Transparent;
             guna2Panel11.BorderColor = Color.Silver;
             guna2Panel11.BorderRadius = 15;
-            guna2Panel11.BorderThickness = 1;
+            guna2Panel11.BorderThickness = 2;
             guna2Panel11.Controls.Add(guna2HtmlLabel37);
             guna2Panel11.Controls.Add(guna2HtmlLabel36);
             guna2Panel11.Controls.Add(guna2HtmlLabel35);
@@ -1537,7 +1538,7 @@
             guna2Panel13.BackColor = Color.Transparent;
             guna2Panel13.BorderColor = Color.Silver;
             guna2Panel13.BorderRadius = 15;
-            guna2Panel13.BorderThickness = 1;
+            guna2Panel13.BorderThickness = 2;
             guna2Panel13.Controls.Add(guna2HtmlLabel25);
             guna2Panel13.Controls.Add(guna2HtmlLabel22);
             guna2Panel13.CustomBorderColor = Color.Silver;
@@ -1579,7 +1580,7 @@
             guna2Panel14.BackColor = Color.Transparent;
             guna2Panel14.BorderColor = Color.Silver;
             guna2Panel14.BorderRadius = 15;
-            guna2Panel14.BorderThickness = 1;
+            guna2Panel14.BorderThickness = 2;
             guna2Panel14.Controls.Add(guna2HtmlLabel23);
             guna2Panel14.CustomBorderColor = Color.Silver;
             guna2Panel14.CustomBorderThickness = new Padding(0, 0, 3, 3);
@@ -1609,7 +1610,7 @@
             guna2Panel15.BackColor = Color.Transparent;
             guna2Panel15.BorderColor = Color.Silver;
             guna2Panel15.BorderRadius = 15;
-            guna2Panel15.BorderThickness = 1;
+            guna2Panel15.BorderThickness = 2;
             guna2Panel15.Controls.Add(guna2HtmlLabel62);
             guna2Panel15.Controls.Add(guna2HtmlLabel56);
             guna2Panel15.Controls.Add(guna2CirclePictureBox4);
@@ -1822,7 +1823,7 @@
             guna2Panel12.BackColor = Color.Transparent;
             guna2Panel12.BorderColor = Color.Silver;
             guna2Panel12.BorderRadius = 15;
-            guna2Panel12.BorderThickness = 1;
+            guna2Panel12.BorderThickness = 2;
             guna2Panel12.Controls.Add(guna2HtmlLabel38);
             guna2Panel12.CustomBorderColor = Color.Silver;
             guna2Panel12.CustomBorderThickness = new Padding(0, 0, 3, 3);
@@ -1920,10 +1921,10 @@
             guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(122, 2, 38);
             guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(112, 0, 31);
             guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(101, 0, 28);
-            guna2CustomGradientPanel1.Location = new Point(0, 1182);
+            guna2CustomGradientPanel1.Location = new Point(0, 1190);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges76;
-            guna2CustomGradientPanel1.Size = new Size(1332, 50);
+            guna2CustomGradientPanel1.Size = new Size(1332, 42);
             guna2CustomGradientPanel1.TabIndex = 36;
             // 
             // UserControlDB
