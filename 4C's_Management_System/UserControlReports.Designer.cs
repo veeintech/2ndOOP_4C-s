@@ -302,7 +302,7 @@
             guna2Panel1.Controls.Add(guna2HtmlLabel4);
             guna2Panel1.Controls.Add(guna2PictureBox2);
             guna2Panel1.CustomizableEdges = customizableEdges5;
-            guna2Panel1.FillColor = Color.WhiteSmoke;
+            guna2Panel1.FillColor = Color.FromArgb(82, 124, 168);
             guna2Panel1.ForeColor = Color.Black;
             guna2Panel1.Location = new Point(49, 105);
             guna2Panel1.Name = "guna2Panel1";
@@ -336,7 +336,7 @@
             guna2Panel3.Controls.Add(guna2HtmlLabel24);
             guna2Panel3.Controls.Add(guna2PictureBox3);
             guna2Panel3.CustomizableEdges = customizableEdges9;
-            guna2Panel3.FillColor = Color.WhiteSmoke;
+            guna2Panel3.FillColor = Color.FromArgb(95, 145, 100);
             guna2Panel3.Location = new Point(363, 105);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -369,7 +369,7 @@
             guna2Panel4.Controls.Add(guna2HtmlLabel8);
             guna2Panel4.Controls.Add(guna2PictureBox5);
             guna2Panel4.CustomizableEdges = customizableEdges13;
-            guna2Panel4.FillColor = Color.WhiteSmoke;
+            guna2Panel4.FillColor = Color.FromArgb(168, 93, 85);
             guna2Panel4.Font = new Font("Microsoft Sans Serif", 8.25F);
             guna2Panel4.Location = new Point(1005, 105);
             guna2Panel4.Name = "guna2Panel4";
@@ -424,7 +424,7 @@
             guna2Panel5.Controls.Add(guna2HtmlLabel6);
             guna2Panel5.Controls.Add(guna2PictureBox4);
             guna2Panel5.CustomizableEdges = customizableEdges19;
-            guna2Panel5.FillColor = Color.WhiteSmoke;
+            guna2Panel5.FillColor = Color.FromArgb(169, 121, 56);
             guna2Panel5.Location = new Point(686, 105);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -453,7 +453,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.FromArgb(138, 10, 46);
-            guna2HtmlLabel1.Location = new Point(111, 25);
+            guna2HtmlLabel1.Location = new Point(111, 27);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(112, 40);
             guna2HtmlLabel1.TabIndex = 25;
@@ -478,7 +478,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Baskerville Old Face", 10.2F);
-            guna2HtmlLabel2.Location = new Point(111, 59);
+            guna2HtmlLabel2.Location = new Point(111, 62);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(255, 21);
             guna2HtmlLabel2.TabIndex = 28;
@@ -864,16 +864,16 @@
             guna2ComboBox2.Font = new Font("Segoe UI", 10F);
             guna2ComboBox2.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox2.ItemHeight = 30;
-            guna2ComboBox2.Location = new Point(939, 565);
+            guna2ComboBox2.Location = new Point(1079, 565);
             guna2ComboBox2.Name = "guna2ComboBox2";
             guna2ComboBox2.ShadowDecoration.CustomizableEdges = customizableEdges39;
-            guna2ComboBox2.Size = new Size(343, 36);
+            guna2ComboBox2.Size = new Size(203, 36);
             guna2ComboBox2.TabIndex = 40;
             // 
             // guna2TextBox2
             // 
             guna2TextBox2.BackColor = Color.White;
-            guna2TextBox2.BorderColor = Color.Silver;
+            guna2TextBox2.BorderColor = Color.Maroon;
             guna2TextBox2.BorderRadius = 6;
             guna2TextBox2.CustomizableEdges = customizableEdges40;
             guna2TextBox2.DefaultText = "";
@@ -891,7 +891,7 @@
             guna2TextBox2.PlaceholderText = "Search room number";
             guna2TextBox2.SelectedText = "";
             guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges41;
-            guna2TextBox2.Size = new Size(836, 37);
+            guna2TextBox2.Size = new Size(730, 37);
             guna2TextBox2.TabIndex = 39;
             // 
             // guna2ComboBox1
@@ -907,10 +907,10 @@
             guna2ComboBox1.Font = new Font("Segoe UI", 10F);
             guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Location = new Point(864, 44);
+            guna2ComboBox1.Location = new Point(839, 564);
             guna2ComboBox1.Name = "guna2ComboBox1";
             guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges43;
-            guna2ComboBox1.Size = new Size(202, 36);
+            guna2ComboBox1.Size = new Size(218, 36);
             guna2ComboBox1.TabIndex = 42;
             // 
             // UserControlReports
@@ -933,8 +933,8 @@
             Controls.Add(guna2Panel5);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2PictureBox1);
-            Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2Panel6);
+            Controls.Add(guna2HtmlLabel2);
             Name = "UserControlReports";
             Size = new Size(1332, 953);
             Load += UserControlReports_Load;
