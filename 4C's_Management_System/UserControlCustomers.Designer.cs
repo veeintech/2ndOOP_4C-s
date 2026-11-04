@@ -63,6 +63,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -95,6 +97,7 @@
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
@@ -131,7 +134,7 @@
             guna2Panel1.Controls.Add(guna2HtmlLabel4);
             guna2Panel1.Controls.Add(guna2PictureBox2);
             guna2Panel1.CustomizableEdges = customizableEdges3;
-            guna2Panel1.FillColor = Color.WhiteSmoke;
+            guna2Panel1.FillColor = Color.FromArgb(82, 124, 168);
             guna2Panel1.Font = new Font("Microsoft Sans Serif", 8.25F);
             guna2Panel1.ForeColor = Color.Black;
             guna2Panel1.Location = new Point(50, 103);
@@ -207,7 +210,7 @@
             guna2Panel4.Controls.Add(guna2HtmlLabel8);
             guna2Panel4.Controls.Add(guna2PictureBox5);
             guna2Panel4.CustomizableEdges = customizableEdges9;
-            guna2Panel4.FillColor = Color.WhiteSmoke;
+            guna2Panel4.FillColor = Color.FromArgb(168, 93, 85);
             guna2Panel4.Font = new Font("Microsoft Sans Serif", 8.25F);
             guna2Panel4.Location = new Point(1006, 103);
             guna2Panel4.Name = "guna2Panel4";
@@ -284,7 +287,7 @@
             guna2Panel5.Controls.Add(guna2HtmlLabel6);
             guna2Panel5.Controls.Add(guna2PictureBox4);
             guna2Panel5.CustomizableEdges = customizableEdges15;
-            guna2Panel5.FillColor = Color.WhiteSmoke;
+            guna2Panel5.FillColor = Color.FromArgb(169, 121, 56);
             guna2Panel5.Location = new Point(687, 103);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -341,7 +344,7 @@
             guna2Panel3.Controls.Add(guna2HtmlLabel24);
             guna2Panel3.Controls.Add(guna2PictureBox3);
             guna2Panel3.CustomizableEdges = customizableEdges17;
-            guna2Panel3.FillColor = Color.WhiteSmoke;
+            guna2Panel3.FillColor = Color.FromArgb(95, 145, 100);
             guna2Panel3.Location = new Point(364, 103);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges18;
@@ -353,7 +356,7 @@
             guna2HtmlLabel23.BackColor = Color.Transparent;
             guna2HtmlLabel23.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel23.ForeColor = Color.FromArgb(25, 72, 39);
-            guna2HtmlLabel23.Location = new Point(91, 35);
+            guna2HtmlLabel23.Location = new Point(97, 35);
             guna2HtmlLabel23.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel23.Name = "guna2HtmlLabel23";
             guna2HtmlLabel23.Size = new Size(54, 40);
@@ -365,7 +368,7 @@
             guna2HtmlLabel24.BackColor = Color.Transparent;
             guna2HtmlLabel24.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel24.ForeColor = Color.FromArgb(25, 72, 39);
-            guna2HtmlLabel24.Location = new Point(91, 14);
+            guna2HtmlLabel24.Location = new Point(97, 14);
             guna2HtmlLabel24.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel24.Name = "guna2HtmlLabel24";
             guna2HtmlLabel24.Size = new Size(52, 25);
@@ -422,7 +425,7 @@
             // guna2TextBox2
             // 
             guna2TextBox2.BackColor = Color.White;
-            guna2TextBox2.BorderColor = Color.Silver;
+            guna2TextBox2.BorderColor = Color.Maroon;
             guna2TextBox2.BorderRadius = 6;
             guna2TextBox2.CustomizableEdges = customizableEdges25;
             guna2TextBox2.DefaultText = "";
@@ -572,6 +575,27 @@
             guna2Panel8.Size = new Size(1237, 282);
             guna2Panel8.TabIndex = 87;
             // 
+            // guna2Button1
+            // 
+            guna2Button1.BackColor = Color.Transparent;
+            guna2Button1.BorderColor = Color.Silver;
+            guna2Button1.BorderRadius = 6;
+            guna2Button1.BorderThickness = 1;
+            guna2Button1.CustomizableEdges = customizableEdges35;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(138, 10, 46);
+            guna2Button1.Font = new Font("Baskerville Old Face", 12F);
+            guna2Button1.ForeColor = Color.WhiteSmoke;
+            guna2Button1.Location = new Point(973, 42);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            guna2Button1.Size = new Size(107, 35);
+            guna2Button1.TabIndex = 89;
+            guna2Button1.Text = "Edit";
+            // 
             // UserControlCustomers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -579,6 +603,7 @@
             AutoScroll = true;
             AutoScrollMinSize = new Size(0, 953);
             BackColor = Color.FromArgb(255, 249, 239);
+            Controls.Add(guna2Button1);
             Controls.Add(guna2Panel7);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2HtmlLabel13);
@@ -656,5 +681,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

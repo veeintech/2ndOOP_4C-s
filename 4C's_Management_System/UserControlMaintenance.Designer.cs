@@ -797,10 +797,10 @@
             guna2Button12.FillColor = Color.FromArgb(138, 10, 46);
             guna2Button12.Font = new Font("Baskerville Old Face", 12F);
             guna2Button12.ForeColor = Color.WhiteSmoke;
-            guna2Button12.Location = new Point(1086, 43);
+            guna2Button12.Location = new Point(1071, 43);
             guna2Button12.Name = "guna2Button12";
             guna2Button12.ShadowDecoration.CustomizableEdges = customizableEdges33;
-            guna2Button12.Size = new Size(200, 35);
+            guna2Button12.Size = new Size(215, 35);
             guna2Button12.TabIndex = 44;
             guna2Button12.Text = "+ New Maintenance";
             // 
