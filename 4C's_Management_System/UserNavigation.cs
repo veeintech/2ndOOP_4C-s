@@ -20,7 +20,8 @@ namespace _4C_s_Management_System
         public void designBTN(
             Guna2Button BWC1, Guna2Button BWTC2, Guna2Button BWTC3,
             Guna2Button BWTC4, Guna2Button BWTC5, Guna2Button BWTC6,
-            Guna2Button BWTC7, Guna2Button BWTC8, Guna2Button BWTC9
+            Guna2Button BWTC7, Guna2Button BWTC8, Guna2Button BWTC9,
+            Guna2Button BWTC10
             )
         {
             BWC1.FillColor = Color.FromArgb(212, 167, 44);
@@ -33,21 +34,23 @@ namespace _4C_s_Management_System
             BWTC7.FillColor = Color.Transparent;
             BWTC8.FillColor = Color.Transparent;
             BWTC9.FillColor = Color.Transparent;
+            BWTC10.FillColor = Color.Transparent;
         }
 
 
         public void reservationBTN()
         {
             designBTN(
-                UserNav_ReservationBtn,
-                userNav_DashboardBtn,
-                userNav_RoomsBtn,
-                UserNav_PaymentBtn,
-                UserNav_CustomerBtn,
-                UserNav_TenantsBtn,
-                UserNav_MaintenanceBtn,
                 UserNav_ReportsBtn,
-                UserNav_LogoutBtn
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_StaffBtn
                 );
         }
 
@@ -55,15 +58,16 @@ namespace _4C_s_Management_System
         {
 
             designBTN(
-                userNav_DashboardBtn,
-                userNav_RoomsBtn,
-                UserNav_ReservationBtn,
-                UserNav_PaymentBtn,
-                UserNav_CustomerBtn,
-                UserNav_TenantsBtn,
-                UserNav_MaintenanceBtn,
                 UserNav_ReportsBtn,
-                UserNav_LogoutBtn
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_StaffBtn
                 );
 
             try
@@ -80,15 +84,16 @@ namespace _4C_s_Management_System
         private void userNav_DashboardBtn_Click(object sender, EventArgs e)
         {
             designBTN(
-                userNav_DashboardBtn,
-                userNav_RoomsBtn,
-                UserNav_ReservationBtn,
-                UserNav_PaymentBtn,
-                UserNav_CustomerBtn,
-                UserNav_TenantsBtn,
-                UserNav_MaintenanceBtn,
                 UserNav_ReportsBtn,
-                UserNav_LogoutBtn
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_StaffBtn
                 );
 
             try
@@ -105,15 +110,16 @@ namespace _4C_s_Management_System
         private void userNav_RoomsBtn_Click(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_ReportsBtn,
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_ReservationBtn,
-                UserNav_PaymentBtn,
-                UserNav_CustomerBtn,
-                UserNav_TenantsBtn,
                 UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn,
-                UserNav_LogoutBtn
+                UserNav_StaffBtn
                 );
 
             try
@@ -130,15 +136,16 @@ namespace _4C_s_Management_System
         public void guna2Button9_Click(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_ReportsBtn,
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_PaymentBtn,
-                UserNav_CustomerBtn,
-                UserNav_TenantsBtn,
                 UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn,
-                UserNav_LogoutBtn
+                UserNav_StaffBtn
                 );
             try
             {
@@ -155,15 +162,16 @@ namespace _4C_s_Management_System
         private void UserNav_PaymentBtn_Click(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_ReportsBtn,
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
                 UserNav_PaymentBtn,
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_CustomerBtn,
-                UserNav_TenantsBtn,
                 UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn,
-                UserNav_LogoutBtn
+                UserNav_StaffBtn
                 );
 
 
@@ -181,15 +189,16 @@ namespace _4C_s_Management_System
         private void UserNav_LogoutBtn_Click_2(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_ReportsBtn,
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
                 UserNav_PaymentBtn,
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_CustomerBtn,
-                UserNav_TenantsBtn,
                 UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn
+                UserNav_StaffBtn
                 );
 
             try
@@ -218,15 +227,16 @@ namespace _4C_s_Management_System
         private void UserNav_CustomerBtn_Click(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_ReportsBtn,
+                UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
                 UserNav_PaymentBtn,
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_TenantsBtn,
                 UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn
+                UserNav_StaffBtn
                 );
 
             try
@@ -244,6 +254,7 @@ namespace _4C_s_Management_System
         private void UserNav_TenantsBtn_Click(object sender, EventArgs e)
         {
             designBTN(
+                UserNav_ReportsBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -252,7 +263,7 @@ namespace _4C_s_Management_System
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
                 UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn
+                UserNav_StaffBtn
                 );
 
             try
@@ -269,7 +280,7 @@ namespace _4C_s_Management_System
         private void UserNav_MaintenanceBtn_Click(object sender, EventArgs e)
         {
             designBTN(
-                UserNav_MaintenanceBtn,
+                UserNav_ReportsBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -277,7 +288,8 @@ namespace _4C_s_Management_System
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_ReportsBtn
+                UserNav_MaintenanceBtn,
+                UserNav_StaffBtn
                 );
 
             try
@@ -302,12 +314,39 @@ namespace _4C_s_Management_System
                 UserNav_ReservationBtn,
                 userNav_RoomsBtn,
                 userNav_DashboardBtn,
-                UserNav_MaintenanceBtn
+                UserNav_MaintenanceBtn,
+                UserNav_StaffBtn
                 );
 
             try
             {
                 UserControlReports cr = new UserControlReports();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UserNav_StaffBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+                UserNav_ReportsBtn,
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                UserNav_StaffBtn
+                );
+
+            try
+            {
+                UserControlStaff cr = new UserControlStaff();
                 MainControlClass.ShowControl(cr, UserNav_Panel_shift);
             }
             catch (Exception ex)

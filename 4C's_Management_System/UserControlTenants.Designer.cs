@@ -634,7 +634,7 @@
             guna2Panel1.Controls.Add(guna2HtmlLabel4);
             guna2Panel1.Controls.Add(guna2PictureBox2);
             guna2Panel1.CustomizableEdges = customizableEdges14;
-            guna2Panel1.FillColor = Color.WhiteSmoke;
+            guna2Panel1.FillColor = Color.FromArgb(82, 124, 168);
             guna2Panel1.ForeColor = Color.Black;
             guna2Panel1.Location = new Point(50, 103);
             guna2Panel1.Name = "guna2Panel1";
@@ -668,7 +668,7 @@
             guna2Panel4.Controls.Add(guna2HtmlLabel8);
             guna2Panel4.Controls.Add(guna2PictureBox5);
             guna2Panel4.CustomizableEdges = customizableEdges20;
-            guna2Panel4.FillColor = Color.WhiteSmoke;
+            guna2Panel4.FillColor = Color.FromArgb(168, 93, 85);
             guna2Panel4.Font = new Font("Microsoft Sans Serif", 8.25F);
             guna2Panel4.Location = new Point(1006, 103);
             guna2Panel4.Name = "guna2Panel4";
@@ -702,7 +702,7 @@
             guna2Panel3.Controls.Add(guna2HtmlLabel24);
             guna2Panel3.Controls.Add(guna2PictureBox3);
             guna2Panel3.CustomizableEdges = customizableEdges22;
-            guna2Panel3.FillColor = Color.WhiteSmoke;
+            guna2Panel3.FillColor = Color.FromArgb(95, 145, 100);
             guna2Panel3.Location = new Point(364, 103);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges23;
@@ -728,7 +728,7 @@
             guna2Button12.ShadowDecoration.CustomizableEdges = customizableEdges25;
             guna2Button12.Size = new Size(200, 35);
             guna2Button12.TabIndex = 58;
-            guna2Button12.Text = "+ Add Tenant";
+            guna2Button12.Text = "Add Tenant";
             // 
             // guna2Panel5
             // 
@@ -739,7 +739,7 @@
             guna2Panel5.Controls.Add(guna2HtmlLabel6);
             guna2Panel5.Controls.Add(guna2PictureBox4);
             guna2Panel5.CustomizableEdges = customizableEdges28;
-            guna2Panel5.FillColor = Color.WhiteSmoke;
+            guna2Panel5.FillColor = Color.FromArgb(169, 121, 56);
             guna2Panel5.Location = new Point(687, 103);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges29;
@@ -813,8 +813,9 @@
             // guna2TextBox2
             // 
             guna2TextBox2.BackColor = Color.White;
-            guna2TextBox2.BorderColor = Color.Silver;
+            guna2TextBox2.BorderColor = Color.FromArgb(138, 10, 46);
             guna2TextBox2.BorderRadius = 6;
+            guna2TextBox2.BorderThickness = 2;
             guna2TextBox2.CustomizableEdges = customizableEdges36;
             guna2TextBox2.DefaultText = "";
             guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);

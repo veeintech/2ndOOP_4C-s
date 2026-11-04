@@ -875,6 +875,7 @@
             guna2TextBox2.BackColor = Color.White;
             guna2TextBox2.BorderColor = Color.Maroon;
             guna2TextBox2.BorderRadius = 6;
+            guna2TextBox2.BorderThickness = 2;
             guna2TextBox2.CustomizableEdges = customizableEdges40;
             guna2TextBox2.DefaultText = "";
             guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
