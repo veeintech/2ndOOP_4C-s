@@ -217,6 +217,8 @@
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel4.Size = new Size(280, 83);
             guna2Panel4.TabIndex = 78;
+            guna2Panel4.Paint += guna2Panel4_Paint;
+            guna2Panel4.MouseEnter += haha;
             // 
             // guna2HtmlLabel8
             // 

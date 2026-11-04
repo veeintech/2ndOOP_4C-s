@@ -26,5 +26,15 @@ namespace _4C_s_Management_System
         {
 
         }
+
+        private void haha(object sender, EventArgs e)
+        {
+            this.Size = new Size(280, 100);
+        }
+
+        private void guna2Panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
