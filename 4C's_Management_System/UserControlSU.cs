@@ -15,6 +15,9 @@ namespace _4C_s_Management_System
         public UserControlSU()
         {
             InitializeComponent();
+            SU_createaccBtn.Click += SU_createaccBtn_Click;
+            SU_eyeop.Click += SU_openeyeBtn_Click;
+            guna2PictureBox7.Click += SU_closedeyeBtn_Click;
         }
 
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
@@ -25,25 +28,25 @@ namespace _4C_s_Management_System
 
         private void SU_closedeyeBtn_Click(object sender, EventArgs e)
         {
-            SU_passwordTxt.PasswordChar = '*';
-            SU_conpassTxt.PasswordChar = '*';
-            SU_openeyeBtn.BringToFront();
+            SU_passwordtxt.PasswordChar = '*';
+            SU_conpasstxt.PasswordChar = '*';
+            guna2PictureBox7.BringToFront();
         }
 
         private void SU_openeyeBtn_Click(object sender, EventArgs e)
         {
-            SU_passwordTxt.PasswordChar = '\0';
-            SU_conpassTxt.PasswordChar = '\0';
-            SU_closedeyeBtn.BringToFront();
+            SU_passwordtxt.PasswordChar = '\0';
+            SU_conpasstxt.PasswordChar = '\0';
+            SU_eyeop.BringToFront();
         }
 
         private void SU_createaccBtn_Click(object sender, EventArgs e)
         {
-            string userid = SU_useridTxt.Text.Trim();
-            string branchid = SU_branchTxt.Text.Trim();
-            string password = SU_passwordTxt.Text;
-            string username = SU_usernameTxt.Text.Trim();
-            string confirmPassword = SU_conpassTxt.Text;
+            string userid = SU_useridtxt.Text.Trim();
+            string branchid = SU_branchidtxt.Text.Trim();
+            string password = SU_passwordtxt.Text;
+            string username = SU_usernametxt.Text.Trim();
+            string confirmPassword = SU_conpasstxt.Text;
 
             if (string.IsNullOrWhiteSpace(username) || 
                 string.IsNullOrWhiteSpace(password) || 
@@ -69,7 +72,7 @@ namespace _4C_s_Management_System
                 return;
             }
 
-            if (!SU_termconCB.Checked)
+            if (!SU_trmconCB.Checked)
             {
                 MessageBox.Show(
                     "Please accept the terms and conditions to proceed.",
