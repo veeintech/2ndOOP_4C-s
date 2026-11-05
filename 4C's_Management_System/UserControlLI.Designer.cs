@@ -55,13 +55,13 @@
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             LOGIN_signupbtn = new Guna.UI2.WinForms.Guna2Button();
-            guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            LOGIN_ternconCB = new Guna.UI2.WinForms.Guna2CheckBox();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            LOGIN_loginBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            LOGIN_passwprdBtn = new Guna.UI2.WinForms.Guna2TextBox();
+            LOGIN_usernameBtn = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox9).BeginInit();
@@ -202,26 +202,26 @@
             LOGIN_signupbtn.Text = "Sign Up";
             LOGIN_signupbtn.Click += LOGIN_signupbtn_Click;
             // 
-            // guna2CheckBox1
+            // LOGIN_ternconCB
             // 
-            guna2CheckBox1.AutoSize = true;
-            guna2CheckBox1.BackColor = Color.Transparent;
-            guna2CheckBox1.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2CheckBox1.CheckedState.BorderRadius = 0;
-            guna2CheckBox1.CheckedState.BorderThickness = 0;
-            guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            guna2CheckBox1.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2CheckBox1.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2CheckBox1.Location = new Point(119, 502);
-            guna2CheckBox1.Name = "guna2CheckBox1";
-            guna2CheckBox1.Size = new Size(288, 25);
-            guna2CheckBox1.TabIndex = 35;
-            guna2CheckBox1.Text = " I agree to the Terms and Condition";
-            guna2CheckBox1.UncheckedState.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2CheckBox1.UncheckedState.BorderRadius = 0;
-            guna2CheckBox1.UncheckedState.BorderThickness = 1;
-            guna2CheckBox1.UncheckedState.FillColor = Color.White;
-            guna2CheckBox1.UseVisualStyleBackColor = false;
+            LOGIN_ternconCB.AutoSize = true;
+            LOGIN_ternconCB.BackColor = Color.Transparent;
+            LOGIN_ternconCB.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            LOGIN_ternconCB.CheckedState.BorderRadius = 0;
+            LOGIN_ternconCB.CheckedState.BorderThickness = 0;
+            LOGIN_ternconCB.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            LOGIN_ternconCB.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LOGIN_ternconCB.ForeColor = Color.FromArgb(74, 14, 14);
+            LOGIN_ternconCB.Location = new Point(119, 502);
+            LOGIN_ternconCB.Name = "LOGIN_ternconCB";
+            LOGIN_ternconCB.Size = new Size(288, 25);
+            LOGIN_ternconCB.TabIndex = 35;
+            LOGIN_ternconCB.Text = " I agree to the Terms and Condition";
+            LOGIN_ternconCB.UncheckedState.BorderColor = Color.FromArgb(64, 64, 64);
+            LOGIN_ternconCB.UncheckedState.BorderRadius = 0;
+            LOGIN_ternconCB.UncheckedState.BorderThickness = 1;
+            LOGIN_ternconCB.UncheckedState.FillColor = Color.White;
+            LOGIN_ternconCB.UseVisualStyleBackColor = false;
             // 
             // guna2HtmlLabel8
             // 
@@ -234,42 +234,42 @@
             guna2HtmlLabel8.TabIndex = 34;
             guna2HtmlLabel8.Text = "Forgot Password?";
             // 
-            // guna2Button1
+            // LOGIN_loginBtn
             // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 15;
-            guna2Button1.BorderThickness = 1;
-            guna2Button1.CustomizableEdges = customizableEdges7;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(153, 0, 0);
-            guna2Button1.Font = new Font("Baskerville Old Face", 10.2F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.HoverState.BorderColor = Color.Black;
-            guna2Button1.HoverState.FillColor = Color.FromArgb(192, 0, 0);
-            guna2Button1.HoverState.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2Button1.HoverState.ForeColor = Color.White;
-            guna2Button1.Location = new Point(199, 559);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Button1.Size = new Size(379, 40);
-            guna2Button1.TabIndex = 33;
-            guna2Button1.Text = "Login";
-            guna2Button1.Click += guna2Button1_Click;
+            LOGIN_loginBtn.BackColor = Color.Transparent;
+            LOGIN_loginBtn.BorderRadius = 15;
+            LOGIN_loginBtn.BorderThickness = 1;
+            LOGIN_loginBtn.CustomizableEdges = customizableEdges7;
+            LOGIN_loginBtn.DisabledState.BorderColor = Color.DarkGray;
+            LOGIN_loginBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            LOGIN_loginBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            LOGIN_loginBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            LOGIN_loginBtn.FillColor = Color.FromArgb(153, 0, 0);
+            LOGIN_loginBtn.Font = new Font("Baskerville Old Face", 10.2F);
+            LOGIN_loginBtn.ForeColor = Color.White;
+            LOGIN_loginBtn.HoverState.BorderColor = Color.Black;
+            LOGIN_loginBtn.HoverState.FillColor = Color.FromArgb(192, 0, 0);
+            LOGIN_loginBtn.HoverState.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LOGIN_loginBtn.HoverState.ForeColor = Color.White;
+            LOGIN_loginBtn.Location = new Point(199, 559);
+            LOGIN_loginBtn.Name = "LOGIN_loginBtn";
+            LOGIN_loginBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            LOGIN_loginBtn.Size = new Size(379, 40);
+            LOGIN_loginBtn.TabIndex = 33;
+            LOGIN_loginBtn.Text = "Login";
+            LOGIN_loginBtn.Click += guna2Button1_Click;
             // 
             // guna2PictureBox5
             // 
-            guna2PictureBox5.BackColor = Color.White;
+            guna2PictureBox5.BackColor = Color.Transparent;
             guna2PictureBox5.CustomizableEdges = customizableEdges9;
             guna2PictureBox5.FillColor = Color.Transparent;
             guna2PictureBox5.Image = Properties.Resources.akar_icons__eye;
             guna2PictureBox5.ImageRotate = 0F;
-            guna2PictureBox5.Location = new Point(558, 446);
+            guna2PictureBox5.Location = new Point(668, 441);
             guna2PictureBox5.Name = "guna2PictureBox5";
             guna2PictureBox5.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2PictureBox5.Size = new Size(89, 27);
+            guna2PictureBox5.Size = new Size(36, 27);
             guna2PictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox5.TabIndex = 32;
             guna2PictureBox5.TabStop = false;
@@ -285,55 +285,55 @@
             guna2HtmlLabel9.TabIndex = 31;
             guna2HtmlLabel9.Text = "Please log in to your account";
             // 
-            // guna2TextBox2
+            // LOGIN_passwprdBtn
             // 
-            guna2TextBox2.BackColor = Color.Transparent;
-            guna2TextBox2.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox2.BorderRadius = 5;
-            guna2TextBox2.BorderThickness = 2;
-            guna2TextBox2.CustomizableEdges = customizableEdges11;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2TextBox2.ForeColor = Color.Black;
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(130, 434);
-            guna2TextBox2.Margin = new Padding(5, 4, 5, 4);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PlaceholderText = "123**";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2TextBox2.Size = new Size(530, 46);
-            guna2TextBox2.TabIndex = 30;
+            LOGIN_passwprdBtn.BackColor = Color.Transparent;
+            LOGIN_passwprdBtn.BorderColor = Color.FromArgb(64, 64, 64);
+            LOGIN_passwprdBtn.BorderRadius = 5;
+            LOGIN_passwprdBtn.BorderThickness = 2;
+            LOGIN_passwprdBtn.CustomizableEdges = customizableEdges11;
+            LOGIN_passwprdBtn.DefaultText = "";
+            LOGIN_passwprdBtn.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            LOGIN_passwprdBtn.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            LOGIN_passwprdBtn.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            LOGIN_passwprdBtn.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            LOGIN_passwprdBtn.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            LOGIN_passwprdBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LOGIN_passwprdBtn.ForeColor = Color.Black;
+            LOGIN_passwprdBtn.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            LOGIN_passwprdBtn.Location = new Point(130, 432);
+            LOGIN_passwprdBtn.Margin = new Padding(5, 4, 5, 4);
+            LOGIN_passwprdBtn.Name = "LOGIN_passwprdBtn";
+            LOGIN_passwprdBtn.PlaceholderText = "123**";
+            LOGIN_passwprdBtn.SelectedText = "";
+            LOGIN_passwprdBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            LOGIN_passwprdBtn.Size = new Size(530, 46);
+            LOGIN_passwprdBtn.TabIndex = 30;
             // 
-            // guna2TextBox1
+            // LOGIN_usernameBtn
             // 
-            guna2TextBox1.BackColor = Color.Transparent;
-            guna2TextBox1.BorderColor = Color.DimGray;
-            guna2TextBox1.BorderRadius = 5;
-            guna2TextBox1.BorderThickness = 2;
-            guna2TextBox1.CustomizableEdges = customizableEdges13;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2TextBox1.ForeColor = Color.Black;
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(130, 319);
-            guna2TextBox1.Margin = new Padding(5, 4, 5, 4);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PlaceholderText = "e.g., jamalapote_21";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2TextBox1.Size = new Size(530, 48);
-            guna2TextBox1.TabIndex = 29;
+            LOGIN_usernameBtn.BackColor = Color.Transparent;
+            LOGIN_usernameBtn.BorderColor = Color.DimGray;
+            LOGIN_usernameBtn.BorderRadius = 5;
+            LOGIN_usernameBtn.BorderThickness = 2;
+            LOGIN_usernameBtn.CustomizableEdges = customizableEdges13;
+            LOGIN_usernameBtn.DefaultText = "";
+            LOGIN_usernameBtn.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            LOGIN_usernameBtn.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            LOGIN_usernameBtn.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            LOGIN_usernameBtn.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            LOGIN_usernameBtn.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            LOGIN_usernameBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LOGIN_usernameBtn.ForeColor = Color.Black;
+            LOGIN_usernameBtn.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            LOGIN_usernameBtn.Location = new Point(130, 319);
+            LOGIN_usernameBtn.Margin = new Padding(5, 4, 5, 4);
+            LOGIN_usernameBtn.Name = "LOGIN_usernameBtn";
+            LOGIN_usernameBtn.PlaceholderText = "e.g., jamalapote_21";
+            LOGIN_usernameBtn.SelectedText = "";
+            LOGIN_usernameBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            LOGIN_usernameBtn.Size = new Size(530, 48);
+            LOGIN_usernameBtn.TabIndex = 29;
             // 
             // guna2HtmlLabel10
             // 
@@ -348,15 +348,15 @@
             // 
             // guna2PictureBox4
             // 
-            guna2PictureBox4.BackColor = Color.White;
+            guna2PictureBox4.BackColor = Color.Transparent;
             guna2PictureBox4.CustomizableEdges = customizableEdges15;
             guna2PictureBox4.FillColor = Color.Transparent;
             guna2PictureBox4.Image = Properties.Resources.akar_icons__eye_closed;
             guna2PictureBox4.ImageRotate = 0F;
-            guna2PictureBox4.Location = new Point(505, 446);
+            guna2PictureBox4.Location = new Point(606, 441);
             guna2PictureBox4.Name = "guna2PictureBox4";
             guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2PictureBox4.Size = new Size(89, 27);
+            guna2PictureBox4.Size = new Size(36, 27);
             guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox4.TabIndex = 41;
             guna2PictureBox4.TabStop = false;
@@ -365,23 +365,23 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 249, 239);
+            BackColor = Color.Transparent;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(guna2PictureBox5);
+            Controls.Add(guna2PictureBox4);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2PictureBox9);
             Controls.Add(guna2HtmlLabel7);
             Controls.Add(guna2PictureBox8);
             Controls.Add(LOGIN_signupbtn);
-            Controls.Add(guna2CheckBox1);
+            Controls.Add(LOGIN_ternconCB);
             Controls.Add(guna2HtmlLabel8);
-            Controls.Add(guna2Button1);
-            Controls.Add(guna2PictureBox5);
+            Controls.Add(LOGIN_loginBtn);
             Controls.Add(guna2HtmlLabel9);
-            Controls.Add(guna2TextBox2);
-            Controls.Add(guna2TextBox1);
+            Controls.Add(LOGIN_passwprdBtn);
+            Controls.Add(LOGIN_usernameBtn);
             Controls.Add(guna2HtmlLabel10);
-            Controls.Add(guna2PictureBox4);
             MaximumSize = new Size(800, 853);
             MinimumSize = new Size(800, 853);
             Name = "UserControlLI";
@@ -406,13 +406,13 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
         private Guna.UI2.WinForms.Guna2Button LOGIN_signupbtn;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private Guna.UI2.WinForms.Guna2CheckBox LOGIN_ternconCB;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button LOGIN_loginBtn;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox LOGIN_passwprdBtn;
+        private Guna.UI2.WinForms.Guna2TextBox LOGIN_usernameBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
     }
