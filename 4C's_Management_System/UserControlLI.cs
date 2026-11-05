@@ -40,10 +40,17 @@ namespace _4C_s_Management_System
 
             try
             {
-                const string query =
-                    "SELECT 1 FROM UserTbl WHERE UserName = @Username AND Password = @Password";
+                const string statuscheckQuery = "SELECT Status FROM UserTbl WHERE UserName = @Username AND Password = @Password";
+
+                const string query = "SELECT 1 FROM UserTbl WHERE UserName = @Username AND Password = @Password";
 
                 var result = AppDB.Instance.Scalar(query, new
+                {
+                    Username = username,
+                    Password = password
+                });
+
+                var statusResult = AppDB.Instance.Scalar(statuscheckQuery, new
                 {
                     Username = username,
                     Password = password
@@ -58,6 +65,17 @@ namespace _4C_s_Management_System
                         MessageBoxIcon.Error);
                     return;
                 }
+                
+                if(statusResult is not null && statusResult != DBNull.Value && statusResult.ToString() == "Inactive")
+                {
+                    MessageBox.Show(
+                        "Your account is inactive. Please contact the administrator.",
+                        "Account Inactive",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (!LOGIN_ternconCB.Checked)
                 {
                     MessageBox.Show(

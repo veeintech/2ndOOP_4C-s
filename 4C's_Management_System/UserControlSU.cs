@@ -22,5 +22,102 @@ namespace _4C_s_Management_System
             UserControlLI li = new UserControlLI();
             MainControlClass.ShowControl(li, this.Parent);
         }
+
+        private void SU_closedeyeBtn_Click(object sender, EventArgs e)
+        {
+            SU_passwordTxt.PasswordChar = '*';
+            SU_conpassTxt.PasswordChar = '*';
+            SU_openeyeBtn.BringToFront();
+        }
+
+        private void SU_openeyeBtn_Click(object sender, EventArgs e)
+        {
+            SU_passwordTxt.PasswordChar = '\0';
+            SU_conpassTxt.PasswordChar = '\0';
+            SU_closedeyeBtn.BringToFront();
+        }
+
+        private void SU_createaccBtn_Click(object sender, EventArgs e)
+        {
+            string userid = SU_useridTxt.Text.Trim();
+            string branchid = SU_branchTxt.Text.Trim();
+            string password = SU_passwordTxt.Text;
+            string username = SU_usernameTxt.Text.Trim();
+            string confirmPassword = SU_conpassTxt.Text;
+
+            if (string.IsNullOrWhiteSpace(username) || 
+                string.IsNullOrWhiteSpace(password) || 
+                string.IsNullOrWhiteSpace(confirmPassword) || 
+                string.IsNullOrWhiteSpace(userid) || 
+                string.IsNullOrWhiteSpace(branchid))
+            {
+                MessageBox.Show(
+                    "Please fill in all fields.",
+                    "Missing Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                MessageBox.Show(
+                    "Passwords do not match.",
+                    "Warning",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!SU_termconCB.Checked)
+            {
+                MessageBox.Show(
+                    "Please accept the terms and conditions to proceed.",
+                    "Terms and Conditions",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                const string query =
+                    "INSERT INTO UserTbl (UserId, BranchId, UserName, Password, Role, Status) " +
+                    "VALUES (@UserID, @BranchId, @Username, @Password, @Role, @Status)";
+
+                var result = AppDB.Instance.CUD(query, new
+                {
+                    UserID = userid,
+                    BranchId = branchid,
+                    UserName = username,
+                    Password = password,
+                    Role = "User",
+                    Status = "Active"
+                });
+                if (result > 0)
+                {
+                    MessageBox.Show(
+                        "Account created successfully.",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                     DialogResult re = MessageBox.Show(
+                        "Please proceed to login.",
+                        "Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    if(re ==DialogResult.OK)
+                    {
+                        UserControlLI li = new UserControlLI();
+                        MainControlClass.ShowControl(li, this.Parent);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

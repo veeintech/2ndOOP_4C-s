@@ -30,7 +30,6 @@ namespace _4C_s_Management_System
             UserControlRoomReserv rs = new UserControlRoomReserv();
             MainControlClass.ShowControl(rs, parent);
 
-            nav?.reservationBTN();
         }
 
         private void UserControlDB_Load(object sender, EventArgs e)
