@@ -15,6 +15,7 @@ namespace _4C_s_Management_System
         }
 
         string roomId = "";
+        string branchId = "brc-001";
 
         private void UserControlRoom_Load(object sender, EventArgs e)
         {
@@ -24,7 +25,6 @@ namespace _4C_s_Management_System
             _isInitializing = false;
 
             LoadRoomData();
-            ApplyGridStyle();
             LoadRoomsdisplay();
         }
 
@@ -33,7 +33,7 @@ namespace _4C_s_Management_System
             try
             {
                 const string query =
-                    "SELECT RoomId, BranchId, RoomType, Capacity, Rate, Status " +
+                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
                     "ORDER BY RoomId ASC";
 
@@ -42,14 +42,12 @@ namespace _4C_s_Management_System
                     RM_roomDGv,
                     header: new[]
                     {
-                "Room ID",
-                "Branch ID",
-                "Room Type",
-                "Capacity",
-                "Rate",
-                "Status"
+                    "Room ID",
+                    "Room Type",
+                    "Capacity",
+                    "Rate",
+                    "Status"
                     });
-                ApplyGridStyle();
             }
             catch (Exception ex)
             {
@@ -74,7 +72,7 @@ namespace _4C_s_Management_System
             try
             {
                 const string query =
-                    "SELECT RoomId, BranchId, RoomType, Capacity, Rate, Status " +
+                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
                     "WHERE RoomId Like @RoomId " +
                     "ORDER BY RoomId ASC";
@@ -85,14 +83,12 @@ namespace _4C_s_Management_System
                     RM_roomDGv,
                     header: new[]
                     {
-                "Room ID",
-                "Branch ID",
-                "Room Type",
-                "Capacity",
-                "Rate",
-                "Status"
+                    "Room ID",
+                    "Room Type",
+                    "Capacity",
+                    "Rate",
+                    "Status"
                     });
-                ApplyGridStyle();
             }
             catch (Exception ex)
             {
@@ -119,7 +115,7 @@ namespace _4C_s_Management_System
 
                 string roomType = RM_roomtypeCB.SelectedItem.ToString()!;
                 const string query =
-                    "SELECT RoomId, BranchId, RoomType, Capacity, Rate, Status " +
+                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
                     "WHERE RoomType = @RoomType " +
                     "ORDER BY RoomId ASC";
@@ -131,13 +127,11 @@ namespace _4C_s_Management_System
                     header: new[]
                     {
                 "Room ID",
-                "Branch ID",
                 "Room Type",
                 "Capacity",
                 "Rate",
                 "Status"
                     });
-                ApplyGridStyle();
             }
             catch (Exception ex)
             {
@@ -160,7 +154,7 @@ namespace _4C_s_Management_System
                 {
                     string roomType1 = RM_capacityCB.SelectedItem.ToString()!;
                     const string query1 =
-                        "SELECT RoomId, BranchId, RoomType, Capacity, Rate, Status " +
+                        "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                         "FROM TBLRoom " +
                         "ORDER BY RoomId ASC";
 
@@ -170,19 +164,17 @@ namespace _4C_s_Management_System
                         header: new[]
                         {
                         "Room ID",
-                        "Branch ID",
                         "Room Type",
                         "Capacity",
                         "Rate",
                         "Status"
                         });
 
-                    ApplyGridStyle();
                     return;
                 }
                 string capacity = RM_capacityCB.SelectedItem.ToString()!;
                 const string query =
-                    "SELECT RoomId, BranchId, RoomType, Capacity, Rate, Status " +
+                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
                     "WHERE Capacity = @Capacity " +
                     "ORDER BY RoomId ASC";
@@ -194,13 +186,11 @@ namespace _4C_s_Management_System
                     header: new[]
                     {
                 "Room ID",
-                "Branch ID",
                 "Room Type",
                 "Capacity",
                 "Rate",
                 "Status"
                     });
-                ApplyGridStyle();
             }
             catch (Exception ex)
             {
@@ -220,18 +210,17 @@ namespace _4C_s_Management_System
 
                 roomId = row.Cells[0].Value?.ToString() ?? "";
 
-                RM_statusCB.SelectedItem = row.Cells[5].Value?.ToString() ?? "";
+                RM_statusCB.SelectedItem = row.Cells[4].Value?.ToString() ?? "";
+
                 RM_RoomIdLbl.Text = row.Cells[0].Value?.ToString() ?? "";
-                RM_StatusLbl.Text = row.Cells[5].Value?.ToString() ?? "";
-                RM_RoomTypeLbl.Text = row.Cells[2].Value?.ToString() ?? "";
-                RM_CapacityLbl.Text = row.Cells[3].Value?.ToString() ?? "";
-                RM_RateLbl.Text = row.Cells[4].Value?.ToString() ?? "";
+                RM_RoomTypeLbl.Text = row.Cells[1].Value?.ToString() ?? "";
+                RM_CapacityLbl.Text = row.Cells[2].Value?.ToString() ?? "";
+                RM_RateLbl.Text = row.Cells[3].Value?.ToString() ?? "";
+                RM_StatusLbl.Text = row.Cells[4].Value?.ToString() ?? "";
                 RM_DescriptionLbl.Text = $"Room {row.Cells[0].Value?.ToString() ?? ""} is a " +
                                          $"{row.Cells[2].Value?.ToString() ?? ""} with a capacity of " +
                                          $"{row.Cells[3].Value?.ToString() ?? ""} and a rate of " +
-                                         $"{row.Cells[4].Value?.ToString() ?? ""}.";
-                ApplyGridStyle();
-            
+                                         $"{row.Cells[4].Value?.ToString() ?? ""}.";            
         }
         private void RM_roomDGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -249,49 +238,11 @@ namespace _4C_s_Management_System
         private void RoomtypeSelected_Indexchanged(object sender, EventArgs e)
         {
             Roomtypesort();
-            ApplyGridStyle();
         }
 
         private void RoomStatusSelectedIndexchanged(object sender, EventArgs e)
         {
             RoomCapacitysort();
-            ApplyGridStyle();
-        }
-
-        private void ApplyGridStyle()
-        {
-            RM_roomDGv.EnableHeadersVisualStyles = false;
-
-            // Normal rows
-            RM_roomDGv.DefaultCellStyle.BackColor = Color.White;
-            RM_roomDGv.DefaultCellStyle.ForeColor = Color.FromArgb(92, 16, 35);
-
-            // Selected rows
-            RM_roomDGv.DefaultCellStyle.SelectionBackColor =
-                Color.FromArgb(212, 167, 44);
-
-            RM_roomDGv.DefaultCellStyle.SelectionForeColor =
-                Color.FromArgb(92, 16, 35);
-
-            // Alternating rows
-            RM_roomDGv.AlternatingRowsDefaultCellStyle.BackColor =
-                Color.FromArgb(255, 248, 231);
-
-            RM_roomDGv.AlternatingRowsDefaultCellStyle.ForeColor =
-                Color.FromArgb(92, 16, 35);
-
-            RM_roomDGv.AlternatingRowsDefaultCellStyle.SelectionBackColor =
-                Color.FromArgb(212, 167, 44);
-
-            RM_roomDGv.AlternatingRowsDefaultCellStyle.SelectionForeColor =
-                Color.FromArgb(92, 16, 35);
-
-            if (RM_roomDGv.Rows.Count > 0)
-            {
-                RM_roomDGv.ClearSelection();
-                RM_roomDGv.Rows[0].Selected = true;
-                RM_roomDGv.CurrentCell = RM_roomDGv.Rows[0].Cells[0];
-            }
         }
 
         private void RM_UpdateBtn_Click(object sender, EventArgs e)
@@ -334,7 +285,7 @@ namespace _4C_s_Management_System
                     "SUM(CASE WHEN Status = 'Available' THEN 1 ELSE 0 END) AS AvailableRooms " +
                     "FROM TBLRoom WHERE BranchId = @BranchId";
 
-                var data = AppDB.Instance.TableData(query, new { BranchId = "BRC-001" });
+                var data = AppDB.Instance.TableData(query, new { BranchId = branchId });
 
                 if (data.Rows.Count == 0)
                 {

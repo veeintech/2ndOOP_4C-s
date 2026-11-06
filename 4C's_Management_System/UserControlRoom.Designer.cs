@@ -683,10 +683,10 @@
             RM_roomDGv.AllowUserToResizeColumns = false;
             RM_roomDGv.AllowUserToResizeRows = false;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 218, 88);
             dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 219, 88);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(64, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(255, 128, 128);
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(64, 0, 0);
             RM_roomDGv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             RM_roomDGv.BackgroundColor = Color.FromArgb(255, 248, 231);
@@ -703,9 +703,9 @@
             RM_roomDGv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.DarkGray;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 219, 88);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(64, 0, 0);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(255, 128, 128);
             dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(64, 0, 0);
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             RM_roomDGv.DefaultCellStyle = dataGridViewCellStyle7;
@@ -731,10 +731,10 @@
             RM_roomDGv.ScrollBars = ScrollBars.Vertical;
             RM_roomDGv.Size = new Size(848, 490);
             RM_roomDGv.TabIndex = 0;
-            RM_roomDGv.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            RM_roomDGv.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(255, 218, 88);
             RM_roomDGv.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RM_roomDGv.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
-            RM_roomDGv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(255, 219, 88);
+            RM_roomDGv.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.FromArgb(64, 0, 0);
+            RM_roomDGv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
             RM_roomDGv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(64, 0, 0);
             RM_roomDGv.ThemeStyle.BackColor = Color.FromArgb(255, 248, 231);
             RM_roomDGv.ThemeStyle.HeaderStyle.BackColor = Color.Maroon;
@@ -742,10 +742,10 @@
             RM_roomDGv.ThemeStyle.HeaderStyle.Height = 30;
             RM_roomDGv.ThemeStyle.ReadOnly = true;
             RM_roomDGv.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.None;
-            RM_roomDGv.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            RM_roomDGv.ThemeStyle.RowsStyle.ForeColor = Color.DarkGray;
+            RM_roomDGv.ThemeStyle.RowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RM_roomDGv.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(64, 0, 0);
             RM_roomDGv.ThemeStyle.RowsStyle.Height = 30;
-            RM_roomDGv.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(255, 219, 88);
+            RM_roomDGv.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
             RM_roomDGv.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(64, 0, 0);
             RM_roomDGv.CellContentClick += RM_roomDGv_CellContentClick;
             // 

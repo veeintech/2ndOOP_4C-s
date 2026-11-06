@@ -18,15 +18,15 @@ namespace _4C_s_Management_System
         }
         private void UserControlRoomReserv_Load(object sender, EventArgs e)
         {
-            guna2ComboBox1.Items.Clear();
+            RRes_RoomTypeCB.Items.Clear();
 
-            guna2ComboBox1.Items.Add("All Status");
-            guna2ComboBox1.Items.Add("Checked In");
-            guna2ComboBox1.Items.Add("Confirmed");
-            guna2ComboBox1.Items.Add("Pending");
-            guna2ComboBox1.Items.Add("Cancelled");
+            RRes_RoomTypeCB.Items.Add("All Status");
+            RRes_RoomTypeCB.Items.Add("Checked In");
+            RRes_RoomTypeCB.Items.Add("Confirmed");
+            RRes_RoomTypeCB.Items.Add("Pending");
+            RRes_RoomTypeCB.Items.Add("Cancelled");
 
-            guna2ComboBox1.SelectedIndex = 0;
+            RRes_RoomTypeCB.SelectedIndex = 0;
         }
 
         private void guna2TextBox6_TextChanged(object sender, EventArgs e)

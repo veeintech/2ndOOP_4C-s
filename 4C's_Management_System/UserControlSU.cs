@@ -17,6 +17,8 @@ namespace _4C_s_Management_System
             InitializeComponent();
         }
 
+        public long idnum = 0;
+
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
         {
             UserControlLI li = new UserControlLI();
@@ -39,7 +41,6 @@ namespace _4C_s_Management_System
 
         private void SU_createaccBtn_Click_1(object sender, EventArgs e)
         {
-            string userid = SU_useridtxt.Text.Trim();
             string branchid = SU_branchidtxt.Text.Trim();
             string password = SU_passwordtxt.Text;
             string username = SU_usernametxt.Text.Trim();
@@ -48,7 +49,6 @@ namespace _4C_s_Management_System
             if (string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(password) ||
                 string.IsNullOrWhiteSpace(confirmPassword) ||
-                string.IsNullOrWhiteSpace(userid) ||
                 string.IsNullOrWhiteSpace(branchid))
             {
                 MessageBox.Show(
@@ -87,7 +87,7 @@ namespace _4C_s_Management_System
 
                 var result = AppDB.Instance.CUD(query, new
                 {
-                    UserID = userid,
+                    UserID = IDGenerator.GenerateNextCustomerID(),
                     BranchId = branchid,
                     UserName = username,
                     Password = password,
@@ -118,6 +118,11 @@ namespace _4C_s_Management_System
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void UserControlSU_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
