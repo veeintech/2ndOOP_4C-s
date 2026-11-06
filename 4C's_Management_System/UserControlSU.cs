@@ -37,11 +37,6 @@ namespace _4C_s_Management_System
             SU_closedeyeBtn.BringToFront();
         }
 
-        private void SU_createaccBtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void UserControlSU_Load(object sender, EventArgs e)
         {
 

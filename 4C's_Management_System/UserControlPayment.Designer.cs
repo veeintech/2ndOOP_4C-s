@@ -75,6 +75,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -129,6 +131,7 @@
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             printDocument1 = new System.Drawing.Printing.PrintDocument();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel4.SuspendLayout();
@@ -146,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).BeginInit();
+            guna2Panel2.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel3
@@ -274,7 +278,7 @@
             guna2Button3.FillColor = Color.Maroon;
             guna2Button3.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(179, 501);
+            guna2Button3.Location = new Point(175, 50);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Button3.Size = new Size(149, 35);
@@ -292,7 +296,7 @@
             guna2Button1.FillColor = Color.FromArgb(183, 122, 50);
             guna2Button1.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(20, 460);
+            guna2Button1.Location = new Point(16, 9);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Button1.Size = new Size(308, 35);
@@ -311,7 +315,7 @@
             guna2Button2.FillColor = Color.FromArgb(49, 91, 133);
             guna2Button2.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(20, 501);
+            guna2Button2.Location = new Point(16, 50);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Button2.Size = new Size(153, 35);
@@ -622,9 +626,6 @@
             panelPaymentDetails.Controls.Add(guna2HtmlLabel26);
             panelPaymentDetails.Controls.Add(guna2HtmlLabel25);
             panelPaymentDetails.Controls.Add(guna2PictureBox6);
-            panelPaymentDetails.Controls.Add(guna2Button3);
-            panelPaymentDetails.Controls.Add(guna2Button1);
-            panelPaymentDetails.Controls.Add(guna2Button2);
             panelPaymentDetails.Controls.Add(guna2HtmlLabel22);
             panelPaymentDetails.Controls.Add(guna2Panel7);
             panelPaymentDetails.Controls.Add(guna2HtmlLabel13);
@@ -633,7 +634,7 @@
             panelPaymentDetails.Location = new Point(940, 221);
             panelPaymentDetails.Name = "panelPaymentDetails";
             panelPaymentDetails.ShadowDecoration.CustomizableEdges = customizableEdges45;
-            panelPaymentDetails.Size = new Size(347, 551);
+            panelPaymentDetails.Size = new Size(347, 463);
             panelPaymentDetails.TabIndex = 18;
             // 
             // guna2HtmlLabel21
@@ -907,11 +908,24 @@
             guna2PictureBox8.TabIndex = 24;
             guna2PictureBox8.TabStop = false;
             // 
+            // guna2Panel2
+            // 
+            guna2Panel2.Controls.Add(guna2Button1);
+            guna2Panel2.Controls.Add(guna2Button2);
+            guna2Panel2.Controls.Add(guna2Button3);
+            guna2Panel2.CustomizableEdges = customizableEdges48;
+            guna2Panel2.Location = new Point(943, 687);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges49;
+            guna2Panel2.Size = new Size(344, 91);
+            guna2Panel2.TabIndex = 58;
+            // 
             // UserControlPayment
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 249, 239);
+            Controls.Add(guna2Panel2);
             Controls.Add(guna2PictureBox8);
             Controls.Add(guna2Panel3);
             Controls.Add(guna2Panel4);
@@ -951,6 +965,7 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).EndInit();
+            guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1011,5 +1026,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }
