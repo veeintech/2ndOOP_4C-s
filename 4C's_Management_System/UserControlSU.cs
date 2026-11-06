@@ -37,11 +37,6 @@ namespace _4C_s_Management_System
             SU_closedeyeBtn.BringToFront();
         }
 
-        private void UserControlSU_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void SU_createaccBtn_Click_1(object sender, EventArgs e)
         {
             string userid = SU_useridtxt.Text.Trim();
