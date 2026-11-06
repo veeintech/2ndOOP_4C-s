@@ -15,9 +15,6 @@ namespace _4C_s_Management_System
         public UserControlSU()
         {
             InitializeComponent();
-            SU_createaccBtn.Click += SU_createaccBtn_Click;
-            SU_eyeop.Click += SU_openeyeBtn_Click;
-            guna2PictureBox7.Click += SU_closedeyeBtn_Click;
         }
 
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
@@ -26,21 +23,31 @@ namespace _4C_s_Management_System
             MainControlClass.ShowControl(li, this.Parent);
         }
 
-        private void SU_closedeyeBtn_Click(object sender, EventArgs e)
+        private void SU_closedeyeBtn_Click_1(object sender, EventArgs e)
         {
             SU_passwordtxt.PasswordChar = '*';
             SU_conpasstxt.PasswordChar = '*';
-            guna2PictureBox7.BringToFront();
+            SU_openedeyeBtn.BringToFront();
         }
 
-        private void SU_openeyeBtn_Click(object sender, EventArgs e)
+        private void SU_openedeyeBtn_Click(object sender, EventArgs e)
         {
             SU_passwordtxt.PasswordChar = '\0';
             SU_conpasstxt.PasswordChar = '\0';
-            SU_eyeop.BringToFront();
+            SU_closedeyeBtn.BringToFront();
         }
 
         private void SU_createaccBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void UserControlSU_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SU_createaccBtn_Click_1(object sender, EventArgs e)
         {
             string userid = SU_useridtxt.Text.Trim();
             string branchid = SU_branchidtxt.Text.Trim();
@@ -48,10 +55,10 @@ namespace _4C_s_Management_System
             string username = SU_usernametxt.Text.Trim();
             string confirmPassword = SU_conpasstxt.Text;
 
-            if (string.IsNullOrWhiteSpace(username) || 
-                string.IsNullOrWhiteSpace(password) || 
-                string.IsNullOrWhiteSpace(confirmPassword) || 
-                string.IsNullOrWhiteSpace(userid) || 
+            if (string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(confirmPassword) ||
+                string.IsNullOrWhiteSpace(userid) ||
                 string.IsNullOrWhiteSpace(branchid))
             {
                 MessageBox.Show(
@@ -104,12 +111,12 @@ namespace _4C_s_Management_System
                         "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                     DialogResult re = MessageBox.Show(
-                        "Please proceed to login.",
-                        "Information",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    if(re ==DialogResult.OK)
+                    DialogResult re = MessageBox.Show(
+                       "Please proceed to login.",
+                       "Information",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    if (re == DialogResult.OK)
                     {
                         UserControlLI li = new UserControlLI();
                         MainControlClass.ShowControl(li, this.Parent);
