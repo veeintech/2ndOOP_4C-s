@@ -21,5 +21,10 @@ namespace _4C_s_Management_System
         {
 
         }
+
+        private void UserControlAdRoom_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

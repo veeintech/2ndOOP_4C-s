@@ -16,5 +16,13 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        private void UserNav_Panel_shift_Paint(object sender, PaintEventArgs e)
+        {
+
+
+
+
+        }
     }
 }
