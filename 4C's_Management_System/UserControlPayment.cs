@@ -44,5 +44,10 @@ namespace _4C_s_Management_System
             e.Graphics.DrawImage(bmp, 50, 50);
             bmp.Dispose();
         }
+
+        private void UserControlPayment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
