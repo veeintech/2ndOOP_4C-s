@@ -34,17 +34,17 @@ namespace _4C_s_Management_System
                 timeOut = null;
             }
 
-            // first click
+            // FIRST CLICK: TIME IN
             if (timeIn == null)
             {
                 timeIn = DateTime.Now;
             }
-            // 2nd click
+            // SECOND CLICK: TIME OUT
             else if (timeOut == null)
             {
                 timeOut = DateTime.Now;
             }
-            // kumplited na 
+            // Already completed
             else
             {
                 return;
@@ -194,11 +194,6 @@ namespace _4C_s_Management_System
             );
 
             guna2Panel8.ShadowDecoration.Depth = 0;
-        }
-
-        private void UserControlStaff_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
