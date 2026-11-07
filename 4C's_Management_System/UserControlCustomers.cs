@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,8 @@ namespace _4C_s_Management_System
             InitializeComponent();
         }
         public int idnum = 0;
-        string branchId = "brc-001";
+        public string branchId = "brc-001";
+        public string tempid = "";
 
         private void UserControlCustomers_Load(object sender, EventArgs e)
         {
@@ -35,10 +37,12 @@ namespace _4C_s_Management_System
                 const string query =
                     "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
                     "FROM CustomerTbl " +
+                    "WHERE BranchId = @BranchId " +
                     "ORDER BY CustomerID ASC";
 
                 AppDB.Instance.Table(
                     query,
+                    new { BranchId = branchId },
                     CM_CustomerDGV,
                     header: new[]
                     {
@@ -61,11 +65,6 @@ namespace _4C_s_Management_System
             }
         }
 
-        private void CM_CustomerType_indexChanged(object sender, EventArgs e)
-        {
-            RoomCapacitysort();
-        }
-
         public void loaddisplay()
         {
             if (CM_CustomerDGV.SelectedRows.Count == 0)
@@ -80,76 +79,6 @@ namespace _4C_s_Management_System
             CM_AddressTxt.Text = row.Cells[3].Value?.ToString() ?? "";
             CM_AccomTypeTxt.Text = row.Cells[4].Value?.ToString() ?? "";
             CM_CustomerstatTxt.Text = row.Cells[5].Value?.ToString() ?? "";
-
-        }
-
-        private void CM_dataselecteditemchanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-
-            loaddisplay();
-        }
-
-        public void RoomCapacitysort()
-        {
-            if (CM_custypeCB.SelectedIndex == -1 || CM_custypeCB.SelectedItem is null)
-                return;
-
-            try
-            {
-                if (CM_custypeCB.SelectedIndex == 0)
-                {
-                    string roomType1 = CM_custypeCB.SelectedItem.ToString()!;
-                    const string query1 =
-                        "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
-                        "FROM CustomerTbl " +
-                        "ORDER BY CustomerID ASC";
-
-                    AppDB.Instance.Table(
-                        query1,
-                        CM_CustomerDGV,
-                        header: new[]
-                        {
-                        "Customer ID",
-                        "Full Name",
-                        "Contact Number",
-                        "Address",
-                        "Customer Type",
-                        "Customer Status"
-                        });
-
-                    return;
-                }
-                string capacity = CM_custypeCB.SelectedItem.ToString()!;
-                const string query =
-                    "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
-                    "FROM CustomerTbl " +
-                    "WHERE CustomerType = @CustomerType " +
-                    "ORDER BY CustomerID ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { CustomerType = capacity },
-                    CM_CustomerDGV,
-                    header: new[]
-                    {
-                        "Customer ID",
-                        "Full Name",
-                        "Contact Number",
-                        "Address",
-                        "Customer Type",
-                        "Customer Status"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading customer data: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
 
         }
 
@@ -168,12 +97,12 @@ namespace _4C_s_Management_System
                 const string query =
                     "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
                     "FROM CustomerTbl " +
-                    "WHERE CustomerID Like @CustomerID " +
+                    "WHERE BranchId = @BranchId AND CustomerID LIKE @CustomerID " +
                     "ORDER BY CustomerID ASC";
 
                 AppDB.Instance.Table(
                     query,
-                    new { CustomerID = $"%{customerId}%" },
+                    new { BranchId = branchId, CustomerID = $"%{customerId}%" },
                     CM_CustomerDGV,
                     header: new[]
                     {
@@ -197,16 +126,13 @@ namespace _4C_s_Management_System
 
         private void CM_AddCusBtn_Click(object sender, EventArgs e)
         {
-            string customerid = IDGenerator.GenerateNextCustomerID();
             string fullname = CM_fullnameTxt.Text.Trim();
             string contactnumber = CM_conManTxt.Text.Trim();
             string address = CM_AddressTxt.Text.Trim();
             string customerType = CM_AccomTypeTxt.Text.Trim();
             string customerStatus = CM_CustomerstatTxt.Text.Trim();
-            CM_CustomeridTxt.Text = customerid;
 
-            if (string.IsNullOrWhiteSpace(customerid) ||
-                string.IsNullOrWhiteSpace(fullname) ||
+            if (string.IsNullOrWhiteSpace(fullname) ||
                 string.IsNullOrWhiteSpace(contactnumber) ||
                 string.IsNullOrWhiteSpace(address) ||
                 string.IsNullOrWhiteSpace(customerType) ||
@@ -219,30 +145,44 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Warning);
                 return;
             }
-
             try
             {
-                const string query =
-                    "INSERT INTO CustomerTbl (CustomerID,BranchID, Fullname, ContactNumber, Address, CustomerType, CustomerStatus) " +
-                    "VALUES (@CustomerID, @BranchID, @Fullname, @ContactNumber, @Address, @CustomerType, @CustomerStatus)";
-
-                var result = AppDB.Instance.CUD(query, new
+                if (CM_CustomeridTxt.Text == "")
                 {
-                    CustomerID = customerid,
-                    BranchID = branchId,
-                    Fullname = fullname,
-                    ContactNumber = contactnumber,
-                    Address = address,
-                    CustomerType = customerType,
-                    CustomerStatus = customerStatus
-                });
-                if (result > 0)
+                    string customerid = IDGenerator.GenerateNextCustomerID("CUS");
+                    CM_CustomeridTxt.Text = customerid;
+                    tempid = customerid;
+
+                    const string query =
+                        "INSERT INTO CustomerTbl (CustomerID,BranchID, Fullname, ContactNumber, Address, CustomerType, CustomerStatus) " +
+                        "VALUES (@CustomerID, @BranchID, @Fullname, @ContactNumber, @Address, @CustomerType, @CustomerStatus)";
+
+                    var result = AppDB.Instance.CUD(query, new
+                    {
+                        CustomerID = customerid,
+                        BranchID = branchId,
+                        Fullname = fullname,
+                        ContactNumber = contactnumber,
+                        Address = address,
+                        CustomerType = customerType,
+                        CustomerStatus = customerStatus
+                    });
+                    if (result > 0)
+                    {
+                        MessageBox.Show(
+                            "Customer added successfully.",
+                            "Success",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                }
+                else
                 {
                     MessageBox.Show(
-                        "Customer added successfully.",
-                        "Success",
+                        "Customer cannot be added, already exists.",
+                        "Information",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                        MessageBoxIcon.Warning);
                 }
 
                 LoadRoomData();
@@ -283,12 +223,13 @@ namespace _4C_s_Management_System
             {
                 const string query =
                     "UPDATE CustomerTbl SET BranchID = @BranchID, Fullname = @Fullname, ContactNumber = @ContactNumber," +
-                    " Address = @Address, CustomerType = @CustomerType, CustomerStatus = @CustomerStatus WHERE CustomerID = @CustomerID ";
+                    " Address = @Address, CustomerType = @CustomerType, CustomerStatus = @CustomerStatus " +
+                    "WHERE CustomerID = @CustomerID AND BranchID = @BranchID";
 
                 var result = AppDB.Instance.CUD(query, new
                 {
                     CustomerID = customerid,
-                    BranchID = "brc-001",
+                    BranchID = branchId,
                     Fullname = fullname,
                     ContactNumber = contactnumber,
                     Address = address,
@@ -313,67 +254,6 @@ namespace _4C_s_Management_System
             }
         }
 
-        private void CM_selectedindexchange_stat(object sender, EventArgs e)
-        {
-            if (CM_CustomerstatCB.SelectedIndex == -1 || CM_CustomerstatCB.SelectedItem is null)
-                return;
-
-            try
-            {
-                if (CM_CustomerstatCB.SelectedIndex == 0)
-                {
-                    string roomType1 = CM_CustomerstatCB.SelectedItem.ToString()!;
-                    const string query1 =
-                        "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
-                        "FROM CustomerTbl " +
-                        "ORDER BY CustomerID ASC";
-
-                    AppDB.Instance.Table(
-                        query1,
-                        CM_CustomerDGV,
-                        header: new[]
-                        {
-                        "Customer ID",
-                        "Full Name",
-                        "Contact Number",
-                        "Address",
-                        "Customer Type",
-                        "Customer Status"
-                        });
-
-                    return;
-                }
-                string capacity = CM_CustomerstatCB.SelectedItem.ToString()!;
-                const string query =
-                    "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
-                    "FROM CustomerTbl " +
-                    "WHERE CustomerStatus = @CustomerStatus " +
-                    "ORDER BY CustomerID ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { CustomerStatus = capacity },
-                    CM_CustomerDGV,
-                    header: new[]
-                    {
-                        "Customer ID",
-                        "Full Name",
-                        "Contact Number",
-                        "Address",
-                        "Customer Type",
-                        "Customer Status"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading customer data: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
         public void ClearFields()
         {
             CM_CustomeridTxt.Clear();
@@ -391,9 +271,9 @@ namespace _4C_s_Management_System
                 const string query =
                     "SELECT " +
                     "COUNT(*) AS TotalCustomers, " +
-                    "SUM(CASE WHEN CustomerStatus = 'Active' THEN 1 ELSE 0 END) AS ActiveCustomers, " +
-                    "SUM(CASE WHEN CustomerStatus = 'Inactive' THEN 1 ELSE 0 END) AS InactiveCustomers, " +
-                    "SUM(CASE WHEN CustomerStatus = 'Pending' THEN 1 ELSE 0 END) AS PendingCustomers " +
+                    "COALESCE(SUM(CASE WHEN CustomerStatus = 'Active' THEN 1 ELSE 0 END), 0) AS ActiveCustomers, " +
+                    "COALESCE(SUM(CASE WHEN CustomerStatus = 'Inactive' THEN 1 ELSE 0 END), 0) AS InactiveCustomers, " +
+                    "COALESCE(SUM(CASE WHEN CustomerStatus = 'Pending' THEN 1 ELSE 0 END), 0) AS PendingCustomers " +
                     "FROM CustomerTbl " +
                     "WHERE BranchId = @BranchId";
 
@@ -428,19 +308,8 @@ namespace _4C_s_Management_System
         private void CM_deleteBtn_Click(object sender, EventArgs e)
         {
             string customerid = CM_CustomeridTxt.Text.Trim();
-            string fullname = CM_fullnameTxt.Text.Trim();
-            string contactnumber = CM_conManTxt.Text.Trim();
-            string address = CM_AddressTxt.Text.Trim();
-            string customerType = CM_AccomTypeTxt.Text.Trim();
-            string customerStatus = CM_CustomerstatTxt.Text.Trim();
-            CM_CustomeridTxt.Text = customerid;
 
-            if (string.IsNullOrWhiteSpace(customerid) ||
-                string.IsNullOrWhiteSpace(fullname) ||
-                string.IsNullOrWhiteSpace(contactnumber) ||
-                string.IsNullOrWhiteSpace(address) ||
-                string.IsNullOrWhiteSpace(customerType) ||
-                string.IsNullOrWhiteSpace(customerStatus))
+            if (string.IsNullOrWhiteSpace(customerid))
             {
                 MessageBox.Show(
                     "Please select Data",
@@ -452,11 +321,14 @@ namespace _4C_s_Management_System
             try
             {
 
-                const string query = "DELETE FROM CustomerTbl WHERE CustomerID = @CustomerID";
+                const string query =
+                    "DELETE FROM CustomerTbl " +
+                    "WHERE CustomerID = @CustomerID AND BranchID = @BranchID";
 
                 var result = AppDB.Instance.CUD(query, new
                 {
-                    CustomerID = customerid
+                    CustomerID = customerid,
+                    BranchID = branchId
                 });
                 if (result > 0)
                 {
@@ -480,6 +352,96 @@ namespace _4C_s_Management_System
                 );
             }
         }
+
+        private void Cellcontent_click_roomDgv(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            loaddisplay();
+        }
+       #region "Customer Status and Type Filtering"
+
+private void ApplyCustomerFilters()
+{
+    try
+    {
+        var conditions = new List<string>
+        {
+            "BranchId = @BranchId"
+        };
+
+        var parameters = new Dictionary<string, object>
+        {
+            ["BranchId"] = branchId
+        };
+
+        if (CM_custypeCB.SelectedIndex > 0 &&
+            CM_custypeCB.SelectedItem is not null)
+        {
+            conditions.Add("CustomerType = @CustomerType");
+            parameters["CustomerType"] =
+                CM_custypeCB.SelectedItem.ToString()!;
+        }
+
+        if (CM_CustomerstatCB.SelectedIndex > 0 &&
+            CM_CustomerstatCB.SelectedItem is not null)
+        {
+            conditions.Add("CustomerStatus = @CustomerStatus");
+            parameters["CustomerStatus"] =
+                CM_CustomerstatCB.SelectedItem.ToString()!;
+        }
+
+        string customerId = Cm_searchLbl.Text.Trim();
+
+        if (!string.IsNullOrWhiteSpace(customerId))
+        {
+            conditions.Add("CustomerID LIKE @CustomerID");
+            parameters["CustomerID"] = $"%{customerId}%";
+        }
+
+        string query =
+            "SELECT CustomerID, Fullname, ContactNumber, Address, " +
+            "CustomerType, CustomerStatus " +
+            "FROM CustomerTbl " +
+            $"WHERE {string.Join(" AND ", conditions)} " +
+            "ORDER BY CustomerID ASC";
+
+        AppDB.Instance.Table(
+            query,
+            parameters,
+            CM_CustomerDGV,
+            header: new[]
+            {
+                "Customer ID",
+                "Full Name",
+                "Contact Number",
+                "Address",
+                "Customer Type",
+                "Customer Status"
+            });
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(
+            $"Error loading customer data: {ex.Message}",
+            "Error",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error);
+    }
+}
+
+private void CM_selectedindexchange_stat(object sender, EventArgs e)
+{
+    ApplyCustomerFilters();
+}
+
+private void CM_CustomerType_indexChanged(object sender, EventArgs e)
+{
+    ApplyCustomerFilters();
+}
+
+#endregion
     }
 }
 

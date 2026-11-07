@@ -22,14 +22,15 @@ namespace _4C_s_Management_System
 
 //mike's connection string ======================================================================
 /*
+ 
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="AppDB"
+         connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Users\mikel\OneDrive\文档\oop\2ndOOP_4C-s\4C's_Management_System\4C's_Database.mdf&quot;;Integrated Security=True" />
+  </connectionStrings>
+</configuration>
 
-<? xml version = "1.0" encoding = "utf-8" ?>
-< configuration >
-  < connectionStrings >
-    < add name = "AppDB"
-         connectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Users\mikel\OneDrive\文档\oop\2ndOOP_4C-s\4C's_Management_System\4C's_Database.mdf&quot;;Integrated Security=True" />
-  </ connectionStrings >
-</ configuration >
 
 */
 //==============================================================================================

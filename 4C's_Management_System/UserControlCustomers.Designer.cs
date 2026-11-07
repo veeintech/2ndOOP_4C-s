@@ -73,6 +73,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -85,8 +87,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             CM_InactiveLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             CM_totalcusLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -127,6 +127,7 @@
             guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             CM_AddCusBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            CM_deleteBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox7 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             CM_CustomerstatTxt = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -136,7 +137,6 @@
             guna2CirclePictureBox8 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             CM_AccomTypeTxt = new Guna.UI2.WinForms.Guna2ComboBox();
             CM_CustomerstatCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            CM_deleteBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
@@ -496,7 +496,7 @@
             CM_CustomerDGV.ThemeStyle.RowsStyle.Height = 30;
             CM_CustomerDGV.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
             CM_CustomerDGV.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(64, 0, 0);
-            CM_CustomerDGV.CellContentClick += CM_dataselecteditemchanged;
+            CM_CustomerDGV.CellContentClick += Cellcontent_click_roomDgv;
             // 
             // CM_custypeCB
             // 
@@ -814,6 +814,25 @@
             guna2Panel2.Size = new Size(1237, 263);
             guna2Panel2.TabIndex = 80;
             // 
+            // CM_deleteBtn
+            // 
+            CM_deleteBtn.BorderRadius = 7;
+            CM_deleteBtn.CustomizableEdges = customizableEdges39;
+            CM_deleteBtn.DisabledState.BorderColor = Color.DarkGray;
+            CM_deleteBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            CM_deleteBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            CM_deleteBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            CM_deleteBtn.FillColor = Color.Maroon;
+            CM_deleteBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CM_deleteBtn.ForeColor = Color.White;
+            CM_deleteBtn.Location = new Point(1068, 206);
+            CM_deleteBtn.Name = "CM_deleteBtn";
+            CM_deleteBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            CM_deleteBtn.Size = new Size(130, 35);
+            CM_deleteBtn.TabIndex = 34;
+            CM_deleteBtn.Text = "Delete";
+            CM_deleteBtn.Click += CM_deleteBtn_Click;
+            // 
             // guna2CirclePictureBox7
             // 
             guna2CirclePictureBox7.Image = Properties.Resources.beldeng;
@@ -953,32 +972,13 @@
             CM_CustomerstatCB.Font = new Font("Segoe UI", 10F);
             CM_CustomerstatCB.ForeColor = Color.FromArgb(68, 88, 112);
             CM_CustomerstatCB.ItemHeight = 30;
-            CM_CustomerstatCB.Items.AddRange(new object[] { "Alll customer", "Active", "Pending", "Inactive" });
+            CM_CustomerstatCB.Items.AddRange(new object[] { "All status", "Active", "Pending", "Inactive" });
             CM_CustomerstatCB.Location = new Point(687, 215);
             CM_CustomerstatCB.Name = "CM_CustomerstatCB";
             CM_CustomerstatCB.ShadowDecoration.CustomizableEdges = customizableEdges54;
             CM_CustomerstatCB.Size = new Size(280, 36);
             CM_CustomerstatCB.TabIndex = 85;
             CM_CustomerstatCB.SelectedIndexChanged += CM_selectedindexchange_stat;
-            // 
-            // CM_deleteBtn
-            // 
-            CM_deleteBtn.BorderRadius = 7;
-            CM_deleteBtn.CustomizableEdges = customizableEdges39;
-            CM_deleteBtn.DisabledState.BorderColor = Color.DarkGray;
-            CM_deleteBtn.DisabledState.CustomBorderColor = Color.DarkGray;
-            CM_deleteBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            CM_deleteBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            CM_deleteBtn.FillColor = Color.Maroon;
-            CM_deleteBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CM_deleteBtn.ForeColor = Color.White;
-            CM_deleteBtn.Location = new Point(1068, 206);
-            CM_deleteBtn.Name = "CM_deleteBtn";
-            CM_deleteBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            CM_deleteBtn.Size = new Size(130, 35);
-            CM_deleteBtn.TabIndex = 34;
-            CM_deleteBtn.Text = "Delete";
-            CM_deleteBtn.Click += CM_deleteBtn_Click;
             // 
             // UserControlCustomers
             // 

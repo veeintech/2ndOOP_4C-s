@@ -1,7 +1,6 @@
 ﻿using _4C_s_Management_System;
 using System;
 using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace _4C_s_Management_System
 {
@@ -35,10 +34,12 @@ namespace _4C_s_Management_System
                 const string query =
                     "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
+                    "WHERE BranchId = @BranchId " +
                     "ORDER BY RoomId ASC";
 
                 AppDB.Instance.Table(
                     query,
+                    new { BranchId = branchId },
                     RM_roomDGv,
                     header: new[]
                     {
@@ -74,12 +75,12 @@ namespace _4C_s_Management_System
                 const string query =
                     "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
-                    "WHERE RoomId Like @RoomId " +
+                    "WHERE BranchId = @BranchId AND RoomId LIKE @RoomId " +
                     "ORDER BY RoomId ASC";
 
                 AppDB.Instance.Table(
                     query,
-                    new { RoomId = $"{roomId}%" },
+                    new { BranchId = branchId, RoomId = $"%{roomId}%" },
                     RM_roomDGv,
                     header: new[]
                     {
@@ -117,12 +118,12 @@ namespace _4C_s_Management_System
                 const string query =
                     "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
-                    "WHERE RoomType = @RoomType " +
+                    "WHERE BranchId = @BranchId AND RoomType = @RoomType " +
                     "ORDER BY RoomId ASC";
 
                 AppDB.Instance.Table(
                     query,
-                    new { RoomType = roomType },
+                    new { BranchId = branchId, RoomType = roomType },
                     RM_roomDGv,
                     header: new[]
                     {
@@ -152,36 +153,19 @@ namespace _4C_s_Management_System
             {
                 if (RM_capacityCB.SelectedIndex == 0)
                 {
-                    string roomType1 = RM_capacityCB.SelectedItem.ToString()!;
-                    const string query1 =
-                        "SELECT RoomId, RoomType, Capacity, Rate, Status " +
-                        "FROM TBLRoom " +
-                        "ORDER BY RoomId ASC";
-
-                    AppDB.Instance.Table(
-                        query1,
-                        RM_roomDGv,
-                        header: new[]
-                        {
-                        "Room ID",
-                        "Room Type",
-                        "Capacity",
-                        "Rate",
-                        "Status"
-                        });
-
+                    LoadRoomData();
                     return;
                 }
                 string capacity = RM_capacityCB.SelectedItem.ToString()!;
                 const string query =
                     "SELECT RoomId, RoomType, Capacity, Rate, Status " +
                     "FROM TBLRoom " +
-                    "WHERE Capacity = @Capacity " +
+                    "WHERE BranchId = @BranchId AND Capacity = @Capacity " +
                     "ORDER BY RoomId ASC";
 
                 AppDB.Instance.Table(
                     query,
-                    new { Capacity = capacity },
+                    new { BranchId = branchId, Capacity = capacity },
                     RM_roomDGv,
                     header: new[]
                     {
@@ -205,22 +189,24 @@ namespace _4C_s_Management_System
 
         public void loaddisplay()
         {
+            if (RM_roomDGv.SelectedRows.Count == 0)
+                return;
 
             DataGridViewRow row = RM_roomDGv.SelectedRows[0];
 
-                roomId = row.Cells[0].Value?.ToString() ?? "";
+            roomId = row.Cells[0].Value?.ToString() ?? "";
 
-                RM_statusCB.SelectedItem = row.Cells[4].Value?.ToString() ?? "";
+            RM_statusCB.SelectedItem = row.Cells[4].Value?.ToString() ?? "";
 
-                RM_RoomIdLbl.Text = row.Cells[0].Value?.ToString() ?? "";
-                RM_RoomTypeLbl.Text = row.Cells[1].Value?.ToString() ?? "";
-                RM_CapacityLbl.Text = row.Cells[2].Value?.ToString() ?? "";
-                RM_RateLbl.Text = row.Cells[3].Value?.ToString() ?? "";
-                RM_StatusLbl.Text = row.Cells[4].Value?.ToString() ?? "";
-                RM_DescriptionLbl.Text = $"Room {row.Cells[0].Value?.ToString() ?? ""} is a " +
-                                         $"{row.Cells[2].Value?.ToString() ?? ""} with a capacity of " +
-                                         $"{row.Cells[3].Value?.ToString() ?? ""} and a rate of " +
-                                         $"{row.Cells[4].Value?.ToString() ?? ""}.";            
+            RM_RoomIdLbl.Text = row.Cells[0].Value?.ToString() ?? "";
+            RM_RoomTypeLbl.Text = row.Cells[1].Value?.ToString() ?? "";
+            RM_CapacityLbl.Text = row.Cells[2].Value?.ToString() ?? "";
+            RM_RateLbl.Text = row.Cells[3].Value?.ToString() ?? "";
+            RM_StatusLbl.Text = row.Cells[4].Value?.ToString() ?? "";
+            RM_DescriptionLbl.Text = $"Room {row.Cells[0].Value?.ToString() ?? ""} is a " +
+                                     $"{row.Cells[2].Value?.ToString() ?? ""} with a capacity of " +
+                                     $"{row.Cells[3].Value?.ToString() ?? ""} and a rate of " +
+                                     $"{row.Cells[4].Value?.ToString() ?? ""}.";
         }
         private void RM_roomDGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -247,6 +233,16 @@ namespace _4C_s_Management_System
 
         private void RM_UpdateBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(roomId) || RM_statusCB.SelectedItem is null)
+            {
+                MessageBox.Show(
+                    "Select a room and choose a status first.",
+                    "Missing Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 const string query =
@@ -261,7 +257,6 @@ namespace _4C_s_Management_System
                 });
                 LoadRoomData();
                 LoadRoomsdisplay();
-                loaddisplay();
             }
             catch (Exception ex)
             {
@@ -281,8 +276,8 @@ namespace _4C_s_Management_System
                 const string query =
                     "SELECT " +
                     "COUNT(*) AS TotalRooms, " +
-                    "SUM(CASE WHEN Status = 'Occupied' THEN 1 ELSE 0 END) AS OccupiedRooms, " +
-                    "SUM(CASE WHEN Status = 'Available' THEN 1 ELSE 0 END) AS AvailableRooms " +
+                    "COALESCE(SUM(CASE WHEN Status = 'Occupied' THEN 1 ELSE 0 END), 0) AS OccupiedRooms, " +
+                    "COALESCE(SUM(CASE WHEN Status = 'Available' THEN 1 ELSE 0 END), 0) AS AvailableRooms " +
                     "FROM TBLRoom WHERE BranchId = @BranchId";
 
                 var data = AppDB.Instance.TableData(query, new { BranchId = branchId });
@@ -311,5 +306,9 @@ namespace _4C_s_Management_System
             }
         }
 
+        private void guna2vSeparator1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

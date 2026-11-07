@@ -7,14 +7,14 @@
             return $"{prefix}-{number:D5}";
         }
 
-        public static string GenerateNextCustomerID()
+        public static string GenerateNextCustomerID(string prefix)
         {
             object? result = AppDB.Instance.Scalar(
                 "SELECT NEXT VALUE FOR CustomerIdSequence");
 
             long number = Convert.ToInt64(result);
 
-            return GenerateID("CUS", number);
+            return GenerateID(prefix, number);
         }
     }
 }

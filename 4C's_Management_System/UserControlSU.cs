@@ -87,7 +87,7 @@ namespace _4C_s_Management_System
 
                 var result = AppDB.Instance.CUD(query, new
                 {
-                    UserID = IDGenerator.GenerateNextCustomerID(),
+                    UserID = IDGenerator.GenerateNextCustomerID("USR"),
                     BranchId = branchid,
                     UserName = username,
                     Password = password,
