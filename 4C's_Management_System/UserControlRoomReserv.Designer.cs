@@ -99,6 +99,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges62 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges67 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges68 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             RR_checkedInLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -181,6 +183,7 @@
             guna2HtmlLabel39 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             RR_ConNumTxt = new Guna.UI2.WinForms.Guna2TextBox();
             guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel4.SuspendLayout();
@@ -976,7 +979,7 @@
             RR_searchresID.PlaceholderText = "Search room number";
             RR_searchresID.SelectedText = "";
             RR_searchresID.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            RR_searchresID.Size = new Size(536, 37);
+            RR_searchresID.Size = new Size(274, 37);
             RR_searchresID.TabIndex = 25;
             // 
             // guna2Panel8
@@ -1161,10 +1164,10 @@
             RR_RoomTypeTxt.ForeColor = Color.FromArgb(68, 88, 112);
             RR_RoomTypeTxt.ItemHeight = 30;
             RR_RoomTypeTxt.Items.AddRange(new object[] { "Single Room", "Double Room" });
-            RR_RoomTypeTxt.Location = new Point(824, 126);
+            RR_RoomTypeTxt.Location = new Point(846, 126);
             RR_RoomTypeTxt.Name = "RR_RoomTypeTxt";
             RR_RoomTypeTxt.ShadowDecoration.CustomizableEdges = customizableEdges48;
-            RR_RoomTypeTxt.Size = new Size(387, 36);
+            RR_RoomTypeTxt.Size = new Size(365, 36);
             RR_RoomTypeTxt.TabIndex = 125;
             // 
             // guna2CirclePictureBox1
@@ -1273,9 +1276,9 @@
             guna2HtmlLabel35.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel35.Location = new Point(67, 92);
             guna2HtmlLabel35.Name = "guna2HtmlLabel35";
-            guna2HtmlLabel35.Size = new Size(88, 25);
+            guna2HtmlLabel35.Size = new Size(107, 25);
             guna2HtmlLabel35.TabIndex = 91;
-            guna2HtmlLabel35.Text = "Full Name";
+            guna2HtmlLabel35.Text = "Customer ID";
             // 
             // RR_Editbtn
             // 
@@ -1440,6 +1443,27 @@
             guna2CirclePictureBox2.TabIndex = 98;
             guna2CirclePictureBox2.TabStop = false;
             // 
+            // guna2ComboBox1
+            // 
+            guna2ComboBox1.BackColor = Color.Transparent;
+            guna2ComboBox1.BorderColor = Color.Maroon;
+            guna2ComboBox1.BorderRadius = 1;
+            guna2ComboBox1.BorderThickness = 2;
+            guna2ComboBox1.CustomizableEdges = customizableEdges67;
+            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2ComboBox1.Font = new Font("Segoe UI", 10F);
+            guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
+            guna2ComboBox1.ItemHeight = 30;
+            guna2ComboBox1.Items.AddRange(new object[] { "Single Room", "Double Room" });
+            guna2ComboBox1.Location = new Point(369, 221);
+            guna2ComboBox1.Name = "guna2ComboBox1";
+            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges68;
+            guna2ComboBox1.Size = new Size(270, 36);
+            guna2ComboBox1.TabIndex = 126;
+            // 
             // UserControlRoomReserv
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1448,6 +1472,7 @@
             AutoScrollMinSize = new Size(0, 1183);
             AutoSize = true;
             BackColor = Color.FromArgb(255, 249, 239);
+            Controls.Add(guna2ComboBox1);
             Controls.Add(guna2Panel8);
             Controls.Add(guna2PictureBox8);
             Controls.Add(RR_searchresID);
@@ -1582,5 +1607,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker RR_checkOutDateTxt;
         private Guna.UI2.WinForms.Guna2DateTimePicker RR_checkInDateTXT;
         private Guna.UI2.WinForms.Guna2HtmlLabel RR_priceLBL;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
