@@ -195,5 +195,35 @@ namespace _4C_s_Management_System
 
             guna2Panel8.ShadowDecoration.Depth = 0;
         }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel28_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
