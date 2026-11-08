@@ -785,7 +785,7 @@
             RM_roomtypeCB.Font = new Font("Segoe UI", 10F);
             RM_roomtypeCB.ForeColor = Color.FromArgb(68, 88, 112);
             RM_roomtypeCB.ItemHeight = 30;
-            RM_roomtypeCB.Items.AddRange(new object[] { "All Room", "Transient Room", "Apartment ", "Hotel Room" });
+            RM_roomtypeCB.Items.AddRange(new object[] { "All Room", "Transient", "Apartment ", "Hotel" });
             RM_roomtypeCB.Location = new Point(905, 55);
             RM_roomtypeCB.Name = "RM_roomtypeCB";
             RM_roomtypeCB.ShadowDecoration.CustomizableEdges = customizableEdges36;

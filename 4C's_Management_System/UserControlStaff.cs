@@ -62,7 +62,6 @@ namespace _4C_s_Management_System
             //dili time in
             if (timeIn == null)
             {
-                lblStatus.Text = "Not timed in yet";
 
                 btnTimeAction.Text = "Time in";
                 btnTimeAction.Enabled = true;
@@ -71,7 +70,6 @@ namespace _4C_s_Management_System
             //time in
             else if (timeOut == null)
             {
-                lblStatus.Text = "Timed in at " +
                     timeIn.Value.ToString("h:mm tt");
 
                 btnTimeAction.Text = "Time out";
@@ -81,9 +79,6 @@ namespace _4C_s_Management_System
             //time out
             else
             {
-                lblStatus.Text =
-                    "In " + timeIn.Value.ToString("h:mm tt") +
-                    " · Out " + timeOut.Value.ToString("h:mm tt");
 
                 btnTimeAction.Text = "Done for today";
                 btnTimeAction.Enabled = false;

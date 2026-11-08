@@ -362,86 +362,86 @@ namespace _4C_s_Management_System
         }
        #region "Customer Status and Type Filtering"
 
-private void ApplyCustomerFilters()
-{
-    try
-    {
-        var conditions = new List<string>
+        private void ApplyCustomerFilters()
         {
-            "BranchId = @BranchId"
-        };
-
-        var parameters = new Dictionary<string, object>
-        {
-            ["BranchId"] = branchId
-        };
-
-        if (CM_custypeCB.SelectedIndex > 0 &&
-            CM_custypeCB.SelectedItem is not null)
-        {
-            conditions.Add("CustomerType = @CustomerType");
-            parameters["CustomerType"] =
-                CM_custypeCB.SelectedItem.ToString()!;
-        }
-
-        if (CM_CustomerstatCB.SelectedIndex > 0 &&
-            CM_CustomerstatCB.SelectedItem is not null)
-        {
-            conditions.Add("CustomerStatus = @CustomerStatus");
-            parameters["CustomerStatus"] =
-                CM_CustomerstatCB.SelectedItem.ToString()!;
-        }
-
-        string customerId = Cm_searchLbl.Text.Trim();
-
-        if (!string.IsNullOrWhiteSpace(customerId))
-        {
-            conditions.Add("CustomerID LIKE @CustomerID");
-            parameters["CustomerID"] = $"%{customerId}%";
-        }
-
-        string query =
-            "SELECT CustomerID, Fullname, ContactNumber, Address, " +
-            "CustomerType, CustomerStatus " +
-            "FROM CustomerTbl " +
-            $"WHERE {string.Join(" AND ", conditions)} " +
-            "ORDER BY CustomerID ASC";
-
-        AppDB.Instance.Table(
-            query,
-            parameters,
-            CM_CustomerDGV,
-            header: new[]
+            try
             {
-                "Customer ID",
-                "Full Name",
-                "Contact Number",
-                "Address",
-                "Customer Type",
-                "Customer Status"
-            });
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show(
-            $"Error loading customer data: {ex.Message}",
-            "Error",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Error);
-    }
-}
+                var conditions = new List<string>
+                {
+                    "BranchId = @BranchId"
+                };
 
-private void CM_selectedindexchange_stat(object sender, EventArgs e)
-{
-    ApplyCustomerFilters();
-}
+                var parameters = new Dictionary<string, object>
+                {
+                    ["BranchId"] = branchId
+                };
 
-private void CM_CustomerType_indexChanged(object sender, EventArgs e)
-{
-    ApplyCustomerFilters();
-}
+                if (CM_custypeCB.SelectedIndex > 0 &&
+                    CM_custypeCB.SelectedItem is not null)
+                {
+                    conditions.Add("CustomerType = @CustomerType");
+                    parameters["CustomerType"] =
+                        CM_custypeCB.SelectedItem.ToString()!;
+                }
 
-#endregion
+                if (CM_CustomerstatCB.SelectedIndex > 0 &&
+                    CM_CustomerstatCB.SelectedItem is not null)
+                {
+                    conditions.Add("CustomerStatus = @CustomerStatus");
+                    parameters["CustomerStatus"] =
+                        CM_CustomerstatCB.SelectedItem.ToString()!;
+                }
+
+                string customerId = Cm_searchLbl.Text.Trim();
+
+                if (!string.IsNullOrWhiteSpace(customerId))
+                {
+                    conditions.Add("CustomerID LIKE @CustomerID");
+                    parameters["CustomerID"] = $"%{customerId}%";
+                }
+
+                string query =
+                    "SELECT CustomerID, Fullname, ContactNumber, Address, " +
+                    "CustomerType, CustomerStatus " +
+                    "FROM CustomerTbl " +
+                    $"WHERE {string.Join(" AND ", conditions)} " +
+                    "ORDER BY CustomerID ASC";
+
+                AppDB.Instance.Table(
+                    query,
+                    parameters,
+                    CM_CustomerDGV,
+                    header: new[]
+                    {
+                        "Customer ID",
+                        "Full Name",
+                        "Contact Number",
+                        "Address",
+                        "Customer Type",
+                        "Customer Status"
+                    });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error loading customer data: {ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void CM_selectedindexchange_stat(object sender, EventArgs e)
+        {
+            ApplyCustomerFilters();
+        }
+
+        private void CM_CustomerType_indexChanged(object sender, EventArgs e)
+        {
+            ApplyCustomerFilters();
+        }
+
+        #endregion
     }
 }
 

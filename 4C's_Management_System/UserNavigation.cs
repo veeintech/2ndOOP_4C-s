@@ -42,7 +42,7 @@ namespace _4C_s_Management_System
 
             designBTN(
                 userNav_DashboardBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -68,7 +68,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 userNav_DashboardBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -94,7 +94,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 userNav_RoomsBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -120,7 +120,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 UserNav_ReservationBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -146,7 +146,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 UserNav_PaymentBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -173,7 +173,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 UserNav_LogoutBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_PaymentBtn,
@@ -211,7 +211,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 UserNav_CustomerBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_LogoutBtn,
                 UserNav_PaymentBtn,
@@ -238,7 +238,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 UserNav_TenantsBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
                 UserNav_PaymentBtn,
@@ -264,7 +264,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
                 UserNav_MaintenanceBtn,
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -289,7 +289,7 @@ namespace _4C_s_Management_System
         private void UserNav_ReportsBtn_Click(object sender, EventArgs e)
         {
             designBTN(
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -315,7 +315,7 @@ namespace _4C_s_Management_System
         private void UserNav_StaffBtn_Click(object sender, EventArgs e)
         {
             designBTN(
-                UserNav_ReportsBtn,
+                UserNav_StaffBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,

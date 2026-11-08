@@ -774,7 +774,7 @@
             CM_AddCusBtn.ShadowDecoration.CustomizableEdges = customizableEdges38;
             CM_AddCusBtn.Size = new Size(130, 35);
             CM_AddCusBtn.TabIndex = 72;
-            CM_AddCusBtn.Text = "+ Add Customer";
+            CM_AddCusBtn.Text = "Add";
             CM_AddCusBtn.Click += CM_AddCusBtn_Click;
             // 
             // guna2Panel2
@@ -858,7 +858,7 @@
             CM_CustomerstatTxt.Font = new Font("Segoe UI", 10F);
             CM_CustomerstatTxt.ForeColor = Color.FromArgb(68, 88, 112);
             CM_CustomerstatTxt.ItemHeight = 30;
-            CM_CustomerstatTxt.Items.AddRange(new object[] { "Active", "Pending", "Inactive" });
+            CM_CustomerstatTxt.Items.AddRange(new object[] { "Pending", "Reserved", "Cancelled", "Checked In", "Checked Out", "No Show / Expired" });
             CM_CustomerstatTxt.Location = new Point(878, 126);
             CM_CustomerstatTxt.Name = "CM_CustomerstatTxt";
             CM_CustomerstatTxt.ShadowDecoration.CustomizableEdges = customizableEdges43;
