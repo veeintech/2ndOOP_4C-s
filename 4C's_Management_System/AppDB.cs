@@ -14,8 +14,16 @@ namespace _4C_s_Management_System
         /// </summary>
         private static readonly Lazy<IDatabase> _instance = new Lazy<IDatabase>(() =>
         {
-            string connStr = ConfigurationManager.ConnectionStrings["AppDB"].ConnectionString;
-            return new SqlDatabase(connStr);
+            try
+            {
+                string connStr = ConfigurationManager.ConnectionStrings["AppDB"].ConnectionString;
+                return new SqlDatabase(connStr);
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (e.g., log it)
+                throw new InvalidOperationException("Failed to initialize the database.", ex);
+            }
         });
 
         /// <summary>
