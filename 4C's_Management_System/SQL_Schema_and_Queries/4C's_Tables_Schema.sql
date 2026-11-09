@@ -1,0 +1,133 @@
+﻿-- ==========================================
+-- 1. BranchTbl
+-- ==========================================
+
+CREATE TABLE [dbo].[BranchTbl] (
+    [BranchId]   VARCHAR(15)  NOT NULL,
+    [BranchName] VARCHAR(100) NOT NULL,
+    [Address]    VARCHAR(255) NOT NULL,
+    [Status]     VARCHAR(20)  NOT NULL,
+
+    CONSTRAINT PK_BranchTbl PRIMARY KEY CLUSTERED ([BranchId] ASC)
+);
+GO
+
+-- ==========================================
+-- 2. TBLRoom
+-- ==========================================
+
+CREATE TABLE [dbo].[TBLRoom] (
+    [RoomId]   VARCHAR(10)    NOT NULL,
+    [BranchId] VARCHAR(15)    NOT NULL,
+    [RoomType] VARCHAR(20)    NOT NULL,
+    [Capacity] VARCHAR(20)    NOT NULL,
+    [Rate]     DECIMAL(10, 2) NOT NULL,
+    [Status]   VARCHAR(15)    NOT NULL,
+
+    CONSTRAINT PK_TBLRoom PRIMARY KEY CLUSTERED ([RoomId] ASC),
+
+    CONSTRAINT FK_TBLRoom_BranchTbl
+        FOREIGN KEY ([BranchId])
+        REFERENCES [dbo].[BranchTbl] ([BranchId])
+);
+GO
+
+-- ==========================================
+-- 3. CustomerTbl
+-- ==========================================
+
+CREATE TABLE [dbo].[CustomerTbl] (
+    [CustomerID]     VARCHAR(20)  NOT NULL,
+    [BranchId]       VARCHAR(15)  NOT NULL,
+    [Fullname]       VARCHAR(100) NOT NULL,
+    [ContactNumber]  VARCHAR(11)  NOT NULL,
+    [Address]        VARCHAR(200) NOT NULL,
+    [CustomerType]   VARCHAR(50)  NOT NULL,
+    [CustomerStatus] VARCHAR(20)  NOT NULL,
+
+    CONSTRAINT PK_CustomerTbl PRIMARY KEY CLUSTERED ([CustomerID] ASC),
+
+    CONSTRAINT FK_CustomerTbl_BranchTbl
+        FOREIGN KEY ([BranchId])
+        REFERENCES [dbo].[BranchTbl] ([BranchId])
+);
+GO
+
+-- ==========================================
+-- 4. TenantTbl
+-- ==========================================
+
+CREATE TABLE [dbo].[TenantTbl] (
+    [TenantId]           VARCHAR(20)    NOT NULL,
+    [BranchId]           VARCHAR(15)    NOT NULL,
+    [FullName]           VARCHAR(100)   NOT NULL,
+    [ContactNumber]      VARCHAR(20)    NOT NULL,
+    [Address]            VARCHAR(200)   NOT NULL,
+    [AgreementStartDate] DATE           NOT NULL,
+    [AgreementEndDate]   DATE           NOT NULL,
+    [MonthlyRent]        DECIMAL(10, 2) NOT NULL,
+    [Status]             VARCHAR(20)    NOT NULL,
+
+    CONSTRAINT PK_TenantTbl PRIMARY KEY CLUSTERED ([TenantId] ASC),
+
+    CONSTRAINT FK_TenantTbl_BranchTbl
+        FOREIGN KEY ([BranchId])
+        REFERENCES [dbo].[BranchTbl] ([BranchId])
+);
+GO
+
+-- ==========================================
+-- 5. UserTbl
+-- ==========================================
+
+CREATE TABLE [dbo].[UserTbl] (
+    [UserId]   VARCHAR(15) NOT NULL,
+    [BranchId] VARCHAR(15) NOT NULL,
+    [UserName] VARCHAR(30) NOT NULL,
+    [Password] VARCHAR(30) NOT NULL,
+    [Role]     VARCHAR(20) NOT NULL,
+    [Status]   VARCHAR(10) NOT NULL,
+
+    CONSTRAINT PK_UserTbl PRIMARY KEY CLUSTERED ([UserId] ASC),
+
+    CONSTRAINT FK_UserTbl_BranchTbl
+        FOREIGN KEY ([BranchId])
+        REFERENCES [dbo].[BranchTbl] ([BranchId])
+);
+GO
+
+-- ==========================================
+-- 6. ReservationTbl
+-- ==========================================
+
+CREATE TABLE [dbo].[ReservationTbl] (
+    [ReservationId]     VARCHAR(20)  NOT NULL,
+    [branchId]          VARCHAR(15)  NOT NULL,
+    [CustomerId]        VARCHAR(20)  NULL,
+    [TenantId]          VARCHAR(20)  NULL,
+    [RoomId]            VARCHAR(10)  NOT NULL,
+    [AccomodationType]  VARCHAR(30)  NOT NULL,
+    [ReservationDate]   DATETIME2(7) NOT NULL,
+    [ResStartDate]      DATETIME2(7) NOT NULL,
+    [ResEndDate]        DATETIME2(7) NOT NULL,
+    [ReservationStatus] VARCHAR(20)  NULL,
+
+    CONSTRAINT PK_ReservationTbl PRIMARY KEY CLUSTERED ([ReservationId] ASC),
+
+    CONSTRAINT FK_ReservationTbl_BranchTbl
+        FOREIGN KEY ([branchId])
+        REFERENCES [dbo].[BranchTbl] ([BranchId]),
+
+    CONSTRAINT FK_ReservationTbl_CustomerTbl
+        FOREIGN KEY ([CustomerId])
+        REFERENCES [dbo].[CustomerTbl] ([CustomerID]),
+
+    CONSTRAINT FK_ReservationTbl_TenantTbl
+        FOREIGN KEY ([TenantId])
+        REFERENCES [dbo].[TenantTbl] ([TenantId]),
+
+    CONSTRAINT FK_ReservationTbl_TBLRoom
+        FOREIGN KEY ([RoomId])
+        REFERENCES [dbo].[TBLRoom] ([RoomId])
+);
+GO

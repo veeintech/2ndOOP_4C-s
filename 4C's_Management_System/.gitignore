@@ -1,5 +1,11 @@
+# Visual Studio
 .vs/
 bin/
 obj/
 *.user
 *.suo
+
+# Local SQL Server Database Files
+*.mdf
+*.ldf
+*.ndf
