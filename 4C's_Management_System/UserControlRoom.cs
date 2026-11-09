@@ -14,7 +14,7 @@ namespace _4C_s_Management_System
         }
 
         string roomId = "";
-        string branchId = "brc-001";
+        string branchId = "BRN-001";
 
         private void UserControlRoom_Load(object sender, EventArgs e)
         {

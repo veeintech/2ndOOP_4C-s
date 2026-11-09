@@ -1,4 +1,5 @@
-﻿namespace _4C_s_Management_System
+﻿
+namespace _4C_s_Management_System
 {
     internal static class IDGenerator
     {
@@ -10,7 +11,15 @@
         public static string GenerateNextCustomerID(string prefix)
         {
             object? result = AppDB.Instance.Scalar(
-                "SELECT NEXT VALUE FOR CustomerIdSequence");
+                "SELECT NEXT VALUE FOR dbo.CustomerIDSequence;"
+            );
+
+            if (result == null || result == DBNull.Value)
+            {
+                throw new InvalidOperationException(
+                    "Failed to generate Customer ID."
+                );
+            }
 
             long number = Convert.ToInt64(result);
 

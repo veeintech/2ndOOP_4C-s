@@ -18,9 +18,7 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
-        public int idnum = 0;
-        public string branchId = "brc-001";
-        public string tempid = "";
+        public string branchId = "BRN-001";
 
         private void UserControlCustomers_Load(object sender, EventArgs e)
         {
@@ -78,7 +76,6 @@ namespace _4C_s_Management_System
             CM_conManTxt.Text = row.Cells[2].Value?.ToString() ?? "";
             CM_AddressTxt.Text = row.Cells[3].Value?.ToString() ?? "";
             CM_AccomTypeTxt.Text = row.Cells[4].Value?.ToString() ?? "";
-            CM_CustomerstatTxt.Text = row.Cells[5].Value?.ToString() ?? "";
 
         }
 
@@ -130,13 +127,11 @@ namespace _4C_s_Management_System
             string contactnumber = CM_conManTxt.Text.Trim();
             string address = CM_AddressTxt.Text.Trim();
             string customerType = CM_AccomTypeTxt.Text.Trim();
-            string customerStatus = CM_CustomerstatTxt.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(fullname) ||
                 string.IsNullOrWhiteSpace(contactnumber) ||
                 string.IsNullOrWhiteSpace(address) ||
-                string.IsNullOrWhiteSpace(customerType) ||
-                string.IsNullOrWhiteSpace(customerStatus))
+                string.IsNullOrWhiteSpace(customerType))
             {
                 MessageBox.Show(
                     "Please fill in all fields.",
@@ -150,11 +145,9 @@ namespace _4C_s_Management_System
                 if (CM_CustomeridTxt.Text == "")
                 {
                     string customerid = IDGenerator.GenerateNextCustomerID("CUS");
-                    CM_CustomeridTxt.Text = customerid;
-                    tempid = customerid;
 
                     const string query =
-                        "INSERT INTO CustomerTbl (CustomerID,BranchID, Fullname, ContactNumber, Address, CustomerType, CustomerStatus) " +
+                        "INSERT INTO CustomerTbl (CustomerID, BranchID, Fullname, ContactNumber, Address, CustomerType, CustomerStatus) " +
                         "VALUES (@CustomerID, @BranchID, @Fullname, @ContactNumber, @Address, @CustomerType, @CustomerStatus)";
 
                     var result = AppDB.Instance.CUD(query, new
@@ -165,7 +158,7 @@ namespace _4C_s_Management_System
                         ContactNumber = contactnumber,
                         Address = address,
                         CustomerType = customerType,
-                        CustomerStatus = customerStatus
+                        CustomerStatus = "Inactive"
                     });
                     if (result > 0)
                     {
@@ -202,15 +195,13 @@ namespace _4C_s_Management_System
             string contactnumber = CM_conManTxt.Text.Trim();
             string address = CM_AddressTxt.Text.Trim();
             string customerType = CM_AccomTypeTxt.Text.Trim();
-            string customerStatus = CM_CustomerstatTxt.Text.Trim();
             CM_CustomeridTxt.Text = customerid;
 
             if (string.IsNullOrWhiteSpace(customerid) ||
                 string.IsNullOrWhiteSpace(fullname) ||
                 string.IsNullOrWhiteSpace(contactnumber) ||
                 string.IsNullOrWhiteSpace(address) ||
-                string.IsNullOrWhiteSpace(customerType) ||
-                string.IsNullOrWhiteSpace(customerStatus))
+                string.IsNullOrWhiteSpace(customerType))
             {
                 MessageBox.Show(
                     "Please fill in all fields.",
@@ -223,7 +214,7 @@ namespace _4C_s_Management_System
             {
                 const string query =
                     "UPDATE CustomerTbl SET BranchID = @BranchID, Fullname = @Fullname, ContactNumber = @ContactNumber," +
-                    " Address = @Address, CustomerType = @CustomerType, CustomerStatus = @CustomerStatus " +
+                    " Address = @Address, CustomerType = @CustomerType" +
                     "WHERE CustomerID = @CustomerID AND BranchID = @BranchID";
 
                 var result = AppDB.Instance.CUD(query, new
@@ -233,8 +224,7 @@ namespace _4C_s_Management_System
                     Fullname = fullname,
                     ContactNumber = contactnumber,
                     Address = address,
-                    CustomerType = customerType,
-                    CustomerStatus = customerStatus
+                    CustomerType = customerType
                 });
                 if (result > 0)
                 {
@@ -261,7 +251,6 @@ namespace _4C_s_Management_System
             CM_conManTxt.Clear();
             CM_AddressTxt.Clear();
             CM_AccomTypeTxt.SelectedIndex = -1;
-            CM_CustomerstatTxt.SelectedIndex = -1;
         }
 
         public void LoadRoomsdisplay()

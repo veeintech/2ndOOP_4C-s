@@ -17,7 +17,7 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
-        public string branchid = "BRC-001";
+        public string branchid = "BRN-001";
 
         private void UserControlTenants_Load(object sender, EventArgs e)
         {

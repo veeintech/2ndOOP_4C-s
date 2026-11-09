@@ -22,7 +22,7 @@ namespace _4C_s_Management_System
             RoomReserveDGV.CellClick += RoomReserveDGV_CellClick;
         }
 
-        public string branchid = "BRC-001";
+        public string branchid = "BRN-001";
         private void UserControlRoomReserv_Load(object sender, EventArgs e)
         {
             RRes_AccommodationCB.SelectedIndex = 0;
@@ -178,7 +178,7 @@ namespace _4C_s_Management_System
                 }
 
                 string query =
-                    "SELECT ReservationId, AccomodationType " +
+                    "SELECT ReservationId, AccomodationType, " +
                     "ReservationDate, ResStartDate, ResEndDate " +
                     "FROM ReservationTbl " +
                     $"WHERE {string.Join(" AND ", conditions)} " +
