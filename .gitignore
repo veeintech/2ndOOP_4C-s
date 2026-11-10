@@ -1,3 +1,7 @@
+# SQL Server Database Files
+*.mdf
+*.ldf
+
 .vs/
 bin/
 obj/

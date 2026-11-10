@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace _4C_s_Management_System
 {
-    public partial class UserControlAdMaintenance : UserControl
+    public partial class UserControl_Admin_Room : UserControl
     {
-        public UserControlAdMaintenance()
+        public UserControl_Admin_Room()
         {
             InitializeComponent();
         }
 
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void CM_deleteBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        private void UserControlAdRoom_Load(object sender, EventArgs e)
         {
 
         }
