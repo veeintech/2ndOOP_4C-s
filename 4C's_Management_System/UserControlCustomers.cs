@@ -18,7 +18,7 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
-        public string branchId = "BRN-001";
+        public string branchId = AccessBranch_ByForm.BranchId;
 
         private void UserControlCustomers_Load(object sender, EventArgs e)
         {
@@ -144,7 +144,7 @@ namespace _4C_s_Management_System
             {
                 if (CM_CustomeridTxt.Text == "")
                 {
-                    string customerid = IDGenerator.GenerateNextCustomerID("CUS");
+                    string customerid = IDGenerator.GenerateNextID("CUS", branchId);
 
                     const string query =
                         "INSERT INTO CustomerTbl (CustomerID, BranchID, Fullname, ContactNumber, Address, CustomerType, CustomerStatus) " +

@@ -17,7 +17,7 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
-        public string branchid = "BRN-001";
+        public string branchid = AccessBranch_ByForm.BranchId;
 
         private void UserControlTenants_Load(object sender, EventArgs e)
         {
@@ -210,7 +210,7 @@ namespace _4C_s_Management_System
         private void TM_AddCusBtn_Click(object sender, EventArgs e)
         {
             // Replace this with a tenant-specific sequence when one is created.
-            string tenantid = IDGenerator.GenerateNextCustomerID("TEN");
+            string tenantid = IDGenerator.GenerateNextID("TEN", branchid);
             string fullname = TM_fullnametxt.Text.Trim();
             string contactnumber = TM_contacttxt.Text.Trim();
             string address = TM_AdressTxt.Text.Trim();

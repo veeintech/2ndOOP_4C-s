@@ -17,8 +17,6 @@ namespace _4C_s_Management_System
             InitializeComponent();
         }
 
-        public long idnum = 0;
-
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
         {
             UserControlLI li = new UserControlLI();
@@ -81,13 +79,29 @@ namespace _4C_s_Management_System
 
             try
             {
+
+                bool brcIDExists = AppDB.Instance.Scalar(
+                    "SELECT COUNT(1) FROM BranchTbl WHERE BranchId = @BranchId",
+                    new { BranchId = branchid }
+                ) is int count && count > 0;
+
+                if (!brcIDExists)
+                {
+                    MessageBox.Show(
+                        "The provided Branch ID does not exist. Please check and try again.",
+                        "Invalid Branch ID",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
                 const string query =
                     "INSERT INTO UserTbl (UserId, BranchId, UserName, Password, Role, Status) " +
                     "VALUES (@UserID, @BranchId, @Username, @Password, @Role, @Status)";
 
                 var result = AppDB.Instance.CUD(query, new
                 {
-                    UserID = IDGenerator.GenerateNextCustomerID("USR"),
+                    UserID = IDGenerator.GenerateNextID("USR", branchid),
                     BranchId = branchid,
                     UserName = username,
                     Password = password,
