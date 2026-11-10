@@ -4,12 +4,6 @@
 -- TEST DATA / CONTENT QUERIES
 -- ==========================================
 
-CREATE SEQUENCE dbo.CustomerIDSequence
-    AS BIGINT
-    START WITH 1
-    INCREMENT BY 1;
-GO
-
 -- ==========================================
 -- 1. BranchTbl
 -- ==========================================
@@ -29,17 +23,7 @@ INSERT INTO [dbo].[TBLRoom]
     ([RoomId], [BranchId], [RoomType], [Capacity], [Rate], [Status])
 VALUES
     ('RM-001', 'BRN-001', 'Hotel', 'Double Room', 800.00, 'Available'),
-    ('RM-002', 'BRN-001', 'Apartment', 'Single Room', 1500.00, 'Available'),
-    ('RM-003', 'BRN-001', 'Hotel', 'Double Room', 2500.00, 'Occupied'),
-    ('RM-004', 'BRN-001', 'Transient', 'Double Room', 600.00, 'Available'),
-    ('RM-005', 'BRN-001', 'Apartment', 'Double Room', 8000.00, 'Occupied'),
-
-    ('RM-006', 'BRN-002', 'Hotel', 'Double Room', 900.00, 'Available'),
-    ('RM-007', 'BRN-002', 'Apartment', 'Single Room', 1800.00, 'Available'),
-    ('RM-008', 'BRN-002', 'Transient', 'Single Room', 3000.00, 'Maintenance'),
-
-    ('RM-009', 'BRN-003', 'Transient', 'Double Room', 750.00, 'Available'),
-    ('RM-010', 'BRN-003', 'Hotel', 'Double Room', 7500.00, 'Available');
+    ('RM-002', 'BRN-001', 'Apartment', 'Single Room', 1500.00, 'Available')
 GO
 
 
