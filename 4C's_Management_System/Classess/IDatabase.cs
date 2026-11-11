@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 
+
 namespace _4C_s_Management_System
 {
     /// <summary>Synchronous database abstraction for SQL Server.</summary>
@@ -83,5 +84,6 @@ namespace _4C_s_Management_System
             DataGridView dgv, string[]? header = null);
         void Table(string query, ListView lv, string[]? headers = null);
         void list(string query, ComboBox comboBox);
+
     }
 }

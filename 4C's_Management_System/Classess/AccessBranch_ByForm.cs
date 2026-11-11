@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4C_s_Management_System
+namespace _4C_s_Management_System.Classess
 {
     internal class AccessBranch_ByForm
     {

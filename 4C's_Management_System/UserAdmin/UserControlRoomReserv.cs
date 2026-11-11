@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4C_s_Management_System.Classess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -820,15 +821,6 @@ namespace _4C_s_Management_System
             double totalHours = duration.TotalHours;
 
             double totalPrice = totalHours * hourlyRate;
-
-            // APPLY ROOM MULTIPLIER
-            if (RR_RoomTypesCB.SelectedIndex != 2)
-            {
-                if (capacity == "Double Room")
-                {
-                    totalPrice *= 2;
-                }
-            }
 
             totalPrice = Math.Round(totalPrice, 2);
 

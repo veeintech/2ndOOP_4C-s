@@ -1,4 +1,4 @@
-﻿using _4C_s_Management_System;
+﻿using _4C_s_Management_System.Classess;
 using System;
 using System.Windows.Forms;
 

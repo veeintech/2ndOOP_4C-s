@@ -39,7 +39,7 @@ namespace _4C_s_Management_System
         }
 
         private void SU_createaccBtn_Click_1(object sender, EventArgs e)
-        {
+        { 
             string branchid = SU_branchidtxt.Text.Trim();
             string password = SU_passwordtxt.Text;
             string username = SU_usernametxt.Text.Trim();
