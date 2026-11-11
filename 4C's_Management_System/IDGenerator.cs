@@ -12,13 +12,13 @@ namespace _4C_s_Management_System
             string branchId)
         {
             object? result = AppDB.Instance.Scalar(
-                "EXEC dbo.GenerateNextIDNumber @Prefix, @BranchId",
-                new SqlParameter[]
-                {
-                    new SqlParameter("@Prefix", prefix),
-                    new SqlParameter("@BranchId", branchId)
-                }
-            );
+                  "EXEC dbo.GenerateNextIDNumber @Prefix, @BranchId",
+              new
+                 {
+                        Prefix = prefix,
+                        BranchId = branchId
+                    }
+);
 
             if (result == null || result == DBNull.Value)
             {

@@ -74,6 +74,17 @@ namespace _4C_s_Management_System
         {
             if (parameters == null) return;
 
+            // Support SqlParameter arrays
+            if (parameters is IEnumerable<SqlParameter> sqlParameters)
+            {
+                foreach (var parameter in sqlParameters)
+                {
+                    cmd.Parameters.Add(parameter);
+                }
+
+                return;
+            }
+
             // Allow IDictionary<string, object> OR anonymous/POCO
             if (parameters is IDictionary<string, object> dict)
             {

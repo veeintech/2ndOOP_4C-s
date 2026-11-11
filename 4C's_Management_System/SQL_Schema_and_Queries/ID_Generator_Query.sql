@@ -26,24 +26,15 @@
    One counter per Prefix + BranchId combination.
    ========================================================= */
 
-IF OBJECT_ID('dbo.IDSequenceTbl', 'U') IS NULL
-BEGIN
-    CREATE TABLE dbo.IDSequenceTbl
-    (
-        Prefix      VARCHAR(10) NOT NULL,
-        BranchId    VARCHAR(15) NOT NULL,
-        LastNumber  BIGINT NOT NULL
-            CONSTRAINT DF_IDSequenceTbl_LastNumber DEFAULT (0),
+CREATE TABLE [dbo].[IDSequenceTbl] (
+    [Prefix]     VARCHAR (10) NOT NULL,
+    [BranchId]   VARCHAR (15) NOT NULL,
+    [LastNumber] BIGINT       CONSTRAINT [DF_IDSequenceTbl_LastNumber] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_IDSequenceTbl] PRIMARY KEY CLUSTERED ([Prefix] ASC, [BranchId] ASC),
+    CONSTRAINT [FK_IDSequenceTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
+);
 
-        CONSTRAINT PK_IDSequenceTbl
-            PRIMARY KEY (Prefix, BranchId),
 
-        CONSTRAINT FK_IDSequenceTbl_BranchTbl
-            FOREIGN KEY (BranchId)
-            REFERENCES dbo.BranchTbl (BranchId)
-    );
-END;
-GO
 
 
 /* =========================================================

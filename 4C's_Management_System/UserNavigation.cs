@@ -301,8 +301,8 @@ namespace _4C_s_Management_System
         private void UserNav_ReportsBtn_Click(object sender, EventArgs e)
         {
             designBTN(
-                User_Control_ReportsBtn,
                 UserNav_Staff_Btn,
+                User_Control_ReportsBtn,
                 UserNav_TenantsBtn,
                 UserNav_CustomerBtn,
                 UserNav_LogoutBtn,
@@ -314,33 +314,6 @@ namespace _4C_s_Management_System
                 UserNav_AdminBtn
 
 
-                );
-
-            try
-            {
-                UserControlReports cr = new UserControlReports();
-                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void UserNav_StaffBtn_Click(object sender, EventArgs e)
-        {
-            designBTN(
-                UserNav_Staff_Btn,
-                UserNav_TenantsBtn,
-                UserNav_CustomerBtn,
-                UserNav_LogoutBtn,
-                UserNav_PaymentBtn,
-                UserNav_ReservationBtn,
-                userNav_RoomsBtn,
-                userNav_DashboardBtn,
-                UserNav_MaintenanceBtn,
-                User_Control_ReportsBtn,
-                UserNav_AdminBtn
                 );
 
             try
@@ -397,6 +370,33 @@ namespace _4C_s_Management_System
                 User_Control_ReportsBtn
                 );
 
+        }
+
+        private void UserNav_Staff_Btn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+                UserNav_Staff_Btn,
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                UserNav_ReservationBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                User_Control_ReportsBtn,
+                UserNav_AdminBtn
+                );
+
+            try
+            {
+                UserControlStaff cr = new UserControlStaff();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

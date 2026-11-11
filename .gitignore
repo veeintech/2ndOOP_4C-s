@@ -9,3 +9,5 @@ obj/
 *.mdf
 *.ldf
 *.ndf
+/SQLQuery1.sql
+/SQLQuery2.sql

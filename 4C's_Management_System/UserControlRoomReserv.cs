@@ -231,6 +231,7 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Warning);
                 return;
             }
+
             if (startdate >= enddate)
             {
                 MessageBox.Show(
@@ -310,10 +311,10 @@ namespace _4C_s_Management_System
 
                     const string query =
                         "INSERT INTO ReservationTbl " +
-                        "(ReservationId, BranchId, CustomerId, TenantId, RoomId, " +
+                        "(ReservationId, BranchId, CustomerId, RoomId, " +
                         "AccomodationType, ReservationDate, ResStartDate, ResEndDate) " +
                         "VALUES " +
-                        "(@ReservationId, @BranchId, @CustomerId, @TenantId, @RoomId, " +
+                        "(@ReservationId, @BranchId, @CustomerId, @RoomId, " +
                         "@AccomodationType, @ReservationDate, @ResStartDate, @ResEndDate)";
 
                     int result = AppDB.Instance.CUD(
@@ -323,7 +324,6 @@ namespace _4C_s_Management_System
                             ReservationId = reservationId,
                             BranchId = branchid,
                             CustomerId = customerid,
-                            TenantId = tenantid,
                             RoomId = roomid,
                             AccomodationType = accomodationtype,
                             ReservationDate = DateTime.Today,
