@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="try4cs.mdf" />
+    <None Remove="try4cs_log.ldf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.Charts.WinForms" Version="1.1.0" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.8" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />

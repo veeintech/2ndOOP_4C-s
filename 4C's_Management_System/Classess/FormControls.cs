@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace _4C_s_Management_System
+namespace _4C_s_Management_System.Classess
 {
     /// <summary>Helpers for common Windows Forms input controls.</summary>
     public static class FormControls

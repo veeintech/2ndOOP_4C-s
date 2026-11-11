@@ -1,4 +1,4 @@
-﻿using _4C_s_Management_System;
+﻿using _4C_s_Management_System.Classess;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +14,7 @@ namespace _4C_s_Management_System
         }
 
         string roomId = "";
-        string branchId = "brc-001";
+        string branchId = AccessBranch_ByForm.BranchId;
 
         private void UserControlRoom_Load(object sender, EventArgs e)
         {

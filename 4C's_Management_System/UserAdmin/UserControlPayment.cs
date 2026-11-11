@@ -29,20 +29,29 @@ namespace _4C_s_Management_System
             printDocument1.PrintPage -= PrintDocument1_PrintPage;
         }
 
+
         private void PrintDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Bitmap bmp = new Bitmap(
+            using (Bitmap bmp = new Bitmap(
                 panelPaymentDetails.Width,
-                panelPaymentDetails.Height
-            );
+                panelPaymentDetails.Height))
+            {
+                panelPaymentDetails.DrawToBitmap(
+                    bmp,
+                    new Rectangle(0, 0, bmp.Width, bmp.Height)
+                );
 
-            panelPaymentDetails.DrawToBitmap(
-                bmp,
-                new Rectangle(0, 0, bmp.Width, bmp.Height)
-            );
+                int newWidth = 750;
+                int newHeight = (int)(
+                    bmp.Height * ((float)newWidth / bmp.Width)
+                );
 
-            e.Graphics.DrawImage(bmp, 50, 50);
-            bmp.Dispose();
+                e.Graphics.DrawImage(
+                    bmp,
+                    new Rectangle(50, 50, newWidth, newHeight)
+                );
+            }
         }
+
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace _4C_s_Management_System
 {
@@ -16,8 +17,6 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
-
-        public long idnum = 0;
 
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
         {
@@ -40,7 +39,7 @@ namespace _4C_s_Management_System
         }
 
         private void SU_createaccBtn_Click_1(object sender, EventArgs e)
-        {
+        { 
             string branchid = SU_branchidtxt.Text.Trim();
             string password = SU_passwordtxt.Text;
             string username = SU_usernametxt.Text.Trim();
@@ -81,13 +80,29 @@ namespace _4C_s_Management_System
 
             try
             {
+
+                bool brcIDExists = AppDB.Instance.Scalar(
+                    "SELECT COUNT(1) FROM BranchTbl WHERE BranchId = @BranchId",
+                    new { BranchId = branchid }
+                ) is int count && count > 0;
+
+                if (!brcIDExists)
+                {
+                    MessageBox.Show(
+                        "The provided Branch ID does not exist. Please check and try again.",
+                        "Invalid Branch ID",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
                 const string query =
                     "INSERT INTO UserTbl (UserId, BranchId, UserName, Password, Role, Status) " +
                     "VALUES (@UserID, @BranchId, @Username, @Password, @Role, @Status)";
 
                 var result = AppDB.Instance.CUD(query, new
                 {
-                    UserID = IDGenerator.GenerateNextCustomerID("USR"),
+                    UserID = IDGenerator.GenerateNextID("USR", branchid),
                     BranchId = branchid,
                     UserName = username,
                     Password = password,

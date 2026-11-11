@@ -503,7 +503,7 @@
             UserNav_Staff_Btn.TabIndex = 7;
             UserNav_Staff_Btn.Text = "Staff";
             UserNav_Staff_Btn.TextAlign = HorizontalAlignment.Left;
-            UserNav_Staff_Btn.Click += UserNav_ReportsBtn_Click;
+            UserNav_Staff_Btn.Click += UserNav_Staff_Btn_Click;
             // 
             // UserNav_PaymentBtn
             // 

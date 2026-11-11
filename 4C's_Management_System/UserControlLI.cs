@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _4C_s_Management_System.Classess;
+using Microsoft.Data.SqlClient;
 
 namespace _4C_s_Management_System
 {
@@ -17,6 +19,8 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        public string branchid = string.Empty;
 
         private void LOGIN_signupbtn_Click(object sender, EventArgs e)
         {
@@ -44,6 +48,8 @@ namespace _4C_s_Management_System
 
                 const string query = "SELECT 1 FROM UserTbl WHERE UserName = @Username AND Password = @Password";
 
+                const string getbranchid = "SELECT BranchId FROM UserTbl WHERE UserName = @Username AND Password = @Password";
+
                 var result = AppDB.Instance.Scalar(query, new
                 {
                     Username = username,
@@ -51,6 +57,12 @@ namespace _4C_s_Management_System
                 });
 
                 var statusResult = AppDB.Instance.Scalar(statuscheckQuery, new
+                {
+                    Username = username,
+                    Password = password
+                });
+
+                var getBRCid = AppDB.Instance.Scalar(getbranchid, new
                 {
                     Username = username,
                     Password = password
@@ -95,6 +107,9 @@ namespace _4C_s_Management_System
 
                     dashboard.Show();
                     loginForm?.Hide();
+
+                    branchid = getBRCid?.ToString() ?? string.Empty;    
+                    AccessBranch_ByForm.SetBranch(branchid);
                 }
 
             }

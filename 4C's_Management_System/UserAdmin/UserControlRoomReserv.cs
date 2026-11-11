@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4C_s_Management_System.Classess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,7 @@ namespace _4C_s_Management_System
             RoomReserveDGV.CellClick += RoomReserveDGV_CellClick;
         }
 
-        public string branchid = "BRC-001";
+        public string branchid = AccessBranch_ByForm.BranchId;
         private void UserControlRoomReserv_Load(object sender, EventArgs e)
         {
             RRes_AccommodationCB.SelectedIndex = 0;
@@ -178,7 +179,7 @@ namespace _4C_s_Management_System
                 }
 
                 string query =
-                    "SELECT ReservationId, AccomodationType " +
+                    "SELECT ReservationId, AccomodationType, " +
                     "ReservationDate, ResStartDate, ResEndDate " +
                     "FROM ReservationTbl " +
                     $"WHERE {string.Join(" AND ", conditions)} " +
@@ -231,6 +232,7 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Warning);
                 return;
             }
+
             if (startdate >= enddate)
             {
                 MessageBox.Show(
@@ -304,16 +306,16 @@ namespace _4C_s_Management_System
                 if (string.IsNullOrWhiteSpace(RR_ReserIDTxt.Text))
                 {
                     string reservationId =
-                        IDGenerator.GenerateNextCustomerID("RES");
+                        IDGenerator.GenerateNextID("RES", branchid);
 
                     RR_ReserIDTxt.Text = reservationId;
 
                     const string query =
                         "INSERT INTO ReservationTbl " +
-                        "(ReservationId, BranchId, CustomerId, TenantId, RoomId, " +
+                        "(ReservationId, BranchId, CustomerId, RoomId, " +
                         "AccomodationType, ReservationDate, ResStartDate, ResEndDate) " +
                         "VALUES " +
-                        "(@ReservationId, @BranchId, @CustomerId, @TenantId, @RoomId, " +
+                        "(@ReservationId, @BranchId, @CustomerId, @RoomId, " +
                         "@AccomodationType, @ReservationDate, @ResStartDate, @ResEndDate)";
 
                     int result = AppDB.Instance.CUD(
@@ -323,7 +325,6 @@ namespace _4C_s_Management_System
                             ReservationId = reservationId,
                             BranchId = branchid,
                             CustomerId = customerid,
-                            TenantId = tenantid,
                             RoomId = roomid,
                             AccomodationType = accomodationtype,
                             ReservationDate = DateTime.Today,
@@ -820,15 +821,6 @@ namespace _4C_s_Management_System
             double totalHours = duration.TotalHours;
 
             double totalPrice = totalHours * hourlyRate;
-
-            // APPLY ROOM MULTIPLIER
-            if (RR_RoomTypesCB.SelectedIndex != 2)
-            {
-                if (capacity == "Double Room")
-                {
-                    totalPrice *= 2;
-                }
-            }
 
             totalPrice = Math.Round(totalPrice, 2);
 
