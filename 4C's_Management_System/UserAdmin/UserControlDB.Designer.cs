@@ -1837,6 +1837,7 @@
             guna2HtmlLabel24.Size = new Size(213, 28);
             guna2HtmlLabel24.TabIndex = 32;
             guna2HtmlLabel24.Text = "Housekeeping Status";
+            guna2HtmlLabel24.Click += guna2HtmlLabel24_Click;
             // 
             // guna2Panel12
             // 

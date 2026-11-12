@@ -182,9 +182,9 @@
             guna2HtmlLabel3.Location = new Point(99, 35);
             guna2HtmlLabel3.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(62, 40);
+            guna2HtmlLabel3.Size = new Size(39, 40);
             guna2HtmlLabel3.TabIndex = 26;
-            guna2HtmlLabel3.Text = "78%";
+            guna2HtmlLabel3.Text = "__";
             // 
             // guna2HtmlLabel6
             // 
@@ -206,9 +206,9 @@
             guna2HtmlLabel23.Location = new Point(91, 35);
             guna2HtmlLabel23.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel23.Name = "guna2HtmlLabel23";
-            guna2HtmlLabel23.Size = new Size(37, 40);
+            guna2HtmlLabel23.Size = new Size(39, 40);
             guna2HtmlLabel23.TabIndex = 21;
-            guna2HtmlLabel23.Text = "86";
+            guna2HtmlLabel23.Text = "__";
             // 
             // guna2HtmlLabel24
             // 
@@ -230,9 +230,9 @@
             guna2HtmlLabel7.Location = new Point(89, 35);
             guna2HtmlLabel7.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(54, 40);
+            guna2HtmlLabel7.Size = new Size(39, 40);
             guna2HtmlLabel7.TabIndex = 28;
-            guna2HtmlLabel7.Text = "124";
+            guna2HtmlLabel7.Text = "__";
             // 
             // guna2HtmlLabel5
             // 
@@ -242,9 +242,9 @@
             guna2HtmlLabel5.Location = new Point(112, 36);
             guna2HtmlLabel5.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(114, 40);
+            guna2HtmlLabel5.Size = new Size(39, 40);
             guna2HtmlLabel5.TabIndex = 19;
-            guna2HtmlLabel5.Text = "185,400";
+            guna2HtmlLabel5.Text = "__";
             // 
             // guna2HtmlLabel4
             // 

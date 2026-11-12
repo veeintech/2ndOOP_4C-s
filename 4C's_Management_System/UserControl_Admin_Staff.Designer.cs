@@ -626,7 +626,7 @@
             guna2TextBox2.PlaceholderText = "malapotej@gmail.com";
             guna2TextBox2.SelectedText = "";
             guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            guna2TextBox2.Size = new Size(329, 28);
+            guna2TextBox2.Size = new Size(329, 30);
             guna2TextBox2.TabIndex = 133;
             // 
             // guna2CirclePictureBox12
@@ -1791,9 +1791,9 @@
             guna2HtmlLabel50.Font = new Font("Berlin Sans FB", 12F);
             guna2HtmlLabel50.Location = new Point(85, 567);
             guna2HtmlLabel50.Name = "guna2HtmlLabel50";
-            guna2HtmlLabel50.Size = new Size(56, 25);
+            guna2HtmlLabel50.Size = new Size(35, 25);
             guna2HtmlLabel50.TabIndex = 148;
-            guna2HtmlLabel50.Text = "Active";
+            guna2HtmlLabel50.Text = "----";
             // 
             // guna2CirclePictureBox15
             // 
@@ -1814,9 +1814,9 @@
             guna2HtmlLabel49.Font = new Font("Berlin Sans FB", 12F);
             guna2HtmlLabel49.Location = new Point(79, 445);
             guna2HtmlLabel49.Name = "guna2HtmlLabel49";
-            guna2HtmlLabel49.Size = new Size(130, 25);
+            guna2HtmlLabel49.Size = new Size(43, 25);
             guna2HtmlLabel49.TabIndex = 146;
-            guna2HtmlLabel49.Text = "Room Manager";
+            guna2HtmlLabel49.Text = "-----";
             // 
             // btnReject
             // 
@@ -1842,9 +1842,9 @@
             guna2HtmlLabel23.Font = new Font("Berlin Sans FB", 12F);
             guna2HtmlLabel23.Location = new Point(79, 411);
             guna2HtmlLabel23.Name = "guna2HtmlLabel23";
-            guna2HtmlLabel23.Size = new Size(76, 25);
+            guna2HtmlLabel23.Size = new Size(35, 25);
             guna2HtmlLabel23.TabIndex = 136;
-            guna2HtmlLabel23.Text = "STF- 001";
+            guna2HtmlLabel23.Text = "----";
             // 
             // guna2CirclePictureBox8
             // 
@@ -1884,9 +1884,9 @@
             guna2HtmlLabel45.Font = new Font("Berlin Sans FB", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel45.Location = new Point(85, 170);
             guna2HtmlLabel45.Name = "guna2HtmlLabel45";
-            guna2HtmlLabel45.Size = new Size(182, 25);
+            guna2HtmlLabel45.Size = new Size(43, 25);
             guna2HtmlLabel45.TabIndex = 132;
-            guna2HtmlLabel45.Text = "Venice Alces Calaluan";
+            guna2HtmlLabel45.Text = "-----";
             // 
             // guna2CirclePictureBox7
             // 
@@ -1947,9 +1947,9 @@
             guna2HtmlLabel18.ForeColor = Color.Black;
             guna2HtmlLabel18.Location = new Point(83, 241);
             guna2HtmlLabel18.Name = "guna2HtmlLabel18";
-            guna2HtmlLabel18.Size = new Size(73, 25);
+            guna2HtmlLabel18.Size = new Size(51, 25);
             guna2HtmlLabel18.TabIndex = 109;
-            guna2HtmlLabel18.Text = "091******";
+            guna2HtmlLabel18.Text = "------";
             // 
             // guna2PictureBox14
             // 
@@ -1971,9 +1971,9 @@
             guna2HtmlLabel25.ForeColor = Color.Black;
             guna2HtmlLabel25.Location = new Point(86, 210);
             guna2HtmlLabel25.Name = "guna2HtmlLabel25";
-            guna2HtmlLabel25.Size = new Size(61, 22);
+            guna2HtmlLabel25.Size = new Size(31, 22);
             guna2HtmlLabel25.TabIndex = 130;
-            guna2HtmlLabel25.Text = "Female";
+            guna2HtmlLabel25.Text = "----";
             // 
             // guna2HtmlLabel22
             // 
@@ -1982,9 +1982,9 @@
             guna2HtmlLabel22.ForeColor = Color.Black;
             guna2HtmlLabel22.Location = new Point(82, 486);
             guna2HtmlLabel22.Name = "guna2HtmlLabel22";
-            guna2HtmlLabel22.Size = new Size(110, 25);
+            guna2HtmlLabel22.Size = new Size(35, 25);
             guna2HtmlLabel22.TabIndex = 117;
-            guna2HtmlLabel22.Text = "Nov. 12, 2012";
+            guna2HtmlLabel22.Text = "----";
             // 
             // guna2HtmlLabel20
             // 
@@ -1993,9 +1993,9 @@
             guna2HtmlLabel20.ForeColor = Color.Black;
             guna2HtmlLabel20.Location = new Point(99, 531);
             guna2HtmlLabel20.Name = "guna2HtmlLabel20";
-            guna2HtmlLabel20.Size = new Size(112, 22);
+            guna2HtmlLabel20.Size = new Size(85, 22);
             guna2HtmlLabel20.TabIndex = 119;
-            guna2HtmlLabel20.Text = "22,000/month";
+            guna2HtmlLabel20.Text = "----/month";
             // 
             // guna2CirclePictureBox4
             // 
@@ -2055,9 +2055,9 @@
             guna2HtmlLabel19.ForeColor = Color.Black;
             guna2HtmlLabel19.Location = new Point(80, 313);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
-            guna2HtmlLabel19.Size = new Size(237, 22);
+            guna2HtmlLabel19.Size = new Size(38, 22);
             guna2HtmlLabel19.TabIndex = 115;
-            guna2HtmlLabel19.Text = "Calapan City, Oriental Mindoro";
+            guna2HtmlLabel19.Text = "-----";
             // 
             // guna2PictureBox15
             // 
@@ -2079,9 +2079,9 @@
             guna2HtmlLabel27.ForeColor = Color.Black;
             guna2HtmlLabel27.Location = new Point(96, 52);
             guna2HtmlLabel27.Name = "guna2HtmlLabel27";
-            guna2HtmlLabel27.Size = new Size(194, 22);
+            guna2HtmlLabel27.Size = new Size(104, 22);
             guna2HtmlLabel27.TabIndex = 96;
-            guna2HtmlLabel27.Text = "Room Manager · STF-001";
+            guna2HtmlLabel27.Text = "----- - -------";
             // 
             // guna2HtmlLabel21
             // 
@@ -2090,9 +2090,9 @@
             guna2HtmlLabel21.ForeColor = Color.Black;
             guna2HtmlLabel21.Location = new Point(83, 272);
             guna2HtmlLabel21.Name = "guna2HtmlLabel21";
-            guna2HtmlLabel21.Size = new Size(151, 25);
+            guna2HtmlLabel21.Size = new Size(43, 25);
             guna2HtmlLabel21.TabIndex = 113;
-            guna2HtmlLabel21.Text = "venice@gmail.com";
+            guna2HtmlLabel21.Text = "-----";
             // 
             // guna2Separator8
             // 
@@ -2150,13 +2150,13 @@
             guna2HtmlLabel39.ForeColor = Color.DarkGreen;
             guna2HtmlLabel39.Location = new Point(24, 3);
             guna2HtmlLabel39.Name = "guna2HtmlLabel39";
-            guna2HtmlLabel39.Size = new Size(46, 20);
+            guna2HtmlLabel39.Size = new Size(21, 20);
             guna2HtmlLabel39.TabIndex = 122;
-            guna2HtmlLabel39.Text = "Active";
+            guna2HtmlLabel39.Text = "---";
             // 
             // guna2vSeparator2
             // 
-            guna2vSeparator2.FillColor = Color.FromArgb(64, 64, 64);
+            guna2vSeparator2.FillColor = Color.Maroon;
             guna2vSeparator2.Location = new Point(48, 18);
             guna2vSeparator2.Name = "guna2vSeparator2";
             guna2vSeparator2.Size = new Size(11, 31);

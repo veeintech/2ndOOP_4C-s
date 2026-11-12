@@ -53,5 +53,26 @@ namespace _4C_s_Management_System
             }
         }
 
+
+        private void payM_payBTN_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                panelPOPUP.Visible = true;
+                UserControl_payment_panel paymentPanel = new UserControl_payment_panel();
+                MainControlClass.ShowControl(paymentPanel, panelPOPUP);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void UserControlPayment_Load(object sender, EventArgs e)
+        {
+            panelPOPUP.Visible = false;
+        }
     }
 }

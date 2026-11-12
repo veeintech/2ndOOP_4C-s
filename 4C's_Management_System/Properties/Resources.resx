@@ -133,11 +133,17 @@
   <data name="building" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\building.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PESOO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\PESOO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="staffid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\staffid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\user.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\calll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallet2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\wallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +169,14 @@
   <data name="location" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="location1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GCash Logo PNG Vector (EPS, SVG) Free Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\GCash Logo PNG Vector (EPS, SVG) Free Download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fill location2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\fill location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="room" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\room.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,14 +217,23 @@
   <data name="bed.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\bed.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DOLLAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\DOLLAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pips" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\pips.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clipboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\clipboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="banko" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\banko.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mpayment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\mpayment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,8 +265,8 @@
   <data name="baba" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\baba.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="staffers" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\staffers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\new user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tenant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\tenant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,11 +322,14 @@
   <data name="LogSign_Panel-removebg-preview(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\LogSign_Panel-removebg-preview(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\calll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maya" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\maya.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ux1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\ux.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="staffers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\staffers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="akar-icons--eye-closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\akar-icons--eye-closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,6 +343,9 @@
   <data name="failed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\failed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ux" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\ux.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -334,11 +358,20 @@
   <data name="bed4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\bed4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pepol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\pepol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bbq" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\bbq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="STACK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\STACK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\calll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="location1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\wallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,6 +388,9 @@
   <data name="circle-check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\circle-check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\pay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tenant1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\tenant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -370,8 +406,8 @@
   <data name="calll2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\calll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pepol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\pepol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -384,6 +420,9 @@
   </data>
   <data name="4C_s_Real_Estate_Emblem-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4C_s_Real_Estate_Emblem-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="branch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\branch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -406,8 +445,11 @@
   <data name="wallet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\wallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\ma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ma1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\ma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -418,7 +460,7 @@
   <data name="new user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\new user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="safe and secure1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\safe and secure1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

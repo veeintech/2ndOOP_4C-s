@@ -638,9 +638,9 @@
             guna2HtmlLabel14.ForeColor = Color.Black;
             guna2HtmlLabel14.Location = new Point(79, 311);
             guna2HtmlLabel14.Name = "guna2HtmlLabel14";
-            guna2HtmlLabel14.Size = new Size(73, 25);
+            guna2HtmlLabel14.Size = new Size(51, 25);
             guna2HtmlLabel14.TabIndex = 109;
-            guna2HtmlLabel14.Text = "091******";
+            guna2HtmlLabel14.Text = "------";
             // 
             // guna2PictureBox14
             // 
@@ -662,9 +662,9 @@
             guna2HtmlLabel25.ForeColor = Color.Black;
             guna2HtmlLabel25.Location = new Point(86, 425);
             guna2HtmlLabel25.Name = "guna2HtmlLabel25";
-            guna2HtmlLabel25.Size = new Size(61, 22);
+            guna2HtmlLabel25.Size = new Size(45, 22);
             guna2HtmlLabel25.TabIndex = 130;
-            guna2HtmlLabel25.Text = "Female";
+            guna2HtmlLabel25.Text = "------";
             // 
             // guna2HtmlLabel22
             // 
@@ -673,9 +673,9 @@
             guna2HtmlLabel22.ForeColor = Color.Black;
             guna2HtmlLabel22.Location = new Point(84, 529);
             guna2HtmlLabel22.Name = "guna2HtmlLabel22";
-            guna2HtmlLabel22.Size = new Size(110, 25);
+            guna2HtmlLabel22.Size = new Size(51, 25);
             guna2HtmlLabel22.TabIndex = 117;
-            guna2HtmlLabel22.Text = "Nov. 12, 2012";
+            guna2HtmlLabel22.Text = "------";
             // 
             // guna2HtmlLabel20
             // 
@@ -684,9 +684,9 @@
             guna2HtmlLabel20.ForeColor = Color.Black;
             guna2HtmlLabel20.Location = new Point(100, 572);
             guna2HtmlLabel20.Name = "guna2HtmlLabel20";
-            guna2HtmlLabel20.Size = new Size(112, 22);
+            guna2HtmlLabel20.Size = new Size(45, 22);
             guna2HtmlLabel20.TabIndex = 119;
-            guna2HtmlLabel20.Text = "22,000/month";
+            guna2HtmlLabel20.Text = "------";
             // 
             // guna2CirclePictureBox4
             // 
@@ -757,9 +757,9 @@
             guna2HtmlLabel19.ForeColor = Color.Black;
             guna2HtmlLabel19.Location = new Point(78, 386);
             guna2HtmlLabel19.Name = "guna2HtmlLabel19";
-            guna2HtmlLabel19.Size = new Size(237, 22);
+            guna2HtmlLabel19.Size = new Size(45, 22);
             guna2HtmlLabel19.TabIndex = 115;
-            guna2HtmlLabel19.Text = "Calapan City, Oriental Mindoro";
+            guna2HtmlLabel19.Text = "------";
             // 
             // guna2PictureBox10
             // 
@@ -781,9 +781,9 @@
             guna2HtmlLabel27.ForeColor = Color.Black;
             guna2HtmlLabel27.Location = new Point(86, 224);
             guna2HtmlLabel27.Name = "guna2HtmlLabel27";
-            guna2HtmlLabel27.Size = new Size(194, 22);
+            guna2HtmlLabel27.Size = new Size(38, 22);
             guna2HtmlLabel27.TabIndex = 96;
-            guna2HtmlLabel27.Text = "Room Manager · STF-001";
+            guna2HtmlLabel27.Text = "-----";
             // 
             // guna2HtmlLabel18
             // 
@@ -792,9 +792,9 @@
             guna2HtmlLabel18.ForeColor = Color.Black;
             guna2HtmlLabel18.Location = new Point(82, 343);
             guna2HtmlLabel18.Name = "guna2HtmlLabel18";
-            guna2HtmlLabel18.Size = new Size(151, 25);
+            guna2HtmlLabel18.Size = new Size(51, 25);
             guna2HtmlLabel18.TabIndex = 113;
-            guna2HtmlLabel18.Text = "venice@gmail.com";
+            guna2HtmlLabel18.Text = "------";
             // 
             // guna2Separator8
             // 
@@ -811,9 +811,9 @@
             guna2HtmlLabel21.ForeColor = Color.Black;
             guna2HtmlLabel21.Location = new Point(66, 199);
             guna2HtmlLabel21.Name = "guna2HtmlLabel21";
-            guna2HtmlLabel21.Size = new Size(232, 29);
+            guna2HtmlLabel21.Size = new Size(53, 29);
             guna2HtmlLabel21.TabIndex = 91;
-            guna2HtmlLabel21.Text = "Venice Alces Calaluan";
+            guna2HtmlLabel21.Text = "-----";
             // 
             // guna2PictureBox1
             // 
@@ -1154,9 +1154,9 @@
             guna2HtmlLabel17.ForeColor = Color.DarkGreen;
             guna2HtmlLabel17.Location = new Point(24, 3);
             guna2HtmlLabel17.Name = "guna2HtmlLabel17";
-            guna2HtmlLabel17.Size = new Size(46, 20);
+            guna2HtmlLabel17.Size = new Size(21, 20);
             guna2HtmlLabel17.TabIndex = 122;
-            guna2HtmlLabel17.Text = "Active";
+            guna2HtmlLabel17.Text = "---";
             // 
             // guna2Panel10
             // 
