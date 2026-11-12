@@ -74,6 +74,7 @@
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             SU_conpasstxt = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox13).BeginInit();
@@ -276,9 +277,9 @@
             SU_trmconCB.ForeColor = Color.FromArgb(74, 14, 14);
             SU_trmconCB.Location = new Point(149, 546);
             SU_trmconCB.Name = "SU_trmconCB";
-            SU_trmconCB.Size = new Size(274, 23);
+            SU_trmconCB.Size = new Size(35, 23);
             SU_trmconCB.TabIndex = 37;
-            SU_trmconCB.Text = " I agree to the Terms and Condition";
+            SU_trmconCB.Text = " ";
             SU_trmconCB.UncheckedState.BorderColor = Color.FromArgb(64, 64, 64);
             SU_trmconCB.UncheckedState.BorderRadius = 0;
             SU_trmconCB.UncheckedState.BorderThickness = 1;
@@ -427,6 +428,16 @@
             SU_conpasstxt.Size = new Size(487, 48);
             SU_conpasstxt.TabIndex = 31;
             // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Location = new Point(171, 546);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(247, 21);
+            guna2HtmlLabel1.TabIndex = 54;
+            guna2HtmlLabel1.Text = "I agree to the Terms and Condition";
+            // 
             // UserControlSU
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -434,6 +445,7 @@
             BackColor = Color.FromArgb(255, 249, 239);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(guna2HtmlLabel1);
             Controls.Add(SU_openedeyeBtn);
             Controls.Add(SU_closedeyeBtn);
             Controls.Add(LOGIN_lblsignup);
@@ -500,5 +512,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox SU_conpasstxt;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

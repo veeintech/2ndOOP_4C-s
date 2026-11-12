@@ -78,6 +78,13 @@ namespace _4C_s_Management_System
                 return;
             }
 
+            if(password.Length <= 8)
+            {
+                MessageBox.Show("Password must consist of at least 8 characters!", "Information", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             try
             {
 

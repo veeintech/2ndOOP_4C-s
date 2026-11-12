@@ -83,16 +83,6 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                if (!LOGIN_ternconCB.Checked)
-                {
-                    MessageBox.Show(
-                        "Please accept the terms and conditions to proceed.",
-                        "Terms and Conditions",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
-                }
-
                 var branchResult = AppDB.Instance.Scalar(branchQuery, parameters);
                 string branchId = branchResult?.ToString() ?? string.Empty;
 

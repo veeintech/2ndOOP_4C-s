@@ -124,9 +124,9 @@
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             Panel_Gcash_Payment = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_GcashAmountSentBTN = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_GcashSenderNameTXT = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_GcashRefereneceNumTXT = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -138,9 +138,9 @@
             guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_MayaAmountSentTXT = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_MayaSenderNameTXT = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_MayaRefereneceNumTXT = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -148,19 +148,19 @@
             guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_BankAmountSentTXT = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_BankSenderNameTXT = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_BankReferenceNumTXT = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel20 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             Panel_CashPayment = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_CashChangeTXT = new Guna.UI2.WinForms.Guna2TextBox();
             guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
+            PD_CashCashRecievedTXT = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel25 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -377,7 +377,10 @@
             // 
             // guna2CirclePictureBox1
             // 
-            guna2CirclePictureBox1.Image = Properties.Resources.STACK;
+            guna2CirclePictureBox1.BackColor = Color.Transparent;
+            guna2CirclePictureBox1.BackgroundImage = Properties.Resources.STACK;
+            guna2CirclePictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            guna2CirclePictureBox1.FillColor = Color.Transparent;
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(33, 237);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -390,6 +393,8 @@
             // 
             // guna2CirclePictureBox2
             // 
+            guna2CirclePictureBox2.BackColor = Color.Transparent;
+            guna2CirclePictureBox2.FillColor = Color.Transparent;
             guna2CirclePictureBox2.Image = Properties.Resources.GCash_Logo_PNG_Vector__EPS__SVG__Free_Download;
             guna2CirclePictureBox2.ImageRotate = 0F;
             guna2CirclePictureBox2.Location = new Point(148, 241);
@@ -407,6 +412,7 @@
             guna2PictureBox2.BackColor = Color.Transparent;
             guna2PictureBox2.BorderRadius = 1;
             guna2PictureBox2.CustomizableEdges = customizableEdges17;
+            guna2PictureBox2.FillColor = Color.Transparent;
             guna2PictureBox2.Image = Properties.Resources.ma1;
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.Location = new Point(243, 241);
@@ -422,6 +428,7 @@
             guna2PictureBox3.BackColor = Color.Transparent;
             guna2PictureBox3.BorderRadius = 1;
             guna2PictureBox3.CustomizableEdges = customizableEdges19;
+            guna2PictureBox3.FillColor = Color.Transparent;
             guna2PictureBox3.Image = Properties.Resources.banko;
             guna2PictureBox3.ImageRotate = 0F;
             guna2PictureBox3.Location = new Point(358, 239);
@@ -435,6 +442,7 @@
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
+            guna2HtmlLabel6.Enabled = false;
             guna2HtmlLabel6.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel6.ForeColor = Color.Maroon;
             guna2HtmlLabel6.Location = new Point(40, 279);
@@ -481,9 +489,9 @@
             Panel_Gcash_Payment.AutoRoundedCorners = true;
             Panel_Gcash_Payment.BorderRadius = 80;
             Panel_Gcash_Payment.Controls.Add(guna2PictureBox4);
-            Panel_Gcash_Payment.Controls.Add(guna2TextBox3);
-            Panel_Gcash_Payment.Controls.Add(guna2TextBox2);
-            Panel_Gcash_Payment.Controls.Add(guna2TextBox1);
+            Panel_Gcash_Payment.Controls.Add(PD_GcashAmountSentBTN);
+            Panel_Gcash_Payment.Controls.Add(PD_GcashSenderNameTXT);
+            Panel_Gcash_Payment.Controls.Add(PD_GcashRefereneceNumTXT);
             Panel_Gcash_Payment.Controls.Add(guna2HtmlLabel13);
             Panel_Gcash_Payment.Controls.Add(guna2HtmlLabel12);
             Panel_Gcash_Payment.Controls.Add(guna2HtmlLabel11);
@@ -512,68 +520,68 @@
             guna2PictureBox4.TabIndex = 58;
             guna2PictureBox4.TabStop = false;
             // 
-            // guna2TextBox3
+            // PD_GcashAmountSentBTN
             // 
-            guna2TextBox3.BorderColor = Color.Maroon;
-            guna2TextBox3.CustomizableEdges = customizableEdges23;
-            guna2TextBox3.DefaultText = "";
-            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Font = new Font("Segoe UI", 9F);
-            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Location = new Point(200, 123);
-            guna2TextBox3.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox3.Name = "guna2TextBox3";
-            guna2TextBox3.PlaceholderText = "Enter amount";
-            guna2TextBox3.SelectedText = "";
-            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2TextBox3.Size = new Size(210, 29);
-            guna2TextBox3.TabIndex = 17;
+            PD_GcashAmountSentBTN.BorderColor = Color.Maroon;
+            PD_GcashAmountSentBTN.CustomizableEdges = customizableEdges23;
+            PD_GcashAmountSentBTN.DefaultText = "";
+            PD_GcashAmountSentBTN.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_GcashAmountSentBTN.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_GcashAmountSentBTN.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_GcashAmountSentBTN.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_GcashAmountSentBTN.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_GcashAmountSentBTN.Font = new Font("Segoe UI", 9F);
+            PD_GcashAmountSentBTN.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_GcashAmountSentBTN.Location = new Point(200, 124);
+            PD_GcashAmountSentBTN.Margin = new Padding(3, 4, 3, 4);
+            PD_GcashAmountSentBTN.Name = "PD_GcashAmountSentBTN";
+            PD_GcashAmountSentBTN.PlaceholderText = "Enter amount";
+            PD_GcashAmountSentBTN.SelectedText = "";
+            PD_GcashAmountSentBTN.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            PD_GcashAmountSentBTN.Size = new Size(210, 29);
+            PD_GcashAmountSentBTN.TabIndex = 17;
             // 
-            // guna2TextBox2
+            // PD_GcashSenderNameTXT
             // 
-            guna2TextBox2.BorderColor = Color.Maroon;
-            guna2TextBox2.CustomizableEdges = customizableEdges25;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Font = new Font("Segoe UI", 9F);
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(162, 83);
-            guna2TextBox2.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PlaceholderText = "Enter sender name";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2TextBox2.Size = new Size(249, 29);
-            guna2TextBox2.TabIndex = 16;
+            PD_GcashSenderNameTXT.BorderColor = Color.Maroon;
+            PD_GcashSenderNameTXT.CustomizableEdges = customizableEdges25;
+            PD_GcashSenderNameTXT.DefaultText = "";
+            PD_GcashSenderNameTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_GcashSenderNameTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_GcashSenderNameTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_GcashSenderNameTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_GcashSenderNameTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_GcashSenderNameTXT.Font = new Font("Segoe UI", 9F);
+            PD_GcashSenderNameTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_GcashSenderNameTXT.Location = new Point(162, 83);
+            PD_GcashSenderNameTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_GcashSenderNameTXT.Name = "PD_GcashSenderNameTXT";
+            PD_GcashSenderNameTXT.PlaceholderText = "Enter sender name";
+            PD_GcashSenderNameTXT.SelectedText = "";
+            PD_GcashSenderNameTXT.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            PD_GcashSenderNameTXT.Size = new Size(249, 29);
+            PD_GcashSenderNameTXT.TabIndex = 16;
             // 
-            // guna2TextBox1
+            // PD_GcashRefereneceNumTXT
             // 
-            guna2TextBox1.BorderColor = Color.Maroon;
-            guna2TextBox1.CustomizableEdges = customizableEdges27;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(161, 45);
-            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PlaceholderText = "Enter reference number";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2TextBox1.Size = new Size(249, 29);
-            guna2TextBox1.TabIndex = 15;
+            PD_GcashRefereneceNumTXT.BorderColor = Color.Maroon;
+            PD_GcashRefereneceNumTXT.CustomizableEdges = customizableEdges27;
+            PD_GcashRefereneceNumTXT.DefaultText = "";
+            PD_GcashRefereneceNumTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_GcashRefereneceNumTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_GcashRefereneceNumTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_GcashRefereneceNumTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_GcashRefereneceNumTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_GcashRefereneceNumTXT.Font = new Font("Segoe UI", 9F);
+            PD_GcashRefereneceNumTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_GcashRefereneceNumTXT.Location = new Point(161, 45);
+            PD_GcashRefereneceNumTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_GcashRefereneceNumTXT.Name = "PD_GcashRefereneceNumTXT";
+            PD_GcashRefereneceNumTXT.PlaceholderText = "Enter reference number";
+            PD_GcashRefereneceNumTXT.SelectedText = "";
+            PD_GcashRefereneceNumTXT.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            PD_GcashRefereneceNumTXT.Size = new Size(249, 29);
+            PD_GcashRefereneceNumTXT.TabIndex = 15;
             // 
             // guna2HtmlLabel13
             // 
@@ -681,14 +689,14 @@
             Panel_MayaPayment.Controls.Add(guna2HtmlLabel17);
             Panel_MayaPayment.Controls.Add(guna2PictureBox8);
             Panel_MayaPayment.Controls.Add(guna2PictureBox5);
-            Panel_MayaPayment.Controls.Add(guna2TextBox4);
-            Panel_MayaPayment.Controls.Add(guna2TextBox5);
-            Panel_MayaPayment.Controls.Add(guna2TextBox6);
+            Panel_MayaPayment.Controls.Add(PD_MayaAmountSentTXT);
+            Panel_MayaPayment.Controls.Add(PD_MayaSenderNameTXT);
+            Panel_MayaPayment.Controls.Add(PD_MayaRefereneceNumTXT);
             Panel_MayaPayment.Controls.Add(guna2HtmlLabel14);
             Panel_MayaPayment.Controls.Add(guna2HtmlLabel15);
             Panel_MayaPayment.Controls.Add(guna2HtmlLabel16);
             Panel_MayaPayment.CustomizableEdges = customizableEdges46;
-            Panel_MayaPayment.Location = new Point(547, 39);
+            Panel_MayaPayment.Location = new Point(13, 311);
             Panel_MayaPayment.Name = "Panel_MayaPayment";
             Panel_MayaPayment.ShadowDecoration.CustomizableEdges = customizableEdges47;
             Panel_MayaPayment.Size = new Size(424, 163);
@@ -736,68 +744,68 @@
             guna2PictureBox5.TabIndex = 58;
             guna2PictureBox5.TabStop = false;
             // 
-            // guna2TextBox4
+            // PD_MayaAmountSentTXT
             // 
-            guna2TextBox4.BorderColor = Color.Maroon;
-            guna2TextBox4.CustomizableEdges = customizableEdges40;
-            guna2TextBox4.DefaultText = "";
-            guna2TextBox4.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox4.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox4.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox4.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox4.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox4.Font = new Font("Segoe UI", 9F);
-            guna2TextBox4.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox4.Location = new Point(200, 123);
-            guna2TextBox4.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox4.Name = "guna2TextBox4";
-            guna2TextBox4.PlaceholderText = "Enter amount";
-            guna2TextBox4.SelectedText = "";
-            guna2TextBox4.ShadowDecoration.CustomizableEdges = customizableEdges41;
-            guna2TextBox4.Size = new Size(210, 29);
-            guna2TextBox4.TabIndex = 17;
+            PD_MayaAmountSentTXT.BorderColor = Color.Maroon;
+            PD_MayaAmountSentTXT.CustomizableEdges = customizableEdges40;
+            PD_MayaAmountSentTXT.DefaultText = "";
+            PD_MayaAmountSentTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_MayaAmountSentTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_MayaAmountSentTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_MayaAmountSentTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_MayaAmountSentTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_MayaAmountSentTXT.Font = new Font("Segoe UI", 9F);
+            PD_MayaAmountSentTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_MayaAmountSentTXT.Location = new Point(200, 123);
+            PD_MayaAmountSentTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_MayaAmountSentTXT.Name = "PD_MayaAmountSentTXT";
+            PD_MayaAmountSentTXT.PlaceholderText = "Enter amount";
+            PD_MayaAmountSentTXT.SelectedText = "";
+            PD_MayaAmountSentTXT.ShadowDecoration.CustomizableEdges = customizableEdges41;
+            PD_MayaAmountSentTXT.Size = new Size(210, 29);
+            PD_MayaAmountSentTXT.TabIndex = 17;
             // 
-            // guna2TextBox5
+            // PD_MayaSenderNameTXT
             // 
-            guna2TextBox5.BorderColor = Color.Maroon;
-            guna2TextBox5.CustomizableEdges = customizableEdges42;
-            guna2TextBox5.DefaultText = "";
-            guna2TextBox5.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox5.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox5.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox5.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox5.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox5.Font = new Font("Segoe UI", 9F);
-            guna2TextBox5.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox5.Location = new Point(162, 83);
-            guna2TextBox5.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox5.Name = "guna2TextBox5";
-            guna2TextBox5.PlaceholderText = "Enter sender name";
-            guna2TextBox5.SelectedText = "";
-            guna2TextBox5.ShadowDecoration.CustomizableEdges = customizableEdges43;
-            guna2TextBox5.Size = new Size(249, 29);
-            guna2TextBox5.TabIndex = 16;
+            PD_MayaSenderNameTXT.BorderColor = Color.Maroon;
+            PD_MayaSenderNameTXT.CustomizableEdges = customizableEdges42;
+            PD_MayaSenderNameTXT.DefaultText = "";
+            PD_MayaSenderNameTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_MayaSenderNameTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_MayaSenderNameTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_MayaSenderNameTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_MayaSenderNameTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_MayaSenderNameTXT.Font = new Font("Segoe UI", 9F);
+            PD_MayaSenderNameTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_MayaSenderNameTXT.Location = new Point(162, 83);
+            PD_MayaSenderNameTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_MayaSenderNameTXT.Name = "PD_MayaSenderNameTXT";
+            PD_MayaSenderNameTXT.PlaceholderText = "Enter sender name";
+            PD_MayaSenderNameTXT.SelectedText = "";
+            PD_MayaSenderNameTXT.ShadowDecoration.CustomizableEdges = customizableEdges43;
+            PD_MayaSenderNameTXT.Size = new Size(249, 29);
+            PD_MayaSenderNameTXT.TabIndex = 16;
             // 
-            // guna2TextBox6
+            // PD_MayaRefereneceNumTXT
             // 
-            guna2TextBox6.BorderColor = Color.Maroon;
-            guna2TextBox6.CustomizableEdges = customizableEdges44;
-            guna2TextBox6.DefaultText = "";
-            guna2TextBox6.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox6.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox6.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox6.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox6.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox6.Font = new Font("Segoe UI", 9F);
-            guna2TextBox6.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox6.Location = new Point(161, 45);
-            guna2TextBox6.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox6.Name = "guna2TextBox6";
-            guna2TextBox6.PlaceholderText = "Enter reference number";
-            guna2TextBox6.SelectedText = "";
-            guna2TextBox6.ShadowDecoration.CustomizableEdges = customizableEdges45;
-            guna2TextBox6.Size = new Size(249, 29);
-            guna2TextBox6.TabIndex = 15;
+            PD_MayaRefereneceNumTXT.BorderColor = Color.Maroon;
+            PD_MayaRefereneceNumTXT.CustomizableEdges = customizableEdges44;
+            PD_MayaRefereneceNumTXT.DefaultText = "";
+            PD_MayaRefereneceNumTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_MayaRefereneceNumTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_MayaRefereneceNumTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_MayaRefereneceNumTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_MayaRefereneceNumTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_MayaRefereneceNumTXT.Font = new Font("Segoe UI", 9F);
+            PD_MayaRefereneceNumTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_MayaRefereneceNumTXT.Location = new Point(161, 45);
+            PD_MayaRefereneceNumTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_MayaRefereneceNumTXT.Name = "PD_MayaRefereneceNumTXT";
+            PD_MayaRefereneceNumTXT.PlaceholderText = "Enter reference number";
+            PD_MayaRefereneceNumTXT.SelectedText = "";
+            PD_MayaRefereneceNumTXT.ShadowDecoration.CustomizableEdges = customizableEdges45;
+            PD_MayaRefereneceNumTXT.Size = new Size(249, 29);
+            PD_MayaRefereneceNumTXT.TabIndex = 15;
             // 
             // guna2HtmlLabel14
             // 
@@ -839,14 +847,14 @@
             Panel_BankTransPayment.Controls.Add(guna2HtmlLabel21);
             Panel_BankTransPayment.Controls.Add(guna2PictureBox9);
             Panel_BankTransPayment.Controls.Add(guna2PictureBox6);
-            Panel_BankTransPayment.Controls.Add(guna2TextBox7);
-            Panel_BankTransPayment.Controls.Add(guna2TextBox8);
-            Panel_BankTransPayment.Controls.Add(guna2TextBox9);
+            Panel_BankTransPayment.Controls.Add(PD_BankAmountSentTXT);
+            Panel_BankTransPayment.Controls.Add(PD_BankSenderNameTXT);
+            Panel_BankTransPayment.Controls.Add(PD_BankReferenceNumTXT);
             Panel_BankTransPayment.Controls.Add(guna2HtmlLabel18);
             Panel_BankTransPayment.Controls.Add(guna2HtmlLabel19);
             Panel_BankTransPayment.Controls.Add(guna2HtmlLabel20);
             Panel_BankTransPayment.CustomizableEdges = customizableEdges58;
-            Panel_BankTransPayment.Location = new Point(547, 221);
+            Panel_BankTransPayment.Location = new Point(13, 311);
             Panel_BankTransPayment.Name = "Panel_BankTransPayment";
             Panel_BankTransPayment.ShadowDecoration.CustomizableEdges = customizableEdges59;
             Panel_BankTransPayment.Size = new Size(424, 163);
@@ -894,68 +902,68 @@
             guna2PictureBox6.TabIndex = 58;
             guna2PictureBox6.TabStop = false;
             // 
-            // guna2TextBox7
+            // PD_BankAmountSentTXT
             // 
-            guna2TextBox7.BorderColor = Color.Maroon;
-            guna2TextBox7.CustomizableEdges = customizableEdges52;
-            guna2TextBox7.DefaultText = "";
-            guna2TextBox7.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox7.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox7.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox7.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox7.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox7.Font = new Font("Segoe UI", 9F);
-            guna2TextBox7.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox7.Location = new Point(200, 123);
-            guna2TextBox7.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox7.Name = "guna2TextBox7";
-            guna2TextBox7.PlaceholderText = "Enter amount";
-            guna2TextBox7.SelectedText = "";
-            guna2TextBox7.ShadowDecoration.CustomizableEdges = customizableEdges53;
-            guna2TextBox7.Size = new Size(210, 30);
-            guna2TextBox7.TabIndex = 17;
+            PD_BankAmountSentTXT.BorderColor = Color.Maroon;
+            PD_BankAmountSentTXT.CustomizableEdges = customizableEdges52;
+            PD_BankAmountSentTXT.DefaultText = "";
+            PD_BankAmountSentTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_BankAmountSentTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_BankAmountSentTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_BankAmountSentTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_BankAmountSentTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_BankAmountSentTXT.Font = new Font("Segoe UI", 9F);
+            PD_BankAmountSentTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_BankAmountSentTXT.Location = new Point(200, 123);
+            PD_BankAmountSentTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_BankAmountSentTXT.Name = "PD_BankAmountSentTXT";
+            PD_BankAmountSentTXT.PlaceholderText = "Enter amount";
+            PD_BankAmountSentTXT.SelectedText = "";
+            PD_BankAmountSentTXT.ShadowDecoration.CustomizableEdges = customizableEdges53;
+            PD_BankAmountSentTXT.Size = new Size(210, 30);
+            PD_BankAmountSentTXT.TabIndex = 17;
             // 
-            // guna2TextBox8
+            // PD_BankSenderNameTXT
             // 
-            guna2TextBox8.BorderColor = Color.Maroon;
-            guna2TextBox8.CustomizableEdges = customizableEdges54;
-            guna2TextBox8.DefaultText = "";
-            guna2TextBox8.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox8.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox8.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox8.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox8.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox8.Font = new Font("Segoe UI", 9F);
-            guna2TextBox8.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox8.Location = new Point(162, 83);
-            guna2TextBox8.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox8.Name = "guna2TextBox8";
-            guna2TextBox8.PlaceholderText = "Enter sender name";
-            guna2TextBox8.SelectedText = "";
-            guna2TextBox8.ShadowDecoration.CustomizableEdges = customizableEdges55;
-            guna2TextBox8.Size = new Size(249, 30);
-            guna2TextBox8.TabIndex = 16;
+            PD_BankSenderNameTXT.BorderColor = Color.Maroon;
+            PD_BankSenderNameTXT.CustomizableEdges = customizableEdges54;
+            PD_BankSenderNameTXT.DefaultText = "";
+            PD_BankSenderNameTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_BankSenderNameTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_BankSenderNameTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_BankSenderNameTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_BankSenderNameTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_BankSenderNameTXT.Font = new Font("Segoe UI", 9F);
+            PD_BankSenderNameTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_BankSenderNameTXT.Location = new Point(162, 83);
+            PD_BankSenderNameTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_BankSenderNameTXT.Name = "PD_BankSenderNameTXT";
+            PD_BankSenderNameTXT.PlaceholderText = "Enter sender name";
+            PD_BankSenderNameTXT.SelectedText = "";
+            PD_BankSenderNameTXT.ShadowDecoration.CustomizableEdges = customizableEdges55;
+            PD_BankSenderNameTXT.Size = new Size(249, 30);
+            PD_BankSenderNameTXT.TabIndex = 16;
             // 
-            // guna2TextBox9
+            // PD_BankReferenceNumTXT
             // 
-            guna2TextBox9.BorderColor = Color.Maroon;
-            guna2TextBox9.CustomizableEdges = customizableEdges56;
-            guna2TextBox9.DefaultText = "";
-            guna2TextBox9.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox9.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox9.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox9.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox9.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox9.Font = new Font("Segoe UI", 9F);
-            guna2TextBox9.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox9.Location = new Point(161, 46);
-            guna2TextBox9.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox9.Name = "guna2TextBox9";
-            guna2TextBox9.PlaceholderText = "Enter reference number";
-            guna2TextBox9.SelectedText = "";
-            guna2TextBox9.ShadowDecoration.CustomizableEdges = customizableEdges57;
-            guna2TextBox9.Size = new Size(249, 30);
-            guna2TextBox9.TabIndex = 15;
+            PD_BankReferenceNumTXT.BorderColor = Color.Maroon;
+            PD_BankReferenceNumTXT.CustomizableEdges = customizableEdges56;
+            PD_BankReferenceNumTXT.DefaultText = "";
+            PD_BankReferenceNumTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_BankReferenceNumTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_BankReferenceNumTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_BankReferenceNumTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_BankReferenceNumTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_BankReferenceNumTXT.Font = new Font("Segoe UI", 9F);
+            PD_BankReferenceNumTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_BankReferenceNumTXT.Location = new Point(161, 46);
+            PD_BankReferenceNumTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_BankReferenceNumTXT.Name = "PD_BankReferenceNumTXT";
+            PD_BankReferenceNumTXT.PlaceholderText = "Enter reference number";
+            PD_BankReferenceNumTXT.SelectedText = "";
+            PD_BankReferenceNumTXT.ShadowDecoration.CustomizableEdges = customizableEdges57;
+            PD_BankReferenceNumTXT.Size = new Size(249, 30);
+            PD_BankReferenceNumTXT.TabIndex = 15;
             // 
             // guna2HtmlLabel18
             // 
@@ -995,15 +1003,15 @@
             Panel_CashPayment.AutoRoundedCorners = true;
             Panel_CashPayment.BorderRadius = 80;
             Panel_CashPayment.Controls.Add(guna2PictureBox10);
-            Panel_CashPayment.Controls.Add(guna2TextBox11);
+            Panel_CashPayment.Controls.Add(PD_CashChangeTXT);
             Panel_CashPayment.Controls.Add(guna2CirclePictureBox4);
             Panel_CashPayment.Controls.Add(guna2HtmlLabel22);
             Panel_CashPayment.Controls.Add(guna2PictureBox11);
-            Panel_CashPayment.Controls.Add(guna2TextBox10);
+            Panel_CashPayment.Controls.Add(PD_CashCashRecievedTXT);
             Panel_CashPayment.Controls.Add(guna2HtmlLabel24);
             Panel_CashPayment.Controls.Add(guna2HtmlLabel25);
             Panel_CashPayment.CustomizableEdges = customizableEdges69;
-            Panel_CashPayment.Location = new Point(547, 406);
+            Panel_CashPayment.Location = new Point(13, 311);
             Panel_CashPayment.Name = "Panel_CashPayment";
             Panel_CashPayment.ShadowDecoration.CustomizableEdges = customizableEdges70;
             Panel_CashPayment.Size = new Size(424, 163);
@@ -1025,27 +1033,27 @@
             guna2PictureBox10.TabIndex = 61;
             guna2PictureBox10.TabStop = false;
             // 
-            // guna2TextBox11
+            // PD_CashChangeTXT
             // 
-            guna2TextBox11.BorderColor = Color.Maroon;
-            guna2TextBox11.CustomizableEdges = customizableEdges62;
-            guna2TextBox11.DefaultText = "";
-            guna2TextBox11.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox11.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox11.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox11.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox11.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox11.Font = new Font("Segoe UI", 9F);
-            guna2TextBox11.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox11.Location = new Point(200, 84);
-            guna2TextBox11.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox11.Name = "guna2TextBox11";
-            guna2TextBox11.PlaceholderText = "0.00";
-            guna2TextBox11.ReadOnly = true;
-            guna2TextBox11.SelectedText = "";
-            guna2TextBox11.ShadowDecoration.CustomizableEdges = customizableEdges63;
-            guna2TextBox11.Size = new Size(210, 29);
-            guna2TextBox11.TabIndex = 60;
+            PD_CashChangeTXT.BorderColor = Color.Maroon;
+            PD_CashChangeTXT.CustomizableEdges = customizableEdges62;
+            PD_CashChangeTXT.DefaultText = "";
+            PD_CashChangeTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_CashChangeTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_CashChangeTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_CashChangeTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_CashChangeTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_CashChangeTXT.Font = new Font("Segoe UI", 9F);
+            PD_CashChangeTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_CashChangeTXT.Location = new Point(200, 84);
+            PD_CashChangeTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_CashChangeTXT.Name = "PD_CashChangeTXT";
+            PD_CashChangeTXT.PlaceholderText = "0.00";
+            PD_CashChangeTXT.ReadOnly = true;
+            PD_CashChangeTXT.SelectedText = "";
+            PD_CashChangeTXT.ShadowDecoration.CustomizableEdges = customizableEdges63;
+            PD_CashChangeTXT.Size = new Size(210, 29);
+            PD_CashChangeTXT.TabIndex = 60;
             // 
             // guna2CirclePictureBox4
             // 
@@ -1087,26 +1095,26 @@
             guna2PictureBox11.TabIndex = 58;
             guna2PictureBox11.TabStop = false;
             // 
-            // guna2TextBox10
+            // PD_CashCashRecievedTXT
             // 
-            guna2TextBox10.BorderColor = Color.Maroon;
-            guna2TextBox10.CustomizableEdges = customizableEdges67;
-            guna2TextBox10.DefaultText = "";
-            guna2TextBox10.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox10.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox10.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox10.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox10.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox10.Font = new Font("Segoe UI", 9F);
-            guna2TextBox10.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox10.Location = new Point(201, 48);
-            guna2TextBox10.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox10.Name = "guna2TextBox10";
-            guna2TextBox10.PlaceholderText = "Enter amount";
-            guna2TextBox10.SelectedText = "";
-            guna2TextBox10.ShadowDecoration.CustomizableEdges = customizableEdges68;
-            guna2TextBox10.Size = new Size(210, 29);
-            guna2TextBox10.TabIndex = 17;
+            PD_CashCashRecievedTXT.BorderColor = Color.Maroon;
+            PD_CashCashRecievedTXT.CustomizableEdges = customizableEdges67;
+            PD_CashCashRecievedTXT.DefaultText = "";
+            PD_CashCashRecievedTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PD_CashCashRecievedTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PD_CashCashRecievedTXT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PD_CashCashRecievedTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PD_CashCashRecievedTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_CashCashRecievedTXT.Font = new Font("Segoe UI", 9F);
+            PD_CashCashRecievedTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PD_CashCashRecievedTXT.Location = new Point(201, 48);
+            PD_CashCashRecievedTXT.Margin = new Padding(3, 4, 3, 4);
+            PD_CashCashRecievedTXT.Name = "PD_CashCashRecievedTXT";
+            PD_CashCashRecievedTXT.PlaceholderText = "Enter amount";
+            PD_CashCashRecievedTXT.SelectedText = "";
+            PD_CashCashRecievedTXT.ShadowDecoration.CustomizableEdges = customizableEdges68;
+            PD_CashCashRecievedTXT.Size = new Size(210, 29);
+            PD_CashCashRecievedTXT.TabIndex = 17;
             // 
             // guna2HtmlLabel24
             // 
@@ -1171,6 +1179,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 249, 239);
+            BorderStyle = BorderStyle.Fixed3D;
             Controls.Add(guna2Panel5);
             Controls.Add(Panel_CashPayment);
             Controls.Add(Panel_BankTransPayment);
@@ -1197,7 +1206,7 @@
             Controls.Add(guna2PictureBox1);
             Controls.Add(guna2Panel1);
             Name = "UserControl_payment_panel";
-            Size = new Size(1041, 590);
+            Size = new Size(447, 586);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).EndInit();
@@ -1254,31 +1263,31 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2Panel Panel_Gcash_Payment;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox PD_GcashRefereneceNumTXT;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox PD_GcashAmountSentBTN;
+        private Guna.UI2.WinForms.Guna2TextBox PD_GcashSenderNameTXT;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2Button PD_cancelBTN;
         private Guna.UI2.WinForms.Guna2Button PD_ConfirmPaymenBTN;
         private Guna.UI2.WinForms.Guna2Panel Panel_MayaPayment;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
+        private Guna.UI2.WinForms.Guna2TextBox PD_MayaAmountSentTXT;
+        private Guna.UI2.WinForms.Guna2TextBox PD_MayaSenderNameTXT;
+        private Guna.UI2.WinForms.Guna2TextBox PD_MayaRefereneceNumTXT;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
         private Guna.UI2.WinForms.Guna2Panel Panel_BankTransPayment;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox9;
+        private Guna.UI2.WinForms.Guna2TextBox PD_BankAmountSentTXT;
+        private Guna.UI2.WinForms.Guna2TextBox PD_BankSenderNameTXT;
+        private Guna.UI2.WinForms.Guna2TextBox PD_BankReferenceNumTXT;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel20;
@@ -1287,11 +1296,11 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
         private Guna.UI2.WinForms.Guna2Panel Panel_CashPayment;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
+        private Guna.UI2.WinForms.Guna2TextBox PD_CashChangeTXT;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel22;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox11;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox10;
+        private Guna.UI2.WinForms.Guna2TextBox PD_CashCashRecievedTXT;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel24;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
