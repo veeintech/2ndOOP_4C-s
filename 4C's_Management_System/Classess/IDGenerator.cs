@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using Microsoft.Data.SqlClient;
 
 namespace _4C_s_Management_System
@@ -14,10 +13,10 @@ namespace _4C_s_Management_System
             object? result = AppDB.Instance.Scalar(
                   "EXEC dbo.GenerateNextIDNumber @Prefix, @BranchId",
               new
-                 {
-                        Prefix = prefix,
-                        BranchId = branchId
-                    }
+              {
+                  Prefix = prefix,
+                  BranchId = branchId
+              }
 );
 
             if (result == null || result == DBNull.Value)
@@ -40,7 +39,7 @@ namespace _4C_s_Management_System
 
             string branchNumber = parts[1];
 
-            return $"{prefix}-{branchNumber}-{number:D6}";
+            return $"{prefix}-{branchNumber}-{number:D3}";
         }
 
         // Generate Branch IDs without the branch number portion.
@@ -59,7 +58,7 @@ namespace _4C_s_Management_System
 
             long number = Convert.ToInt64(result);
 
-            return $"BRN-{number:D6}";
+            return $"BRN-{number:D3}";
         }
     }
 }

@@ -22,7 +22,8 @@ CREATE TABLE [dbo].[TBLRoom] (
     [Rate]     DECIMAL (10, 2) NOT NULL,
     [Status]   VARCHAR (15)    NOT NULL,
     CONSTRAINT [PK_TBLRoom] PRIMARY KEY CLUSTERED ([RoomId] ASC),
-    CONSTRAINT [FK_TBLRoom_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
+    CONSTRAINT [FK_TBLRoom_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId]),
+    CONSTRAINT [CK_TBLRoom_Rate] CHECK ([Rate] >= 0)
 );
 
 -- ==========================================
@@ -33,7 +34,7 @@ CREATE TABLE [dbo].[CustomerTbl] (
     [CustomerID]     VARCHAR (20)  NOT NULL,
     [BranchId]       VARCHAR (15)  NOT NULL,
     [Fullname]       VARCHAR (100) NOT NULL,
-    [ContactNumber]  VARCHAR (11)  NOT NULL,
+    [ContactNumber]  VARCHAR (20)  NOT NULL,
     [Address]        VARCHAR (200) NOT NULL,
     [CustomerType]   VARCHAR (50)  NOT NULL,
     [CustomerStatus] VARCHAR (20)  NOT NULL,
@@ -56,7 +57,9 @@ CREATE TABLE [dbo].[TenantTbl] (
     [MonthlyRent]        DECIMAL (10, 2) NOT NULL,
     [Status]             VARCHAR (20)    NOT NULL,
     CONSTRAINT [PK_TenantTbl] PRIMARY KEY CLUSTERED ([TenantId] ASC),
-    CONSTRAINT [FK_TenantTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
+    CONSTRAINT [FK_TenantTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId]),
+    CONSTRAINT [CK_TenantTbl_AgreementDates] CHECK ([AgreementEndDate] > [AgreementStartDate]),
+    CONSTRAINT [CK_TenantTbl_MonthlyRent] CHECK ([MonthlyRent] >= 0)
 );
 
 -- ==========================================
@@ -64,14 +67,15 @@ CREATE TABLE [dbo].[TenantTbl] (
 -- ==========================================
 
 CREATE TABLE [dbo].[UserTbl] (
-    [UserId]   VARCHAR (20) NOT NULL,
-    [BranchId] VARCHAR (15) NOT NULL,
-    [UserName] VARCHAR (30) NOT NULL,
-    [Password] VARCHAR (30) NOT NULL,
-    [Role]     VARCHAR (20) NOT NULL,
-    [Status]   VARCHAR (10) NOT NULL,
+    [UserId]   VARCHAR (20)  NOT NULL,
+    [BranchId] VARCHAR (15)  NOT NULL,
+    [UserName] VARCHAR (30)  NOT NULL,
+    [Password] VARCHAR (255) NOT NULL,
+    [Role]     VARCHAR (20)  NOT NULL,
+    [Status]   VARCHAR (10)  NOT NULL,
     CONSTRAINT [PK_UserTbl] PRIMARY KEY CLUSTERED ([UserId] ASC),
-    CONSTRAINT [FK_UserTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
+    CONSTRAINT [FK_UserTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId]),
+    CONSTRAINT [UQ_UserTbl_UserName] UNIQUE ([UserName])
 );
 
 -- ==========================================
@@ -93,5 +97,10 @@ CREATE TABLE [dbo].[ReservationTbl] (
     CONSTRAINT [FK_ReservationTbl_TBLRoom] FOREIGN KEY ([RoomId]) REFERENCES [dbo].[TBLRoom] ([RoomId]),
     CONSTRAINT [FK_ReservationTbl_TenantTbl] FOREIGN KEY ([TenantId]) REFERENCES [dbo].[TenantTbl] ([TenantId]),
     CONSTRAINT [FK_ReservationTbl_BranchTbl] FOREIGN KEY ([branchId]) REFERENCES [dbo].[BranchTbl] ([BranchId]),
-    CONSTRAINT [FK_ReservationTbl_CustomerTbl] FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[CustomerTbl] ([CustomerID])
+    CONSTRAINT [FK_ReservationTbl_CustomerTbl] FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[CustomerTbl] ([CustomerID]),
+    CONSTRAINT [CK_ReservationTbl_Dates] CHECK ([ResEndDate] > [ResStartDate]),
+    CONSTRAINT [CK_ReservationTbl_Owner] CHECK (
+        ([CustomerId] IS NOT NULL AND [TenantId] IS NULL)
+        OR ([CustomerId] IS NULL AND [TenantId] IS NOT NULL)
+    )
 );

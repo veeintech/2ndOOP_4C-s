@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _4C_s_Management_System.Classess;
 using Microsoft.Data.SqlClient;
 
 namespace _4C_s_Management_System

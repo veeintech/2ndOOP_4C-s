@@ -5,9 +5,9 @@
     RUN ORDER:
     1. Run 4C's_Tables_Schema.sql first.
     2. Run this file after BranchTbl has been created.
-    3. Branch records do not need to exist yet. The counter for each
-       prefix/branch combination is created automatically the first
-       time an ID is requested.
+    3. The BranchId must already exist in BranchTbl (enforced by a
+       foreign key). The counter for each prefix/branch combination
+       is created automatically the first time an ID is requested.
 
     GENERAL ID FORMAT:
         PREFIX-BRANCHNUMBER-SEQUENCENUMBER
@@ -26,15 +26,17 @@
    One counter per Prefix + BranchId combination.
    ========================================================= */
 
-CREATE TABLE [dbo].[IDSequenceTbl] (
-    [Prefix]     VARCHAR (10) NOT NULL,
-    [BranchId]   VARCHAR (15) NOT NULL,
-    [LastNumber] BIGINT       CONSTRAINT [DF_IDSequenceTbl_LastNumber] DEFAULT ((0)) NOT NULL,
-    CONSTRAINT [PK_IDSequenceTbl] PRIMARY KEY CLUSTERED ([Prefix] ASC, [BranchId] ASC),
-    CONSTRAINT [FK_IDSequenceTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
-);
-
-
+IF OBJECT_ID(N'dbo.IDSequenceTbl', N'U') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[IDSequenceTbl] (
+        [Prefix]     VARCHAR (10) NOT NULL,
+        [BranchId]   VARCHAR (15) NOT NULL,
+        [LastNumber] BIGINT       CONSTRAINT [DF_IDSequenceTbl_LastNumber] DEFAULT ((0)) NOT NULL,
+        CONSTRAINT [PK_IDSequenceTbl] PRIMARY KEY CLUSTERED ([Prefix] ASC, [BranchId] ASC),
+        CONSTRAINT [FK_IDSequenceTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
+    );
+END;
+GO
 
 
 /* =========================================================
@@ -114,6 +116,3 @@ BEGIN
     END CATCH;
 END;
 GO
-
-
-/* =========================================================
