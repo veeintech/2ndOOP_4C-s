@@ -593,7 +593,7 @@
             CM_fullnameTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             CM_fullnameTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_fullnameTxt.Font = new Font("Segoe UI", 9F);
-            CM_fullnameTxt.ForeColor = Color.FromArgb(64, 64, 64);
+            CM_fullnameTxt.ForeColor = SystemColors.ActiveCaptionText;
             CM_fullnameTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_fullnameTxt.Location = new Point(273, 87);
             CM_fullnameTxt.Margin = new Padding(3, 4, 3, 4);
@@ -660,6 +660,7 @@
             CM_conManTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             CM_conManTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_conManTxt.Font = new Font("Segoe UI", 9F);
+            CM_conManTxt.ForeColor = SystemColors.ActiveCaptionText;
             CM_conManTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_conManTxt.Location = new Point(273, 125);
             CM_conManTxt.Margin = new Padding(3, 4, 3, 4);
@@ -704,6 +705,7 @@
             CM_AddressTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             CM_AddressTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_AddressTxt.Font = new Font("Segoe UI", 9F);
+            CM_AddressTxt.ForeColor = SystemColors.ActiveCaptionText;
             CM_AddressTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_AddressTxt.Location = new Point(273, 165);
             CM_AddressTxt.Margin = new Padding(3, 4, 3, 4);
@@ -853,7 +855,7 @@
             CM_CustomeridTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             CM_CustomeridTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_CustomeridTxt.Font = new Font("Segoe UI", 9F);
-            CM_CustomeridTxt.ForeColor = Color.FromArgb(64, 64, 64);
+            CM_CustomeridTxt.ForeColor = SystemColors.ActiveCaptionText;
             CM_CustomeridTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_CustomeridTxt.Location = new Point(851, 86);
             CM_CustomeridTxt.Margin = new Padding(3, 4, 3, 4);
@@ -898,7 +900,7 @@
             CM_AccomTypeTxt.FocusedColor = Color.FromArgb(94, 148, 255);
             CM_AccomTypeTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             CM_AccomTypeTxt.Font = new Font("Segoe UI", 10F);
-            CM_AccomTypeTxt.ForeColor = Color.FromArgb(68, 88, 112);
+            CM_AccomTypeTxt.ForeColor = SystemColors.ActiveCaptionText;
             CM_AccomTypeTxt.ItemHeight = 30;
             CM_AccomTypeTxt.Items.AddRange(new object[] { "Hotel", "Apartment", "Transient" });
             CM_AccomTypeTxt.Location = new Point(273, 202);

@@ -738,12 +738,12 @@
             RR_totalpriceLBL.BackColor = Color.Transparent;
             RR_totalpriceLBL.Font = new Font("Berlin Sans FB", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RR_totalpriceLBL.ForeColor = Color.Maroon;
-            RR_totalpriceLBL.Location = new Point(241, 435);
+            RR_totalpriceLBL.Location = new Point(250, 434);
             RR_totalpriceLBL.Margin = new Padding(4, 3, 4, 3);
             RR_totalpriceLBL.Name = "RR_totalpriceLBL";
-            RR_totalpriceLBL.Size = new Size(80, 31);
+            RR_totalpriceLBL.Size = new Size(58, 31);
             RR_totalpriceLBL.TabIndex = 43;
-            RR_totalpriceLBL.Text = "*******";
+            RR_totalpriceLBL.Text = "*****";
             // 
             // guna2HtmlLabel27
             // 
