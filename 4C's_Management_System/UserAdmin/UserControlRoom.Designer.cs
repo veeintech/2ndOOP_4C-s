@@ -77,6 +77,8 @@
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            RM_Panel_details_status = new Guna.UI2.WinForms.Guna2Panel();
+            RM_StatusLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             RM_updateDateLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             RM_MaintenanceLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -90,8 +92,6 @@
             guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            RM_Panel_details_status = new Guna.UI2.WinForms.Guna2Panel();
-            RM_StatusLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             RM_RoomIdLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -115,8 +115,8 @@
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).BeginInit();
             RM_Panel_details_status.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
@@ -228,6 +228,7 @@
             guna2Panel2.BorderColor = Color.Silver;
             guna2Panel2.BorderRadius = 15;
             guna2Panel2.BorderThickness = 2;
+            guna2Panel2.Controls.Add(RM_Panel_details_status);
             guna2Panel2.Controls.Add(RM_updateDateLbl);
             guna2Panel2.Controls.Add(guna2HtmlLabel24);
             guna2Panel2.Controls.Add(RM_MaintenanceLbl);
@@ -241,7 +242,6 @@
             guna2Panel2.Controls.Add(guna2HtmlLabel18);
             guna2Panel2.Controls.Add(guna2HtmlLabel16);
             guna2Panel2.Controls.Add(guna2HtmlLabel15);
-            guna2Panel2.Controls.Add(RM_Panel_details_status);
             guna2Panel2.Controls.Add(RM_RoomIdLbl);
             guna2Panel2.Controls.Add(guna2HtmlLabel11);
             guna2Panel2.Controls.Add(guna2PictureBox6);
@@ -251,6 +251,36 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Panel2.Size = new Size(336, 590);
             guna2Panel2.TabIndex = 6;
+            // 
+            // RM_Panel_details_status
+            // 
+            RM_Panel_details_status.BackColor = Color.FromArgb(192, 255, 192);
+            RM_Panel_details_status.BorderRadius = 7;
+            RM_Panel_details_status.BorderThickness = 2;
+            RM_Panel_details_status.Controls.Add(RM_StatusLbl);
+            RM_Panel_details_status.CustomizableEdges = customizableEdges7;
+            RM_Panel_details_status.FillColor = Color.DarkSeaGreen;
+            RM_Panel_details_status.ForeColor = Color.White;
+            RM_Panel_details_status.Location = new Point(207, 231);
+            RM_Panel_details_status.Name = "RM_Panel_details_status";
+            RM_Panel_details_status.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            RM_Panel_details_status.Size = new Size(121, 32);
+            RM_Panel_details_status.TabIndex = 16;
+            RM_Panel_details_status.Paint += RM_Panel_details_status_Paint;
+            // 
+            // RM_StatusLbl
+            // 
+            RM_StatusLbl.BackColor = Color.Transparent;
+            RM_StatusLbl.Font = new Font("Baskerville Old Face", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RM_StatusLbl.ForeColor = Color.DarkOliveGreen;
+            RM_StatusLbl.Location = new Point(13, 3);
+            RM_StatusLbl.Name = "RM_StatusLbl";
+            RM_StatusLbl.Padding = new Padding(4);
+            RM_StatusLbl.Size = new Size(38, 27);
+            RM_StatusLbl.TabIndex = 15;
+            RM_StatusLbl.Text = "ooo";
+            RM_StatusLbl.TextAlignment = ContentAlignment.MiddleCenter;
+            RM_StatusLbl.Click += RM_StatusLbl_Click;
             // 
             // RM_updateDateLbl
             // 
@@ -298,13 +328,13 @@
             // 
             // guna2PictureBox7
             // 
-            guna2PictureBox7.CustomizableEdges = customizableEdges7;
+            guna2PictureBox7.CustomizableEdges = customizableEdges9;
             guna2PictureBox7.FillColor = Color.Transparent;
             guna2PictureBox7.Image = Properties.Resources.peso_sign;
             guna2PictureBox7.ImageRotate = 0F;
             guna2PictureBox7.Location = new Point(154, 321);
             guna2PictureBox7.Name = "guna2PictureBox7";
-            guna2PictureBox7.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2PictureBox7.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2PictureBox7.Size = new Size(14, 27);
             guna2PictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox7.TabIndex = 26;
@@ -315,7 +345,7 @@
             RM_DescriptionLbl.BackColor = Color.Transparent;
             RM_DescriptionLbl.BorderColor = Color.Transparent;
             RM_DescriptionLbl.BorderThickness = 0;
-            RM_DescriptionLbl.CustomizableEdges = customizableEdges9;
+            RM_DescriptionLbl.CustomizableEdges = customizableEdges11;
             RM_DescriptionLbl.DefaultText = "_ _ _ _ _ ";
             RM_DescriptionLbl.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             RM_DescriptionLbl.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -332,7 +362,7 @@
             RM_DescriptionLbl.PlaceholderText = "";
             RM_DescriptionLbl.ReadOnly = true;
             RM_DescriptionLbl.SelectedText = "";
-            RM_DescriptionLbl.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            RM_DescriptionLbl.ShadowDecoration.CustomizableEdges = customizableEdges12;
             RM_DescriptionLbl.Size = new Size(182, 93);
             RM_DescriptionLbl.TabIndex = 25;
             // 
@@ -412,33 +442,6 @@
             guna2HtmlLabel15.Size = new Size(98, 23);
             guna2HtmlLabel15.TabIndex = 17;
             guna2HtmlLabel15.Text = "Room Type";
-            // 
-            // RM_Panel_details_status
-            // 
-            RM_Panel_details_status.BackColor = Color.Transparent;
-            RM_Panel_details_status.BorderRadius = 7;
-            RM_Panel_details_status.BorderThickness = 2;
-            RM_Panel_details_status.Controls.Add(RM_StatusLbl);
-            RM_Panel_details_status.CustomizableEdges = customizableEdges11;
-            RM_Panel_details_status.FillColor = Color.DarkSeaGreen;
-            RM_Panel_details_status.Location = new Point(230, 231);
-            RM_Panel_details_status.Name = "RM_Panel_details_status";
-            RM_Panel_details_status.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            RM_Panel_details_status.Size = new Size(85, 32);
-            RM_Panel_details_status.TabIndex = 16;
-            // 
-            // RM_StatusLbl
-            // 
-            RM_StatusLbl.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            RM_StatusLbl.BackColor = Color.Transparent;
-            RM_StatusLbl.Font = new Font("Baskerville Old Face", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RM_StatusLbl.ForeColor = Color.DarkOliveGreen;
-            RM_StatusLbl.Location = new Point(3, 6);
-            RM_StatusLbl.Name = "RM_StatusLbl";
-            RM_StatusLbl.Padding = new Padding(2);
-            RM_StatusLbl.Size = new Size(7, 6);
-            RM_StatusLbl.TabIndex = 15;
-            RM_StatusLbl.Text = null;
             // 
             // RM_RoomIdLbl
             // 
@@ -739,12 +742,13 @@
             RM_statusCB.Font = new Font("Segoe UI", 10F);
             RM_statusCB.ForeColor = Color.FromArgb(68, 88, 112);
             RM_statusCB.ItemHeight = 30;
-            RM_statusCB.Items.AddRange(new object[] { "All Status ", "Occupied", "Available", "Reserved", "Under Maintenance" });
+            RM_statusCB.Items.AddRange(new object[] { "All Status ", "Occupied", "Available", "Reserved", "Maintenance" });
             RM_statusCB.Location = new Point(745, 196);
             RM_statusCB.Name = "RM_statusCB";
             RM_statusCB.ShadowDecoration.CustomizableEdges = customizableEdges32;
             RM_statusCB.Size = new Size(163, 36);
             RM_statusCB.TabIndex = 12;
+            RM_statusCB.SelectedIndexChanged += RM_statusCB_Selected_indexChanged;
             // 
             // guna2PictureBox8
             // 
@@ -822,9 +826,9 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).EndInit();
             RM_Panel_details_status.ResumeLayout(false);
             RM_Panel_details_status.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
             guna2Panel3.ResumeLayout(false);
             guna2Panel3.PerformLayout();

@@ -55,7 +55,6 @@
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             LOGIN_signupbtn = new Guna.UI2.WinForms.Guna2Button();
-            LOGIN_ternconCB = new Guna.UI2.WinForms.Guna2CheckBox();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             LOGIN_loginBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -194,7 +193,7 @@
             LOGIN_signupbtn.HoverState.FillColor = Color.PaleGoldenrod;
             LOGIN_signupbtn.HoverState.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LOGIN_signupbtn.HoverState.ForeColor = Color.DarkRed;
-            LOGIN_signupbtn.Location = new Point(199, 621);
+            LOGIN_signupbtn.Location = new Point(202, 582);
             LOGIN_signupbtn.Name = "LOGIN_signupbtn";
             LOGIN_signupbtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             LOGIN_signupbtn.Size = new Size(379, 40);
@@ -202,33 +201,12 @@
             LOGIN_signupbtn.Text = "Sign Up";
             LOGIN_signupbtn.Click += LOGIN_signupbtn_Click;
             // 
-            // LOGIN_ternconCB
-            // 
-            LOGIN_ternconCB.AutoSize = true;
-            LOGIN_ternconCB.BackColor = Color.Transparent;
-            LOGIN_ternconCB.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            LOGIN_ternconCB.CheckedState.BorderRadius = 0;
-            LOGIN_ternconCB.CheckedState.BorderThickness = 0;
-            LOGIN_ternconCB.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            LOGIN_ternconCB.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LOGIN_ternconCB.ForeColor = Color.FromArgb(74, 14, 14);
-            LOGIN_ternconCB.Location = new Point(119, 502);
-            LOGIN_ternconCB.Name = "LOGIN_ternconCB";
-            LOGIN_ternconCB.Size = new Size(288, 25);
-            LOGIN_ternconCB.TabIndex = 35;
-            LOGIN_ternconCB.Text = " I agree to the Terms and Condition";
-            LOGIN_ternconCB.UncheckedState.BorderColor = Color.FromArgb(64, 64, 64);
-            LOGIN_ternconCB.UncheckedState.BorderRadius = 0;
-            LOGIN_ternconCB.UncheckedState.BorderThickness = 1;
-            LOGIN_ternconCB.UncheckedState.FillColor = Color.White;
-            LOGIN_ternconCB.UseVisualStyleBackColor = false;
-            // 
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.Font = new Font("Baskerville Old Face", 10.2F);
             guna2HtmlLabel8.ForeColor = Color.FromArgb(139, 0, 21);
-            guna2HtmlLabel8.Location = new Point(329, 676);
+            guna2HtmlLabel8.Location = new Point(332, 637);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(122, 21);
             guna2HtmlLabel8.TabIndex = 34;
@@ -251,7 +229,7 @@
             LOGIN_loginBtn.HoverState.FillColor = Color.FromArgb(192, 0, 0);
             LOGIN_loginBtn.HoverState.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LOGIN_loginBtn.HoverState.ForeColor = Color.White;
-            LOGIN_loginBtn.Location = new Point(199, 559);
+            LOGIN_loginBtn.Location = new Point(202, 520);
             LOGIN_loginBtn.Name = "LOGIN_loginBtn";
             LOGIN_loginBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
             LOGIN_loginBtn.Size = new Size(379, 40);
@@ -378,7 +356,6 @@
             Controls.Add(guna2HtmlLabel7);
             Controls.Add(guna2PictureBox8);
             Controls.Add(LOGIN_signupbtn);
-            Controls.Add(LOGIN_ternconCB);
             Controls.Add(guna2HtmlLabel8);
             Controls.Add(LOGIN_loginBtn);
             Controls.Add(guna2HtmlLabel9);

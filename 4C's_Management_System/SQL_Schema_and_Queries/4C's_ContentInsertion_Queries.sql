@@ -4,87 +4,86 @@
 -- TEST DATA / CONTENT QUERIES
 -- ==========================================
 
--- ==========================================
 -- 1. BranchTbl
--- ==========================================
+IF NOT EXISTS (
+    SELECT 1 FROM dbo.BranchTbl
+    WHERE BranchId = 'BRC-002'
+)
+BEGIN
+    INSERT INTO dbo.BranchTbl
+        (BranchId, BranchName, Address, Status)
+    VALUES
+        ('BRC-002', 'Naujan Main Branch',
+         'Poblacion, Naujan, Oriental Mindoro', 'Active');
+END;
 
-INSERT INTO [dbo].[BranchTbl]
-    ([BranchId], [BranchName], [Address], [Status])
-VALUES
-    ('BRN-001', 'Naujan Main Branch', 'Poblacion, Naujan, Oriental Mindoro', 'Active')
-GO
 
-
--- ==========================================
 -- 2. TBLRoom
--- ==========================================
+INSERT INTO dbo.TBLRoom
+    (RoomId, BranchId, RoomType, Capacity, Rate, Status)
+SELECT
+    V.RoomId, V.BranchId, V.RoomType,
+    V.Capacity, V.Rate, V.Status
+FROM (VALUES
+    -- HOTEL
+    ('RM-002-002', 'BRC-002', 'Hotel', 'Double Room', 1500.00, 'Available'),
+    ('RM-002-003', 'BRC-002', 'Hotel', 'Single Room', 1000.00, 'Occupied'),
+    ('RM-002-004', 'BRC-002', 'Hotel', 'Double Room', 1500.00, 'Occupied'),
+    ('RM-002-005', 'BRC-002', 'Hotel', 'Single Room', 1000.00, 'Reserved'),
+    ('RM-002-006', 'BRC-002', 'Hotel', 'Double Room', 1500.00, 'Maintenance'),
+    ('RM-002-007', 'BRC-002', 'Hotel', 'Single Room', 1000.00, 'Available'),
+    ('RM-002-008', 'BRC-002', 'Hotel', 'Double Room', 1500.00, 'Reserved'),
 
-INSERT INTO [dbo].[TBLRoom]
-    ([RoomId], [BranchId], [RoomType], [Capacity], [Rate], [Status])
-VALUES
-    ('RM-001', 'BRN-001', 'Hotel', 'Double Room', 800.00, 'Available'),
-    ('RM-002', 'BRN-001', 'Apartment', 'Single Room', 1500.00, 'Available')
-GO
+    -- APARTMENT
+    ('RM-002-009', 'BRC-002', 'Apartment', 'Single Room', 1200.00, 'Available'),
+    ('RM-002-010', 'BRC-002', 'Apartment', 'Double Room', 1800.00, 'Occupied'),
+    ('RM-002-011', 'BRC-002', 'Apartment', 'Single Room', 1200.00, 'Reserved'),
+    ('RM-002-012', 'BRC-002', 'Apartment', 'Double Room', 1800.00, 'Maintenance'),
+    ('RM-002-013', 'BRC-002', 'Apartment', 'Single Room', 1200.00, 'Available'),
+    ('RM-002-014', 'BRC-002', 'Apartment', 'Double Room', 1800.00, 'Occupied'),
+    ('RM-002-015', 'BRC-002', 'Apartment', 'Single Room', 1200.00, 'Reserved'),
+    ('RM-002-016', 'BRC-002', 'Apartment', 'Double Room', 1800.00, 'Available'),
 
-
--- ==========================================
--- 3. CustomerTbl
--- ==========================================
-
-INSERT INTO [dbo].[CustomerTbl]
-    ([CustomerID], [BranchId], [Fullname], [ContactNumber],
-     [Address], [CustomerType], [CustomerStatus])
-VALUES
-    ('CUS-001', 'BRN-001', 'Juan Dela Cruz', '09171234567',
-     'Naujan, Oriental Mindoro', 'Hotel', 'Inactive')
-GO
-
-
--- ==========================================
--- 4. TenantTbl
--- ==========================================
-
-INSERT INTO [dbo].[TenantTbl]
-    ([TenantId], [BranchId], [FullName], [ContactNumber],
-     [Address], [AgreementStartDate], [AgreementEndDate],
-     [MonthlyRent], [Status])
-VALUES
-    ('TEN-001', 'BRN-001', 'Carlos Fernandez', '09171230001',
-     'Naujan, Oriental Mindoro',
-     '2026-01-01', '2026-12-31', 8000.00, 'Inactive')
-GO
-
-
--- ==========================================
--- 5. UserTbl
--- ==========================================
-
-INSERT INTO [dbo].[UserTbl]
-    ([UserId], [BranchId], [UserName], [Password], [Role], [Status])
-VALUES
-    ('USR-001', 'BRN-001', 'masteradmin', 'TestMaster123',
-     'MasterAdmin', 'Active')
-GO
+    -- TRANSIENT
+    ('RM-002-017', 'BRC-002', 'Transient', 'Single Room', 500.00, 'Available'),
+    ('RM-002-018', 'BRC-002', 'Transient', 'Double Room', 800.00, 'Occupied'),
+    ('RM-002-019', 'BRC-002', 'Transient', 'Single Room', 500.00, 'Reserved'),
+    ('RM-002-020', 'BRC-002', 'Transient', 'Double Room', 800.00, 'Maintenance'),
+    ('RM-002-021', 'BRC-002', 'Transient', 'Single Room', 500.00, 'Available'),
+    ('RM-002-022', 'BRC-002', 'Transient', 'Double Room', 800.00, 'Occupied'),
+    ('RM-002-023', 'BRC-002', 'Transient', 'Single Room', 500.00, 'Reserved'),
+    ('RM-002-024', 'BRC-002', 'Transient', 'Double Room', 800.00, 'Available')
+) AS V(RoomId, BranchId, RoomType, Capacity, Rate, Status)
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM dbo.TBLRoom R
+    WHERE R.RoomId = V.RoomId
+);
 
 
--- ==========================================
--- 6. ReservationTbl
--- ==========================================
-
-INSERT INTO [dbo].[ReservationTbl]
-    ([ReservationId], [branchId], [CustomerId], [TenantId],
-     [RoomId], [AccomodationType], [ReservationDate],
-     [ResStartDate], [ResEndDate], [ReservationStatus])
-VALUES
-
-    -- Reserved
-    ('RES-001', 'BRN-001', 'CUS-001', NULL,
-     'RM-001', 'Hotel', GETDATE(),
-     DATEADD(DAY, 2, GETDATE()),
-     DATEADD(DAY, 4, GETDATE()), 'Reserved')
-GO
+-- 3. UserTbl
+IF NOT EXISTS (
+    SELECT 1 FROM dbo.UserTbl
+    WHERE UserId = 'USR-001'
+)
+BEGIN
+    INSERT INTO dbo.UserTbl
+        (UserId, BranchId, UserName, Password, Role, Status)
+    VALUES
+        ('USR-001', 'BRC-002', 'ja', 'ja123',
+         'MasterAdmin', 'Active');
+END;
 
 
 -- ==========================================
--- END OF TEST DATA
+-- VERIFY INSERTED DATA
 -- ==========================================
+
+SELECT * FROM dbo.BranchTbl
+WHERE BranchId = 'BRC-002';
+
+SELECT * FROM dbo.TBLRoom
+WHERE BranchId = 'BRC-002';
+
+SELECT * FROM dbo.UserTbl
+WHERE BranchId = 'BRC-002';

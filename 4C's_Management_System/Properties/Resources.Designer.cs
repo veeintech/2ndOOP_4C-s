@@ -143,6 +143,16 @@ namespace _4C_s_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap andrsrxn__clock_hour_eight {
+            get {
+                object obj = ResourceManager.GetObject("andrsrxn--clock-hour-eight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap b {
             get {
                 object obj = ResourceManager.GetObject("b", resourceCulture);
@@ -306,6 +316,16 @@ namespace _4C_s_Management_System.Properties {
         internal static System.Drawing.Bitmap buser {
             get {
                 object obj = ResourceManager.GetObject("buser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bxs__calendar {
+            get {
+                object obj = ResourceManager.GetObject("bxs--calendar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -816,6 +836,26 @@ namespace _4C_s_Management_System.Properties {
         internal static System.Drawing.Bitmap room {
             get {
                 object obj = ResourceManager.GetObject("room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap safe_and_secure {
+            get {
+                object obj = ResourceManager.GetObject("safe and secure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap safe_and_secure1 {
+            get {
+                object obj = ResourceManager.GetObject("safe and secure1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

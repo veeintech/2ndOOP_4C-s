@@ -187,6 +187,7 @@ namespace _4C_s_Management_System
 
         }
 
+
         public void loaddisplay()
         {
             if (RM_roomDGv.SelectedRows.Count == 0)
@@ -196,18 +197,43 @@ namespace _4C_s_Management_System
 
             roomId = row.Cells[0].Value?.ToString() ?? "";
 
-            RM_statusCB.SelectedItem = row.Cells[4].Value?.ToString() ?? "";
+            string status = row.Cells[4].Value?.ToString() ?? "";
+
+            if (status == "Available")
+            {
+                RM_Panel_details_status.FillColor = Color.FromArgb(95, 145, 100);
+                RM_StatusLbl.BackColor = Color.FromArgb(95, 145, 100);
+            }
+            else if (status == "Occupied")
+            {
+                RM_Panel_details_status.FillColor = Color.FromArgb(169, 121, 56);
+                RM_StatusLbl.BackColor = Color.FromArgb(169, 121, 56);
+            }
+            else if (status == "Maintenance")
+            {
+                RM_Panel_details_status.FillColor = Color.FromArgb(168, 93, 85);
+                RM_StatusLbl.BackColor = Color.FromArgb(168, 93, 85);
+            }
+            else if (status == "Reserved")
+            {
+                RM_Panel_details_status.FillColor = Color.FromArgb(112, 126, 145);
+                RM_StatusLbl.BackColor = Color.FromArgb(112, 126, 145);
+            }
 
             RM_RoomIdLbl.Text = row.Cells[0].Value?.ToString() ?? "";
             RM_RoomTypeLbl.Text = row.Cells[1].Value?.ToString() ?? "";
             RM_CapacityLbl.Text = row.Cells[2].Value?.ToString() ?? "";
             RM_RateLbl.Text = row.Cells[3].Value?.ToString() ?? "";
-            RM_StatusLbl.Text = row.Cells[4].Value?.ToString() ?? "";
-            RM_DescriptionLbl.Text = $"Room {row.Cells[0].Value?.ToString() ?? ""} is a " +
-                                     $"{row.Cells[2].Value?.ToString() ?? ""} with a capacity of " +
-                                     $"{row.Cells[3].Value?.ToString() ?? ""} and a rate of " +
-                                     $"{row.Cells[4].Value?.ToString() ?? ""}.";
+            RM_StatusLbl.Text = status;
+            RM_StatusLbl.ForeColor = Color.White;
+
+            RM_DescriptionLbl.Text =
+                $"Room {row.Cells[0].Value?.ToString() ?? ""} is a " +
+                $"{row.Cells[1].Value?.ToString() ?? ""} with a capacity of " +
+                $"{row.Cells[2].Value?.ToString() ?? ""} and a rate of " +
+                $"{row.Cells[3].Value?.ToString() ?? ""}.";
         }
+
         private void RM_roomDGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             loaddisplay();
@@ -309,6 +335,58 @@ namespace _4C_s_Management_System
         private void guna2vSeparator1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RM_Panel_details_status_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RM_StatusLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RM_statusCB_Selected_indexChanged(object sender, EventArgs e)
+        {
+            if (_isInitializing || RM_statusCB.SelectedItem is null)
+                return;
+
+            try
+            {
+                if (RM_statusCB.SelectedIndex == 0)
+                {
+                    LoadRoomData();
+                    return;
+                }
+                string status = RM_statusCB.SelectedItem.ToString()!;
+                const string query =
+                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
+                    "FROM TBLRoom " +
+                    "WHERE BranchId = @BranchId AND Status = @status " +
+                    "ORDER BY RoomId ASC";
+
+                AppDB.Instance.Table(
+                    query,
+                    new { BranchId = branchId, Status = status },
+                    RM_roomDGv,
+                    header: new[]
+                    {
+                        "Room ID",
+                        "Room Type",
+                        "Capacity",
+                        "Rate",
+                        "Status"
+                    });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error loading room data: {ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

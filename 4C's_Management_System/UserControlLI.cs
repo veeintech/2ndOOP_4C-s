@@ -44,31 +44,22 @@ namespace _4C_s_Management_System
 
             try
             {
-                const string statuscheckQuery = "SELECT Status FROM UserTbl WHERE UserName = @Username AND Password = @Password";
+                const string statusCheckQuery =
+                    "SELECT Status FROM UserTbl WHERE UserName = @Username AND Password = @Password";
+                const string loginQuery =
+                    "SELECT 1 FROM UserTbl WHERE UserName = @Username AND Password = @Password";
+                const string branchQuery =
+                    "SELECT BranchId FROM UserTbl WHERE UserName = @Username AND Password = @Password";
 
-                const string query = "SELECT 1 FROM UserTbl WHERE UserName = @Username AND Password = @Password";
-
-                const string getbranchid = "SELECT BranchId FROM UserTbl WHERE UserName = @Username AND Password = @Password";
-
-                var result = AppDB.Instance.Scalar(query, new
+                var parameters = new
                 {
                     Username = username,
                     Password = password
-                });
+                };
 
-                var statusResult = AppDB.Instance.Scalar(statuscheckQuery, new
-                {
-                    Username = username,
-                    Password = password
-                });
+                var result = AppDB.Instance.Scalar(loginQuery, parameters);
 
-                var getBRCid = AppDB.Instance.Scalar(getbranchid, new
-                {
-                    Username = username,
-                    Password = password
-                });
-
-                if ((result is null || result is DBNull))
+                if (result is null || result == DBNull.Value)
                 {
                     MessageBox.Show(
                         "Invalid username or password.",
@@ -77,8 +68,12 @@ namespace _4C_s_Management_System
                         MessageBoxIcon.Error);
                     return;
                 }
-                
-                if(statusResult is not null && statusResult != DBNull.Value && statusResult.ToString() == "Inactive")
+
+                var statusResult = AppDB.Instance.Scalar(statusCheckQuery, parameters);
+
+                if (statusResult is not null &&
+                    statusResult != DBNull.Value &&
+                    statusResult.ToString() == "Inactive")
                 {
                     MessageBox.Show(
                         "Your account is inactive. Please contact the administrator.",
@@ -97,25 +92,41 @@ namespace _4C_s_Management_System
                         MessageBoxIcon.Warning);
                     return;
                 }
-                if(result is not null && result != DBNull.Value && LOGIN_ternconCB.Checked)
+
+                var branchResult = AppDB.Instance.Scalar(branchQuery, parameters);
+                string branchId = branchResult?.ToString() ?? string.Empty;
+
+                if (string.IsNullOrWhiteSpace(branchId))
                 {
-                    Form? loginForm = FindForm();
-                    var dashboard = new UserNavigation();
-
-                    if (loginForm is not null)
-                        dashboard.FormClosed += (_, _) => loginForm.Close();
-
-                    dashboard.Show();
-                    loginForm?.Hide();
-
-                    branchid = getBRCid?.ToString() ?? string.Empty;    
-                    AccessBranch_ByForm.SetBranch(branchid);
+                    MessageBox.Show(
+                        "No branch is assigned to this account.",
+                        "Login Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
                 }
 
+                branchid = branchId;
+                AccessBranch_ByForm.SetBranch(branchId);
+
+                Form? loginForm = FindForm();
+                var dashboard = new UserNavigation();
+
+                if (loginForm is not null)
+                {
+                    dashboard.FormClosed += (_, _) => loginForm.Close();
+                }
+
+                dashboard.Show();
+                loginForm?.Hide();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
