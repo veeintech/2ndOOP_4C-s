@@ -161,7 +161,6 @@
             Controls.Add(guna2Separator1);
             Name = "UserControl_terms_condition";
             Size = new Size(331, 531);
-            Load += UserControl_terms_condition_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

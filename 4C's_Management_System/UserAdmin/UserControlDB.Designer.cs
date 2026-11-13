@@ -2021,6 +2021,7 @@
             RM_Panel_DateTime.ShadowDecoration.CustomizableEdges = customizableEdges71;
             RM_Panel_DateTime.Size = new Size(401, 145);
             RM_Panel_DateTime.TabIndex = 41;
+            RM_Panel_DateTime.Paint += RM_Panel_DateTime_Paint;
             // 
             // RM_TimeLbl
             // 

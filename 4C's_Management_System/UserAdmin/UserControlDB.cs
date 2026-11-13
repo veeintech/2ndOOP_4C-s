@@ -422,5 +422,10 @@ namespace _4C_s_Management_System
         {
 
         }
+
+        private void RM_Panel_DateTime_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -387,7 +387,15 @@ namespace _4C_s_Management_System
                 UserNav_MaintenanceBtn,
                 User_Control_ReportsBtn
                 );
-
+            try
+            {
+                UserControl_Admin_PROFILE cr = new UserControl_Admin_PROFILE();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void UserNav_Staff_Btn_Click(object sender, EventArgs e)

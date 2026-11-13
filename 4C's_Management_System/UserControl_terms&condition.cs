@@ -13,26 +13,6 @@ namespace _4C_s_Management_System
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void agreeBTN_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserControl_terms_condition_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void agreeBTN_Click_1(object sender, EventArgs e)
         {
             Accepted?.Invoke(this, EventArgs.Empty);
