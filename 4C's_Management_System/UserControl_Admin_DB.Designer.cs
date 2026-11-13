@@ -1373,7 +1373,6 @@
             Controls.Add(guna2HtmlLabel2);
             Name = "UserControl_Admin_DB";
             Size = new Size(1332, 1232);
-            Load += this.UserControl_Admin_DB_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox15).EndInit();
             guna2Panel4.ResumeLayout(false);
             guna2Panel4.PerformLayout();

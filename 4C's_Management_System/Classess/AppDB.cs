@@ -22,7 +22,7 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 // Handle exception (e.g., log it)
-                throw new InvalidOperationException("Failed to initialize the database.", ex);
+                throw new InvalidOperationException("Failed to initialize the database. Connection string: {0}", ex);
             }
         });
 
