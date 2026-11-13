@@ -1,0 +1,16 @@
+private void agreeBTN_Click(object sender, EventArgs e)
+{
+	if (!agreeCHK.Checked)
+	{
+		MessageBox.Show(
+			"Please read and agree to the Terms and Conditions.",
+			"Terms and Conditions",
+			MessageBoxButtons.OK,
+			MessageBoxIcon.Warning);
+
+		return;
+	}
+
+	SU_trmconCB.Checked = true;
+	termsPanel.Hide();
+}

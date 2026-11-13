@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _4C_s_Management_System.Classess;
 using Microsoft.Data.SqlClient;
 
 namespace _4C_s_Management_System
@@ -16,6 +18,16 @@ namespace _4C_s_Management_System
         public UserControlSU()
         {
             InitializeComponent();
+
+            // Initial checkbox state
+            SU_trmconCB.Checked = false;
+
+            // Hide Terms and Conditions overlay
+            userControl_terms_condition1.Visible = false;
+
+            // Connect Accepted event
+            userControl_terms_condition1.Accepted +=
+                userControl_terms_condition1_Accepted;
         }
 
         private void LOGIN_lblsignupclk(object sender, EventArgs e)
@@ -38,8 +50,9 @@ namespace _4C_s_Management_System
             SU_closedeyeBtn.BringToFront();
         }
 
+        // CREATE ACCOUNT
         private void SU_createaccBtn_Click_1(object sender, EventArgs e)
-        { 
+        {
             string branchid = SU_branchidtxt.Text.Trim();
             string password = SU_passwordtxt.Text;
             string username = SU_usernametxt.Text.Trim();
@@ -68,6 +81,7 @@ namespace _4C_s_Management_System
                 return;
             }
 
+            // TERMS AND CONDITIONS VALIDATION
             if (!SU_trmconCB.Checked)
             {
                 MessageBox.Show(
@@ -80,7 +94,6 @@ namespace _4C_s_Management_System
 
             try
             {
-
                 bool brcIDExists = AppDB.Instance.Scalar(
                     "SELECT COUNT(1) FROM BranchTbl WHERE BranchId = @BranchId",
                     new { BranchId = branchid }
@@ -109,6 +122,7 @@ namespace _4C_s_Management_System
                     Role = "User",
                     Status = "Active"
                 });
+
                 if (result > 0)
                 {
                     MessageBox.Show(
@@ -116,26 +130,50 @@ namespace _4C_s_Management_System
                         "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    DialogResult re = MessageBox.Show(
-                       "Please proceed to login.",
-                       "Information",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Information);
-                    if (re == DialogResult.OK)
-                    {
-                        UserControlLI li = new UserControlLI();
-                        MainControlClass.ShowControl(li, this.Parent);
-                    }
-                }
 
+                    MessageBox.Show(
+                        "Please proceed to login.",
+                        "Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    UserControlLI li = new UserControlLI();
+                    MainControlClass.ShowControl(li, this.Parent);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
+        // OPEN TERMS AND CONDITIONS
+        private void termsLBL_Click(object sender, EventArgs e)
+        {
+            userControl_terms_condition1.Visible = true;
+            userControl_terms_condition1.BringToFront();
+        }
+
+        // RECEIVE ACCEPTED EVENT
+        private void userControl_terms_condition1_Accepted(
+            object sender, EventArgs e)
+        {
+            SU_trmconCB.Checked = true;
+            userControl_terms_condition1.Visible = false;
+        }
+
+        // FORM LOAD
         private void UserControlSU_Load(object sender, EventArgs e)
+        {
+            userControl_terms_condition1.Visible = false;
+            SU_trmconCB.Checked = false;
+        }
+
+        private void userControl_terms_condition1_Load(object sender, EventArgs e)
         {
 
         }

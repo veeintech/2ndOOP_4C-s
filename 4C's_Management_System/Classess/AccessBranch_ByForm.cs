@@ -10,6 +10,13 @@ namespace _4C_s_Management_System.Classess
     {
         public static string BranchId { get; private set; } = string.Empty;
 
+        public static bool x { get; set; } = false;
+
+        public  static void CBCHECKED(bool cbbool)
+        {
+            x = cbbool;
+        }
+
         // Store the branch after successful login
         public static void SetBranch(string branchId)
         {

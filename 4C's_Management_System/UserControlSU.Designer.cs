@@ -74,6 +74,8 @@
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             SU_conpasstxt = new Guna.UI2.WinForms.Guna2TextBox();
+            termsLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            userControl_terms_condition1 = new UserControl_terms_condition();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox13).BeginInit();
@@ -276,9 +278,8 @@
             SU_trmconCB.ForeColor = Color.FromArgb(74, 14, 14);
             SU_trmconCB.Location = new Point(149, 546);
             SU_trmconCB.Name = "SU_trmconCB";
-            SU_trmconCB.Size = new Size(274, 23);
+            SU_trmconCB.Size = new Size(18, 17);
             SU_trmconCB.TabIndex = 37;
-            SU_trmconCB.Text = " I agree to the Terms and Condition";
             SU_trmconCB.UncheckedState.BorderColor = Color.FromArgb(64, 64, 64);
             SU_trmconCB.UncheckedState.BorderRadius = 0;
             SU_trmconCB.UncheckedState.BorderThickness = 1;
@@ -427,6 +428,26 @@
             SU_conpasstxt.Size = new Size(487, 48);
             SU_conpasstxt.TabIndex = 31;
             // 
+            // termsLBL
+            // 
+            termsLBL.BackColor = Color.Transparent;
+            termsLBL.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            termsLBL.Location = new Point(175, 543);
+            termsLBL.Name = "termsLBL";
+            termsLBL.Size = new Size(158, 22);
+            termsLBL.TabIndex = 54;
+            termsLBL.Text = "Terms and Condition";
+            termsLBL.Click += termsLBL_Click;
+            // 
+            // userControl_terms_condition1
+            // 
+            userControl_terms_condition1.BackColor = Color.FromArgb(255, 249, 239);
+            userControl_terms_condition1.Location = new Point(207, 56);
+            userControl_terms_condition1.Name = "userControl_terms_condition1";
+            userControl_terms_condition1.Size = new Size(331, 531);
+            userControl_terms_condition1.TabIndex = 56;
+            userControl_terms_condition1.Load += userControl_terms_condition1_Load;
+            // 
             // UserControlSU
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -434,6 +455,8 @@
             BackColor = Color.FromArgb(255, 249, 239);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(userControl_terms_condition1);
+            Controls.Add(termsLBL);
             Controls.Add(SU_openedeyeBtn);
             Controls.Add(SU_closedeyeBtn);
             Controls.Add(LOGIN_lblsignup);
@@ -500,5 +523,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox SU_conpasstxt;
+        private Guna.UI2.WinForms.Guna2HtmlLabel termsLBL;
+        private UserControl_terms_condition userControl_terms_condition1;
     }
 }
