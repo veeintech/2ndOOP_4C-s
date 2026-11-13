@@ -104,3 +104,21 @@ CREATE TABLE [dbo].[ReservationTbl] (
         OR ([CustomerId] IS NULL AND [TenantId] IS NOT NULL)
     )
 );
+
+-- ==========================================
+-- 7. MaintenanceTbl
+-- ==========================================
+
+CREATE TABLE [dbo].[MaintenanceTbl]
+(
+    [MaintenanceID] VARCHAR(20) PRIMARY KEY,
+	[BranchID] VARCHAR(15), 
+    [RoomID] VARCHAR(20) NOT NULL,
+    [Issue] NVARCHAR(150) NOT NULL,
+    [Description] NVARCHAR(500),
+    [DateStarted] DATETIME NULL,
+    [DateCompleted]	 DATETIME NULL,
+    [Remarks] NVARCHAR(500),
+    [Status] NVARCHAR(30) NOT NULL DEFAULT 'Pending',
+    FOREIGN KEY ([BranchID]) REFERENCES [dbo].[BranchTbl]([BranchID])
+);

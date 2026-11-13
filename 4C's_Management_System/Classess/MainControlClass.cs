@@ -9,6 +9,7 @@ namespace _4C_s_Management_System
 {
     internal class MainControlClass
     {
+
         public static void ShowControl(Control control, Control Content)
         {
             Content.Controls.Clear();
