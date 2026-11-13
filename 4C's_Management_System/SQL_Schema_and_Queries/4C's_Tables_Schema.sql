@@ -122,3 +122,40 @@ CREATE TABLE [dbo].[MaintenanceTbl]
     [Status] NVARCHAR(30) NOT NULL DEFAULT 'Pending',
     FOREIGN KEY ([BranchID]) REFERENCES [dbo].[BranchTbl]([BranchID])
 );
+
+-- ==========================================
+-- 8. ReservationTBl
+-- ==========================================
+
+CREATE TABLE [dbo].[PaymentTbl] (
+    [PaymentID]       VARCHAR(20) NOT NULL,
+    [BranchID]        VARCHAR(15) NOT NULL,
+    [ReservationID]   VARCHAR(20) NULL,
+    [TenantID]        VARCHAR(20) NULL,
+    [CustomerID]      VARCHAR(20) NULL,
+    [AmountPaid]      DECIMAL(10,2) NULL,
+    [PaymentDate]     DATETIME2(7) DEFAULT (GETDATE()) NULL,
+    [PaymentMethod]   VARCHAR(30) NULL,
+    [ReferenceNumber] VARCHAR(20) NULL,
+    [Balance]         DECIMAL(10,2) NULL,
+    [PaymentStatus]   VARCHAR(20) DEFAULT ('Pending') NOT NULL,
+
+    CONSTRAINT PK_PaymentTbl
+        PRIMARY KEY CLUSTERED ([PaymentID] ASC),
+
+    CONSTRAINT FK_PaymentTbl_BranchTbl
+        FOREIGN KEY ([BranchID])
+        REFERENCES [dbo].[BranchTbl] ([BranchID]),
+
+    CONSTRAINT FK_PaymentTbl_ReservationTbl
+        FOREIGN KEY ([ReservationID])
+        REFERENCES [dbo].[ReservationTbl] ([ReservationID]),
+
+    CONSTRAINT FK_PaymentTbl_TenantTbl
+        FOREIGN KEY ([TenantID])
+        REFERENCES [dbo].[TenantTbl] ([TenantID]),
+
+    CONSTRAINT FK_PaymentTbl_CustomerTbl
+        FOREIGN KEY ([CustomerID])
+        REFERENCES [dbo].[CustomerTbl] ([CustomerID])
+);
