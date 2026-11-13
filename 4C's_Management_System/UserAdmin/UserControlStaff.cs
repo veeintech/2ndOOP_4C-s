@@ -70,7 +70,7 @@ namespace _4C_s_Management_System
             //time in
             else if (timeOut == null)
             {
-                    timeIn.Value.ToString("h:mm tt");
+                timeIn.Value.ToString("h:mm tt");
 
                 btnTimeAction.Text = "Time out";
                 btnTimeAction.Enabled = true;
@@ -217,6 +217,16 @@ namespace _4C_s_Management_System
         }
 
         private void guna2HtmlLabel28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel9_Click(object sender, EventArgs e)
         {
 
         }
