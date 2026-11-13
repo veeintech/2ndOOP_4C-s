@@ -273,6 +273,16 @@ namespace _4C_s_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap beldeng1 {
+            get {
+                object obj = ResourceManager.GetObject("beldeng1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_yelloworangegold {
             get {
                 object obj = ResourceManager.GetObject("bg yelloworangegold", resourceCulture);
@@ -756,6 +766,16 @@ namespace _4C_s_Management_System.Properties {
         internal static System.Drawing.Bitmap kama {
             get {
                 object obj = ResourceManager.GetObject("kama", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kama1 {
+            get {
+                object obj = ResourceManager.GetObject("kama1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

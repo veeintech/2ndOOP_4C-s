@@ -115,7 +115,6 @@ CREATE TABLE [dbo].[MaintenanceTbl]
 	[BranchID] VARCHAR(15), 
     [RoomID] VARCHAR(20) NOT NULL,
     [Issue] NVARCHAR(150) NOT NULL,
-    [Description] NVARCHAR(500),
     [DateStarted] DATETIME NULL,
     [DateCompleted]	 DATETIME NULL,
     [Remarks] NVARCHAR(500),
