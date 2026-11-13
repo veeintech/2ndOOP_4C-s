@@ -2,125 +2,82 @@
 using _4C_s_Management_System.Classess;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _4C_s_Management_System
 {
     public partial class UserControlCustomers : UserControl
     {
+        public string branchId = AccessBranch_ByForm.BranchId;
+
         public UserControlCustomers()
         {
             InitializeComponent();
         }
-        public string branchId = AccessBranch_ByForm.BranchId;
+
+        // =====================================================
+        // LOAD USERCONTROL
+        // =====================================================
 
         private void UserControlCustomers_Load(object sender, EventArgs e)
         {
-            LoadRoomData();
             CM_custypeCB.SelectedIndex = 0;
             CM_CustomerstatCB.SelectedIndex = 0;
+
+            ApplyCustomerFilters();
             LoadRoomsdisplay();
         }
 
+        // =====================================================
+        // LOAD CUSTOMER DATAGRIDVIEW
+        // =====================================================
+
         public void LoadRoomData()
         {
-            try
-            {
-                const string query =
-                    "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
-                    "FROM CustomerTbl " +
-                    "WHERE BranchId = @BranchId " +
-                    "ORDER BY CustomerID ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { BranchId = branchId },
-                    CM_CustomerDGV,
-                    header: new[]
-                    {
-                    "Customer ID",
-                    "Full Name",
-                    "Contact Number",
-                    "Address",
-                    "Customer Type",
-                    "Customer Status"
-
-                        });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading Customerdata: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            ApplyCustomerFilters();
         }
+
+        // =====================================================
+        // DISPLAY SELECTED CUSTOMER
+        // =====================================================
 
         public void loaddisplay()
         {
-            if (CM_CustomerDGV.SelectedRows.Count == 0)
+            if (CM_CustomerDGV.CurrentRow == null ||
+                CM_CustomerDGV.CurrentRow.IsNewRow)
                 return;
 
-            DataGridViewRow row = CM_CustomerDGV.SelectedRows[0];
+            DataGridViewRow row = CM_CustomerDGV.CurrentRow;
 
-            CM_CustomeridTxt.Text = row.Cells[0].Value?.ToString() ?? "";
+            CM_CustomeridTxt.Text =
+                Convert.ToString(row.Cells[0].Value) ?? "";
 
-            CM_fullnameTxt.Text = row.Cells[1].Value?.ToString() ?? "";
-            CM_conManTxt.Text = row.Cells[2].Value?.ToString() ?? "";
-            CM_AddressTxt.Text = row.Cells[3].Value?.ToString() ?? "";
-            CM_AccomTypeTxt.Text = row.Cells[4].Value?.ToString() ?? "";
+            CM_fullnameTxt.Text =
+                Convert.ToString(row.Cells[1].Value) ?? "";
 
+            CM_conManTxt.Text =
+                Convert.ToString(row.Cells[2].Value) ?? "";
+
+            CM_AddressTxt.Text =
+                Convert.ToString(row.Cells[3].Value) ?? "";
+
+            CM_AccomTypeTxt.Text =
+                Convert.ToString(row.Cells[4].Value) ?? "";
         }
+
+        // =====================================================
+        // SEARCH CUSTOMER
+        // =====================================================
 
         private void CMsearchtxtTextchanged(object sender, EventArgs e)
         {
-            string customerId = Cm_searchLbl.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(customerId))
-            {
-                LoadRoomData();
-                return;
-            }
-
-            try
-            {
-                const string query =
-                    "SELECT CustomerID, Fullname, ContactNumber, Address, CustomerType , CustomerStatus " +
-                    "FROM CustomerTbl " +
-                    "WHERE BranchId = @BranchId AND CustomerID LIKE @CustomerID " +
-                    "ORDER BY CustomerID ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { BranchId = branchId, CustomerID = $"%{customerId}%" },
-                    CM_CustomerDGV,
-                    header: new[]
-                    {
-                    "Customer ID",
-                    "Full Name",
-                    "Contact Number",
-                    "Address",
-                    "Customer Type",
-                    "Customer Status"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading customer data: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            ApplyCustomerFilters();
         }
+
+        // =====================================================
+        // ADD CUSTOMER
+        // =====================================================
 
         private void CM_AddCusBtn_Click(object sender, EventArgs e)
         {
@@ -141,17 +98,48 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Warning);
                 return;
             }
+
             try
             {
-                if (CM_CustomeridTxt.Text == "")
+                // CHECK IF CUSTOMER ID ALREADY EXISTS
+                if (!string.IsNullOrWhiteSpace(CM_CustomeridTxt.Text))
                 {
-                    string customerid = IDGenerator.GenerateNextID("CUS", branchId);
+                    MessageBox.Show(
+                        "Customer cannot be added because a customer is already selected. Please clear the fields first.",
+                        "Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
 
-                    const string query =
-                        "INSERT INTO CustomerTbl (CustomerID, BranchID, Fullname, ContactNumber, Address, CustomerType, CustomerStatus) " +
-                        "VALUES (@CustomerID, @BranchID, @Fullname, @ContactNumber, @Address, @CustomerType, @CustomerStatus)";
+                string customerid =
+                    IDGenerator.GenerateNextID("CUS", branchId);
 
-                    var result = AppDB.Instance.CUD(query, new
+                const string query = @"
+                    INSERT INTO CustomerTbl
+                    (
+                        CustomerID,
+                        BranchID,
+                        Fullname,
+                        ContactNumber,
+                        Address,
+                        CustomerType,
+                        CustomerStatus
+                    )
+                    VALUES
+                    (
+                        @CustomerID,
+                        @BranchID,
+                        @Fullname,
+                        @ContactNumber,
+                        @Address,
+                        @CustomerType,
+                        @CustomerStatus
+                    )";
+
+                int result = AppDB.Instance.CUD(
+                    query,
+                    new
                     {
                         CustomerID = customerid,
                         BranchID = branchId,
@@ -161,33 +149,33 @@ namespace _4C_s_Management_System
                         CustomerType = customerType,
                         CustomerStatus = "Inactive"
                     });
-                    if (result > 0)
-                    {
-                        MessageBox.Show(
-                            "Customer added successfully.",
-                            "Success",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                    }
-                }
-                else
+
+                if (result > 0)
                 {
                     MessageBox.Show(
-                        "Customer cannot be added, already exists.",
-                        "Information",
+                        "Customer added successfully.",
+                        "Success",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                }
+                        MessageBoxIcon.Information);
 
-                LoadRoomData();
-                ClearFields();
-                LoadRoomsdisplay();
+                    ClearFields();
+                    ApplyCustomerFilters();
+                    LoadRoomsdisplay();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Error adding customer: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
+        // =====================================================
+        // UPDATE CUSTOMER
+        // =====================================================
 
         private void CM_UpdateBtn_Click(object sender, EventArgs e)
         {
@@ -196,7 +184,6 @@ namespace _4C_s_Management_System
             string contactnumber = CM_conManTxt.Text.Trim();
             string address = CM_AddressTxt.Text.Trim();
             string customerType = CM_AccomTypeTxt.Text.Trim();
-            CM_CustomeridTxt.Text = customerid;
 
             if (string.IsNullOrWhiteSpace(customerid) ||
                 string.IsNullOrWhiteSpace(fullname) ||
@@ -205,28 +192,37 @@ namespace _4C_s_Management_System
                 string.IsNullOrWhiteSpace(customerType))
             {
                 MessageBox.Show(
-                    "Please fill in all fields.",
+                    "Please select a customer and fill in all fields.",
                     "Missing Information",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }
+
             try
             {
-                const string query =
-                    "UPDATE CustomerTbl SET BranchID = @BranchID, Fullname = @Fullname, ContactNumber = @ContactNumber," +
-                    " Address = @Address, CustomerType = @CustomerType " +
-                    "WHERE CustomerID = @CustomerID AND BranchID = @BranchID";
+                const string query = @"
+                    UPDATE CustomerTbl
+                    SET
+                        Fullname = @Fullname,
+                        ContactNumber = @ContactNumber,
+                        Address = @Address,
+                        CustomerType = @CustomerType
+                    WHERE CustomerID = @CustomerID
+                    AND BranchID = @BranchID";
 
-                var result = AppDB.Instance.CUD(query, new
-                {
-                    CustomerID = customerid,
-                    BranchID = branchId,
-                    Fullname = fullname,
-                    ContactNumber = contactnumber,
-                    Address = address,
-                    CustomerType = customerType
-                });
+                int result = AppDB.Instance.CUD(
+                    query,
+                    new
+                    {
+                        CustomerID = customerid,
+                        BranchID = branchId,
+                        Fullname = fullname,
+                        ContactNumber = contactnumber,
+                        Address = address,
+                        CustomerType = customerType
+                    });
+
                 if (result > 0)
                 {
                     MessageBox.Show(
@@ -234,16 +230,33 @@ namespace _4C_s_Management_System
                         "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+
+                    ClearFields();
+                    ApplyCustomerFilters();
+                    LoadRoomsdisplay();
                 }
-                LoadRoomData();
-                ClearFields();
-                LoadRoomsdisplay();
+                else
+                {
+                    MessageBox.Show(
+                        "No customer record was updated.",
+                        "Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Error updating customer: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
+        // =====================================================
+        // CLEAR FIELDS
+        // =====================================================
 
         public void ClearFields()
         {
@@ -252,26 +265,48 @@ namespace _4C_s_Management_System
             CM_conManTxt.Clear();
             CM_AddressTxt.Clear();
             CM_AccomTypeTxt.SelectedIndex = -1;
+
+            CM_CustomerDGV.ClearSelection();
         }
+
+        // =====================================================
+        // CUSTOMER STATISTICS
+        // =====================================================
 
         public void LoadRoomsdisplay()
         {
             try
             {
-                const string query =
-                    "SELECT " +
-                    "COUNT(*) AS TotalCustomers, " +
-                    "COALESCE(SUM(CASE WHEN CustomerStatus = 'Active' THEN 1 ELSE 0 END), 0) AS ActiveCustomers, " +
-                    "COALESCE(SUM(CASE WHEN CustomerStatus = 'Inactive' THEN 1 ELSE 0 END), 0) AS InactiveCustomers, " +
-                    "COALESCE(SUM(CASE WHEN CustomerStatus = 'Pending' THEN 1 ELSE 0 END), 0) AS PendingCustomers " +
-                    "FROM CustomerTbl " +
-                    "WHERE BranchId = @BranchId";
+                const string query = @"
+                    SELECT
+                        COUNT(*) AS TotalCustomers,
+
+                        COALESCE(SUM(
+                            CASE WHEN CustomerStatus = 'Active'
+                            THEN 1 ELSE 0 END
+                        ), 0) AS ActiveCustomers,
+
+                        COALESCE(SUM(
+                            CASE WHEN CustomerStatus = 'Inactive'
+                            THEN 1 ELSE 0 END
+                        ), 0) AS InactiveCustomers,
+
+                        COALESCE(SUM(
+                            CASE WHEN CustomerStatus = 'Pending'
+                            THEN 1 ELSE 0 END
+                        ), 0) AS PendingCustomers
+
+                    FROM CustomerTbl
+                    WHERE BranchID = @BranchID";
 
                 var data = AppDB.Instance.TableData(
                     query,
-                    new { BranchId = branchId });
+                    new { BranchID = branchId });
 
-                var row = data.Rows[0];
+                if (data.Rows.Count == 0)
+                    return;
+
+                DataRow row = data.Rows[0];
 
                 CM_totalcusLbl.Text =
                     Convert.ToInt32(row["TotalCustomers"]).ToString();
@@ -288,12 +323,16 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error loading customer statistics: {ex.Message}",
+                    "Error loading customer statistics: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
+
+        // =====================================================
+        // DELETE CUSTOMER
+        // =====================================================
 
         private void CM_deleteBtn_Click(object sender, EventArgs e)
         {
@@ -302,24 +341,38 @@ namespace _4C_s_Management_System
             if (string.IsNullOrWhiteSpace(customerid))
             {
                 MessageBox.Show(
-                    "Please select Data",
+                    "Please select a customer first.",
                     "Missing Information",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }
+
+            DialogResult confirm = MessageBox.Show(
+                "Are you sure you want to delete this customer?\n\nCustomer ID: "
+                + customerid,
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
             try
             {
+                const string query = @"
+                    DELETE FROM CustomerTbl
+                    WHERE CustomerID = @CustomerID
+                    AND BranchID = @BranchID";
 
-                const string query =
-                    "DELETE FROM CustomerTbl " +
-                    "WHERE CustomerID = @CustomerID AND BranchID = @BranchID";
+                int result = AppDB.Instance.CUD(
+                    query,
+                    new
+                    {
+                        CustomerID = customerid,
+                        BranchID = branchId
+                    });
 
-                var result = AppDB.Instance.CUD(query, new
-                {
-                    CustomerID = customerid,
-                    BranchID = branchId
-                });
                 if (result > 0)
                 {
                     MessageBox.Show(
@@ -327,30 +380,52 @@ namespace _4C_s_Management_System
                         "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+
+                    ClearFields();
+                    ApplyCustomerFilters();
+                    LoadRoomsdisplay();
                 }
-                LoadRoomData();
-                ClearFields();
-                LoadRoomsdisplay();
+                else
+                {
+                    MessageBox.Show(
+                        "Customer record was not found.",
+                        "Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error loading rooms: {ex.Message}",
-                    "Error",
+                    "Unable to delete customer. The customer may have existing reservation or payment records.\n\n"
+                    + ex.Message,
+                    "Delete Error",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                    MessageBoxIcon.Warning);
             }
         }
 
-        private void Cellcontent_click_roomDgv(object sender, DataGridViewCellEventArgs e)
+        // =====================================================
+        // DATAGRIDVIEW CELL CLICK
+        // =====================================================
+
+        private void Cellcontent_click_roomDgv(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
 
+            CM_CustomerDGV.ClearSelection();
+
+            CM_CustomerDGV.Rows[e.RowIndex].Selected = true;
+
             loaddisplay();
         }
-       #region "Customer Status and Type Filtering"
+
+        // =====================================================
+        // CUSTOMER STATUS AND TYPE FILTERING
+        // =====================================================
 
         private void ApplyCustomerFilters()
         {
@@ -358,44 +433,60 @@ namespace _4C_s_Management_System
             {
                 var conditions = new List<string>
                 {
-                    "BranchId = @BranchId"
+                    "BranchID = @BranchID"
                 };
 
                 var parameters = new Dictionary<string, object>
                 {
-                    ["BranchId"] = branchId
+                    ["BranchID"] = branchId
                 };
 
+                // FILTER CUSTOMER TYPE
                 if (CM_custypeCB.SelectedIndex > 0 &&
-                    CM_custypeCB.SelectedItem is not null)
+                    CM_custypeCB.SelectedItem != null)
                 {
-                    conditions.Add("CustomerType = @CustomerType");
+                    conditions.Add(
+                        "CustomerType = @CustomerType");
+
                     parameters["CustomerType"] =
                         CM_custypeCB.SelectedItem.ToString()!;
                 }
 
+                // FILTER CUSTOMER STATUS
                 if (CM_CustomerstatCB.SelectedIndex > 0 &&
-                    CM_CustomerstatCB.SelectedItem is not null)
+                    CM_CustomerstatCB.SelectedItem != null)
                 {
-                    conditions.Add("CustomerStatus = @CustomerStatus");
+                    conditions.Add(
+                        "CustomerStatus = @CustomerStatus");
+
                     parameters["CustomerStatus"] =
                         CM_CustomerstatCB.SelectedItem.ToString()!;
                 }
 
+                // SEARCH CUSTOMER ID
                 string customerId = Cm_searchLbl.Text.Trim();
 
                 if (!string.IsNullOrWhiteSpace(customerId))
                 {
-                    conditions.Add("CustomerID LIKE @CustomerID");
-                    parameters["CustomerID"] = $"%{customerId}%";
+                    conditions.Add(
+                        "CustomerID LIKE @CustomerID");
+
+                    parameters["CustomerID"] =
+                        "%" + customerId + "%";
                 }
 
-                string query =
-                    "SELECT CustomerID, Fullname, ContactNumber, Address, " +
-                    "CustomerType, CustomerStatus " +
-                    "FROM CustomerTbl " +
-                    $"WHERE {string.Join(" AND ", conditions)} " +
-                    "ORDER BY CustomerID ASC";
+                // FINAL QUERY
+                string query = @"
+                    SELECT
+                        CustomerID,
+                        Fullname,
+                        ContactNumber,
+                        Address,
+                        CustomerType,
+                        CustomerStatus
+                    FROM CustomerTbl
+                    WHERE " + string.Join(" AND ", conditions) + @"
+                    ORDER BY CustomerID ASC";
 
                 AppDB.Instance.Table(
                     query,
@@ -414,24 +505,34 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error loading customer data: {ex.Message}",
+                    "Error loading customer data: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
-        private void CM_selectedindexchange_stat(object sender, EventArgs e)
+        // =====================================================
+        // CUSTOMER STATUS FILTER EVENT
+        // =====================================================
+
+        private void CM_selectedindexchange_stat(
+            object sender,
+            EventArgs e)
         {
             ApplyCustomerFilters();
         }
 
-        private void CM_CustomerType_indexChanged(object sender, EventArgs e)
+        // =====================================================
+        // CUSTOMER TYPE FILTER EVENT
+        // =====================================================
+
+        private void CM_CustomerType_indexChanged(
+            object sender,
+            EventArgs e)
         {
             ApplyCustomerFilters();
         }
 
-        #endregion
     }
 }
-

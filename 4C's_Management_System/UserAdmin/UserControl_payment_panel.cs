@@ -13,21 +13,24 @@ namespace _4C_s_Management_System
         public string paymentMet = "Cash";
         public double totalam = 0;
 
+        // EVENT TO NOTIFY PARENT
+        public event EventHandler PaymentAccepted;
+
         public UserControl_payment_panel()
         {
             InitializeComponent();
 
-            // Default payment method
+            // DEFAULT PAYMENT METHOD
             paymentMet = "Cash";
             PaymentMethod.Text = "Cash Payment";
 
-            // Calculate change whenever the received amount changes
-            PD_CashRecievedTXT.TextChanged += PD_CashRecievedTXT_TextChanged;
+            // AUTOMATIC CHANGE CALCULATION
+            PD_CashRecievedTXT.TextChanged +=
+                PD_CashRecievedTXT_TextChanged;
         }
 
         private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
         {
-
         }
 
         // CASH PAYMENT
@@ -104,7 +107,6 @@ namespace _4C_s_Management_System
         // LOAD EVENT
         private void UserControl_payment_panel_Load(object sender, EventArgs e)
         {
-            // Prevent database operations in Visual Studio Designer
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime ||
                 DesignMode)
             {
@@ -143,7 +145,6 @@ namespace _4C_s_Management_System
                 if (result != null && result != DBNull.Value)
                 {
                     totalam = Convert.ToDouble(result);
-
                     PD_AmountLBL.Text = totalam.ToString("N2");
                 }
                 else
@@ -162,7 +163,8 @@ namespace _4C_s_Management_System
         }
 
         // AUTOMATIC CHANGE CALCULATION
-        private void PD_CashRecievedTXT_TextChanged(object sender, EventArgs e)
+        private void PD_CashRecievedTXT_TextChanged(
+            object sender, EventArgs e)
         {
             CalculateChange();
         }
@@ -172,13 +174,15 @@ namespace _4C_s_Management_System
             decimal received;
             decimal amountDue;
 
-            if (!decimal.TryParse(PD_CashRecievedTXT.Text, out received))
+            if (!decimal.TryParse(
+                PD_CashRecievedTXT.Text, out received))
             {
                 PD_ChangeTXT.Text = "0.00";
                 return;
             }
 
-            if (!decimal.TryParse(PD_AmountLBL.Text, out amountDue))
+            if (!decimal.TryParse(
+                PD_AmountLBL.Text, out amountDue))
             {
                 PD_ChangeTXT.Text = "0.00";
                 return;
@@ -188,14 +192,9 @@ namespace _4C_s_Management_System
             {
                 decimal change = received - amountDue;
 
-                if (change >= 0)
-                {
-                    PD_ChangeTXT.Text = change.ToString("N2");
-                }
-                else
-                {
-                    PD_ChangeTXT.Text = "0.00";
-                }
+                PD_ChangeTXT.Text = change >= 0
+                    ? change.ToString("N2")
+                    : "0.00";
             }
             else
             {
@@ -204,21 +203,23 @@ namespace _4C_s_Management_System
         }
 
         // CONFIRM PAYMENT
-        private void PD_ConfirmPaymenBTN_Click(object sender, EventArgs e)
+        private void PD_ConfirmPaymenBTN_Click(
+            object sender, EventArgs e)
         {
             try
             {
-                // Check payment method
+                // CHECK PAYMENT METHOD
                 if (string.IsNullOrWhiteSpace(paymentMet))
                 {
                     MessageBox.Show("Please select a payment method.");
                     return;
                 }
 
-                // Check received amount
+                // CHECK RECEIVED AMOUNT
                 decimal totpaid;
 
-                if (!decimal.TryParse(PD_CashRecievedTXT.Text, out totpaid))
+                if (!decimal.TryParse(
+                    PD_CashRecievedTXT.Text, out totpaid))
                 {
                     MessageBox.Show("Please enter a valid payment amount.");
                     PD_CashRecievedTXT.Focus();
@@ -227,22 +228,25 @@ namespace _4C_s_Management_System
 
                 if (totpaid <= 0)
                 {
-                    MessageBox.Show("Payment amount must be greater than zero.");
+                    MessageBox.Show(
+                        "Payment amount must be greater than zero.");
+
                     PD_CashRecievedTXT.Focus();
                     return;
                 }
 
-                // Get total amount due
+                // GET TOTAL AMOUNT DUE
                 decimal totalAmount;
 
-                if (!decimal.TryParse(PD_AmountLBL.Text, out totalAmount) ||
+                if (!decimal.TryParse(
+                    PD_AmountLBL.Text, out totalAmount) ||
                     totalAmount <= 0)
                 {
                     MessageBox.Show("Invalid payment amount.");
                     return;
                 }
 
-                // Validate payment amount
+                // VALIDATE PAYMENT AMOUNT
                 if (totpaid < totalAmount)
                 {
                     MessageBox.Show(
@@ -253,18 +257,20 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // Get reference number
+                // GET REFERENCE NUMBER
                 string refn = refNumtxt.Text.Trim();
 
-                // Reference number is required for online payments
-                if (paymentMet != "Cash" && string.IsNullOrWhiteSpace(refn))
+                if (paymentMet != "Cash" &&
+                    string.IsNullOrWhiteSpace(refn))
                 {
-                    MessageBox.Show("Please enter the reference number.");
+                    MessageBox.Show(
+                        "Please enter the reference number.");
+
                     refNumtxt.Focus();
                     return;
                 }
 
-                // Calculate change
+                // CALCULATE CHANGE
                 decimal change = 0;
 
                 if (paymentMet == "Cash")
@@ -274,19 +280,20 @@ namespace _4C_s_Management_System
 
                 PD_ChangeTXT.Text = change.ToString("N2");
 
-                // Actual amount applied to the payment
+                // ACTUAL AMOUNT APPLIED
                 decimal amountPaid = totalAmount;
 
-                // Remaining balance
+                // REMAINING BALANCE
                 decimal balance = totalAmount - amountPaid;
 
-                // Payment status
-                string paymentStatus = balance <= 0 ? "Paid" : "Pending";
+                // PAYMENT STATUS
+                string paymentStatus =
+                    balance <= 0 ? "Paid" : "Pending";
 
-                // Payment date
+                // PAYMENT DATE
                 DateTime dateNom = DateTime.Now;
 
-                // Payment ID
+                // PAYMENT ID
                 string pid = AccessBranch_ByForm.PaymentId;
 
                 if (string.IsNullOrWhiteSpace(pid))
@@ -295,7 +302,7 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // Update PaymentTbl
+                // UPDATE PAYMENT TABLE
                 const string paymentq =
                     "UPDATE PaymentTbl SET " +
                     "AmountPaid = @AmountPaid, " +
@@ -319,6 +326,7 @@ namespace _4C_s_Management_System
                         PaymentID = pid
                     });
 
+                // CHECK DATABASE RESULT
                 if (result > 0)
                 {
                     MessageBox.Show(
@@ -327,6 +335,10 @@ namespace _4C_s_Management_System
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
+                    // NOTIFY PARENT AFTER SUCCESS
+                    PaymentAccepted?.Invoke(this, EventArgs.Empty);
+
+                    // CLOSE SHELL
                     if (this.Parent != null)
                     {
                         this.Parent.Visible = false;
@@ -334,7 +346,8 @@ namespace _4C_s_Management_System
                 }
                 else
                 {
-                    MessageBox.Show("Payment failed. Please try again.");
+                    MessageBox.Show(
+                        "Payment failed. Please try again.");
                 }
             }
             catch (Exception ex)
@@ -343,9 +356,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        private void UserControl_payment_panel_Load_1(object sender, EventArgs e)
+        private void UserControl_payment_panel_Load_1(
+            object sender, EventArgs e)
         {
-            // Prevent database operations in Visual Studio Designer
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime ||
                 DesignMode)
             {

@@ -2,16 +2,13 @@
 using _4C_s_Management_System.Classess;
 using System;
 using System.Data;
-using System.Diagnostics;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _4C_s_Management_System
 {
     public partial class UserControlMaintenance : UserControl
     {
         private bool isLoading = false;
-        private bool isNewRequest = false;
 
         public string branchid = AccessBranch_ByForm.BranchId;
 
@@ -50,7 +47,11 @@ namespace _4C_s_Management_System
                 CB_ROOM_TYPE.Items.Add("All Room Types");
 
                 DataTable roomTypes = AppDB.Instance.TableData(
-                    "SELECT DISTINCT RoomType FROM TBLRoom ORDER BY RoomType");
+                    @"SELECT DISTINCT RoomType
+                      FROM TBLRoom
+                      WHERE BranchID = @BranchID
+                      ORDER BY RoomType",
+                    new { BranchID = branchid });
 
                 foreach (DataRow row in roomTypes.Rows)
                 {
@@ -65,13 +66,12 @@ namespace _4C_s_Management_System
                 CB_STATUS.Items.AddRange(new object[]
                 {
                     "All Status",
-                    "Pending", 
+                    "Pending",
                     "Approved",
                     "In Progress",
                     "Completed",
                     "Canceled",
                     "Rejected"
-                   
                 });
 
                 CB_STATUS.SelectedIndex = 0;
@@ -92,7 +92,7 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
-        // LOAD, SEARCH AND FILTER MAINTENANCE
+        // LOAD MAINTENANCE
         // ==========================================
 
         private void LoadMaintenance()
@@ -112,7 +112,10 @@ namespace _4C_s_Management_System
                     FROM MaintenanceTbl M
                     LEFT JOIN TBLRoom R
                         ON M.RoomID = R.RoomId
+                        AND M.BranchID = R.BranchID
                     WHERE
+                        M.BranchID = @BranchID
+                        AND
                         (
                             @search = ''
                             OR M.MaintenanceID LIKE '%' + @search + '%'
@@ -135,12 +138,12 @@ namespace _4C_s_Management_System
                     query,
                     new
                     {
+                        BranchID = branchid,
                         search = TB_SEARCH.Text.Trim(),
                         roomType = CB_ROOM_TYPE.Text,
                         status = CB_STATUS.Text
                     });
 
-                // DISPLAY DATA
                 DGV_MAINTENANCE.DataSource = null;
                 DGV_MAINTENANCE.DataSource = dt;
 
@@ -162,7 +165,7 @@ namespace _4C_s_Management_System
                 DGV_MAINTENANCE.Columns["DateStarted"].Visible = false;
                 DGV_MAINTENANCE.Columns["DateCompleted"].Visible = false;
 
-                // EQUAL COLUMN WIDTH
+                // COLUMN WIDTH
                 DGV_MAINTENANCE.AutoSizeColumnsMode =
                     DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -172,6 +175,7 @@ namespace _4C_s_Management_System
                 DGV_MAINTENANCE.Columns["Status"].FillWeight = 100;
                 DGV_MAINTENANCE.Columns["RoomType"].FillWeight = 100;
 
+                DGV_MAINTENANCE.ClearSelection();
                 DGV_MAINTENANCE.Refresh();
             }
             catch (Exception ex)
@@ -221,10 +225,9 @@ namespace _4C_s_Management_System
             {
                 DataGridViewRow row = DGV_MAINTENANCE.Rows[e.RowIndex];
 
-                if (row.Cells["MaintenanceID"].Value == null)
+                if (row.IsNewRow ||
+                    row.Cells["MaintenanceID"].Value == null)
                     return;
-
-                isNewRequest = false;
 
                 string maintenanceID =
                     row.Cells["MaintenanceID"].Value.ToString();
@@ -276,6 +279,35 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
+        // VALIDATE ROOM
+        // ==========================================
+
+        private bool ValidateRoom()
+        {
+            object roomExists = AppDB.Instance.Scalar(
+                @"SELECT COUNT(*)
+                  FROM TBLRoom
+                  WHERE RoomId = @RoomID
+                  AND BranchID = @BranchID",
+                new
+                {
+                    RoomID = txb_Room_id.Text.Trim(),
+                    BranchID = branchid
+                });
+
+            if (roomExists == null ||
+                Convert.ToInt32(roomExists) == 0)
+            {
+                MessageBox.Show(
+                    "Room ID does not exist in this branch.");
+
+                return false;
+            }
+
+            return true;
+        }
+
+        // ==========================================
         // ADD NEW MAINTENANCE REQUEST
         // ==========================================
 
@@ -290,20 +322,17 @@ namespace _4C_s_Management_System
 
             try
             {
-                object? roomExists = AppDB.Instance.Scalar(
-                    "SELECT COUNT(*) FROM TBLRoom WHERE RoomId = @RoomID",
-                    new { RoomID = txb_Room_id.Text.Trim() });
-
-                if (roomExists == null || Convert.ToInt32(roomExists) == 0)
-                {
-                    MessageBox.Show("Room ID does not exist.");
+                if (!ValidateRoom())
                     return;
-                }
+
+                string maintenanceID =
+                    IDGenerator.GenerateNextID("MTN", branchid);
 
                 string query = @"
                     INSERT INTO MaintenanceTbl
                     (
                         MaintenanceID,
+                        BranchID,
                         RoomID,
                         Issue,
                         Remarks,
@@ -312,6 +341,7 @@ namespace _4C_s_Management_System
                     VALUES
                     (
                         @id,
+                        @BranchID,
                         @roomID,
                         @issue,
                         @remarks,
@@ -322,7 +352,8 @@ namespace _4C_s_Management_System
                     query,
                     new
                     {
-                        id = IDGenerator.GenerateNextID("MTN", branchid),
+                        id = maintenanceID,
+                        BranchID = branchid,
                         roomID = txb_Room_id.Text.Trim(),
                         issue = txb_issue.Text.Trim(),
                         remarks = txb_remarks.Text.Trim()
@@ -339,7 +370,8 @@ namespace _4C_s_Management_System
                 }
                 else
                 {
-                    MessageBox.Show("Unable to add maintenance request.");
+                    MessageBox.Show(
+                        "Unable to add maintenance request.");
                 }
             }
             catch (Exception ex)
@@ -372,15 +404,8 @@ namespace _4C_s_Management_System
 
             try
             {
-                object? roomExists = AppDB.Instance.Scalar(
-                    "SELECT COUNT(*) FROM TBLRoom WHERE RoomId = @RoomID",
-                    new { RoomID = txb_Room_id.Text.Trim() });
-
-                if (roomExists == null || Convert.ToInt32(roomExists) == 0)
-                {
-                    MessageBox.Show("Room ID does not exist.");
+                if (!ValidateRoom())
                     return;
-                }
 
                 string query = @"
                     UPDATE MaintenanceTbl
@@ -388,7 +413,8 @@ namespace _4C_s_Management_System
                         RoomID = @roomID,
                         Issue = @issue,
                         Remarks = @remarks
-                    WHERE MaintenanceID = @id";
+                    WHERE MaintenanceID = @id
+                    AND BranchID = @BranchID";
 
                 int result = AppDB.Instance.CUD(
                     query,
@@ -397,12 +423,14 @@ namespace _4C_s_Management_System
                         id = tb_maintenance_id.Text,
                         roomID = txb_Room_id.Text.Trim(),
                         issue = txb_issue.Text.Trim(),
-                        remarks = txb_remarks.Text.Trim()
+                        remarks = txb_remarks.Text.Trim(),
+                        BranchID = branchid
                     });
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Maintenance record updated!");
+                    MessageBox.Show(
+                        "Maintenance record updated!");
 
                     LoadMaintenance();
                     UpdateDashboard();
@@ -410,7 +438,8 @@ namespace _4C_s_Management_System
                 }
                 else
                 {
-                    MessageBox.Show("No record was updated.");
+                    MessageBox.Show(
+                        "No record was updated.");
                 }
             }
             catch (Exception ex)
@@ -431,8 +460,6 @@ namespace _4C_s_Management_System
 
         private void ClearFields()
         {
-            isNewRequest = true;
-
             tb_maintenance_id.Clear();
             txb_Room_id.Clear();
             txb_issue.Clear();
@@ -472,11 +499,16 @@ namespace _4C_s_Management_System
                         Status = 'In Progress',
                         DateStarted = GETDATE()
                     WHERE MaintenanceID = @id
+                    AND BranchID = @BranchID
                     AND Status = 'Pending'";
 
                 int result = AppDB.Instance.CUD(
                     query,
-                    new { id = tb_maintenance_id.Text });
+                    new
+                    {
+                        id = tb_maintenance_id.Text,
+                        BranchID = branchid
+                    });
 
                 if (result > 0)
                 {
@@ -520,11 +552,16 @@ namespace _4C_s_Management_System
                         Status = 'Completed',
                         DateCompleted = GETDATE()
                     WHERE MaintenanceID = @id
+                    AND BranchID = @BranchID
                     AND Status = 'In Progress'";
 
                 int result = AppDB.Instance.CUD(
                     query,
-                    new { id = tb_maintenance_id.Text });
+                    new
+                    {
+                        id = tb_maintenance_id.Text,
+                        BranchID = branchid
+                    });
 
                 if (result > 0)
                 {
@@ -587,7 +624,9 @@ namespace _4C_s_Management_System
                         Status,
                         COUNT(*) AS Total
                     FROM MaintenanceTbl
-                    GROUP BY Status");
+                    WHERE BranchID = @BranchID
+                    GROUP BY Status",
+                    new { BranchID = branchid });
 
                 int total = 0;
                 int completed = 0;
@@ -597,7 +636,9 @@ namespace _4C_s_Management_System
                 foreach (DataRow row in dt.Rows)
                 {
                     int count = Convert.ToInt32(row["Total"]);
-                    string status = row["Status"].ToString();
+
+                    string status =
+                        row["Status"]?.ToString() ?? "";
 
                     total += count;
 
