@@ -215,7 +215,7 @@ namespace _4C_s_Management_System
             {
                 const string query =
                     "UPDATE CustomerTbl SET BranchID = @BranchID, Fullname = @Fullname, ContactNumber = @ContactNumber," +
-                    " Address = @Address, CustomerType = @CustomerType" +
+                    " Address = @Address, CustomerType = @CustomerType " +
                     "WHERE CustomerID = @CustomerID AND BranchID = @BranchID";
 
                 var result = AppDB.Instance.CUD(query, new
