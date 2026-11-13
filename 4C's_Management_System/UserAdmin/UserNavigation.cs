@@ -122,6 +122,24 @@ namespace _4C_s_Management_System
             }
         }
 
+
+        public void reservation()
+        {
+            designBTN(
+                UserNav_ReservationBtn,
+                UserNav_Staff_Btn,
+                UserNav_TenantsBtn,
+                UserNav_CustomerBtn,
+                UserNav_LogoutBtn,
+                UserNav_PaymentBtn,
+                userNav_RoomsBtn,
+                userNav_DashboardBtn,
+                UserNav_MaintenanceBtn,
+                User_Control_ReportsBtn,
+                UserNav_AdminBtn
+                );
+        }
+
         public void guna2Button9_Click(object sender, EventArgs e)
         {
             designBTN(

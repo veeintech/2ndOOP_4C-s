@@ -253,6 +253,19 @@ namespace _4C_s_Management_System
                 return;
             }
 
+            const string checkroom = "SELECT ResEndDate FROM ReservationTbl WHERE RoomId = @Roomid";
+
+            DateTime endDate = Convert.ToDateTime(
+            AppDB.Instance.Scalar(
+                checkroom,
+                new { RoomId = roomid }));
+
+            if(endDate < startdate)
+            {
+
+            }
+
+            //check if room is available
             const string customerQuery =
                "SELECT Status " +
                "FROM TBLRoom " +
@@ -265,12 +278,16 @@ namespace _4C_s_Management_System
 
             if (!string.Equals(status, "Available", StringComparison.OrdinalIgnoreCase))
             {
-                MessageBox.Show(
+
+                if (!(endDate < startdate))
+                {
+                    MessageBox.Show(
                     "Room is not currently available. Cannot be reserved.",
                     "Invalid Operation",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                return;
+                    return;
+                }
             }
 
             string roomType = "";
@@ -343,11 +360,56 @@ namespace _4C_s_Management_System
                     customerstatus("re");
 
                     const string roomquery =
-                    "UPDATE TBLRoom SET " +
-                    "Status = @Status " +
-                    "WHERE RoomId = @RoomId";
+                        "UPDATE TBLRoom SET " +
+                        "Status = @Status " +
+                        "WHERE RoomId = @RoomId";
 
                     int roomres = AppDB.Instance.CUD(roomquery, new { RoomId = roomid, Status = "Reserved" });
+
+
+                    // PAYMENT INSERT
+                    if (accomodationtype != "Apartment")
+                    {
+                        const string payment =
+                            "INSERT INTO PaymentTbl " +
+                            "(PaymentID, BranchID, ReservationID, CustomerID, AmountPaid, PaymentStatus) " +
+                            "VALUES " +
+                            "(@PaymentID, @BranchID, @ReservationID, @CustomerID, @AmountPaid, @PaymentStatus)";
+
+                        int paymentResult = AppDB.Instance.CUD(
+                            payment,
+                            new
+                            {
+                                PaymentID = IDGenerator.GenerateNextID("PAY", branchid),
+                                BranchID = branchid,
+                                ReservationID = RR_ReserIDTxt.Text.Trim(),
+                                CustomerID = customerid,
+                                AmountPaid = Convert.ToDecimal(
+                                    RR_totalpriceLBL.Text.Replace("₱", "").Replace(",", "").Trim()),
+                                PaymentStatus = "Pending"
+                            });
+                    }
+                    else
+                    {
+                        const string payment =
+                            "INSERT INTO PaymentTbl " +
+                            "(PaymentID, BranchID, TenantID, AmountPaid, PaymentStatus) " +
+                            "VALUES " +
+                            "(@PaymentID, @BranchID, @TenantID, @AmountPaid, @PaymentStatus)";
+
+                        int paymentResult = AppDB.Instance.CUD(
+                            payment,
+                            new
+                            {
+                                PaymentID = IDGenerator.GenerateNextID("PAY", branchid),
+                                BranchID = branchid,
+                                TenantID = RR_tenantidTxt.Text.Trim(),
+                                AmountPaid = Convert.ToDecimal(
+                                    RR_totalpriceLBL.Text.Replace("₱", "").Replace(",", "").Trim()),
+                                PaymentStatus = "Pending"
+                            });
+                    }
+                    //dito ang end
 
                     if (roomres > 0)
                     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4C_s_Management_System.Classess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace _4C_s_Management_System
 {
@@ -17,6 +19,8 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
         }
+
+        public string branchid = AccessBranch_ByForm.BranchId;
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -62,6 +66,8 @@ namespace _4C_s_Management_System
                 panelPOPUP.Visible = true;
                 UserControl_payment_panel paymentPanel = new UserControl_payment_panel();
                 MainControlClass.ShowControl(paymentPanel, panelPOPUP);
+                string id = PM_PaymentIdLBL.Text;
+                AccessBranch_ByForm.SetPayment(id);
 
             }
             catch (Exception ex)
@@ -73,6 +79,38 @@ namespace _4C_s_Management_System
         private void UserControlPayment_Load(object sender, EventArgs e)
         {
             panelPOPUP.Visible = false;
+            loadDGV();
+        }
+
+        public void loadDGV()
+        {
+            try
+            {
+                const string query =
+                       "SELECT PaymentID, ReservationID, AmountPaid, PaymentDate, " +
+                       "PaymentMethod, PaymentStatus " +
+                       "FROM PaymentTbl " +
+                       "WHERE BranchID = @BranchId " +
+                       "ORDER BY PaymentDate DESC";
+
+                AppDB.Instance.Table(
+                    query,
+                    new { BranchId = branchid },
+                    PaymentDGV,
+                    header: new[]
+                                {
+                        "Payment ID",
+                        "Reservation ID",
+                        "Amount",
+                        "Date",
+                        "Method",
+                        "Status",
+                    });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

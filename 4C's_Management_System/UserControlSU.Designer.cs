@@ -278,8 +278,9 @@
             SU_trmconCB.ForeColor = Color.FromArgb(74, 14, 14);
             SU_trmconCB.Location = new Point(149, 546);
             SU_trmconCB.Name = "SU_trmconCB";
-            SU_trmconCB.Size = new Size(18, 17);
+            SU_trmconCB.Size = new Size(274, 23);
             SU_trmconCB.TabIndex = 37;
+            SU_trmconCB.Text = " I agree to the Terms and Condition";
             SU_trmconCB.UncheckedState.BorderColor = Color.FromArgb(64, 64, 64);
             SU_trmconCB.UncheckedState.BorderRadius = 0;
             SU_trmconCB.UncheckedState.BorderThickness = 1;
@@ -455,8 +456,6 @@
             BackColor = Color.FromArgb(255, 249, 239);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            Controls.Add(userControl_terms_condition1);
-            Controls.Add(termsLBL);
             Controls.Add(SU_openedeyeBtn);
             Controls.Add(SU_closedeyeBtn);
             Controls.Add(LOGIN_lblsignup);

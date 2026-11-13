@@ -30,16 +30,15 @@ namespace _4C_s_Management_System
 
         private void UCDash_NewReservationBtn_Click(object sender, EventArgs e)
         {
-            UserNavigation? nav = FindForm() as UserNavigation;
-            Control? parent = Parent;
-
-            if (parent == null)
+            if (FindForm() is not UserNavigation nav || Parent is not Control parent)
             {
                 return;
             }
 
-            UserControlRoomReserv rs = new UserControlRoomReserv();
-            MainControlClass.ShowControl(rs, parent);
+            nav.reservation();
+
+            UserControlRoomReserv reservationControl = new UserControlRoomReserv();
+            MainControlClass.ShowControl(reservationControl, parent);
         }
 
         private void UserControlDB_Load(object sender, EventArgs e)
