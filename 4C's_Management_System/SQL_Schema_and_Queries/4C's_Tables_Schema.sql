@@ -158,3 +158,26 @@ CREATE TABLE [dbo].[PaymentTbl] (
         FOREIGN KEY ([CustomerID])
         REFERENCES [dbo].[CustomerTbl] ([CustomerID])
 );
+
+-- ==========================================
+-- 9. PaymenytTBl
+-- ==========================================
+
+CREATE TABLE [dbo].[StaffTbl]
+(
+    [StaffID] VARCHAR(20) NOT NULL PRIMARY KEY,
+    [BranchID] VARCHAR(15) NOT NULL,
+    [FullName] VARCHAR(100) NOT NULL,
+    [ContactNumber] VARCHAR(12) NOT NULL,
+    [Email] VARCHAR(40) NOT NULL,
+    [Adress] VARCHAR(100) NOT NULL,
+    [Gender] CHAR(1) NOT NULL,
+    [JobPosition] VARCHAR(30),
+    [Datehired] DATETIME,
+    [SalaryRate] DECIMAL(10,2),
+    [Status] VARCHAR(30) NOT NULL,
+
+    CONSTRAINT FK_StaffTbl_BranchTbl
+    FOREIGN KEY (BranchID)
+    REFERENCES BranchTbl(BranchID)
+);
