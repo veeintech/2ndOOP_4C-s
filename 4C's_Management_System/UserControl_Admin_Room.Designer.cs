@@ -170,9 +170,9 @@
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             BranchIdTXT = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
             gunaHtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             RoomidTXT = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             rateTxt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -424,6 +424,8 @@
             // 
             // guna2Panel7
             // 
+            guna2Panel7.AutoScroll = true;
+            guna2Panel7.AutoScrollMinSize = new Size(0, 1000);
             guna2Panel7.BackColor = Color.White;
             guna2Panel7.BorderColor = Color.Silver;
             guna2Panel7.BorderRadius = 15;
@@ -431,10 +433,10 @@
             guna2Panel7.Controls.Add(RoomDGV);
             guna2Panel7.Controls.Add(dataGridView1);
             guna2Panel7.CustomizableEdges = customizableEdges13;
-            guna2Panel7.Location = new Point(14, 63);
+            guna2Panel7.Location = new Point(16, 58);
             guna2Panel7.Name = "guna2Panel7";
             guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel7.Size = new Size(849, 419);
+            guna2Panel7.Size = new Size(849, 421);
             guna2Panel7.TabIndex = 37;
             // 
             // RoomDGV
@@ -484,7 +486,7 @@
             RoomDGV.RowHeadersVisible = false;
             RoomDGV.RowHeadersWidth = 51;
             RoomDGV.RowTemplate.Height = 30;
-            RoomDGV.Size = new Size(849, 419);
+            RoomDGV.Size = new Size(828, 1000);
             RoomDGV.TabIndex = 1;
             RoomDGV.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(255, 218, 88);
             RoomDGV.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -505,6 +507,8 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 218, 88);
             dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -525,7 +529,7 @@
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView1.ColumnHeadersHeight = 30;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -534,9 +538,11 @@
             dataGridViewCellStyle7.SelectionForeColor = Color.Maroon;
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(1298, 0);
+            dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = Color.White;
@@ -548,8 +554,9 @@
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.ScrollBars = ScrollBars.Vertical;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(300, 188);
+            dataGridView1.Size = new Size(828, 1000);
             dataGridView1.TabIndex = 0;
             // 
             // cb_status
@@ -1073,9 +1080,9 @@
             guna2Panel8.BorderRadius = 15;
             guna2Panel8.BorderThickness = 2;
             guna2Panel8.Controls.Add(BranchIdTXT);
-            guna2Panel8.Controls.Add(guna2PictureBox15);
             guna2Panel8.Controls.Add(gunaHtmlLabel3);
             guna2Panel8.Controls.Add(RoomidTXT);
+            guna2Panel8.Controls.Add(guna2PictureBox15);
             guna2Panel8.Controls.Add(guna2PictureBox14);
             guna2Panel8.Controls.Add(guna2HtmlLabel14);
             guna2Panel8.Controls.Add(rateTxt);
@@ -1100,7 +1107,7 @@
             guna2Panel8.Location = new Point(33, 768);
             guna2Panel8.Name = "guna2Panel8";
             guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges79;
-            guna2Panel8.Size = new Size(1267, 306);
+            guna2Panel8.Size = new Size(1267, 332);
             guna2Panel8.TabIndex = 67;
             // 
             // BranchIdTXT
@@ -1124,23 +1131,6 @@
             BranchIdTXT.Size = new Size(370, 36);
             BranchIdTXT.TabIndex = 171;
             // 
-            // guna2PictureBox15
-            // 
-            guna2PictureBox15.BackColor = Color.Transparent;
-            guna2PictureBox15.BackgroundImageLayout = ImageLayout.Zoom;
-            guna2PictureBox15.BorderRadius = 20;
-            guna2PictureBox15.CustomizableEdges = customizableEdges50;
-            guna2PictureBox15.FillColor = Color.Transparent;
-            guna2PictureBox15.Image = Properties.Resources.d1;
-            guna2PictureBox15.ImageRotate = 0F;
-            guna2PictureBox15.Location = new Point(39, 132);
-            guna2PictureBox15.Name = "guna2PictureBox15";
-            guna2PictureBox15.ShadowDecoration.CustomizableEdges = customizableEdges51;
-            guna2PictureBox15.Size = new Size(34, 27);
-            guna2PictureBox15.SizeMode = PictureBoxSizeMode.Zoom;
-            guna2PictureBox15.TabIndex = 170;
-            guna2PictureBox15.TabStop = false;
-            // 
             // gunaHtmlLabel3
             // 
             gunaHtmlLabel3.BackColor = Color.Transparent;
@@ -1156,7 +1146,7 @@
             // RoomidTXT
             // 
             RoomidTXT.BorderColor = Color.Maroon;
-            RoomidTXT.CustomizableEdges = customizableEdges52;
+            RoomidTXT.CustomizableEdges = customizableEdges50;
             RoomidTXT.DefaultText = "";
             RoomidTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             RoomidTXT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -1170,9 +1160,26 @@
             RoomidTXT.Name = "RoomidTXT";
             RoomidTXT.PlaceholderText = "RM-002";
             RoomidTXT.SelectedText = "";
-            RoomidTXT.ShadowDecoration.CustomizableEdges = customizableEdges53;
+            RoomidTXT.ShadowDecoration.CustomizableEdges = customizableEdges51;
             RoomidTXT.Size = new Size(370, 36);
             RoomidTXT.TabIndex = 168;
+            // 
+            // guna2PictureBox15
+            // 
+            guna2PictureBox15.BackColor = Color.Transparent;
+            guna2PictureBox15.BackgroundImageLayout = ImageLayout.Zoom;
+            guna2PictureBox15.BorderRadius = 20;
+            guna2PictureBox15.CustomizableEdges = customizableEdges52;
+            guna2PictureBox15.FillColor = Color.Transparent;
+            guna2PictureBox15.Image = Properties.Resources.b1;
+            guna2PictureBox15.ImageRotate = 0F;
+            guna2PictureBox15.Location = new Point(35, 134);
+            guna2PictureBox15.Name = "guna2PictureBox15";
+            guna2PictureBox15.ShadowDecoration.CustomizableEdges = customizableEdges53;
+            guna2PictureBox15.Size = new Size(34, 27);
+            guna2PictureBox15.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox15.TabIndex = 171;
+            guna2PictureBox15.TabStop = false;
             // 
             // guna2PictureBox14
             // 
@@ -1236,7 +1243,7 @@
             rd_capacity.Font = new Font("Segoe UI", 10F);
             rd_capacity.ForeColor = Color.FromArgb(68, 88, 112);
             rd_capacity.ItemHeight = 30;
-            rd_capacity.Items.AddRange(new object[] { "Double Room", "Single Room" });
+            rd_capacity.Items.AddRange(new object[] { "Double Room", "Single Room", "Single ", "Double" });
             rd_capacity.Location = new Point(214, 216);
             rd_capacity.Name = "rd_capacity";
             rd_capacity.ShadowDecoration.CustomizableEdges = customizableEdges59;
@@ -1300,7 +1307,7 @@
             guna2PictureBox12.FillColor = Color.Transparent;
             guna2PictureBox12.Image = (Image)resources.GetObject("guna2PictureBox12.Image");
             guna2PictureBox12.ImageRotate = 0F;
-            guna2PictureBox12.Location = new Point(657, 143);
+            guna2PictureBox12.Location = new Point(654, 136);
             guna2PictureBox12.Name = "guna2PictureBox12";
             guna2PictureBox12.ShadowDecoration.CustomizableEdges = customizableEdges65;
             guna2PictureBox12.Size = new Size(34, 27);
@@ -1313,7 +1320,7 @@
             guna2HtmlLabel26.BackColor = Color.Transparent;
             guna2HtmlLabel26.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel26.ForeColor = Color.FromArgb(62, 41, 17);
-            guna2HtmlLabel26.Location = new Point(699, 145);
+            guna2HtmlLabel26.Location = new Point(696, 138);
             guna2HtmlLabel26.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel26.Name = "guna2HtmlLabel26";
             guna2HtmlLabel26.Size = new Size(49, 25);
@@ -1499,7 +1506,7 @@
             Controls.Add(guna2Panel1);
             Controls.Add(RM_status_panel);
             Name = "UserControl_Admin_Room";
-            Size = new Size(1332, 1094);
+            Size = new Size(1332, 1117);
             Load += UserControl_Admin_Room_Load;
             guna2Panel3.ResumeLayout(false);
             guna2Panel3.PerformLayout();
@@ -1592,7 +1599,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox12;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel26;
         private Guna.UI2.WinForms.Guna2ComboBox statusTxt;
@@ -1621,5 +1627,8 @@
         private Guna.UI2.WinForms.Guna2TextBox BranchIdTXT;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox15;
         private Guna.UI2.WinForms.Guna2HtmlLabel gunaHtmlLabel3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
     }
 }

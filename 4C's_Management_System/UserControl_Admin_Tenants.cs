@@ -1,93 +1,121 @@
-﻿using System;
+﻿
+using _4C_s_Management_System.Classess;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace _4C_s_Management_System
 {
     public partial class UserControl_Admin_Tenants : UserControl
     {
+        // ==========================================
+        // VARIABLES
+        // ==========================================
+
+        private string tenantBranchId = "";
+
+        // ==========================================
+        // CONSTRUCTOR
+        // ==========================================
+
         public UserControl_Admin_Tenants()
         {
             InitializeComponent();
+
+            this.Load += UserControlTenants_Load;
         }
 
-        // =====================================================
+        // ==========================================
         // LOAD USERCONTROL
-        // =====================================================
+        // ==========================================
 
         private void UserControlTenants_Load(object sender, EventArgs e)
         {
-            TM_tenantstatusCB.SelectedIndex = 0;
+            if (TM_tenantstatusCB.Items.Count > 0)
+                TM_tenantstatusCB.SelectedIndex = 0;
+
+            ClearFields();
 
             ApplyTenantFilters();
             LoadRoomsdisplay();
         }
 
-        // =====================================================
-        // LOAD TENANT DATAGRIDVIEW
-        // =====================================================
+        // ==========================================
+        // LOAD TENANT DATA
+        // ==========================================
 
         public void LoadRoomData()
         {
             ApplyTenantFilters();
+            LoadRoomsdisplay();
         }
 
-        // =====================================================
+        // ==========================================
         // DISPLAY SELECTED TENANT
-        // =====================================================
+        // ==========================================
 
         public void loaddisplay()
         {
-            if (TM_TenantDGV.CurrentRow == null ||
-                TM_TenantDGV.CurrentRow.IsNewRow)
-                return;
-
-            DataGridViewRow row = TM_TenantDGV.CurrentRow;
-
-            TM_tenantidtxt.Text =
-                Convert.ToString(row.Cells[0].Value) ?? "";
-
-            TM_fullnametxt.Text =
-                Convert.ToString(row.Cells[1].Value) ?? "";
-
-            TM_contacttxt.Text =
-                Convert.ToString(row.Cells[2].Value) ?? "";
-
-            TM_AdressTxt.Text =
-                Convert.ToString(row.Cells[3].Value) ?? "";
-
-            if (DateTime.TryParse(
-                Convert.ToString(row.Cells[4].Value),
-                out DateTime agreementStartDate))
+            try
             {
-                TM_agreementstartTXT.Value = agreementStartDate;
-            }
+                if (TM_TenantDGV.CurrentRow == null ||
+                    TM_TenantDGV.CurrentRow.IsNewRow)
+                    return;
 
-            if (DateTime.TryParse(
-                Convert.ToString(row.Cells[5].Value),
-                out DateTime agreementEndDate))
+                DataGridViewRow row = TM_TenantDGV.CurrentRow;
+
+                TM_tenantidtxt.Text =
+                    Convert.ToString(row.Cells["TenantId"].Value) ?? "";
+
+                TM_fullnametxt.Text =
+                    Convert.ToString(row.Cells["FullName"].Value) ?? "";
+
+                TM_contacttxt.Text =
+                    Convert.ToString(row.Cells["ContactNumber"].Value) ?? "";
+
+                TM_AdressTxt.Text =
+                    Convert.ToString(row.Cells["Address"].Value) ?? "";
+
+                if (DateTime.TryParse(
+                    Convert.ToString(row.Cells["AgreementStartDate"].Value),
+                    out DateTime startDate))
+                {
+                    TM_agreementstartTXT.Value = startDate;
+                }
+
+                if (DateTime.TryParse(
+                    Convert.ToString(row.Cells["AgreementEndDate"].Value),
+                    out DateTime endDate))
+                {
+                    TM_agreementendtxt.Value = endDate;
+                }
+
+                TM_monthlyrenttxt.Text =
+                    Convert.ToString(row.Cells["MonthlyRent"].Value) ?? "";
+
+                TM_statustxt.Text =
+                    Convert.ToString(row.Cells["Status"].Value) ?? "";
+
+                tenantBranchId =
+                    Convert.ToString(row.Cells["BranchId"].Value) ?? "";
+
+                TM_branchidtxt.Text = tenantBranchId;
+            }
+            catch (Exception ex)
             {
-                TM_agreementendtxt.Value = agreementEndDate;
+                MessageBox.Show(
+                    "Error displaying tenant details:\n" + ex.Message,
+                    "Display Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-
-            TM_monthlyrenttxt.Text =
-                Convert.ToString(row.Cells[6].Value) ?? "";
-
-            TM_statustxt.Text =
-                Convert.ToString(row.Cells[7].Value) ?? "";
         }
 
-        // =====================================================
+        // ==========================================
         // DATAGRIDVIEW CELL CLICK
-        // =====================================================
+        // ==========================================
 
         private void tenantDGV_clickcontent(
             object sender,
@@ -96,16 +124,25 @@ namespace _4C_s_Management_System
             if (e.RowIndex < 0)
                 return;
 
+            DataGridViewRow row =
+                TM_TenantDGV.Rows[e.RowIndex];
+
+            if (row.IsNewRow)
+                return;
+
             TM_TenantDGV.ClearSelection();
 
-            TM_TenantDGV.Rows[e.RowIndex].Selected = true;
+            row.Selected = true;
+
+            TM_TenantDGV.CurrentCell =
+                row.Cells["TenantId"];
 
             loaddisplay();
         }
 
-        // =====================================================
-        // TENANT STATUS FILTER
-        // =====================================================
+        // ==========================================
+        // STATUS FILTER
+        // ==========================================
 
         public void statuscombobox()
         {
@@ -119,9 +156,9 @@ namespace _4C_s_Management_System
             ApplyTenantFilters();
         }
 
-        // =====================================================
+        // ==========================================
         // SEARCH TENANT
-        // =====================================================
+        // ==========================================
 
         private void TM_searchtxtTextChanged(
             object sender,
@@ -130,15 +167,23 @@ namespace _4C_s_Management_System
             ApplyTenantFilters();
         }
 
-        // =====================================================
+        // ==========================================
         // ADD TENANT
-        // =====================================================
+        // ==========================================
 
         private void TM_AddCusBtn_Click(object sender, EventArgs e)
         {
-            string fullname = TM_fullnametxt.Text.Trim();
-            string contactnumber = TM_contacttxt.Text.Trim();
-            string address = TM_AdressTxt.Text.Trim();
+            string branchId =
+                TM_branchidtxt.Text.Trim();
+
+            string fullname =
+                TM_fullnametxt.Text.Trim();
+
+            string contactnumber =
+                TM_contacttxt.Text.Trim();
+
+            string address =
+                TM_AdressTxt.Text.Trim();
 
             DateTime agreementStartDate =
                 TM_agreementstartTXT.Value.Date;
@@ -146,23 +191,26 @@ namespace _4C_s_Management_System
             DateTime agreementEndDate =
                 TM_agreementendtxt.Value.Date;
 
-            string monthlyRent = TM_monthlyrenttxt.Text.Trim();
+            string monthlyRent =
+                TM_monthlyrenttxt.Text.Trim();
 
             string status =
                 TM_statustxt.SelectedItem?.ToString() ?? "";
 
-            // CHECK IF TENANT IS ALREADY SELECTED
-            if (!string.IsNullOrWhiteSpace(TM_tenantidtxt.Text))
+            // VALIDATE BRANCH ID
+
+            if (string.IsNullOrWhiteSpace(branchId))
             {
                 MessageBox.Show(
-                    "A tenant is already selected. Clear the fields before adding a new tenant.",
-                    "Information",
+                    "Please enter the Branch ID for this tenant.",
+                    "Missing Branch ID",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }
 
             // VALIDATE REQUIRED FIELDS
+
             if (string.IsNullOrWhiteSpace(fullname) ||
                 string.IsNullOrWhiteSpace(contactnumber) ||
                 string.IsNullOrWhiteSpace(address) ||
@@ -170,7 +218,7 @@ namespace _4C_s_Management_System
                 string.IsNullOrWhiteSpace(status))
             {
                 MessageBox.Show(
-                    "Please fill in all fields.",
+                    "Please complete all tenant information.",
                     "Missing Information",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -178,6 +226,7 @@ namespace _4C_s_Management_System
             }
 
             // VALIDATE MONTHLY RENT
+
             if (!decimal.TryParse(
                 monthlyRent,
                 NumberStyles.Number,
@@ -193,6 +242,7 @@ namespace _4C_s_Management_System
             }
 
             // VALIDATE AGREEMENT DATES
+
             if (agreementEndDate < agreementStartDate)
             {
                 MessageBox.Show(
@@ -203,10 +253,19 @@ namespace _4C_s_Management_System
                 return;
             }
 
+            DialogResult confirm = MessageBox.Show(
+                "Are you sure you want to add this tenant?",
+                "Confirm Add Tenant",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
             try
             {
-                // string tenantid =
-                //  IDGenerator.GenerateNextID("TEN", branchid);
+                string tenantId =
+                    IDGenerator.GenerateNextID("TEN", branchId);
 
                 const string query = @"
                     INSERT INTO TenantTbl
@@ -232,14 +291,14 @@ namespace _4C_s_Management_System
                         @AgreementEndDate,
                         @MonthlyRent,
                         @Status
-                    )";
+                    );";
 
                 int result = AppDB.Instance.CUD(
                     query,
                     new
                     {
-                        //TenantId = tenantid,
-                        //BranchId = branchid,
+                        TenantId = tenantId,
+                        BranchId = branchId,
                         FullName = fullname,
                         ContactNumber = contactnumber,
                         Address = address,
@@ -252,12 +311,13 @@ namespace _4C_s_Management_System
                 if (result > 0)
                 {
                     MessageBox.Show(
-                        "Tenant added successfully.",
+                        "Tenant added successfully!\nTenant ID: " + tenantId,
                         "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
                     ClearFields();
+
                     ApplyTenantFilters();
                     LoadRoomsdisplay();
                 }
@@ -273,25 +333,28 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error adding tenant: " + ex.Message,
-                    "Error",
+                    "Error adding tenant:\n" + ex.Message,
+                    "Database Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
-        // =====================================================
+        // ==========================================
         // CLEAR FIELDS
-        // =====================================================
+        // ==========================================
 
         public void ClearFields()
         {
+            tenantBranchId = "";
+
             TM_tenantidtxt.Clear();
             TM_fullnametxt.Clear();
             TM_contacttxt.Clear();
             TM_AdressTxt.Clear();
-
             TM_monthlyrenttxt.Clear();
+
+            TM_branchidtxt.Clear();
 
             TM_agreementstartTXT.Value = DateTime.Today;
             TM_agreementendtxt.Value = DateTime.Today;
@@ -301,16 +364,23 @@ namespace _4C_s_Management_System
             TM_TenantDGV.ClearSelection();
         }
 
-        // =====================================================
+        // ==========================================
         // UPDATE TENANT
-        // =====================================================
+        // ==========================================
 
         private void TM_UpdateBtn_Click(object sender, EventArgs e)
         {
-            string tenantid = TM_tenantidtxt.Text.Trim();
-            string fullname = TM_fullnametxt.Text.Trim();
-            string contactnumber = TM_contacttxt.Text.Trim();
-            string address = TM_AdressTxt.Text.Trim();
+            string tenantid =
+                TM_tenantidtxt.Text.Trim();
+
+            string fullname =
+                TM_fullnametxt.Text.Trim();
+
+            string contactnumber =
+                TM_contacttxt.Text.Trim();
+
+            string address =
+                TM_AdressTxt.Text.Trim();
 
             DateTime agreementStartDate =
                 TM_agreementstartTXT.Value.Date;
@@ -318,21 +388,35 @@ namespace _4C_s_Management_System
             DateTime agreementEndDate =
                 TM_agreementendtxt.Value.Date;
 
-            string monthlyRent = TM_monthlyrenttxt.Text.Trim();
+            string monthlyRent =
+                TM_monthlyrenttxt.Text.Trim();
 
             string status =
                 TM_statustxt.SelectedItem?.ToString() ?? "";
 
-            // VALIDATE REQUIRED FIELDS
+            // VALIDATE SELECTED TENANT
+
             if (string.IsNullOrWhiteSpace(tenantid) ||
-                string.IsNullOrWhiteSpace(fullname) ||
+                string.IsNullOrWhiteSpace(tenantBranchId))
+            {
+                MessageBox.Show(
+                    "Please select a tenant from the table first.",
+                    "No Tenant Selected",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            // VALIDATE REQUIRED FIELDS
+
+            if (string.IsNullOrWhiteSpace(fullname) ||
                 string.IsNullOrWhiteSpace(contactnumber) ||
                 string.IsNullOrWhiteSpace(address) ||
                 string.IsNullOrWhiteSpace(monthlyRent) ||
                 string.IsNullOrWhiteSpace(status))
             {
                 MessageBox.Show(
-                    "Please select a tenant and fill in all fields.",
+                    "Please complete all tenant information.",
                     "Missing Information",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -340,6 +424,7 @@ namespace _4C_s_Management_System
             }
 
             // VALIDATE MONTHLY RENT
+
             if (!decimal.TryParse(
                 monthlyRent,
                 NumberStyles.Number,
@@ -355,6 +440,7 @@ namespace _4C_s_Management_System
             }
 
             // VALIDATE AGREEMENT DATES
+
             if (agreementEndDate < agreementStartDate)
             {
                 MessageBox.Show(
@@ -364,6 +450,15 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Warning);
                 return;
             }
+
+            DialogResult confirm = MessageBox.Show(
+                "Are you sure you want to update this tenant?",
+                "Confirm Update",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
 
             try
             {
@@ -377,15 +472,16 @@ namespace _4C_s_Management_System
                         AgreementEndDate = @AgreementEndDate,
                         MonthlyRent = @MonthlyRent,
                         Status = @Status
-                    WHERE TenantId = @TenantId
-                    AND BranchId = @BranchId";
+                    WHERE
+                        TenantId = @TenantId
+                        AND BranchId = @BranchId;";
 
                 int result = AppDB.Instance.CUD(
                     query,
                     new
                     {
                         TenantId = tenantid,
-                        //BranchId = branchid,
+                        BranchId = tenantBranchId,
                         FullName = fullname,
                         ContactNumber = contactnumber,
                         Address = address,
@@ -403,7 +499,6 @@ namespace _4C_s_Management_System
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    ClearFields();
                     ApplyTenantFilters();
                     LoadRoomsdisplay();
                 }
@@ -419,26 +514,28 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error updating tenant: " + ex.Message,
-                    "Error",
+                    "Error updating tenant:\n" + ex.Message,
+                    "Database Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
-        // =====================================================
+        // ==========================================
         // DELETE TENANT
-        // =====================================================
+        // ==========================================
 
         private void TM_deleteBtn_Click(object sender, EventArgs e)
         {
-            string tenantid = TM_tenantidtxt.Text.Trim();
+            string tenantid =
+                TM_tenantidtxt.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(tenantid))
+            if (string.IsNullOrWhiteSpace(tenantid) ||
+                string.IsNullOrWhiteSpace(tenantBranchId))
             {
                 MessageBox.Show(
-                    "Please select a tenant first.",
-                    "Missing Information",
+                    "Please select a tenant from the table first.",
+                    "No Tenant Selected",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
@@ -449,7 +546,7 @@ namespace _4C_s_Management_System
                 + tenantid,
                 "Confirm Delete",
                 MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+                MessageBoxIcon.Warning);
 
             if (confirm != DialogResult.Yes)
                 return;
@@ -458,15 +555,16 @@ namespace _4C_s_Management_System
             {
                 const string query = @"
                     DELETE FROM TenantTbl
-                    WHERE TenantId = @TenantId
-                    AND BranchId = @BranchId";
+                    WHERE
+                        TenantId = @TenantId
+                        AND BranchId = @BranchId;";
 
                 int result = AppDB.Instance.CUD(
                     query,
                     new
                     {
                         TenantId = tenantid,
-                        //BranchId = branchid
+                        BranchId = tenantBranchId
                     });
 
                 if (result > 0)
@@ -478,6 +576,7 @@ namespace _4C_s_Management_System
                         MessageBoxIcon.Information);
 
                     ClearFields();
+
                     ApplyTenantFilters();
                     LoadRoomsdisplay();
                 }
@@ -501,9 +600,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // TENANT STATISTICS
-        // =====================================================
+        // ==========================================
 
         public void LoadRoomsdisplay()
         {
@@ -528,14 +627,13 @@ namespace _4C_s_Management_System
                             THEN 1 ELSE 0 END
                         ), 0) AS PendingTenants
 
-                    FROM TenantTbl
-                    WHERE BranchId = @BranchId";
+                    FROM TenantTbl;";
 
-                var data = AppDB.Instance.TableData(
+                DataTable data = AppDB.Instance.TableData(
                     query,
-                    new { /*BranchId = branchid*/ });
+                    new { });
 
-                if (data.Rows.Count == 0)
+                if (data == null || data.Rows.Count == 0)
                     return;
 
                 DataRow row = data.Rows[0];
@@ -555,50 +653,55 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error loading tenant statistics: " + ex.Message,
-                    "Error",
+                    "Error loading tenant statistics:\n" + ex.Message,
+                    "Statistics Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
-        // =====================================================
-        // TENANT STATUS FILTERING AND SEARCH
-        // =====================================================
+        // ==========================================
+        // TENANT FILTERING AND SEARCH
+        // ==========================================
 
         private void ApplyTenantFilters()
         {
             try
             {
-                var conditions = new List<string>
-                {
-                    "BranchId = @BranchId"
-                };
+                List<string> conditions = new List<string>();
 
-                var parameters = new Dictionary<string, object>
-                {
-                   // ["BranchId"] = branchid
-                };
+                Dictionary<string, object> parameters =
+                    new Dictionary<string, object>();
 
-                // FILTER TENANT STATUS
+                // STATUS FILTER
+
                 if (TM_tenantstatusCB.SelectedIndex > 0 &&
                     TM_tenantstatusCB.SelectedItem != null)
                 {
                     conditions.Add("Status = @Status");
 
                     parameters["Status"] =
-                        TM_tenantstatusCB.SelectedItem.ToString()!;
+                        TM_tenantstatusCB.SelectedItem.ToString();
                 }
 
-                // SEARCH TENANT ID
-                string tenantid = TM_searchTxt.Text.Trim();
+                // SEARCH FILTER
 
-                if (!string.IsNullOrWhiteSpace(tenantid))
+                string search =
+                    TM_searchTxt.Text.Trim();
+
+                if (!string.IsNullOrWhiteSpace(search))
                 {
-                    conditions.Add("TenantId LIKE @TenantId");
+                    conditions.Add(@"
+                        (
+                            TenantId LIKE @Search
+                            OR FullName LIKE @Search
+                            OR ContactNumber LIKE @Search
+                            OR Address LIKE @Search
+                            OR BranchId LIKE @Search
+                        )");
 
-                    parameters["TenantId"] =
-                        "%" + tenantid + "%";
+                    parameters["Search"] =
+                        "%" + search + "%";
                 }
 
                 string query = @"
@@ -610,36 +713,73 @@ namespace _4C_s_Management_System
                         AgreementStartDate,
                         AgreementEndDate,
                         MonthlyRent,
-                        Status
+                        Status,
+                        BranchId
                     FROM TenantTbl
-                    WHERE " + string.Join(" AND ", conditions) + @"
-                    ORDER BY TenantId ASC";
+                    " + (conditions.Count > 0
+                        ? "WHERE " + string.Join(" AND ", conditions)
+                        : "") + @"
+                    ORDER BY TenantId ASC;";
 
-                AppDB.Instance.Table(
+                DataTable data = AppDB.Instance.TableData(
                     query,
-                    parameters,
-                    TM_TenantDGV,
-                    header: new[]
-                    {
-                        "Tenant ID",
-                        "Full Name",
-                        "Contact Number",
-                        "Address",
-                        "Agreement Start",
-                        "Agreement End",
-                        "Monthly Rent",
-                        "Status"
-                    });
+                    parameters);
+
+                if (data == null)
+                {
+                    TM_TenantDGV.DataSource = null;
+                    ClearFields();
+                    return;
+                }
+
+                TM_TenantDGV.AutoGenerateColumns = true;
+                TM_TenantDGV.DataSource = null;
+                TM_TenantDGV.DataSource = data;
+
+                // HIDE BRANCH ID
+
+                if (TM_TenantDGV.Columns.Contains("BranchId"))
+                {
+                    TM_TenantDGV.Columns["BranchId"].Visible = false;
+                }
+
+                // COLUMN HEADERS
+
+                TM_TenantDGV.Columns["TenantId"].HeaderText = "Tenant ID";
+                TM_TenantDGV.Columns["FullName"].HeaderText = "Full Name";
+                TM_TenantDGV.Columns["ContactNumber"].HeaderText = "Contact Number";
+                TM_TenantDGV.Columns["Address"].HeaderText = "Address";
+                TM_TenantDGV.Columns["AgreementStartDate"].HeaderText = "Agreement Start";
+                TM_TenantDGV.Columns["AgreementEndDate"].HeaderText = "Agreement End";
+                TM_TenantDGV.Columns["MonthlyRent"].HeaderText = "Monthly Rent";
+                TM_TenantDGV.Columns["Status"].HeaderText = "Status";
+
+                // DISPLAY FIRST TENANT
+
+                if (data.Rows.Count > 0)
+                {
+                    TM_TenantDGV.ClearSelection();
+
+                    TM_TenantDGV.Rows[0].Selected = true;
+
+                    TM_TenantDGV.CurrentCell =
+                        TM_TenantDGV.Rows[0].Cells["TenantId"];
+
+                    loaddisplay();
+                }
+                else
+                {
+                    ClearFields();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error loading tenant data: " + ex.Message,
-                    "Error",
+                    "Error loading tenants:\n" + ex.Message,
+                    "Tenant Display Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
     }
 }
-
