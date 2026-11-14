@@ -181,3 +181,19 @@ CREATE TABLE [dbo].[StaffTbl]
     FOREIGN KEY (BranchID)
     REFERENCES BranchTbl(BranchID)
 );
+
+-- ==========================================
+-- 10. AttendanceTBl
+-- ==========================================
+
+CREATE TABLE [dbo].[AttendanceTbl] (
+    [AttendanceID] VARCHAR (20) NOT NULL,
+    [StaffID]      VARCHAR (20) NOT NULL,
+    [Date]         DATE         NOT NULL,
+    [Time_IN]      TIME (7)     NULL,
+    [Time_OUT]     TIME (7)     NULL,
+    PRIMARY KEY CLUSTERED ([AttendanceID] ASC),
+    CONSTRAINT [UQ_AttendanceTbl_Staff_Date] UNIQUE NONCLUSTERED ([StaffID] ASC, [Date] ASC),
+    CONSTRAINT [FK_AttendanceTbl_StaffTbl] FOREIGN KEY ([StaffID]) REFERENCES [dbo].[StaffTbl] ([StaffID])
+);
+

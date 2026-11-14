@@ -102,8 +102,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges65 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges66 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges67 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges70 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges71 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             RR_checkedInLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -186,7 +184,6 @@
             guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
             guna2HtmlLabel39 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            RR_RoomTypesCB = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel4.SuspendLayout();
@@ -568,7 +565,7 @@
             RRes_AccommodationCB.ForeColor = Color.FromArgb(68, 88, 112);
             RRes_AccommodationCB.ItemHeight = 30;
             RRes_AccommodationCB.Items.AddRange(new object[] { "All accommodation", "Hotel", "Transient", "Apartment" });
-            RRes_AccommodationCB.Location = new Point(370, 221);
+            RRes_AccommodationCB.Location = new Point(645, 226);
             RRes_AccommodationCB.Name = "RRes_AccommodationCB";
             RRes_AccommodationCB.ShadowDecoration.CustomizableEdges = customizableEdges22;
             RRes_AccommodationCB.Size = new Size(270, 36);
@@ -1464,27 +1461,6 @@
             guna2HtmlLabel39.TabIndex = 99;
             guna2HtmlLabel39.Text = "Accommodation Type";
             // 
-            // RR_RoomTypesCB
-            // 
-            RR_RoomTypesCB.BackColor = Color.Transparent;
-            RR_RoomTypesCB.BorderColor = Color.Maroon;
-            RR_RoomTypesCB.BorderRadius = 1;
-            RR_RoomTypesCB.BorderThickness = 2;
-            RR_RoomTypesCB.CustomizableEdges = customizableEdges70;
-            RR_RoomTypesCB.DrawMode = DrawMode.OwnerDrawFixed;
-            RR_RoomTypesCB.DropDownStyle = ComboBoxStyle.DropDownList;
-            RR_RoomTypesCB.FocusedColor = Color.FromArgb(94, 148, 255);
-            RR_RoomTypesCB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            RR_RoomTypesCB.Font = new Font("Segoe UI", 10F);
-            RR_RoomTypesCB.ForeColor = Color.FromArgb(68, 88, 112);
-            RR_RoomTypesCB.ItemHeight = 30;
-            RR_RoomTypesCB.Items.AddRange(new object[] { "All room", "Single Room", "Double Room" });
-            RR_RoomTypesCB.Location = new Point(645, 220);
-            RR_RoomTypesCB.Name = "RR_RoomTypesCB";
-            RR_RoomTypesCB.ShadowDecoration.CustomizableEdges = customizableEdges71;
-            RR_RoomTypesCB.Size = new Size(270, 36);
-            RR_RoomTypesCB.TabIndex = 126;
-            // 
             // UserControlRoomReserv
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1493,7 +1469,6 @@
             AutoScrollMinSize = new Size(0, 1183);
             AutoSize = true;
             BackColor = Color.FromArgb(255, 249, 239);
-            Controls.Add(RR_RoomTypesCB);
             Controls.Add(guna2Panel8);
             Controls.Add(guna2PictureBox8);
             Controls.Add(RR_searchresID);
@@ -1619,7 +1594,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker RR_checkOutDateTxt;
         private Guna.UI2.WinForms.Guna2DateTimePicker RR_checkInDateTXT;
         private Guna.UI2.WinForms.Guna2HtmlLabel RR_priceLBL;
-        private Guna.UI2.WinForms.Guna2ComboBox RR_RoomTypesCB;
         private Guna.UI2.WinForms.Guna2Button RR_UpdateBtn;
         private Guna.UI2.WinForms.Guna2Button RR_deleteBtn;
         private Guna.UI2.WinForms.Guna2Button RR_AddCusBtn;

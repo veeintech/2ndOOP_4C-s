@@ -909,7 +909,7 @@ namespace _4C_s_Management_System
                 "FROM PaymentTbl " +
                 "WHERE BranchID = @BranchID ";
 
-            if (status != "All")
+            if (status != "All Status")
             {
                 query += "AND PaymentStatus = @PaymentStatus ";
             }

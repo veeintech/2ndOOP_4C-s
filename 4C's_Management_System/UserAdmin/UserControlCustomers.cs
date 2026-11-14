@@ -22,8 +22,13 @@ namespace _4C_s_Management_System
 
         private void UserControlCustomers_Load(object sender, EventArgs e)
         {
-            CM_custypeCB.SelectedIndex = 0;
-            CM_CustomerstatCB.SelectedIndex = 0;
+            branchId = AccessBranch_ByForm.BranchId;
+
+            if (CM_custypeCB.Items.Count > 0)
+                CM_custypeCB.SelectedIndex = 0;
+
+            if (CM_CustomerstatCB.Items.Count > 0)
+                CM_CustomerstatCB.SelectedIndex = 0;
 
             ApplyCustomerFilters();
             LoadRoomsdisplay();
@@ -101,7 +106,6 @@ namespace _4C_s_Management_System
 
             try
             {
-                // CHECK IF CUSTOMER ID ALREADY EXISTS
                 if (!string.IsNullOrWhiteSpace(CM_CustomeridTxt.Text))
                 {
                     MessageBox.Show(
@@ -431,6 +435,8 @@ namespace _4C_s_Management_System
         {
             try
             {
+                branchId = AccessBranch_ByForm.BranchId;
+
                 var conditions = new List<string>
                 {
                     "BranchID = @BranchID"
@@ -449,7 +455,7 @@ namespace _4C_s_Management_System
                         "CustomerType = @CustomerType");
 
                     parameters["CustomerType"] =
-                        CM_custypeCB.SelectedItem.ToString()!;
+                        CM_custypeCB.SelectedItem.ToString();
                 }
 
                 // FILTER CUSTOMER STATUS
@@ -460,19 +466,23 @@ namespace _4C_s_Management_System
                         "CustomerStatus = @CustomerStatus");
 
                     parameters["CustomerStatus"] =
-                        CM_CustomerstatCB.SelectedItem.ToString()!;
+                        CM_CustomerstatCB.SelectedItem.ToString();
                 }
 
-                // SEARCH CUSTOMER ID
-                string customerId = Cm_searchLbl.Text.Trim();
+                // SEARCH CUSTOMER DETAILS
+                string searchText = Cm_searchLbl.Text.Trim();
 
-                if (!string.IsNullOrWhiteSpace(customerId))
+                if (!string.IsNullOrWhiteSpace(searchText))
                 {
-                    conditions.Add(
-                        "CustomerID LIKE @CustomerID");
+                    conditions.Add(@"
+                        (
+                            CustomerID LIKE @Search
+                            OR Fullname LIKE @Search
+                            OR ContactNumber LIKE @Search
+                            OR Address LIKE @Search
+                        )");
 
-                    parameters["CustomerID"] =
-                        "%" + customerId + "%";
+                    parameters["Search"] = "%" + searchText + "%";
                 }
 
                 // FINAL QUERY
@@ -533,6 +543,5 @@ namespace _4C_s_Management_System
         {
             ApplyCustomerFilters();
         }
-
     }
 }

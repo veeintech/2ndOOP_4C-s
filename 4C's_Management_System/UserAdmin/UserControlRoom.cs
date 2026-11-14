@@ -1,5 +1,8 @@
-﻿using _4C_s_Management_System.Classess;
+﻿
+using _4C_s_Management_System.Classess;
 using System;
+using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace _4C_s_Management_System
@@ -7,48 +10,117 @@ namespace _4C_s_Management_System
     public partial class UserControlRoom : UserControl
     {
         private bool _isInitializing;
+        private string roomId = "";
+        private string branchId = AccessBranch_ByForm.BranchId;
 
         public UserControlRoom()
         {
             InitializeComponent();
         }
 
-        string roomId = "";
-        string branchId = AccessBranch_ByForm.BranchId;
-
         private void UserControlRoom_Load(object sender, EventArgs e)
         {
             _isInitializing = true;
-            RM_roomtypeCB.SelectedIndex = 0;
-            RM_capacityCB.SelectedIndex = 0;
+
+            branchId = AccessBranch_ByForm.BranchId;
+
+            if (RM_roomtypeCB.Items.Count > 0)
+                RM_roomtypeCB.SelectedIndex = 0;
+
+            if (RM_capacityCB.Items.Count > 0)
+                RM_capacityCB.SelectedIndex = 0;
+
+            if (RM_statusCB.Items.Count > 0)
+                RM_statusCB.SelectedIndex = 0;
+
             _isInitializing = false;
 
             LoadRoomData();
             LoadRoomsdisplay();
         }
 
+        // ==========================================
+        // LOAD ROOM DATA WITH LATEST MAINTENANCE
+        // ==========================================
+
         public void LoadRoomData()
+        {
+            LoadRoomDataFiltered();
+        }
+
+        private void LoadRoomDataFiltered()
         {
             try
             {
-                const string query =
-                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
-                    "FROM TBLRoom " +
-                    "WHERE BranchId = @BranchId " +
-                    "ORDER BY RoomId ASC";
+                string search = RM_searchtxt.Text.Trim();
+
+                string roomType =
+                    RM_roomtypeCB.SelectedIndex > 0
+                    ? RM_roomtypeCB.SelectedItem?.ToString() ?? ""
+                    : "";
+
+                string capacity =
+                    RM_capacityCB.SelectedIndex > 0
+                    ? RM_capacityCB.SelectedItem?.ToString() ?? ""
+                    : "";
+
+                string status =
+                    RM_statusCB.SelectedIndex > 0
+                    ? RM_statusCB.SelectedItem?.ToString() ?? ""
+                    : "";
+
+                const string query = @"
+                    SELECT
+                        R.RoomId,
+                        R.RoomType,
+                        R.Capacity,
+                        R.Rate,
+                        R.Status
+                    FROM TBLRoom R
+
+                    OUTER APPLY
+                    (
+                        SELECT TOP 1
+                            M.Issue,
+                            COALESCE(M.DateCompleted, M.DateStarted) AS LastUpdated
+                        FROM MaintenanceTbl M
+                        WHERE M.RoomID = R.RoomId
+                          AND M.BranchID = R.BranchId
+                        ORDER BY
+                            COALESCE(M.DateCompleted, M.DateStarted) DESC,
+                            M.DateStarted DESC
+                    ) LatestMaintenance
+
+                    WHERE R.BranchId = @BranchId
+                      AND (@Search = '' OR R.RoomId LIKE '%' + @Search + '%')
+                      AND (@RoomType = '' OR R.RoomType = @RoomType)
+                      AND (@Capacity = '' OR R.Capacity = @Capacity)
+                      AND (@Status = '' OR R.Status = @Status)
+
+                    ORDER BY R.RoomId ASC;";
 
                 AppDB.Instance.Table(
                     query,
-                    new { BranchId = branchId },
+                    new
+                    {
+                        BranchId = branchId,
+                        Search = search,
+                        RoomType = roomType,
+                        Capacity = capacity,
+                        Status = status
+                    },
                     RM_roomDGv,
                     header: new[]
                     {
-                    "Room ID",
-                    "Room Type",
-                    "Capacity",
-                    "Rate",
-                    "Status"
+                        "Room ID",
+                        "Room Type",
+                        "Capacity",
+                        "Rate",
+                        "Status"
                     });
+
+                // Keep the selected room after refreshing.
+                SelectRoomAfterRefresh();
             }
             catch (Exception ex)
             {
@@ -59,134 +131,143 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Error);
             }
         }
+
+        // ==========================================
+        // SELECT ROOM AFTER REFRESH
+        // ==========================================
+
+        private void SelectRoomAfterRefresh()
+        {
+            if (RM_roomDGv.Rows.Count == 0)
+            {
+                roomId = "";
+                ClearRoomDetails();
+                return;
+            }
+
+            RM_roomDGv.ClearSelection();
+
+            bool found = false;
+
+            foreach (DataGridViewRow row in RM_roomDGv.Rows)
+            {
+                if (row.IsNewRow)
+                    continue;
+
+                string currentId =
+                    Convert.ToString(row.Cells[0].Value) ?? "";
+
+                if (currentId == roomId && !string.IsNullOrWhiteSpace(roomId))
+                {
+                    row.Selected = true;
+
+                    if (RM_roomDGv.Columns.Count > 0)
+                        RM_roomDGv.CurrentCell = row.Cells[0];
+
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                DataGridViewRow firstRow = RM_roomDGv.Rows[0];
+
+                firstRow.Selected = true;
+
+                if (RM_roomDGv.Columns.Count > 0)
+                    RM_roomDGv.CurrentCell = firstRow.Cells[0];
+            }
+
+            loaddisplay();
+        }
+
+        // ==========================================
+        // CLEAR ROOM DETAILS
+        // ==========================================
+
+        private void ClearRoomDetails()
+        {
+            RM_RoomIdLbl.Text = "";
+            RM_RoomTypeLbl.Text = "";
+            RM_CapacityLbl.Text = "";
+            RM_RateLbl.Text = "";
+            RM_StatusLbl.Text = "";
+
+            RM_DescriptionLbl.Text = "";
+
+            RM_MaintenanceLbl.Text = "No Issue";
+            RM_LastUpdatedLbl.Text = "N/A";
+
+            RM_Panel_details_status.FillColor = Color.Gray;
+        }
+
+        // ==========================================
+        // SEARCH ROOM
+        // ==========================================
 
         public void SearchData()
         {
-            string roomId = RM_searchtxt.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(roomId))
-            {
-                LoadRoomData();
-                return;
-            }
-
-            try
-            {
-                const string query =
-                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
-                    "FROM TBLRoom " +
-                    "WHERE BranchId = @BranchId AND RoomId LIKE @RoomId " +
-                    "ORDER BY RoomId ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { BranchId = branchId, RoomId = $"%{roomId}%" },
-                    RM_roomDGv,
-                    header: new[]
-                    {
-                    "Room ID",
-                    "Room Type",
-                    "Capacity",
-                    "Rate",
-                    "Status"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading room data: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            LoadRoomDataFiltered();
         }
+
+        private void search_roomid_textchange(object sender, EventArgs e)
+        {
+            if (_isInitializing)
+                return;
+
+            LoadRoomDataFiltered();
+        }
+
+        // ==========================================
+        // FILTER ROOM TYPE
+        // ==========================================
 
         public void Roomtypesort()
         {
-            if (_isInitializing || RM_roomtypeCB.SelectedItem is null)
+            if (_isInitializing)
                 return;
 
-            try
-            {
-                if (RM_roomtypeCB.SelectedIndex == 0)
-                {
-                    LoadRoomData();
-                    return;
-                }
-
-                string roomType = RM_roomtypeCB.SelectedItem.ToString()!;
-                const string query =
-                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
-                    "FROM TBLRoom " +
-                    "WHERE BranchId = @BranchId AND RoomType = @RoomType " +
-                    "ORDER BY RoomId ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { BranchId = branchId, RoomType = roomType },
-                    RM_roomDGv,
-                    header: new[]
-                    {
-                "Room ID",
-                "Room Type",
-                "Capacity",
-                "Rate",
-                "Status"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading room data: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            LoadRoomDataFiltered();
         }
+
+        private void RoomtypeSelected_Indexchanged(object sender, EventArgs e)
+        {
+            Roomtypesort();
+        }
+
+        // ==========================================
+        // FILTER ROOM CAPACITY
+        // ==========================================
 
         public void RoomCapacitysort()
         {
-            if (_isInitializing || RM_capacityCB.SelectedItem is null)
+            if (_isInitializing)
                 return;
 
-            try
-            {
-                if (RM_capacityCB.SelectedIndex == 0)
-                {
-                    LoadRoomData();
-                    return;
-                }
-                string capacity = RM_capacityCB.SelectedItem.ToString()!;
-                const string query =
-                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
-                    "FROM TBLRoom " +
-                    "WHERE BranchId = @BranchId AND Capacity = @Capacity " +
-                    "ORDER BY RoomId ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { BranchId = branchId, Capacity = capacity },
-                    RM_roomDGv,
-                    header: new[]
-                    {
-                "Room ID",
-                "Room Type",
-                "Capacity",
-                "Rate",
-                "Status"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading room data: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-
+            LoadRoomDataFiltered();
         }
 
+        private void RoomStatusSelectedIndexchanged(object sender, EventArgs e)
+        {
+            RoomCapacitysort();
+        }
+
+        // ==========================================
+        // FILTER ROOM STATUS
+        // ==========================================
+
+        private void RM_statusCB_Selected_indexChanged(object sender, EventArgs e)
+        {
+            if (_isInitializing)
+                return;
+
+            LoadRoomDataFiltered();
+        }
+
+        // ==========================================
+        // DISPLAY ROOM DETAILS
+        // ==========================================
 
         public void loaddisplay()
         {
@@ -195,71 +276,170 @@ namespace _4C_s_Management_System
 
             DataGridViewRow row = RM_roomDGv.SelectedRows[0];
 
-            roomId = row.Cells[0].Value?.ToString() ?? "";
+            if (row.IsNewRow || row.Cells.Count < 5)
+                return;
 
-            string status = row.Cells[4].Value?.ToString() ?? "";
+            roomId = Convert.ToString(row.Cells[0].Value) ?? "";
 
-            if (status == "Available")
-            {
-                RM_Panel_details_status.FillColor = Color.FromArgb(95, 145, 100);
-                RM_StatusLbl.BackColor = Color.FromArgb(95, 145, 100);
-            }
-            else if (status == "Occupied")
-            {
-                RM_Panel_details_status.FillColor = Color.FromArgb(169, 121, 56);
-                RM_StatusLbl.BackColor = Color.FromArgb(169, 121, 56);
-            }
-            else if (status == "Maintenance")
-            {
-                RM_Panel_details_status.FillColor = Color.FromArgb(168, 93, 85);
-                RM_StatusLbl.BackColor = Color.FromArgb(168, 93, 85);
-            }
-            else if (status == "Reserved")
-            {
-                RM_Panel_details_status.FillColor = Color.FromArgb(112, 126, 145);
-                RM_StatusLbl.BackColor = Color.FromArgb(112, 126, 145);
-            }
+            string roomType =
+                Convert.ToString(row.Cells[1].Value) ?? "";
 
-            RM_RoomIdLbl.Text = row.Cells[0].Value?.ToString() ?? "";
-            RM_RoomTypeLbl.Text = row.Cells[1].Value?.ToString() ?? "";
-            RM_CapacityLbl.Text = row.Cells[2].Value?.ToString() ?? "";
-            RM_RateLbl.Text = row.Cells[3].Value?.ToString() ?? "";
+            string capacity =
+                Convert.ToString(row.Cells[2].Value) ?? "";
+
+            string rate =
+                Convert.ToString(row.Cells[3].Value) ?? "";
+
+            string status =
+                Convert.ToString(row.Cells[4].Value) ?? "";
+
+            RM_RoomIdLbl.Text = roomId;
+            RM_RoomTypeLbl.Text = roomType;
+            RM_CapacityLbl.Text = capacity;
+            RM_RateLbl.Text = rate;
             RM_StatusLbl.Text = status;
+
             RM_StatusLbl.ForeColor = Color.White;
 
+            // Status colors
+            switch (status)
+            {
+                case "Available":
+                    RM_Panel_details_status.FillColor =
+                        Color.FromArgb(95, 145, 100);
+                    RM_StatusLbl.BackColor =
+                        Color.FromArgb(95, 145, 100);
+                    break;
+
+                case "Occupied":
+                    RM_Panel_details_status.FillColor =
+                        Color.FromArgb(169, 121, 56);
+                    RM_StatusLbl.BackColor =
+                        Color.FromArgb(169, 121, 56);
+                    break;
+
+                case "Maintenance":
+                    RM_Panel_details_status.FillColor =
+                        Color.FromArgb(168, 93, 85);
+                    RM_StatusLbl.BackColor =
+                        Color.FromArgb(168, 93, 85);
+                    break;
+
+                case "Reserved":
+                    RM_Panel_details_status.FillColor =
+                        Color.FromArgb(112, 126, 145);
+                    RM_StatusLbl.BackColor =
+                        Color.FromArgb(112, 126, 145);
+                    break;
+
+                default:
+                    RM_Panel_details_status.FillColor = Color.Gray;
+                    RM_StatusLbl.BackColor = Color.Gray;
+                    break;
+            }
+
             RM_DescriptionLbl.Text =
-                $"Room {row.Cells[0].Value?.ToString() ?? ""} is a " +
-                $"{row.Cells[1].Value?.ToString() ?? ""} with a capacity of " +
-                $"{row.Cells[2].Value?.ToString() ?? ""} and a rate of " +
-                $"{row.Cells[3].Value?.ToString() ?? ""}.";
+                $"Room {roomId} is a {roomType} with a capacity of " +
+                $"{capacity} and a rate of {rate}.";
+
+            LoadMaintenanceDetails(roomId);
         }
 
-        private void RM_roomDGv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        // ==========================================
+        // LOAD LATEST MAINTENANCE DETAILS
+        // ==========================================
+
+        private void LoadMaintenanceDetails(string selectedRoomId)
         {
+            try
+            {
+                const string query = @"
+                    SELECT TOP 1
+                        Issue,
+                        DateStarted,
+                        DateCompleted
+                    FROM MaintenanceTbl
+                    WHERE RoomID = @RoomID
+                      AND BranchID = @BranchID
+                    ORDER BY
+                        COALESCE(DateCompleted, DateStarted) DESC,
+                        DateStarted DESC;";
+
+                DataTable data = AppDB.Instance.TableData(
+                    query,
+                    new
+                    {
+                        RoomID = selectedRoomId,
+                        BranchID = branchId
+                    });
+
+                if (data.Rows.Count == 0)
+                {
+                    RM_MaintenanceLbl.Text = "No Issue";
+                    RM_LastUpdatedLbl.Text = "N/A";
+                    return;
+                }
+
+                DataRow maintenance = data.Rows[0];
+
+                string issue =
+                    Convert.ToString(maintenance["Issue"]) ?? "No Issue";
+
+                object dateCompleted = maintenance["DateCompleted"];
+                object dateStarted = maintenance["DateStarted"];
+
+                DateTime lastUpdated;
+
+                if (dateCompleted != DBNull.Value)
+                {
+                    lastUpdated = Convert.ToDateTime(dateCompleted);
+                }
+                else if (dateStarted != DBNull.Value)
+                {
+                    lastUpdated = Convert.ToDateTime(dateStarted);
+                }
+                else
+                {
+                    RM_MaintenanceLbl.Text = issue;
+                    RM_LastUpdatedLbl.Text = "N/A";
+                    return;
+                }
+
+                RM_MaintenanceLbl.Text = issue;
+                RM_LastUpdatedLbl.Text =
+                    lastUpdated.ToString("MM/dd/yyyy");
+            }
+            catch (Exception ex)
+            {
+                RM_MaintenanceLbl.Text = "Unable to load";
+                RM_LastUpdatedLbl.Text = "N/A";
+
+                MessageBox.Show(
+                    $"Error loading maintenance details: {ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void RM_roomDGv_CellContentClick(
+            object sender,
+            DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
             loaddisplay();
         }
 
-        private void search_roomid_textchange(object sender, EventArgs e)
-        {
-            if (_isInitializing)
-                return;
-
-            SearchData();
-        }
-
-        private void RoomtypeSelected_Indexchanged(object sender, EventArgs e)
-        {
-            Roomtypesort();
-        }
-
-        private void RoomStatusSelectedIndexchanged(object sender, EventArgs e)
-        {
-            RoomCapacitysort();
-        }
+        // ==========================================
+        // UPDATE ROOM STATUS
+        // ==========================================
 
         private void RM_UpdateBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(roomId) || RM_statusCB.SelectedItem is null)
+            if (string.IsNullOrWhiteSpace(roomId) ||
+                RM_statusCB.SelectedItem == null)
             {
                 MessageBox.Show(
                     "Select a room and choose a status first.",
@@ -271,42 +451,107 @@ namespace _4C_s_Management_System
 
             try
             {
-                const string query =
-                   "Update TBLRoom " +
-                   "SET Status = @Status " +
-                   "WHERE RoomId = @RoomId";
+                // Do not allow manual status changes while maintenance
+                // is currently in progress for this room.
+                const string checkMaintenance = @"
+                    SELECT COUNT(*)
+                    FROM MaintenanceTbl
+                    WHERE RoomID = @RoomID
+                      AND BranchID = @BranchID
+                      AND Status = 'In Progress';";
 
-                AppDB.Instance.CUD(query, new
+                int activeMaintenance = Convert.ToInt32(
+                    AppDB.Instance.Scalar(
+                        checkMaintenance,
+                        new
+                        {
+                            RoomID = roomId,
+                            BranchID = branchId
+                        }));
+
+                if (activeMaintenance > 0)
                 {
-                    Status = RM_statusCB.SelectedItem?.ToString(),
-                    RoomId = roomId
-                });
-                LoadRoomData();
-                LoadRoomsdisplay();
+                    MessageBox.Show(
+                        "This room currently has an ongoing maintenance task. " +
+                        "Complete the maintenance task before changing its room status.",
+                        "Room Under Maintenance",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                const string query = @"
+                    UPDATE TBLRoom
+                    SET Status = @Status
+                    WHERE RoomId = @RoomId
+                      AND BranchId = @BranchId;";
+
+                AppDB.Instance.CUD(
+                    query,
+                    new
+                    {
+                        Status = RM_statusCB.SelectedItem.ToString(),
+                        RoomId = roomId,
+                        BranchId = branchId
+                    });
+
+                MessageBox.Show(
+                    "Room status updated successfully.",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                RefreshRoomData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error loading room data: {ex.Message}",
+                    $"Error updating room status: {ex.Message}",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
+        // ==========================================
+        // REFRESH ROOM DATA AND SUMMARY
+        // ==========================================
+
+        public void RefreshRoomData()
+        {
+            LoadRoomDataFiltered();
+            LoadRoomsdisplay();
+        }
 
         public void LoadRoomsdisplay()
         {
             try
             {
-                const string query =
-                    "SELECT " +
-                    "COUNT(*) AS TotalRooms, " +
-                    "COALESCE(SUM(CASE WHEN Status = 'Occupied' THEN 1 ELSE 0 END), 0) AS OccupiedRooms, " +
-                    "COALESCE(SUM(CASE WHEN Status = 'Available' THEN 1 ELSE 0 END), 0) AS AvailableRooms " +
-                    "FROM TBLRoom WHERE BranchId = @BranchId";
+                const string query = @"
+                    SELECT
+                        COUNT(*) AS TotalRooms,
 
-                var data = AppDB.Instance.TableData(query, new { BranchId = branchId });
+                        COALESCE(SUM(
+                            CASE WHEN Status = 'Occupied'
+                            THEN 1 ELSE 0 END
+                        ), 0) AS OccupiedRooms,
+
+                        COALESCE(SUM(
+                            CASE WHEN Status = 'Available'
+                            THEN 1 ELSE 0 END
+                        ), 0) AS AvailableRooms,
+
+                        COALESCE(SUM(
+                            CASE WHEN Status = 'Maintenance'
+                            THEN 1 ELSE 0 END
+                        ), 0) AS MaintenanceRooms
+
+                    FROM TBLRoom
+                    WHERE BranchId = @BranchId;";
+
+                DataTable data = AppDB.Instance.TableData(
+                    query,
+                    new { BranchId = branchId });
 
                 if (data.Rows.Count == 0)
                 {
@@ -316,77 +561,48 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                var row = data.Rows[0];
-                Display_TotaoRoom.Text = Convert.ToInt32(row["TotalRooms"]).ToString();
-                Display_Occupied.Text = Convert.ToInt32(row["OccupiedRooms"]).ToString();
-                Display_Available.Text = Convert.ToInt32(row["AvailableRooms"]).ToString();
+                DataRow row = data.Rows[0];
+
+                Display_TotaoRoom.Text =
+                    Convert.ToInt32(row["TotalRooms"]).ToString();
+
+                Display_Occupied.Text =
+                    Convert.ToInt32(row["OccupiedRooms"]).ToString();
+
+                Display_Available.Text =
+                    Convert.ToInt32(row["AvailableRooms"]).ToString();
+
+                // If you have a Maintenance count label,
+                // assign it here:
+                // Display_Maintenance.Text =
+                //     Convert.ToInt32(row["MaintenanceRooms"]).ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error loading rooms: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            }
-        }
-
-        private void guna2vSeparator1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RM_Panel_details_status_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void RM_StatusLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RM_statusCB_Selected_indexChanged(object sender, EventArgs e)
-        {
-            if (_isInitializing || RM_statusCB.SelectedItem is null)
-                return;
-
-            try
-            {
-                if (RM_statusCB.SelectedIndex == 0)
-                {
-                    LoadRoomData();
-                    return;
-                }
-                string status = RM_statusCB.SelectedItem.ToString()!;
-                const string query =
-                    "SELECT RoomId, RoomType, Capacity, Rate, Status " +
-                    "FROM TBLRoom " +
-                    "WHERE BranchId = @BranchId AND Status = @status " +
-                    "ORDER BY RoomId ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { BranchId = branchId, Status = status },
-                    RM_roomDGv,
-                    header: new[]
-                    {
-                        "Room ID",
-                        "Room Type",
-                        "Capacity",
-                        "Rate",
-                        "Status"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading room data: {ex.Message}",
+                    $"Error loading room summary: {ex.Message}",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        // ==========================================
+        // EXISTING EMPTY DESIGNER EVENTS
+        // ==========================================
+
+        private void guna2vSeparator1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void RM_Panel_details_status_Paint(
+            object sender,
+            PaintEventArgs e)
+        {
+        }
+
+        private void RM_StatusLbl_Click(object sender, EventArgs e)
+        {
         }
     }
 }

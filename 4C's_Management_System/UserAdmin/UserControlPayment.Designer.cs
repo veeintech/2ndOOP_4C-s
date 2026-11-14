@@ -451,7 +451,7 @@
             StatusCB.Font = new Font("Segoe UI", 10F);
             StatusCB.ForeColor = Color.FromArgb(68, 88, 112);
             StatusCB.ItemHeight = 30;
-            StatusCB.Items.AddRange(new object[] { "All Status", "Paid", "Pending ", "Failed/Refunded" });
+            StatusCB.Items.AddRange(new object[] { "All Status", "Paid", "Pending ", "Refunded" });
             StatusCB.Location = new Point(660, 12);
             StatusCB.Name = "StatusCB";
             StatusCB.ShadowDecoration.CustomizableEdges = customizableEdges18;
@@ -1004,7 +1004,7 @@
             shift_panel.BorderColor = Color.Maroon;
             shift_panel.BorderThickness = 4;
             shift_panel.CustomizableEdges = customizableEdges49;
-            shift_panel.Location = new Point(514, 91);
+            shift_panel.Location = new Point(422, 87);
             shift_panel.Name = "shift_panel";
             shift_panel.ShadowDecoration.CustomizableEdges = customizableEdges50;
             shift_panel.Size = new Size(451, 590);
