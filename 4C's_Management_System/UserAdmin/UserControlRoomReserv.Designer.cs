@@ -738,7 +738,7 @@
             RR_totalpriceLBL.BackColor = Color.Transparent;
             RR_totalpriceLBL.Font = new Font("Berlin Sans FB", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RR_totalpriceLBL.ForeColor = Color.Maroon;
-            RR_totalpriceLBL.Location = new Point(250, 434);
+            RR_totalpriceLBL.Location = new Point(221, 434);
             RR_totalpriceLBL.Margin = new Padding(4, 3, 4, 3);
             RR_totalpriceLBL.Name = "RR_totalpriceLBL";
             RR_totalpriceLBL.Size = new Size(58, 31);
