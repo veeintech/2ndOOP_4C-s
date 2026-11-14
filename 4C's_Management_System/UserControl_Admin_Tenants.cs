@@ -577,7 +577,7 @@ namespace _4C_s_Management_System
 
                 var parameters = new Dictionary<string, object>
                 {
-                   // ["BranchId"] = branchid
+                    // ["BranchId"] = branchid
                 };
 
                 // FILTER TENANT STATUS
@@ -639,6 +639,16 @@ namespace _4C_s_Management_System
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void UserControl_Admin_Tenants_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserControl_Admin_Tenants_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
