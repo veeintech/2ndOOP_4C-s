@@ -351,6 +351,7 @@
             UserNav_ReservationBtn.TabIndex = 9;
             UserNav_ReservationBtn.Text = "Reservations";
             UserNav_ReservationBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_ReservationBtn.Click += UserNav_ReservationBtn_Click;
             // 
             // UserNav_MaintenanceBtn
             // 
@@ -374,6 +375,7 @@
             UserNav_MaintenanceBtn.TabIndex = 8;
             UserNav_MaintenanceBtn.Text = "Maintenance";
             UserNav_MaintenanceBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_MaintenanceBtn.Click += UserNav_MaintenanceBtn_Click;
             // 
             // UserNav_Staff_Btn
             // 
@@ -422,6 +424,7 @@
             UserNav_PaymentBtn.TabIndex = 6;
             UserNav_PaymentBtn.Text = "Payment";
             UserNav_PaymentBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_PaymentBtn.Click += UserNav_PaymentBtn_Click;
             // 
             // UserNav_TenantsBtn
             // 
@@ -445,6 +448,7 @@
             UserNav_TenantsBtn.TabIndex = 5;
             UserNav_TenantsBtn.Text = "Tenants";
             UserNav_TenantsBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_TenantsBtn.Click += UserNav_TenantsBtn_Click;
             // 
             // UserNav_CustomerBtn
             // 
@@ -515,6 +519,7 @@
             userNav_DashboardBtn.TabIndex = 1;
             userNav_DashboardBtn.Text = "Dashboard";
             userNav_DashboardBtn.TextAlign = HorizontalAlignment.Left;
+            userNav_DashboardBtn.Click += userNav_DashboardBtn_Click;
             // 
             // guna2PictureBox2
             // 

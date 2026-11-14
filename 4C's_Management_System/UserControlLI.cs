@@ -32,6 +32,13 @@ namespace _4C_s_Management_System
             string username = LOGIN_usernameTxt.Text.Trim();
             string password = LOGIN_passwordtxt.Text;
 
+            if(username == "System Admin" && password == "sysad123")
+            {
+                this.Hide();
+                Admin_Navigation ad = new Admin_Navigation();
+                ad.Show();
+            }
+
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show(

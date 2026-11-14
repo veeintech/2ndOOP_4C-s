@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+﻿using _4C_s_Management_System.UserAdmin;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,7 @@ namespace _4C_s_Management_System
 
             try
             {
-                UserControlRoom rm = new UserControlRoom();
+                UserControl_Admin_Room rm = new UserControl_Admin_Room();
                 MainControlClass.ShowControl(rm, UserNav_Panel_shift);
             }
             catch (Exception ex)
@@ -75,32 +76,164 @@ namespace _4C_s_Management_System
 
         private void UserNav_Staff_Btn_Click(object sender, EventArgs e)
         {
+            designBTN(
+           UserNav_Staff_Btn,
+           UserNav_TenantsBtn,
+           UserNav_CustomerBtn,
+           //UserNav_LogoutBtn,
+           UserNav_PaymentBtn,
+           UserNav_ReservationBtn,
+           userNav_RoomsBtn,
+           userNav_DashboardBtn,
+           UserNav_MaintenanceBtn
+           //User_Control_ReportsBtn
+           //UserNav_AdminBtn
+           );
 
-            // designBTN(
-            /*UserNav_Staff_Btn,
-            UserNav_TenantsBtn,
-            UserNav_CustomerBtn,
-            UserNav_LogoutBtn,
-            UserNav_PaymentBtn,
-            UserNav_ReservationBtn,
-            userNav_RoomsBtn,
-            userNav_DashboardBtn,
-            UserNav_MaintenanceBtn,
-            User_Control_ReportsBtn,
-            UserNav_AdminBtn
-            );
-
-        try
-        {
-            UserControlStaff cr = new UserControlStaff();
-            MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            try
+            {
+                UserControl_Admin_Staff cr = new UserControl_Admin_Staff();
+                MainControlClass.ShowControl(cr, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        catch (Exception ex)
+
+        private void userNav_DashboardBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }*/
+            designBTN(
+              userNav_DashboardBtn,
+              userNav_RoomsBtn,
+              //UserNav_Staff_Btn,
+              UserNav_TenantsBtn,
+              UserNav_CustomerBtn,
+              UserNav_LogoutBtn,
+              UserNav_PaymentBtn,
+              UserNav_ReservationBtn,
+              UserNav_MaintenanceBtn
+              //User_Control_ReportsBtn,
+              //UserNav_AdminBtn
+              );
 
+            try
+            {
+                UserControl_Admin_DB rm = new UserControl_Admin_DB();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void UserNav_ReservationBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+              UserNav_ReservationBtn,
+              userNav_DashboardBtn,
+              userNav_RoomsBtn,
+              //UserNav_Staff_Btn,
+              UserNav_TenantsBtn,
+              UserNav_CustomerBtn,
+              UserNav_LogoutBtn,
+              UserNav_PaymentBtn,
+              UserNav_MaintenanceBtn
+              //User_Control_ReportsBtn,
+              //UserNav_AdminBtn
+              );
+
+            try
+            {
+                UserControl_Admin_Reservations rm = new UserControl_Admin_Reservations();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UserNav_PaymentBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+              UserNav_PaymentBtn,
+              UserNav_ReservationBtn,
+              userNav_DashboardBtn,
+              userNav_RoomsBtn,
+              //UserNav_Staff_Btn,
+              UserNav_TenantsBtn,
+              UserNav_CustomerBtn,
+              UserNav_LogoutBtn,
+              UserNav_MaintenanceBtn
+              //User_Control_ReportsBtn,
+              //UserNav_AdminBtn
+              );
+
+            try
+            {
+                UserControl_Admin_Payment rm = new UserControl_Admin_Payment();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UserNav_TenantsBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+             UserNav_TenantsBtn,
+             UserNav_PaymentBtn,
+             UserNav_ReservationBtn,
+             userNav_DashboardBtn,
+             userNav_RoomsBtn,
+             //UserNav_Staff_Btn,
+             UserNav_CustomerBtn,
+             UserNav_LogoutBtn,
+             UserNav_MaintenanceBtn
+             //User_Control_ReportsBtn,
+             //UserNav_AdminBtn
+             );
+
+            try
+            {
+                UserControl_Admin_Tenants rm = new UserControl_Admin_Tenants();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UserNav_MaintenanceBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+             UserNav_MaintenanceBtn,
+             UserNav_TenantsBtn,
+             UserNav_PaymentBtn,
+             UserNav_ReservationBtn,
+             userNav_DashboardBtn,
+             userNav_RoomsBtn,
+             //UserNav_Staff_Btn,
+             UserNav_CustomerBtn,
+             UserNav_LogoutBtn
+             //User_Control_ReportsBtn,
+             //UserNav_AdminBtn
+             );
+
+            try
+            {
+                UserControl_Admin_Maintenance rm = new UserControl_Admin_Maintenance();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void User_Control_PayrollBtn(object sender, EventArgs e)
