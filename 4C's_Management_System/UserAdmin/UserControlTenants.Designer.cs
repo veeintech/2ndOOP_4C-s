@@ -778,7 +778,7 @@
             TM_AddCusBtn.ShadowDecoration.CustomizableEdges = customizableEdges38;
             TM_AddCusBtn.Size = new Size(130, 35);
             TM_AddCusBtn.TabIndex = 129;
-            TM_AddCusBtn.Text = "+ Add Customer";
+            TM_AddCusBtn.Text = "Add Tenant";
             TM_AddCusBtn.Click += TM_AddCusBtn_Click;
             // 
             // TM_tenantidtxt

@@ -312,7 +312,6 @@
             // guna2PictureBox9
             // 
             guna2PictureBox9.BackColor = Color.Transparent;
-            guna2PictureBox9.BackgroundImage = (Image)resources.GetObject("guna2PictureBox9.BackgroundImage");
             guna2PictureBox9.BackgroundImageLayout = ImageLayout.Zoom;
             guna2PictureBox9.CustomizableEdges = customizableEdges15;
             guna2PictureBox9.FillColor = Color.Transparent;

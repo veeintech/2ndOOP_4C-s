@@ -233,7 +233,9 @@
             guna2Separator5 = new Guna.UI2.WinForms.Guna2Separator();
             guna2HtmlLabel30 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel31 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+
             txt_staffID = new Guna.UI2.WinForms.Guna2TextBox();
+
             guna2CirclePictureBox6 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -244,7 +246,8 @@
             guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
-            PB_printer = new Guna.UI2.WinForms.Guna2PictureBox();
+            DGV_Attendance = new Guna.UI2.WinForms.Guna2DataGridView();
+            dgv_staff = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -1396,6 +1399,12 @@
             txt_contact.Size = new Size(329, 30);
             txt_contact.TabIndex = 148;
             // 
+            // guna2CirclePictureBox13
+            // 
+            // 
+            // cb_gender
+            // 
+            // 
             // guna2PictureBox8
             // 
             guna2PictureBox8.CustomizableEdges = customizableEdges61;
@@ -1734,6 +1743,16 @@
             guna2HtmlLabel30.Text = "Staff ID";
             // 
             // guna2HtmlLabel31
+            // 
+            guna2HtmlLabel31.BackColor = Color.Transparent;
+            guna2HtmlLabel31.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2HtmlLabel31.Location = new Point(90, 185);
+            guna2HtmlLabel31.Name = "guna2HtmlLabel31";
+            guna2HtmlLabel31.Size = new Size(63, 25);
+            guna2HtmlLabel31.TabIndex = 99;
+            guna2HtmlLabel31.Text = "Gender";
+            // 
+            // CM_conManTxt
             // 
             guna2HtmlLabel31.BackColor = Color.Transparent;
             guna2HtmlLabel31.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
