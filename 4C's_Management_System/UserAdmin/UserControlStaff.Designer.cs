@@ -289,7 +289,6 @@
             ((System.ComponentModel.ISupportInitialize)dgv_staff).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox16).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PB_printer).BeginInit();
             SuspendLayout();
             // 
             // guna2HtmlLabel4
@@ -1990,16 +1989,6 @@
             // 
             // PB_printer
             // 
-            PB_printer.CustomizableEdges = customizableEdges98;
-            PB_printer.Image = Properties.Resources.print;
-            PB_printer.ImageRotate = 0F;
-            PB_printer.Location = new Point(1241, 41);
-            PB_printer.Name = "PB_printer";
-            PB_printer.ShadowDecoration.CustomizableEdges = customizableEdges99;
-            PB_printer.Size = new Size(57, 44);
-            PB_printer.SizeMode = PictureBoxSizeMode.Zoom;
-            PB_printer.TabIndex = 93;
-            PB_printer.TabStop = false;
             // 
             // UserControlStaff
             // 
@@ -2073,7 +2062,6 @@
             ((System.ComponentModel.ISupportInitialize)dgv_staff).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox16).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PB_printer).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

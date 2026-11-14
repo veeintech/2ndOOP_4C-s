@@ -26,5 +26,10 @@ namespace _4C_s_Management_System.UserAdmin
         {
 
         }
+
+        private void UserControl_Admin_Payment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

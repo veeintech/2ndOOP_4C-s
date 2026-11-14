@@ -163,23 +163,26 @@ CREATE TABLE [dbo].[PaymentTbl] (
 -- 9. StaffTbl
 -- ==========================================
 
-CREATE TABLE [dbo].[StaffTbl]
+CREATE TABLE dbo.StaffTbl
 (
-    [StaffID] VARCHAR(20) NOT NULL PRIMARY KEY,
-    [BranchID] VARCHAR(15) NOT NULL,
-    [FullName] VARCHAR(100) NOT NULL,
-    [ContactNumber] VARCHAR(12) NOT NULL,
-    [Email] VARCHAR(40) NOT NULL,
-    [Adress] VARCHAR(100) NOT NULL,
-    [Gender] CHAR(1) NOT NULL,
-    [JobPosition] VARCHAR(30),
-    [Datehired] DATETIME,
-    [SalaryRate] DECIMAL(10,2),
-    [Status] VARCHAR(30) NOT NULL,
+    StaffID VARCHAR(20) NOT NULL PRIMARY KEY,
+    BranchID VARCHAR(15) NOT NULL,
+    FullName VARCHAR(100) NOT NULL,
+    ContactNumber VARCHAR(20) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Address VARCHAR(100) NOT NULL,
+    Gender CHAR(1) NOT NULL,
+    JobPosition VARCHAR(30),
+    DateHired DATETIME,
+    SalaryRate DECIMAL(10,2),
+    Status VARCHAR(30) NOT NULL,
 
     CONSTRAINT FK_StaffTbl_BranchTbl
-    FOREIGN KEY (BranchID)
-    REFERENCES BranchTbl(BranchID)
+        FOREIGN KEY (BranchID)
+        REFERENCES dbo.BranchTbl(BranchId),
+
+    CONSTRAINT CK_StaffTbl_SalaryRate
+        CHECK (SalaryRate IS NULL OR SalaryRate >= 0)
 );
 
 -- ==========================================
