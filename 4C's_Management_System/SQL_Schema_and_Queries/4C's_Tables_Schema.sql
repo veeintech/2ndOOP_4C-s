@@ -123,7 +123,7 @@ CREATE TABLE [dbo].[MaintenanceTbl]
 );
 
 -- ==========================================
--- 8. ReservationTBl
+-- 8. PaymentTbl
 -- ==========================================
 
 CREATE TABLE [dbo].[PaymentTbl] (
@@ -160,7 +160,7 @@ CREATE TABLE [dbo].[PaymentTbl] (
 );
 
 -- ==========================================
--- 9. PaymenytTBl
+-- 9. StaffTbl
 -- ==========================================
 
 CREATE TABLE [dbo].[StaffTbl]

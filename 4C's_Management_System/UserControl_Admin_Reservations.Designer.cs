@@ -51,6 +51,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -79,28 +81,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.Charts.WinForms.LPoint lPoint1 = new Guna.Charts.WinForms.LPoint();
-            Guna.Charts.WinForms.LPoint lPoint2 = new Guna.Charts.WinForms.LPoint();
-            Guna.Charts.WinForms.LPoint lPoint3 = new Guna.Charts.WinForms.LPoint();
-            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             RR_searchresID = new Guna.UI2.WinForms.Guna2TextBox();
             RR_priceLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -139,6 +119,10 @@
             RR_ResIDLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Separator7 = new Guna.UI2.WinForms.Guna2Separator();
+            guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2vSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
+            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dgv_monitoring = new Guna.UI2.WinForms.Guna2DataGridView();
             RRes_AccommodationCB = new Guna.UI2.WinForms.Guna2ComboBox();
             RR_checkedOutLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -160,15 +144,6 @@
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             Cm_searchLbl = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2vSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
-            guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Separator7 = new Guna.UI2.WinForms.Guna2Separator();
-            guna2vSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            pnlReservationAnalytics = new Guna.UI2.WinForms.Guna2Panel();
-            gunaDoughnutDataset1 = new Guna.Charts.WinForms.GunaDoughnutDataset();
-            gunaChart1 = new Guna.Charts.WinForms.GunaChart();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).BeginInit();
             RR_Panelstatus.SuspendLayout();
             guna2Panel3.SuspendLayout();
@@ -177,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).BeginInit();
             guna2Panel2.SuspendLayout();
             guna2Panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_monitoring).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             guna2Panel5.SuspendLayout();
@@ -187,8 +163,6 @@
             ((System.ComponentModel.ISupportInitialize)dgv_reservation_req).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox15).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).BeginInit();
-            pnlReservationAnalytics.SuspendLayout();
             SuspendLayout();
             // 
             // guna2PictureBox8
@@ -719,6 +693,48 @@
             guna2Panel6.Size = new Size(1241, 408);
             guna2Panel6.TabIndex = 135;
             // 
+            // guna2Separator7
+            // 
+            guna2Separator7.FillColor = Color.FromArgb(64, 64, 64);
+            guna2Separator7.Location = new Point(27, 61);
+            guna2Separator7.Name = "guna2Separator7";
+            guna2Separator7.Size = new Size(1190, 12);
+            guna2Separator7.TabIndex = 144;
+            // 
+            // guna2PictureBox7
+            // 
+            guna2PictureBox7.CustomizableEdges = customizableEdges21;
+            guna2PictureBox7.Image = Properties.Resources.fc;
+            guna2PictureBox7.ImageRotate = 0F;
+            guna2PictureBox7.Location = new Point(27, 23);
+            guna2PictureBox7.Name = "guna2PictureBox7";
+            guna2PictureBox7.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2PictureBox7.Size = new Size(34, 32);
+            guna2PictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox7.TabIndex = 143;
+            guna2PictureBox7.TabStop = false;
+            // 
+            // guna2vSeparator1
+            // 
+            guna2vSeparator1.FillColor = Color.Maroon;
+            guna2vSeparator1.FillThickness = 3;
+            guna2vSeparator1.Location = new Point(67, 24);
+            guna2vSeparator1.Name = "guna2vSeparator1";
+            guna2vSeparator1.Size = new Size(11, 31);
+            guna2vSeparator1.TabIndex = 142;
+            // 
+            // guna2HtmlLabel7
+            // 
+            guna2HtmlLabel7.BackColor = Color.Transparent;
+            guna2HtmlLabel7.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel7.ForeColor = Color.FromArgb(138, 10, 46);
+            guna2HtmlLabel7.Location = new Point(81, 23);
+            guna2HtmlLabel7.Margin = new Padding(4, 3, 4, 3);
+            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            guna2HtmlLabel7.Size = new Size(278, 33);
+            guna2HtmlLabel7.TabIndex = 141;
+            guna2HtmlLabel7.Text = "Reservation Monitoring";
+            // 
             // dgv_monitoring
             // 
             dgv_monitoring.AllowUserToResizeRows = false;
@@ -1122,131 +1138,10 @@
             guna2PictureBox6.TabIndex = 86;
             guna2PictureBox6.TabStop = false;
             // 
-            // guna2PictureBox7
-            // 
-            guna2PictureBox7.CustomizableEdges = customizableEdges21;
-            guna2PictureBox7.Image = Properties.Resources.fc;
-            guna2PictureBox7.ImageRotate = 0F;
-            guna2PictureBox7.Location = new Point(27, 23);
-            guna2PictureBox7.Name = "guna2PictureBox7";
-            guna2PictureBox7.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2PictureBox7.Size = new Size(34, 32);
-            guna2PictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            guna2PictureBox7.TabIndex = 143;
-            guna2PictureBox7.TabStop = false;
-            // 
-            // guna2vSeparator1
-            // 
-            guna2vSeparator1.FillColor = Color.Maroon;
-            guna2vSeparator1.FillThickness = 3;
-            guna2vSeparator1.Location = new Point(67, 24);
-            guna2vSeparator1.Name = "guna2vSeparator1";
-            guna2vSeparator1.Size = new Size(11, 31);
-            guna2vSeparator1.TabIndex = 142;
-            // 
-            // guna2HtmlLabel7
-            // 
-            guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel7.ForeColor = Color.FromArgb(138, 10, 46);
-            guna2HtmlLabel7.Location = new Point(81, 23);
-            guna2HtmlLabel7.Margin = new Padding(4, 3, 4, 3);
-            guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(278, 33);
-            guna2HtmlLabel7.TabIndex = 141;
-            guna2HtmlLabel7.Text = "Reservation Monitoring";
-            // 
-            // guna2Separator7
-            // 
-            guna2Separator7.FillColor = Color.FromArgb(64, 64, 64);
-            guna2Separator7.Location = new Point(27, 61);
-            guna2Separator7.Name = "guna2Separator7";
-            guna2Separator7.Size = new Size(1190, 12);
-            guna2Separator7.TabIndex = 144;
-            // 
-            // guna2vSeparator2
-            // 
-            guna2vSeparator2.FillColor = Color.Maroon;
-            guna2vSeparator2.FillThickness = 3;
-            guna2vSeparator2.Location = new Point(36, 1241);
-            guna2vSeparator2.Name = "guna2vSeparator2";
-            guna2vSeparator2.Size = new Size(11, 31);
-            guna2vSeparator2.TabIndex = 144;
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.ForeColor = Color.FromArgb(138, 10, 46);
-            guna2HtmlLabel3.Location = new Point(50, 1240);
-            guna2HtmlLabel3.Margin = new Padding(4, 3, 4, 3);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(254, 33);
-            guna2HtmlLabel3.TabIndex = 143;
-            guna2HtmlLabel3.Text = "Reservation Analytics";
-            // 
-            // pnlReservationAnalytics
-            // 
-            pnlReservationAnalytics.Controls.Add(gunaChart1);
-            pnlReservationAnalytics.CustomizableEdges = customizableEdges45;
-            pnlReservationAnalytics.Location = new Point(36, 1299);
-            pnlReservationAnalytics.Name = "pnlReservationAnalytics";
-            pnlReservationAnalytics.ShadowDecoration.CustomizableEdges = customizableEdges46;
-            pnlReservationAnalytics.Size = new Size(432, 254);
-            pnlReservationAnalytics.TabIndex = 146;
-            // 
-            // gunaDoughnutDataset1
-            // 
-            lPoint1.Label = "Hotel";
-            lPoint1.Y = 50D;
-            lPoint2.Label = "Transient";
-            lPoint2.Y = 40D;
-            lPoint3.Label = "Apartment";
-            lPoint3.Y = 30D;
-            gunaDoughnutDataset1.DataPoints.AddRange(new Guna.Charts.WinForms.LPoint[] { lPoint1, lPoint2, lPoint3 });
-            gunaDoughnutDataset1.Label = "Doughnut1";
-            // 
-            // gunaChart1
-            // 
-            chartFont1.FontName = "Arial";
-            gunaChart1.Legend.LabelFont = chartFont1;
-            gunaChart1.Location = new Point(18, 25);
-            gunaChart1.Name = "gunaChart1";
-            gunaChart1.Size = new Size(313, 187);
-            gunaChart1.TabIndex = 0;
-            chartFont2.FontName = "Arial";
-            chartFont2.Size = 12;
-            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            gunaChart1.Title.Font = chartFont2;
-            chartFont3.FontName = "Arial";
-            gunaChart1.Tooltips.BodyFont = chartFont3;
-            chartFont4.FontName = "Arial";
-            chartFont4.Size = 9;
-            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            gunaChart1.Tooltips.TitleFont = chartFont4;
-            gunaChart1.XAxes.GridLines = grid1;
-            chartFont5.FontName = "Arial";
-            tick1.Font = chartFont5;
-            gunaChart1.XAxes.Ticks = tick1;
-            gunaChart1.YAxes.GridLines = grid2;
-            chartFont6.FontName = "Arial";
-            tick2.Font = chartFont6;
-            gunaChart1.YAxes.Ticks = tick2;
-            gunaChart1.ZAxes.GridLines = grid3;
-            chartFont7.FontName = "Arial";
-            pointLabel1.Font = chartFont7;
-            gunaChart1.ZAxes.PointLabels = pointLabel1;
-            chartFont8.FontName = "Arial";
-            tick3.Font = chartFont8;
-            gunaChart1.ZAxes.Ticks = tick3;
-            // 
             // UserControl_Admin_Reservations
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pnlReservationAnalytics);
-            Controls.Add(guna2vSeparator2);
-            Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2Panel7);
             Controls.Add(guna2Panel3);
             Controls.Add(guna2Panel4);
@@ -1258,7 +1153,7 @@
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2Panel1);
             Name = "UserControl_Admin_Reservations";
-            Size = new Size(1332, 1898);
+            Size = new Size(1332, 1248);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).EndInit();
             RR_Panelstatus.ResumeLayout(false);
             RR_Panelstatus.PerformLayout();
@@ -1272,6 +1167,7 @@
             guna2Panel2.PerformLayout();
             guna2Panel6.ResumeLayout(false);
             guna2Panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_monitoring).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             guna2Panel5.ResumeLayout(false);
@@ -1285,8 +1181,6 @@
             ((System.ComponentModel.ISupportInitialize)dgv_reservation_req).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox15).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).EndInit();
-            pnlReservationAnalytics.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1355,10 +1249,5 @@
         private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator7;
-        private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2Panel pnlReservationAnalytics;
-        private Guna.Charts.WinForms.GunaDoughnutDataset gunaDoughnutDataset1;
-        private Guna.Charts.WinForms.GunaChart gunaChart1;
     }
 }
