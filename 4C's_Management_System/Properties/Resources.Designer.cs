@@ -383,6 +383,16 @@ namespace _4C_s_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bytesize__print {
+            get {
+                object obj = ResourceManager.GetObject("bytesize--print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calen {
             get {
                 object obj = ResourceManager.GetObject("calen", resourceCulture);
@@ -816,6 +826,26 @@ namespace _4C_s_Management_System.Properties {
         internal static System.Drawing.Bitmap how_does_plumbing_work_e1548696261445 {
             get {
                 object obj = ResourceManager.GetObject("how-does-plumbing-work-e1548696261445", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hugeicons__pay_by_check {
+            get {
+                object obj = ResourceManager.GetObject("hugeicons--pay-by-check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hugeicons__pay_by_check__1_ {
+            get {
+                object obj = ResourceManager.GetObject("hugeicons--pay-by-check (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

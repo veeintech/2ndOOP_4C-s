@@ -102,5 +102,10 @@ namespace _4C_s_Management_System
 
 
         }
+
+        private void User_Control_PayrollBtn(object sender, EventArgs e)
+        {
+
+        }
     }
 }
