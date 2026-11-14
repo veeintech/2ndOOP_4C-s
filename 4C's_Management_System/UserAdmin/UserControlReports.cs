@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -24,10 +23,11 @@ namespace _4C_s_Management_System
 
         private const string ZeroText = "0 (00.00%)";
 
-        private const string LblTotalRevenue = "lblTotalRevenue";
-        private const string LblTotalStaff = "lblTotalStaff";
-        private const string LblOccupancyRate = "lblOccupancyRate";
-        private const string LblMaintenance = "lblMaintenance";
+        // Summary card labels (names from the designer)
+        private const string LblTotalRevenue = "guna2HtmlLabel5";
+        private const string LblTotalStaff = "guna2HtmlLabel23";
+        private const string LblOccupancyRate = "guna2HtmlLabel3";
+        private const string LblMaintenance = "guna2HtmlLabel7";
 
         // =========================================
         // OCCUPANCY LEGEND
@@ -148,7 +148,7 @@ namespace _4C_s_Management_System
 
         private void SetDefaultsToZero()
         {
-            SetText(LblTotalRevenue, "₱ 0.00");
+            SetText(LblTotalRevenue, "0.00");
             SetText(LblTotalStaff, "0");
             SetText(LblOccupancyRate, "0%");
             SetText(LblMaintenance, "0");
@@ -179,17 +179,17 @@ namespace _4C_s_Management_System
 
             // Apartment revenue
             guna2ProgressBar3.Value = 0;
-            guna2HtmlLabel33.Text = "₱ 0.00";
+            guna2HtmlLabel33.Text = "0.00";
             guna2HtmlLabel32.Text = "0.00%";
 
             // Hotel revenue
             guna2ProgressBar5.Value = 0;
-            guna2HtmlLabel35.Text = "₱ 0.00";
+            guna2HtmlLabel35.Text = "0.00";
             guna2HtmlLabel37.Text = "0.00%";
 
             // Transient revenue
             guna2ProgressBar6.Value = 0;
-            guna2HtmlLabel34.Text = "₱ 0.00";
+            guna2HtmlLabel34.Text = "0.00";
             guna2HtmlLabel36.Text = "0.00%";
 
             ResetPlaceholderLabels(this);
@@ -455,7 +455,7 @@ namespace _4C_s_Management_System
 
             SetText(
                 LblTotalRevenue,
-                "₱ " + totalRevenue.ToString("N2"));
+                totalRevenue.ToString("N2"));
 
             // Total Staff
             DataTable staff = GetReportData(@"
@@ -845,7 +845,7 @@ namespace _4C_s_Management_System
                 0,
                 Math.Min(100, (int)Math.Round(percentage)));
 
-            revenueLabel.Text = "₱ " + revenue.ToString("N2");
+            revenueLabel.Text = revenue.ToString("N2");
             percentageLabel.Text = $"{percentage:0.00}%";
         }
 
