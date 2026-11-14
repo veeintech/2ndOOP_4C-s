@@ -1271,7 +1271,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             Recenr_reservationDGV.DefaultCellStyle = dataGridViewCellStyle3;
             Recenr_reservationDGV.GridColor = Color.FromArgb(231, 229, 255);
-            Recenr_reservationDGV.Location = new Point(19, 65);
+            Recenr_reservationDGV.Location = new Point(23, 76);
             Recenr_reservationDGV.Name = "Recenr_reservationDGV";
             Recenr_reservationDGV.ReadOnly = true;
             Recenr_reservationDGV.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
