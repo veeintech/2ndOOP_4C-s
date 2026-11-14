@@ -1,4 +1,5 @@
-﻿using _4C_s_Management_System.Classess;
+﻿
+using _4C_s_Management_System.Classess;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,11 +15,17 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
 
+            RoomReserveDGV.CellClick -= RoomReserveDGV_CellClick;
             RoomReserveDGV.CellClick += RoomReserveDGV_CellClick;
 
-            // Update Customer ID and Tenant ID whenever accommodation changes.
             RR_resTypetxt.SelectedIndexChanged -= AccomodationTXT_selectedIndexChange;
             RR_resTypetxt.SelectedIndexChanged += AccomodationTXT_selectedIndexChange;
+
+            RRes_AccommodationCB.SelectedIndexChanged -= RRes_AccommodationCB_SelectedIndexChanged;
+            RRes_AccommodationCB.SelectedIndexChanged += RRes_AccommodationCB_SelectedIndexChanged;
+
+            RR_searchresID.TextChanged -= RR_searchtxtx_textchanged;
+            RR_searchresID.TextChanged += RR_searchtxtx_textchanged;
         }
 
         private bool IsApartment()
@@ -32,38 +39,28 @@ namespace _4C_s_Management_System
         private void ToggleCustomerTenantInputs()
         {
             bool apartment = IsApartment();
-            bool hasAccommodation = !string.IsNullOrWhiteSpace(RR_resTypetxt.Text);
+            bool hasAccommodation =
+                !string.IsNullOrWhiteSpace(RR_resTypetxt.Text);
 
-            if (!hasAccommodation)
-            {
-                RR_customertxt.Enabled = false;
-                RR_tenantidTxt.Enabled = false;
+            RR_customertxt.Enabled = hasAccommodation && !apartment;
+            RR_tenantidTxt.Enabled = hasAccommodation && apartment;
 
-                RR_customertxt.Clear();
-                RR_tenantidTxt.Clear();
-                return;
-            }
-
-            if (apartment)
-            {
-                RR_customertxt.Enabled = false;
+            if (!hasAccommodation || apartment)
                 RR_customertxt.Clear();
 
-                RR_tenantidTxt.Enabled = true;
-            }
-            else
-            {
-                RR_customertxt.Enabled = true;
-
-                RR_tenantidTxt.Enabled = false;
+            if (!hasAccommodation || !apartment)
                 RR_tenantidTxt.Clear();
-            }
         }
 
         private void UserControlRoomReserv_Load(object sender, EventArgs e)
         {
-            RRes_AccommodationCB.SelectedIndex = 0;
-            RR_RoomTypesCB.SelectedIndex = 0;
+            branchid = AccessBranch_ByForm.BranchId;
+
+            if (RRes_AccommodationCB.Items.Count > 0 &&
+                RRes_AccommodationCB.SelectedIndex < 0)
+            {
+                RRes_AccommodationCB.SelectedIndex = 0;
+            }
 
             RR_Timecheckin_TXT.Format = DateTimePickerFormat.Custom;
             RR_Timecheckin_TXT.CustomFormat = "hh:mm tt";
@@ -81,35 +78,7 @@ namespace _4C_s_Management_System
 
         public void LoadReservationData()
         {
-            try
-            {
-                const string query =
-                    "SELECT ReservationId, AccomodationType, ReservationDate, ResStartDate, ResEndDate " +
-                    "FROM ReservationTbl " +
-                    "WHERE BranchId = @BranchId " +
-                    "ORDER BY ReservationId ASC";
-
-                AppDB.Instance.Table(
-                    query,
-                    new { BranchId = branchid },
-                    RoomReserveDGV,
-                    header: new[]
-                    {
-                        "Reservation ID",
-                        "Accommodation Type",
-                        "Reservation Date",
-                        "Start Date",
-                        "End Date"
-                    });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Error loading reservation data: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            ApplyCustomerFilters();
         }
 
         public void SearchData()
@@ -117,17 +86,15 @@ namespace _4C_s_Management_System
             ApplyCustomerFilters();
         }
 
+        // Search reservation ID.
         private void RR_searchtxtx_textchanged(object sender, EventArgs e)
         {
             ApplyCustomerFilters();
         }
 
-        private void RRes_AccommodationCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ApplyCustomerFilters();
-        }
-
-        private void RR_RoomTypesCB_SelectedIndexChanged(object sender, EventArgs e)
+        // Filter by accommodation type only.
+        private void RRes_AccommodationCB_SelectedIndexChanged(
+            object sender, EventArgs e)
         {
             ApplyCustomerFilters();
         }
@@ -136,6 +103,14 @@ namespace _4C_s_Management_System
         {
             try
             {
+                branchid = AccessBranch_ByForm.BranchId;
+
+                string accommodation =
+                    RRes_AccommodationCB.Text.Trim();
+
+                string searchId =
+                    RR_searchresID.Text.Trim();
+
                 var conditions = new List<string>
                 {
                     "R.BranchId = @BranchId"
@@ -146,43 +121,37 @@ namespace _4C_s_Management_System
                     ["BranchId"] = branchid
                 };
 
-                if (RRes_AccommodationCB.SelectedIndex > 0 &&
-                    RRes_AccommodationCB.SelectedItem != null)
-                {
-                    conditions.Add("R.AccomodationType = @AccommodationType");
-
-                    parameters["AccommodationType"] =
-                        RRes_AccommodationCB.SelectedItem.ToString()!;
-                }
-
-                // RoomType belongs to TBLRoom, not ReservationTbl.
-                if (RR_RoomTypesCB.SelectedIndex > 0 &&
-                    RR_RoomTypesCB.SelectedItem != null)
+                // Ignore the accommodation filter when All accommodation is selected.
+                if (!string.IsNullOrWhiteSpace(accommodation) &&
+                    !accommodation.Equals(
+                        "All accommodation",
+                        StringComparison.OrdinalIgnoreCase))
                 {
                     conditions.Add(
-                        "R.RoomId IN (SELECT RoomId FROM TBLRoom WHERE RoomType = @RoomType AND BranchId = @BranchId)");
+                        "R.AccomodationType = @AccommodationType");
 
-                    parameters["RoomType"] =
-                        RR_RoomTypesCB.SelectedItem.ToString()!;
+                    parameters["AccommodationType"] = accommodation;
                 }
 
-                string reservationId = RR_searchresID.Text.Trim();
-
-                if (!string.IsNullOrWhiteSpace(reservationId))
+                // Search by reservation ID.
+                if (!string.IsNullOrWhiteSpace(searchId))
                 {
-                    conditions.Add("R.ReservationId LIKE @ReservationId");
-                    parameters["ReservationId"] = $"%{reservationId}%";
+                    conditions.Add(
+                        "R.ReservationId LIKE @ReservationId");
+
+                    parameters["ReservationId"] = "%" + searchId + "%";
                 }
 
-                const string queryStart =
-                    "SELECT R.ReservationId, R.AccomodationType, " +
-                    "R.ReservationDate, R.ResStartDate, R.ResEndDate " +
-                    "FROM ReservationTbl R WHERE ";
-
-                string query =
-                    queryStart +
-                    string.Join(" AND ", conditions) +
-                    " ORDER BY R.ReservationId ASC";
+                string query = @"
+                    SELECT
+                        R.ReservationId,
+                        R.AccomodationType,
+                        R.ReservationDate,
+                        R.ResStartDate,
+                        R.ResEndDate
+                    FROM ReservationTbl R
+                    WHERE " + string.Join(" AND ", conditions) + @"
+                    ORDER BY R.ReservationId ASC;";
 
                 AppDB.Instance.Table(
                     query,
@@ -200,21 +169,121 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error loading reservation data: {ex.Message}",
+                    "Error loading reservation data: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
 
-        private void AccomodationTXT_selectedIndexChange(object sender, EventArgs e)
+        private void AccomodationTXT_selectedIndexChange(
+            object sender, EventArgs e)
         {
             ToggleCustomerTenantInputs();
         }
 
-        private void accomodationtype_selectedIndexChange(object sender, EventArgs e)
+        // Keep this method if it is connected to your Designer.
+        private void accomodationtype_selectedIndexChange(
+            object sender, EventArgs e)
         {
             ApplyCustomerFilters();
+        }
+
+        private bool ValidateReservationInputs(
+            string reservationId,
+            string customerId,
+            string tenantId,
+            string roomId,
+            string accommodationType,
+            DateTime startDate,
+            DateTime endDate,
+            bool apartment,
+            bool isUpdate)
+        {
+            if (string.IsNullOrWhiteSpace(roomId) ||
+                string.IsNullOrWhiteSpace(accommodationType))
+            {
+                MessageBox.Show(
+                    "Please fill in all required fields.",
+                    "Missing Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (apartment &&
+                string.IsNullOrWhiteSpace(tenantId))
+            {
+                MessageBox.Show(
+                    "Please enter a Tenant ID for an Apartment reservation.",
+                    "Missing Tenant ID",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!apartment &&
+                string.IsNullOrWhiteSpace(customerId))
+            {
+                MessageBox.Show(
+                    "Please enter a Customer ID for this reservation.",
+                    "Missing Customer ID",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (startDate >= endDate)
+            {
+                MessageBox.Show(
+                    "Start date must be earlier than end date.",
+                    "Invalid Date Range",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (isUpdate && string.IsNullOrWhiteSpace(reservationId))
+            {
+                MessageBox.Show(
+                    "Please select a reservation first.",
+                    "Missing Reservation",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool IsRoomAvailable(
+            string roomId,
+            DateTime startDate,
+            DateTime endDate,
+            string reservationId = "")
+        {
+            const string query = @"
+                SELECT COUNT(*)
+                FROM ReservationTbl
+                WHERE BranchId = @BranchId
+                  AND RoomId = @RoomId
+                  AND ResStartDate < @RequestedEnd
+                  AND ResEndDate > @RequestedStart
+                  AND ReservationId <> @ReservationId;";
+
+            int count = Convert.ToInt32(
+                AppDB.Instance.Scalar(
+                    query,
+                    new
+                    {
+                        BranchId = branchid,
+                        RoomId = roomId,
+                        RequestedStart = startDate,
+                        RequestedEnd = endDate,
+                        ReservationId = reservationId ?? ""
+                    }));
+
+            return count == 0;
         }
 
         private void RR_AddCusBtn_Click(object sender, EventArgs e)
@@ -226,7 +295,6 @@ namespace _4C_s_Management_System
 
             bool apartment = IsApartment();
 
-            // Only the correct ID is used for the selected accommodation.
             if (apartment)
                 customerId = "";
             else
@@ -240,51 +308,22 @@ namespace _4C_s_Management_System
                 RR_checkOutDateTxt.Value.Date.Add(
                     RR_Timecheckout_TXT.Value.TimeOfDay);
 
-            if (string.IsNullOrWhiteSpace(roomId) ||
-                string.IsNullOrWhiteSpace(accommodationType))
-            {
-                MessageBox.Show(
-                    "Please fill in all required fields.",
-                    "Missing Information",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+            if (!ValidateReservationInputs(
+                "",
+                customerId,
+                tenantId,
+                roomId,
+                accommodationType,
+                startDate,
+                endDate,
+                apartment,
+                false))
                 return;
-            }
-
-            if (apartment && string.IsNullOrWhiteSpace(tenantId))
-            {
-                MessageBox.Show(
-                    "Please enter a Tenant ID for an Apartment reservation.",
-                    "Missing Tenant ID",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!apartment && string.IsNullOrWhiteSpace(customerId))
-            {
-                MessageBox.Show(
-                    "Please enter a Customer ID for this reservation.",
-                    "Missing Customer ID",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (startDate >= endDate)
-            {
-                MessageBox.Show(
-                    "Start date must be earlier than end date.",
-                    "Invalid Date Range",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
 
             if (!string.IsNullOrWhiteSpace(RR_ReserIDTxt.Text))
             {
                 MessageBox.Show(
-                    "Reservation cannot be added because a reservation is already selected.",
+                    "A reservation is already selected. Clear the fields before adding another.",
                     "Information",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -293,9 +332,8 @@ namespace _4C_s_Management_System
 
             try
             {
-                // Check the room and retrieve its rate.
                 const string roomQuery = @"
-                    SELECT RoomType, Status, Rate
+                    SELECT Status, Rate
                     FROM TBLRoom
                     WHERE BranchId = @BranchId
                       AND RoomId = @RoomId;";
@@ -336,27 +374,20 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // Check for overlapping reservations.
-                const string reservationOverlapQuery = @"
-                    SELECT COUNT(*)
-                    FROM ReservationTbl
-                    WHERE BranchId = @BranchId
-                      AND RoomId = @RoomId
-                      AND ResStartDate < @RequestedEnd
-                      AND ResEndDate > @RequestedStart;";
+                if (string.Equals(
+                    roomStatus,
+                    "Occupied",
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show(
+                        "The room is currently occupied.",
+                        "Room Unavailable",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
 
-                int activeReservations = Convert.ToInt32(
-                    AppDB.Instance.Scalar(
-                        reservationOverlapQuery,
-                        new
-                        {
-                            BranchId = branchid,
-                            RoomId = roomId,
-                            RequestedStart = startDate,
-                            RequestedEnd = endDate
-                        }));
-
-                if (activeReservations > 0)
+                if (!IsRoomAvailable(roomId, startDate, endDate))
                 {
                     MessageBox.Show(
                         "The room is already reserved during the selected date and time.",
@@ -366,12 +397,10 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // Generate reservation ID.
                 string reservationId =
                     IDGenerator.GenerateNextID("RES", branchid);
 
-                // Save only one ID, depending on accommodation type.
-                const string insertReservationQuery = @"
+                const string insertQuery = @"
                     INSERT INTO ReservationTbl
                     (
                         ReservationId,
@@ -397,8 +426,8 @@ namespace _4C_s_Management_System
                         @ResEndDate
                     );";
 
-                int reservationResult = AppDB.Instance.CUD(
-                    insertReservationQuery,
+                int result = AppDB.Instance.CUD(
+                    insertQuery,
                     new
                     {
                         ReservationId = reservationId,
@@ -412,7 +441,7 @@ namespace _4C_s_Management_System
                         ResEndDate = endDate
                     });
 
-                if (reservationResult <= 0)
+                if (result <= 0)
                 {
                     MessageBox.Show(
                         "The reservation could not be saved.",
@@ -425,11 +454,8 @@ namespace _4C_s_Management_System
                 RR_ReserIDTxt.Text = reservationId;
 
                 if (!apartment)
-                {
                     customerstatus("re");
-                }
 
-                // Update room status.
                 const string updateRoomQuery = @"
                     UPDATE TBLRoom
                     SET Status = @Status
@@ -445,14 +471,16 @@ namespace _4C_s_Management_System
                         Status = "Reserved"
                     });
 
-                // Create the payment record.
+                decimal roomRate = Convert.ToDecimal(room["Rate"]);
+
+                decimal totalHours =
+                    Convert.ToDecimal((endDate - startDate).TotalHours);
+
+                decimal amountPaid =
+                    decimal.Round((roomRate / 24m) * totalHours, 2);
+
                 if (!apartment)
                 {
-                    double roomRate = Convert.ToDouble(room["Rate"]);
-
-                    decimal amountPaid = Convert.ToDecimal(
-                        (endDate - startDate).TotalDays * roomRate);
-
                     const string paymentQuery = @"
                         INSERT INTO PaymentTbl
                         (
@@ -477,7 +505,8 @@ namespace _4C_s_Management_System
                         paymentQuery,
                         new
                         {
-                            PaymentID = IDGenerator.GenerateNextID("PAY", branchid),
+                            PaymentID =
+                                IDGenerator.GenerateNextID("PAY", branchid),
                             BranchID = branchid,
                             ReservationID = reservationId,
                             CustomerID = customerId,
@@ -487,15 +516,6 @@ namespace _4C_s_Management_System
                 }
                 else
                 {
-                    decimal amountPaid = 0;
-
-                    decimal.TryParse(
-                        RR_totalpriceLBL.Text
-                            .Replace("₱", "")
-                            .Replace(",", "")
-                            .Trim(),
-                        out amountPaid);
-
                     const string paymentQuery = @"
                         INSERT INTO PaymentTbl
                         (
@@ -518,7 +538,8 @@ namespace _4C_s_Management_System
                         paymentQuery,
                         new
                         {
-                            PaymentID = IDGenerator.GenerateNextID("PAY", branchid),
+                            PaymentID =
+                                IDGenerator.GenerateNextID("PAY", branchid),
                             BranchID = branchid,
                             TenantID = tenantId,
                             AmountPaid = amountPaid,
@@ -533,12 +554,13 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Information);
 
                 LoadReservationData();
+                loadDisplay_label();
                 ClearFields();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    ex.Message,
+                    "Error adding reservation: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -558,8 +580,20 @@ namespace _4C_s_Management_System
             RR_Timecheckin_TXT.Value = DateTime.Now;
             RR_Timecheckout_TXT.Value = DateTime.Now;
 
-            // Keep the selected accommodation type, but update the controls.
             ToggleCustomerTenantInputs();
+
+            RoomReserveDGV.ClearSelection();
+
+            RR_ResIDLBL.Text = "";
+            RR_nameLBL.Text = "";
+            RR_ContactLBL.Text = "";
+            RR_Resstatuslbl.Text = "";
+            RR_RoomIDLBL.Text = "";
+            RR_checkIndateLBL.Text = "";
+            RR_checkOutLBL.Text = "";
+            RR_capacityLbl.Text = "";
+            RR_priceLBL.Text = "";
+            RR_totalpriceLBL.Text = "";
         }
 
         private void guna2Panel8_Paint(object sender, PaintEventArgs e)
@@ -589,63 +623,22 @@ namespace _4C_s_Management_System
                 RR_checkOutDateTxt.Value.Date.Add(
                     RR_Timecheckout_TXT.Value.TimeOfDay);
 
-            if (string.IsNullOrWhiteSpace(reservationId) ||
-                string.IsNullOrWhiteSpace(roomId) ||
-                string.IsNullOrWhiteSpace(accommodationType))
-            {
-                MessageBox.Show(
-                    "Please select a reservation and fill in all required fields.",
-                    "Missing Information",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+            if (!ValidateReservationInputs(
+                reservationId,
+                customerId,
+                tenantId,
+                roomId,
+                accommodationType,
+                startDate,
+                endDate,
+                apartment,
+                true))
                 return;
-            }
-
-            if (apartment && string.IsNullOrWhiteSpace(tenantId))
-            {
-                MessageBox.Show(
-                    "Please enter a Tenant ID for an Apartment reservation.",
-                    "Missing Tenant ID",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!apartment && string.IsNullOrWhiteSpace(customerId))
-            {
-                MessageBox.Show(
-                    "Please enter a Customer ID for this reservation.",
-                    "Missing Customer ID",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (startDate >= endDate)
-            {
-                MessageBox.Show(
-                    "Start date must be earlier than end date.",
-                    "Invalid Date Range",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (startDate < DateTime.Now)
-            {
-                MessageBox.Show(
-                    "Start date cannot be in the past.",
-                    "Invalid Start Date",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
 
             try
             {
-                // Check that the room exists in the current branch.
                 const string roomQuery = @"
-                    SELECT RoomId
+                    SELECT Status
                     FROM TBLRoom
                     WHERE BranchId = @BranchId
                       AND RoomId = @RoomId;";
@@ -668,8 +661,37 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // Update reservation.
-                const string query = @"
+                string roomStatus =
+                    Convert.ToString(roomData.Rows[0]["Status"]) ?? "";
+
+                if (string.Equals(
+                    roomStatus,
+                    "Maintenance",
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show(
+                        "The selected room is under maintenance.",
+                        "Room Unavailable",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!IsRoomAvailable(
+                    roomId,
+                    startDate,
+                    endDate,
+                    reservationId))
+                {
+                    MessageBox.Show(
+                        "The selected room already has another reservation during this date and time.",
+                        "Room Unavailable",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                const string updateQuery = @"
                     UPDATE ReservationTbl
                     SET
                         CustomerId = @CustomerId,
@@ -683,7 +705,7 @@ namespace _4C_s_Management_System
                       AND BranchId = @BranchId;";
 
                 int result = AppDB.Instance.CUD(
-                    query,
+                    updateQuery,
                     new
                     {
                         ReservationId = reservationId,
@@ -706,6 +728,7 @@ namespace _4C_s_Management_System
                         MessageBoxIcon.Information);
 
                     LoadReservationData();
+                    loadDisplay_label();
                     ClearFields();
                 }
                 else
@@ -720,7 +743,7 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error updating reservation: {ex.Message}",
+                    "Error updating reservation: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -729,7 +752,8 @@ namespace _4C_s_Management_System
 
         private void LoadReservationIntoFields(int rowIndex)
         {
-            if (rowIndex < 0 || rowIndex >= RoomReserveDGV.Rows.Count)
+            if (rowIndex < 0 ||
+                rowIndex >= RoomReserveDGV.Rows.Count)
                 return;
 
             DataGridViewRow row = RoomReserveDGV.Rows[rowIndex];
@@ -737,20 +761,20 @@ namespace _4C_s_Management_System
             if (row.IsNewRow || row.Cells.Count < 5)
                 return;
 
-            RR_ReserIDTxt.Text =
-                Convert.ToString(row.Cells[0].Value) ?? "";
-
-            RR_resTypetxt.Text =
-                Convert.ToString(row.Cells[1].Value) ?? "";
-
-            // Update the enabled/disabled state after loading the type.
-            ToggleCustomerTenantInputs();
-
             string reservationId =
                 Convert.ToString(row.Cells[0].Value) ?? "";
 
+            if (string.IsNullOrWhiteSpace(reservationId))
+                return;
+
             const string query = @"
-                SELECT CustomerId, TenantId, RoomId
+                SELECT
+                    CustomerId,
+                    TenantId,
+                    RoomId,
+                    AccomodationType,
+                    ResStartDate,
+                    ResEndDate
                 FROM ReservationTbl
                 WHERE ReservationId = @ReservationID
                   AND BranchId = @BranchId;";
@@ -763,40 +787,40 @@ namespace _4C_s_Management_System
                     BranchId = branchid
                 });
 
-            if (relatedData.Rows.Count > 0)
-            {
-                DataRow relatedRow = relatedData.Rows[0];
+            if (relatedData.Rows.Count == 0)
+                return;
 
-                RR_customertxt.Text =
-                    Convert.ToString(relatedRow["CustomerId"]) ?? "";
+            DataRow relatedRow = relatedData.Rows[0];
 
-                RR_tenantidTxt.Text =
-                    Convert.ToString(relatedRow["TenantId"]) ?? "";
+            RR_ReserIDTxt.Text = reservationId;
 
-                RR_RoomIdTxt.Text =
-                    Convert.ToString(relatedRow["RoomId"]) ?? "";
-            }
-            else
-            {
-                RR_customertxt.Clear();
-                RR_tenantidTxt.Clear();
-                RR_RoomIdTxt.Clear();
-            }
+            RR_resTypetxt.Text =
+                Convert.ToString(relatedRow["AccomodationType"]) ?? "";
 
-            // Reapply the control state after loading the IDs.
             ToggleCustomerTenantInputs();
 
-            RR_checkInDateTXT.Value =
-                Convert.ToDateTime(row.Cells[3].Value);
+            RR_customertxt.Text =
+                Convert.ToString(relatedRow["CustomerId"]) ?? "";
 
-            RR_Timecheckin_TXT.Value =
-                Convert.ToDateTime(row.Cells[3].Value);
+            RR_tenantidTxt.Text =
+                Convert.ToString(relatedRow["TenantId"]) ?? "";
 
-            RR_checkOutDateTxt.Value =
-                Convert.ToDateTime(row.Cells[4].Value);
+            RR_RoomIdTxt.Text =
+                Convert.ToString(relatedRow["RoomId"]) ?? "";
 
-            RR_Timecheckout_TXT.Value =
-                Convert.ToDateTime(row.Cells[4].Value);
+            DateTime startDate =
+                Convert.ToDateTime(relatedRow["ResStartDate"]);
+
+            DateTime endDate =
+                Convert.ToDateTime(relatedRow["ResEndDate"]);
+
+            RR_checkInDateTXT.Value = startDate;
+            RR_Timecheckin_TXT.Value = startDate;
+
+            RR_checkOutDateTxt.Value = endDate;
+            RR_Timecheckout_TXT.Value = endDate;
+
+            ToggleCustomerTenantInputs();
 
             checkstatus();
         }
@@ -807,9 +831,7 @@ namespace _4C_s_Management_System
         {
             if (e.RowIndex < 0 ||
                 e.RowIndex >= RoomReserveDGV.Rows.Count)
-            {
                 return;
-            }
 
             LoadReservationIntoFields(e.RowIndex);
             LoadDisplay(e.RowIndex);
@@ -829,15 +851,51 @@ namespace _4C_s_Management_System
                 return;
             }
 
+            DialogResult confirm = MessageBox.Show(
+                "Are you sure you want to delete this reservation?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+                return;
+
             try
             {
-                const string query = @"
+                const string getRoomQuery = @"
+                    SELECT RoomId
+                    FROM ReservationTbl
+                    WHERE ReservationId = @ReservationId
+                      AND BranchId = @BranchId;";
+
+                DataTable reservationData = AppDB.Instance.TableData(
+                    getRoomQuery,
+                    new
+                    {
+                        ReservationId = reservationId,
+                        BranchId = branchid
+                    });
+
+                if (reservationData.Rows.Count == 0)
+                {
+                    MessageBox.Show(
+                        "Reservation not found.",
+                        "Not Found",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string roomId =
+                    Convert.ToString(reservationData.Rows[0]["RoomId"]) ?? "";
+
+                const string deleteQuery = @"
                     DELETE FROM ReservationTbl
                     WHERE ReservationId = @ReservationId
                       AND BranchId = @BranchId;";
 
                 int result = AppDB.Instance.CUD(
-                    query,
+                    deleteQuery,
                     new
                     {
                         ReservationId = reservationId,
@@ -846,6 +904,33 @@ namespace _4C_s_Management_System
 
                 if (result > 0)
                 {
+                    const string updateRoomQuery = @"
+                        UPDATE TBLRoom
+                        SET Status =
+                            CASE
+                                WHEN EXISTS
+                                (
+                                    SELECT 1
+                                    FROM ReservationTbl
+                                    WHERE ReservationTbl.BranchId = @BranchId
+                                      AND ReservationTbl.RoomId = @RoomId
+                                      AND ReservationTbl.ResEndDate > GETDATE()
+                                )
+                                THEN 'Reserved'
+                                ELSE 'Available'
+                            END
+                        WHERE BranchId = @BranchId
+                          AND RoomId = @RoomId
+                          AND Status <> 'Maintenance';";
+
+                    AppDB.Instance.CUD(
+                        updateRoomQuery,
+                        new
+                        {
+                            BranchId = branchid,
+                            RoomId = roomId
+                        });
+
                     MessageBox.Show(
                         "Reservation deleted successfully.",
                         "Success",
@@ -854,12 +939,13 @@ namespace _4C_s_Management_System
                 }
 
                 LoadReservationData();
+                loadDisplay_label();
                 ClearFields();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error deleting reservation: {ex.Message}",
+                    "Error deleting reservation: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -868,7 +954,8 @@ namespace _4C_s_Management_System
 
         public void LoadDisplay(int rowIndex)
         {
-            if (rowIndex < 0 || rowIndex >= RoomReserveDGV.Rows.Count)
+            if (rowIndex < 0 ||
+                rowIndex >= RoomReserveDGV.Rows.Count)
                 return;
 
             DataGridViewRow row = RoomReserveDGV.Rows[rowIndex];
@@ -923,13 +1010,9 @@ namespace _4C_s_Management_System
             DateTime endDate =
                 Convert.ToDateTime(reservationRow["ResEndDate"]);
 
-            string accommodationType =
-                Convert.ToString(reservationRow["AccomodationType"]) ?? "";
-
             string capacity = "";
-            double rate = 0;
+            decimal rate = 0m;
 
-            // Get room information.
             if (!string.IsNullOrWhiteSpace(roomId))
             {
                 const string roomQuery = @"
@@ -952,7 +1035,7 @@ namespace _4C_s_Management_System
                         Convert.ToString(roomData.Rows[0]["Capacity"]) ?? "";
 
                     rate =
-                        Convert.ToDouble(roomData.Rows[0]["Rate"]);
+                        Convert.ToDecimal(roomData.Rows[0]["Rate"]);
                 }
             }
 
@@ -960,7 +1043,6 @@ namespace _4C_s_Management_System
             string contactNumber = "";
             string displayStatus = "";
 
-            // Get customer information for Hotel and Transient.
             if (!string.IsNullOrWhiteSpace(customerId))
             {
                 const string customerQuery = @"
@@ -990,7 +1072,6 @@ namespace _4C_s_Management_System
                 }
             }
 
-            // Get tenant information for Apartment.
             if (!string.IsNullOrWhiteSpace(tenantId))
             {
                 const string tenantQuery = @"
@@ -1032,27 +1113,18 @@ namespace _4C_s_Management_System
             RR_checkOutLBL.Text =
                 endDate.ToString("MM/dd/yyyy hh:mm tt");
 
-            if (capacity == "Single Room")
-            {
-                RR_capacityLbl.Text = "1-2 Persons";
-            }
-            else if (capacity == "Double Room")
-            {
-                RR_capacityLbl.Text = "2-4 Persons";
-            }
-            else
-            {
-                RR_capacityLbl.Text = capacity;
-            }
+            RR_capacityLbl.Text =
+                string.IsNullOrWhiteSpace(capacity) ? "N/A" : capacity;
 
             RR_priceLBL.Text = rate.ToString("C2");
 
-            // Calculate the total price.
-            double hourlyRate = rate / 24;
-            TimeSpan duration = endDate - startDate;
+            decimal hourlyRate = rate / 24m;
 
-            double totalPrice =
-                Math.Round(duration.TotalHours * hourlyRate, 2);
+            decimal totalHours =
+                Convert.ToDecimal((endDate - startDate).TotalHours);
+
+            decimal totalPrice =
+                decimal.Round(totalHours * hourlyRate, 2);
 
             RR_totalpriceLBL.Text = totalPrice.ToString("C2");
         }
@@ -1061,7 +1133,8 @@ namespace _4C_s_Management_System
             object sender,
             DataGridViewCellEventArgs e)
         {
-            LoadDisplay(e.RowIndex);
+            if (e.RowIndex >= 0)
+                LoadDisplay(e.RowIndex);
         }
 
         private void RR_checkinBtn_Click(object sender, EventArgs e)
@@ -1105,7 +1178,7 @@ namespace _4C_s_Management_System
                         {
                             CustomerId = customerId,
                             BranchId = branchid
-                        }));
+                        })) ?? "";
 
                 if (!string.Equals(
                     status,
@@ -1119,8 +1192,6 @@ namespace _4C_s_Management_System
                         MessageBoxIcon.Warning);
                     return;
                 }
-
-                customerstatus("ci");
 
                 const string query = @"
                     UPDATE TBLRoom
@@ -1139,17 +1210,22 @@ namespace _4C_s_Management_System
 
                 if (result > 0)
                 {
+                    customerstatus("ci");
+
                     MessageBox.Show(
-                        $"{roomId} is now Occupied.",
+                        roomId + " is now Occupied.",
                         "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+
+                    LoadReservationData();
+                    loadDisplay_label();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error during check-in: {ex.Message}",
+                    "Error during check-in: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -1166,24 +1242,35 @@ namespace _4C_s_Management_System
                 if (string.IsNullOrWhiteSpace(customerId))
                     return;
 
-                if (s == "ci")
-                    status = "Checked In";
-                else if (s == "co")
-                    status = "Checked Out";
-                else if (s == "cn")
-                    status = "Cancelled";
-                else if (s == "re")
-                    status = "Reserved";
-                else if (s == "ns")
-                    status = "No Show";
-                else
+                switch (s)
                 {
-                    MessageBox.Show(
-                        "Invalid status provided.",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return;
+                    case "ci":
+                        status = "Checked In";
+                        break;
+
+                    case "co":
+                        status = "Checked Out";
+                        break;
+
+                    case "cn":
+                        status = "Cancelled";
+                        break;
+
+                    case "re":
+                        status = "Reserved";
+                        break;
+
+                    case "ns":
+                        status = "No Show";
+                        break;
+
+                    default:
+                        MessageBox.Show(
+                            "Invalid status provided.",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                        return;
                 }
 
                 const string query = @"
@@ -1201,15 +1288,7 @@ namespace _4C_s_Management_System
                         Status = status
                     });
 
-                if (result > 0)
-                {
-                    MessageBox.Show(
-                        $"Customer status updated to '{status}'.",
-                        "Success",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }
-                else
+                if (result <= 0)
                 {
                     MessageBox.Show(
                         "No customer status was updated.",
@@ -1221,7 +1300,7 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error updating customer status: {ex.Message}",
+                    "Error updating customer status: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -1232,7 +1311,6 @@ namespace _4C_s_Management_System
         {
             try
             {
-                // Apartment reservations do not use CustomerTbl status.
                 if (IsApartment())
                     return;
 
@@ -1256,10 +1334,10 @@ namespace _4C_s_Management_System
                         {
                             CustomerId = customerId,
                             BranchId = branchid
-                        }));
+                        })) ?? "";
 
                 const string reservationQuery = @"
-                    SELECT ResStartDate, ResEndDate
+                    SELECT ResStartDate
                     FROM ReservationTbl
                     WHERE ReservationId = @ReservationId
                       AND BranchId = @BranchId;";
@@ -1272,19 +1350,15 @@ namespace _4C_s_Management_System
                         BranchId = branchid
                     });
 
-                if (reservationData.Rows.Count == 0)
+                if (reservationData.Rows.Count == 0 ||
+                    reservationData.Rows[0].IsNull("ResStartDate"))
                     return;
 
-                DataRow row = reservationData.Rows[0];
+                DateTime startDate =
+                    Convert.ToDateTime(
+                        reservationData.Rows[0]["ResStartDate"]);
 
-                if (row.IsNull("ResStartDate") ||
-                    row.IsNull("ResEndDate"))
-                    return;
-
-                DateTime endDate =
-                    Convert.ToDateTime(row["ResEndDate"]);
-
-                if (DateTime.Now >= endDate &&
+                if (DateTime.Now >= startDate &&
                     string.Equals(
                         status,
                         "Reserved",
@@ -1302,7 +1376,7 @@ namespace _4C_s_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error checking customer status: {ex.Message}",
+                    "Error checking customer status: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -1343,7 +1417,7 @@ namespace _4C_s_Management_System
                         {
                             CustomerId = customerId,
                             BranchId = branchid
-                        }));
+                        })) ?? "";
 
                 if (!string.Equals(
                     status,
@@ -1357,8 +1431,6 @@ namespace _4C_s_Management_System
                         MessageBoxIcon.Warning);
                     return;
                 }
-
-                customerstatus("co");
 
                 const string query = @"
                     UPDATE TBLRoom
@@ -1377,17 +1449,22 @@ namespace _4C_s_Management_System
 
                 if (result > 0)
                 {
+                    customerstatus("co");
+
                     MessageBox.Show(
-                        $"{roomId} is now Available.",
+                        roomId + " is now Available.",
                         "Success",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+
+                    LoadReservationData();
+                    loadDisplay_label();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error during check-out: {ex.Message}",
+                    "Error during check-out: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -1408,18 +1485,26 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                DateTime now = DateTime.Now;
+                string customerId = RR_customertxt.Text.Trim();
+                string roomId = RR_RoomIdTxt.Text.Trim();
 
                 DateTime startDate =
                     RR_checkInDateTXT.Value.Date.Add(
                         RR_Timecheckin_TXT.Value.TimeOfDay);
 
-                string customerId = RR_customertxt.Text.Trim();
-                string roomId = RR_RoomIdTxt.Text.Trim();
-
                 if (string.IsNullOrWhiteSpace(customerId) ||
                     string.IsNullOrWhiteSpace(roomId))
                     return;
+
+                if (DateTime.Now >= startDate)
+                {
+                    MessageBox.Show(
+                        "Cannot cancel the reservation as the check-in date has already passed.",
+                        "Cancellation Not Allowed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
 
                 const string customerQuery = @"
                     SELECT CustomerStatus
@@ -1434,17 +1519,7 @@ namespace _4C_s_Management_System
                         {
                             CustomerId = customerId,
                             BranchId = branchid
-                        }));
-
-                if (now >= startDate)
-                {
-                    MessageBox.Show(
-                        "Cannot cancel the reservation as the check-in date has already passed.",
-                        "Cancellation Not Allowed",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
-                }
+                        })) ?? "";
 
                 if (!string.Equals(
                     status,
@@ -1476,25 +1551,22 @@ namespace _4C_s_Management_System
                         Status = "Available"
                     });
 
-                MessageBox.Show(
-                    "Reservation cancelled successfully. Balance will be refunded.",
-                    "Cancellation Successful",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
                 if (result > 0)
                 {
                     MessageBox.Show(
-                        $"{roomId} is now Available.",
-                        "Success",
+                        "Reservation cancelled successfully. Please process any applicable refund separately.",
+                        "Cancellation Successful",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+
+                    LoadReservationData();
+                    loadDisplay_label();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Error during cancellation: {ex.Message}",
+                    "Error during cancellation: " + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -1503,35 +1575,46 @@ namespace _4C_s_Management_System
 
         public void loadDisplay_label()
         {
-            const string labelDisplayQuery = @"
-                SELECT
-                    COUNT(CASE WHEN CustomerStatus = 'Reserved' THEN 1 END) AS TotalReserved,
-                    COUNT(CASE WHEN CustomerStatus = 'Checked In' THEN 1 END) AS TotalCheckIn,
-                    COUNT(CASE WHEN CustomerStatus = 'Checked Out' THEN 1 END) AS TotalCheckOut,
-                    COUNT(CASE WHEN CustomerStatus = 'Cancelled' THEN 1 END) AS TotalCancelled
-                FROM CustomerTbl
-                WHERE BranchId = @BranchId;";
+            try
+            {
+                const string query = @"
+                    SELECT
+                        COUNT(CASE WHEN CustomerStatus = 'Reserved' THEN 1 END) AS TotalReserved,
+                        COUNT(CASE WHEN CustomerStatus = 'Checked In' THEN 1 END) AS TotalCheckIn,
+                        COUNT(CASE WHEN CustomerStatus = 'Checked Out' THEN 1 END) AS TotalCheckOut,
+                        COUNT(CASE WHEN CustomerStatus = 'Cancelled' THEN 1 END) AS TotalCancelled
+                    FROM CustomerTbl
+                    WHERE BranchId = @BranchId;";
 
-            DataTable reservationData = AppDB.Instance.TableData(
-                labelDisplayQuery,
-                new { BranchId = branchid });
+                DataTable data = AppDB.Instance.TableData(
+                    query,
+                    new { BranchId = branchid });
 
-            if (reservationData.Rows.Count == 0)
-                return;
+                if (data.Rows.Count == 0)
+                    return;
 
-            DataRow reservationRow = reservationData.Rows[0];
+                DataRow row = data.Rows[0];
 
-            RM_totalResLBL.Text =
-                Convert.ToString(reservationRow["TotalReserved"]) ?? "0";
+                RM_totalResLBL.Text =
+                    Convert.ToString(row["TotalReserved"]) ?? "0";
 
-            RR_checkedInLBL.Text =
-                Convert.ToString(reservationRow["TotalCheckIn"]) ?? "0";
+                RR_checkedInLBL.Text =
+                    Convert.ToString(row["TotalCheckIn"]) ?? "0";
 
-            RR_checkedOutLBL.Text =
-                Convert.ToString(reservationRow["TotalCheckOut"]) ?? "0";
+                RR_checkedOutLBL.Text =
+                    Convert.ToString(row["TotalCheckOut"]) ?? "0";
 
-            RR_CancelledLBL.Text =
-                Convert.ToString(reservationRow["TotalCancelled"]) ?? "0";
+                RR_CancelledLBL.Text =
+                    Convert.ToString(row["TotalCancelled"]) ?? "0";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error loading reservation summary: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

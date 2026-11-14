@@ -42,6 +42,7 @@ namespace _4C_s_Management_System
             catch { /* swallow on dispose */ }
         }
 
+
         #region Core plumbing
 
         private void EnsureConnectionOpen()
@@ -50,6 +51,7 @@ namespace _4C_s_Management_System
                 conn.Open();
         }
 
+        // Determines the correct SQL Server data type.
         private static SqlDbType InferSqlDbType(Type t)
         {
             t = Nullable.GetUnderlyingType(t) ?? t;
@@ -60,7 +62,14 @@ namespace _4C_s_Management_System
             if (t == typeof(short)) return SqlDbType.SmallInt;
             if (t == typeof(byte)) return SqlDbType.TinyInt;
             if (t == typeof(bool)) return SqlDbType.Bit;
+
             if (t == typeof(DateTime)) return SqlDbType.DateTime2;
+            if (t == typeof(DateOnly)) return SqlDbType.Date;
+
+            // IMPORTANT: SQL Server TIME support
+            if (t == typeof(TimeSpan)) return SqlDbType.Time;
+            if (t == typeof(TimeOnly)) return SqlDbType.Time;
+
             if (t == typeof(decimal)) return SqlDbType.Decimal;
             if (t == typeof(double)) return SqlDbType.Float;
             if (t == typeof(float)) return SqlDbType.Real;
@@ -70,11 +79,59 @@ namespace _4C_s_Management_System
             return SqlDbType.Variant;
         }
 
+        // Converts TimeOnly to TimeSpan because SqlClient uses TimeSpan for SQL TIME.
+        private static object ConvertParameterValue(object value)
+        {
+            if (value is TimeOnly timeOnly)
+                return timeOnly.ToTimeSpan();
+
+            return value;
+        }
+
+        private static void AddSingleParameter(
+            SqlCommand cmd,
+            string name,
+            object value,
+            Type propertyType = null)
+        {
+            bool isNull = value == null || value == DBNull.Value;
+
+            SqlDbType sqlType = isNull
+                ? (propertyType != null
+                    ? InferSqlDbType(propertyType)
+                    : SqlDbType.Variant)
+                : InferSqlDbType(value.GetType());
+
+            if (!isNull)
+                value = ConvertParameterValue(value);
+
+            var parameter = cmd.Parameters.Add(name, sqlType);
+
+            if (sqlType == SqlDbType.Time)
+                parameter.Scale = 7;
+
+            if (sqlType == SqlDbType.NVarChar &&
+                value is string text &&
+                text.Length <= 4000)
+            {
+                parameter.Size = Math.Max(1, text.Length);
+            }
+
+            if (sqlType == SqlDbType.Decimal)
+            {
+                parameter.Precision = 18;
+                parameter.Scale = 6;
+            }
+
+            parameter.Value = isNull ? DBNull.Value : value;
+        }
+
         private static void AddParameters(SqlCommand cmd, object parameters)
         {
-            if (parameters == null) return;
+            if (parameters == null)
+                return;
 
-            // Support SqlParameter arrays
+            // Support SqlParameter arrays.
             if (parameters is IEnumerable<SqlParameter> sqlParameters)
             {
                 foreach (var parameter in sqlParameters)
@@ -85,49 +142,59 @@ namespace _4C_s_Management_System
                 return;
             }
 
-            // Allow IDictionary<string, object> OR anonymous/POCO
+            // Support Dictionary parameters.
             if (parameters is IDictionary<string, object> dict)
             {
                 foreach (var kv in dict)
                 {
-                    var p = cmd.Parameters.Add("@" + kv.Key, kv.Value == null || kv.Value is DBNull
-                        ? SqlDbType.Variant
-                        : InferSqlDbType(kv.Value.GetType()));
-                    p.Value = kv.Value ?? DBNull.Value;
+                    AddSingleParameter(
+                        cmd,
+                        "@" + kv.Key,
+                        kv.Value
+                    );
                 }
+
                 return;
             }
 
-            foreach (var prop in parameters.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+            // Support anonymous objects and POCO classes.
+            foreach (var prop in parameters.GetType().GetProperties(
+                BindingFlags.Public | BindingFlags.Instance))
             {
-                var name = "@" + prop.Name;
-                var value = prop.GetValue(parameters) ?? DBNull.Value;
-                var sqlType = value == DBNull.Value ? InferSqlDbType(prop.PropertyType) : InferSqlDbType(value.GetType());
+                object value = prop.GetValue(parameters);
 
-                var p = cmd.Parameters.Add(name, sqlType);
-                // Handle common sizes/precision if desired
-                if (sqlType == SqlDbType.NVarChar && value is string s && s.Length <= 4000) p.Size = Math.Max(1, s.Length);
-                if (sqlType == SqlDbType.Decimal)
-                {
-                    p.Precision = 18;
-                    p.Scale = 6;
-                }
-                p.Value = value;
+                AddSingleParameter(
+                    cmd,
+                    "@" + prop.Name,
+                    value,
+                    prop.PropertyType
+                );
             }
         }
 
-        private SqlCommand CreateCommand(string query, object parameters = null, SqlTransaction tran = null)
+        private SqlCommand CreateCommand(
+            string query,
+            object parameters = null,
+            SqlTransaction tran = null)
         {
             EnsureConnectionOpen();
-            var cmd = new SqlCommand(query, conn, tran) { CommandTimeout = CommandTimeoutSeconds };
+
+            var cmd = new SqlCommand(query, conn, tran)
+            {
+                CommandTimeout = CommandTimeoutSeconds
+            };
+
             AddParameters(cmd, parameters);
+
             Logger?.Invoke(cmd.CommandText);
+
             return cmd;
         }
 
-        private static string Q(string identifier) => $"[{identifier}]"; // bracket-quote
+        private static string Q(string identifier) => $"[{identifier}]";
 
         #endregion
+
 
         #region Basic CRUD / Queries (sync)
 

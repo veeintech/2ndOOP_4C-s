@@ -554,7 +554,7 @@
             TM_tenantstatusCB.Font = new Font("Segoe UI", 10F);
             TM_tenantstatusCB.ForeColor = Color.FromArgb(68, 88, 112);
             TM_tenantstatusCB.ItemHeight = 30;
-            TM_tenantstatusCB.Items.AddRange(new object[] { "All tenants", "Active", "Pending", "Inactive" });
+            TM_tenantstatusCB.Items.AddRange(new object[] { "All status", "Pending", "Reserve", "Checked-In", "Checked-Out", "Canceled" });
             TM_tenantstatusCB.Location = new Point(336, 213);
             TM_tenantstatusCB.Name = "TM_tenantstatusCB";
             TM_tenantstatusCB.ShadowDecoration.CustomizableEdges = customizableEdges22;

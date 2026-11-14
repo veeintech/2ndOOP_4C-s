@@ -504,7 +504,7 @@
             CM_custypeCB.Font = new Font("Segoe UI", 10F);
             CM_custypeCB.ForeColor = Color.FromArgb(68, 88, 112);
             CM_custypeCB.ItemHeight = 30;
-            CM_custypeCB.Items.AddRange(new object[] { "All types", "Hotel", "Apartment", "Transient" });
+            CM_custypeCB.Items.AddRange(new object[] { "All types", "Hotel", "Transient" });
             CM_custypeCB.Location = new Point(1006, 215);
             CM_custypeCB.Name = "CM_custypeCB";
             CM_custypeCB.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -922,7 +922,7 @@
             CM_CustomerstatCB.Font = new Font("Segoe UI", 10F);
             CM_CustomerstatCB.ForeColor = Color.FromArgb(68, 88, 112);
             CM_CustomerstatCB.ItemHeight = 30;
-            CM_CustomerstatCB.Items.AddRange(new object[] { "All status", "Active", "Pending", "Inactive" });
+            CM_CustomerstatCB.Items.AddRange(new object[] { "All status", "Pending", "Reserve", "Checked-In", "Checked-Out", "Canceled" });
             CM_CustomerstatCB.Location = new Point(687, 215);
             CM_CustomerstatCB.Name = "CM_CustomerstatCB";
             CM_CustomerstatCB.ShadowDecoration.CustomizableEdges = customizableEdges51;
