@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 using Guna.Charts.WinForms;
@@ -1021,6 +1022,330 @@ namespace _4C_s_Management_System
                     "Reports Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+
+        // =========================================
+        // PRINT REPORT
+        // Connect PrintIcon_Click to the print icon's Click event
+        // (Properties > Events > Click)
+        // =========================================
+
+        private class ReportSection
+        {
+            public string Title;
+            public string Col1;
+            public string Col2;
+            public List<string[]> Rows = new List<string[]>();
+        }
+
+        private List<ReportSection> _printSections;
+        private int _printSection;
+        private int _printRow;
+        private int _printPage;
+
+        private string GetText(string controlName)
+        {
+            Control c = FindControlByName(controlName);
+            return c != null ? c.Text : "-";
+        }
+
+        private void AddValueSection(
+            List<ReportSection> list,
+            string title,
+            string col1,
+            string col2,
+            System.Collections.IEnumerable points,
+            Func<double, string> format)
+        {
+            ReportSection s = new ReportSection
+            {
+                Title = title,
+                Col1 = col1,
+                Col2 = col2
+            };
+
+            foreach (LPoint p in points)
+                s.Rows.Add(new[] { p.Label, format(p.Y) });
+
+            if (s.Rows.Count == 0)
+                s.Rows.Add(new[] { "No data", "-" });
+
+            list.Add(s);
+        }
+
+        private void AddStatusSection(
+            List<ReportSection> list,
+            string title,
+            string col1,
+            System.Collections.IEnumerable points)
+        {
+            ReportSection s = new ReportSection
+            {
+                Title = title,
+                Col1 = col1,
+                Col2 = "Count (Percentage)"
+            };
+
+            double total = 0;
+            foreach (LPoint p in points)
+                total += p.Y;
+
+            foreach (LPoint p in points)
+            {
+                double pct = total > 0 ? p.Y / total * 100 : 0;
+                s.Rows.Add(new[] { p.Label, $"{p.Y:0} ({pct:0.00}%)" });
+            }
+
+            if (s.Rows.Count == 0)
+                s.Rows.Add(new[] { "No data", "-" });
+
+            list.Add(s);
+        }
+
+        private List<ReportSection> BuildReportSections()
+        {
+            var list = new List<ReportSection>();
+
+            // Summary
+            var summary = new ReportSection
+            {
+                Title = "Summary",
+                Col1 = "Metric",
+                Col2 = "Value"
+            };
+            summary.Rows.Add(new[] { "Total Revenue", GetText(LblTotalRevenue) });
+            summary.Rows.Add(new[] { "Total Staff", GetText(LblTotalStaff) });
+            summary.Rows.Add(new[] { "Occupancy Rate", GetText(LblOccupancyRate) });
+            summary.Rows.Add(new[] { "Pending / Ongoing Maintenance", GetText(LblMaintenance) });
+            list.Add(summary);
+
+            // Financial
+            AddValueSection(list, "Monthly Total Revenue",
+                "Month", "Revenue",
+                gunaBarDataset1.DataPoints,
+                v => v.ToString("N2"));
+
+            var property = new ReportSection
+            {
+                Title = "Revenue by Property Type",
+                Col1 = "Property Type",
+                Col2 = "Revenue (Share)"
+            };
+            property.Rows.Add(new[] { "Apartment", guna2HtmlLabel33.Text + " (" + guna2HtmlLabel32.Text + ")" });
+            property.Rows.Add(new[] { "Hotel", guna2HtmlLabel35.Text + " (" + guna2HtmlLabel37.Text + ")" });
+            property.Rows.Add(new[] { "Transient", guna2HtmlLabel34.Text + " (" + guna2HtmlLabel36.Text + ")" });
+            list.Add(property);
+
+            // Rooms
+            AddStatusSection(list, "Room Occupancy Status",
+                "Status", gunaDoughnutDataset2.DataPoints);
+
+            AddValueSection(list, "Occupancy Rate per Room Type",
+                "Room Type", "Occupancy Rate",
+                gunaBarDataset6.DataPoints,
+                v => v.ToString("0.##") + "%");
+
+            // Maintenance
+            AddStatusSection(list, "Maintenance Status",
+                "Status", gunaDoughnutDataset6.DataPoints);
+
+            AddValueSection(list, "Completed Maintenance per Month",
+                "Month", "Completed",
+                gunaBarDataset3.DataPoints,
+                v => v.ToString("0"));
+
+            // Reservations
+            AddStatusSection(list, "Reservation Status",
+                "Status", gunaDoughnutDataset5.DataPoints);
+
+            AddValueSection(list, "Reservations per Month",
+                "Month", "Reservations",
+                gunaBarDataset5.DataPoints,
+                v => v.ToString("0"));
+
+            // Tenants
+            AddStatusSection(list, "Tenant Status",
+                "Status", gunaDoughnutDataset4.DataPoints);
+
+            AddValueSection(list, "Rental Income per Month",
+                "Month", "Income",
+                gunaBarDataset4.DataPoints,
+                v => v.ToString("N2"));
+
+            return list;
+        }
+
+        private void PrintIcon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PrintDocument pd = new PrintDocument();
+                pd.DocumentName = "4C's Management System - Reports";
+                pd.DefaultPageSettings.Margins = new Margins(60, 60, 60, 60);
+
+                pd.BeginPrint += (s, ev) =>
+                {
+                    _printSections = BuildReportSections();
+                    _printSection = 0;
+                    _printRow = 0;
+                    _printPage = 0;
+                };
+
+                pd.PrintPage += ReportPrintPage;
+
+                using (PrintPreviewDialog preview = new PrintPreviewDialog())
+                {
+                    preview.Document = pd;
+                    preview.WindowState = FormWindowState.Maximized;
+                    preview.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Unable to print the report.\n\n" + ex.Message,
+                    "Print Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void ReportPrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Rectangle m = e.MarginBounds;
+
+            e.HasMorePages = false;
+            _printPage++;
+
+            const float rowH = 24f;
+            float bottom = m.Bottom - 25f;
+
+            using (Font titleFont = new Font("Georgia", 22, FontStyle.Bold))
+            using (Font smallTitleFont = new Font("Georgia", 12, FontStyle.Bold))
+            using (Font subFont = new Font("Segoe UI", 9))
+            using (Font secFont = new Font("Georgia", 13, FontStyle.Bold))
+            using (Font headFont = new Font("Segoe UI", 10, FontStyle.Bold))
+            using (Font rowFont = new Font("Segoe UI", 10))
+            using (Brush maroonBrush = new SolidBrush(Maroon))
+            using (Brush grayBrush = new SolidBrush(Color.Gray))
+            using (Brush blackBrush = new SolidBrush(Color.Black))
+            using (Brush whiteBrush = new SolidBrush(Color.White))
+            using (Brush stripeBrush = new SolidBrush(Color.FromArgb(250, 244, 236)))
+            using (Pen mustardPen = new Pen(Mustard, 2f))
+            using (Pen linePen = new Pen(Color.LightGray))
+            {
+                float y = m.Top;
+
+                // ---------- PAGE HEADER ----------
+                if (_printPage == 1)
+                {
+                    g.DrawString("Reports", titleFont, maroonBrush, m.Left, y);
+                    y += 40;
+
+                    g.DrawString(
+                        "4C's Management System",
+                        subFont, blackBrush, m.Left, y);
+                    y += 16;
+
+                    g.DrawString(
+                        "Generated: " + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt")
+                        + "    |    Branch ID: " + AccessBranch_ByForm.BranchId,
+                        subFont, grayBrush, m.Left, y);
+                    y += 22;
+                }
+                else
+                {
+                    g.DrawString(
+                        "4C's Management System - Reports",
+                        smallTitleFont, maroonBrush, m.Left, y);
+                    y += 24;
+                }
+
+                g.DrawLine(mustardPen, m.Left, y, m.Right, y);
+                y += 16;
+
+                float yStart = y;
+
+                // ---------- SECTIONS ----------
+                while (_printSection < _printSections.Count)
+                {
+                    ReportSection s = _printSections[_printSection];
+
+                    // Keep title + header + at least one row together
+                    float needed = 28 + rowH + rowH;
+
+                    if (y + needed > bottom && y > yStart)
+                    {
+                        e.HasMorePages = true;
+                        break;
+                    }
+
+                    string title = _printRow == 0
+                        ? s.Title
+                        : s.Title + " (continued)";
+
+                    g.DrawString(title, secFont, maroonBrush, m.Left, y);
+                    y += 28;
+
+                    // Table header
+                    g.FillRectangle(maroonBrush, m.Left, y, m.Width, rowH);
+                    g.DrawString(s.Col1, headFont, whiteBrush, m.Left + 8, y + 4);
+
+                    StringFormat right = new StringFormat { Alignment = StringAlignment.Far };
+                    g.DrawString(
+                        s.Col2, headFont, whiteBrush,
+                        new RectangleF(m.Left, y + 4, m.Width - 8, rowH),
+                        right);
+                    y += rowH;
+
+                    // Rows
+                    while (_printRow < s.Rows.Count)
+                    {
+                        if (y + rowH > bottom)
+                            break;
+
+                        if (_printRow % 2 == 1)
+                            g.FillRectangle(stripeBrush, m.Left, y, m.Width, rowH);
+
+                        g.DrawString(
+                            s.Rows[_printRow][0], rowFont, blackBrush,
+                            m.Left + 8, y + 4);
+
+                        g.DrawString(
+                            s.Rows[_printRow][1], rowFont, blackBrush,
+                            new RectangleF(m.Left, y + 4, m.Width - 8, rowH),
+                            right);
+
+                        g.DrawLine(linePen, m.Left, y + rowH, m.Right, y + rowH);
+
+                        y += rowH;
+                        _printRow++;
+                    }
+
+                    right.Dispose();
+
+                    if (_printRow < s.Rows.Count)
+                    {
+                        e.HasMorePages = true;
+                        break;
+                    }
+
+                    _printSection++;
+                    _printRow = 0;
+                    y += 18;
+                }
+
+                // ---------- FOOTER ----------
+                using (StringFormat center = new StringFormat { Alignment = StringAlignment.Center })
+                {
+                    g.DrawString(
+                        "Page " + _printPage,
+                        subFont, grayBrush,
+                        new RectangleF(m.Left, m.Bottom - 10, m.Width, 20),
+                        center);
+                }
             }
         }
 
