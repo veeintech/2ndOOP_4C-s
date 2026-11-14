@@ -761,7 +761,7 @@
             CM_AddCusBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             CM_AddCusBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             CM_AddCusBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            CM_AddCusBtn.FillColor = Color.FromArgb(138, 10, 46);
+            CM_AddCusBtn.FillColor = Color.Maroon;
             CM_AddCusBtn.Font = new Font("Baskerville Old Face", 10.2F);
             CM_AddCusBtn.ForeColor = Color.WhiteSmoke;
             CM_AddCusBtn.Location = new Point(914, 206);
@@ -833,7 +833,7 @@
             CM_UpdateBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             CM_UpdateBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             CM_UpdateBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            CM_UpdateBtn.FillColor = Color.FromArgb(183, 122, 50);
+            CM_UpdateBtn.FillColor = Color.Maroon;
             CM_UpdateBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CM_UpdateBtn.ForeColor = Color.White;
             CM_UpdateBtn.Location = new Point(760, 206);

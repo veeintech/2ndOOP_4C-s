@@ -412,10 +412,10 @@
             StatusCB.ForeColor = Color.FromArgb(68, 88, 112);
             StatusCB.ItemHeight = 30;
             StatusCB.Items.AddRange(new object[] { "All Status", "Paid", "Pending ", "Refunded" });
-            StatusCB.Location = new Point(660, 12);
+            StatusCB.Location = new Point(638, 12);
             StatusCB.Name = "StatusCB";
             StatusCB.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            StatusCB.Size = new Size(179, 36);
+            StatusCB.Size = new Size(201, 36);
             StatusCB.TabIndex = 22;
             // 
             // guna2PictureBox8
