@@ -801,6 +801,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(255, 249, 239);
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(RM_roomtypeCB);
@@ -818,7 +819,7 @@
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             Name = "UserControlRoom";
-            Size = new Size(1332, 780);
+            Size = new Size(1311, 780);
             Load += UserControlRoom_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2Panel1.ResumeLayout(false);

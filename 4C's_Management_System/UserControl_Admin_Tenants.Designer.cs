@@ -1130,6 +1130,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoScrollMinSize = new Size(1332, 1069);
             BackColor = Color.FromArgb(255, 249, 239);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
@@ -1145,7 +1147,6 @@
             Controls.Add(guna2PictureBox6);
             Name = "UserControl_Admin_Tenants";
             Size = new Size(1332, 1069);
-            //Load += UserControl_Admin_Tenants_Load;
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox6).EndInit();

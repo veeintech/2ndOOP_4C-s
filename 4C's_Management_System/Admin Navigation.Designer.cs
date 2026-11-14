@@ -600,6 +600,8 @@
             Controls.Add(UserNav_Panel_shift);
             Controls.Add(guna2Panel1);
             Controls.Add(dashboard_Panel_nav);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Admin_Navigation";
             Text = "Admin_Navigation";
             guna2Panel1.ResumeLayout(false);

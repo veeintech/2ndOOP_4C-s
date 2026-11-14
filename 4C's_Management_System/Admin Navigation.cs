@@ -200,8 +200,8 @@ namespace _4C_s_Management_System
 
             try
             {
-                //UserControl_Admin_Tenants rm = new UserControl_Admin_Tenants();
-                //MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+                UserControl_Admin_Tenants rm = new UserControl_Admin_Tenants();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
             }
             catch (Exception ex)
             {
