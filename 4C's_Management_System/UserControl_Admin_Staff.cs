@@ -23,7 +23,7 @@ namespace _4C_s_Management_System
 
             btnApprove.Visible = true;
             btnReject.Visible = true;
-            btnEdit.Visible = true;
+            //btnEdit.Visible = true;
         }
 
         private void Staff_Directory_Dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -32,7 +32,7 @@ namespace _4C_s_Management_System
 
             btnApprove.Visible = false;
             btnReject.Visible = false;
-            btnEdit.Visible = true;
+           // btnEdit.Visible = true;
         }
 
         private void btnApprove_Click(object sender, EventArgs e)
