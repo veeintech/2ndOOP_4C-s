@@ -13,36 +13,17 @@ namespace _4C_s_Management_System
 {
     public partial class UserControl_Admin_DB : UserControl
     {
-        // =========================================
-        // THEME COLORS
-        // =========================================
 
-        private static readonly Color Maroon =
-            Color.FromArgb(128, 0, 32);
-
-        private static readonly Color DarkMaroon =
-            Color.FromArgb(92, 16, 35);
-
-        private static readonly Color Mustard =
-            Color.FromArgb(212, 167, 44);
-
-        private static readonly Color SandyBrown =
-            Color.SandyBrown;
-
+        private static readonly Color Maroon =Color.FromArgb(128, 0, 32);
+        private static readonly Color DarkMaroon = Color.FromArgb(92, 16, 35);
+        private static readonly Color Mustard = Color.FromArgb(212, 167, 44);
+        private static readonly Color SandyBrown = Color.SandyBrown;
         private static readonly Color LightGray =
             Color.LightGray;
 
         private bool reportsLoaded = false;
 
-        // =========================================
-        // DATE AND TIME TIMER
-        // =========================================
-
         private System.Windows.Forms.Timer dashboardTimer;
-
-        // =========================================
-        // PROGRESS BAR RESULT LABELS
-        // =========================================
 
         private Guna.UI2.WinForms.Guna2HtmlLabel apartmentRevenueLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel hotelRevenueLabel;
@@ -52,10 +33,7 @@ namespace _4C_s_Management_System
         private Guna.UI2.WinForms.Guna2HtmlLabel inactiveTenantLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel expiredTenantLabel;
 
-        // =========================================
-        // CONSTRUCTOR
-        // =========================================
-
+        // Constructor
         public UserControl_Admin_DB()
         {
             InitializeComponent();
@@ -75,10 +53,6 @@ namespace _4C_s_Management_System
                 }
             };
         }
-
-        // =========================================
-        // USERCONTROL LOAD
-        // =========================================
 
         private void UserControl_Admin_DB_Load(
             object sender,
@@ -118,10 +92,7 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =========================================
         // DISPLAY CURRENT DATE AND TIME
-        // =========================================
-
         private void UpdateDashboardDateTime()
         {
             DateTime now = DateTime.Now;
@@ -135,21 +106,13 @@ namespace _4C_s_Management_System
                 CultureInfo.InvariantCulture);
         }
 
-        // =========================================
         // TIMER TICK
-        // =========================================
-
         private void DashboardTimer_Tick(
             object sender,
             EventArgs e)
         {
             UpdateDashboardDateTime();
         }
-
-        // =========================================
-        // CREATE RESULT LABEL
-        // POSITION: UPPER RIGHT
-        // =========================================
 
         private Guna.UI2.WinForms.Guna2HtmlLabel CreateProgressResultLabel(
             Control alignmentLabel,
@@ -209,14 +172,10 @@ namespace _4C_s_Management_System
                     }
                 };
             }
-
             return resultLabel;
         }
 
-        // =========================================
         // INITIALIZE RESULT LABELS
-        // =========================================
-
         private void InitializeProgressResultLabels()
         {
             if (apartmentRevenueLabel == null)
@@ -274,10 +233,6 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =========================================
-        // DEFAULT VALUES
-        // =========================================
-
         private void SetDefaultValues()
         {
             DB_totalRoomLBL.Text = "0";
@@ -293,7 +248,6 @@ namespace _4C_s_Management_System
             ROO_ReservedLBL.Text = "0 (0.00%)";
 
             // PROPERTY REVENUE PROGRESS BARS
-
             DB_ApartmentProgBar.Minimum = 0;
             DB_ApartmentProgBar.Maximum = 100;
             DB_ApartmentProgBar.Value = 0;
@@ -307,7 +261,6 @@ namespace _4C_s_Management_System
             DB_TransientProgBar.Value = 0;
 
             // TENANT STATUS PROGRESS BARS
-
             DB_ActiveProgBar.Minimum = 0;
             DB_ActiveProgBar.Maximum = 100;
             DB_ActiveProgBar.Value = 0;
@@ -320,8 +273,6 @@ namespace _4C_s_Management_System
             DB_ExpiredProgBar.Maximum = 100;
             DB_ExpiredProgBar.Value = 0;
 
-            // INITIALIZE RESULT LABELS
-
             InitializeProgressResultLabels();
 
             apartmentRevenueLabel.Text = "₱ 0.00";
@@ -332,11 +283,6 @@ namespace _4C_s_Management_System
             inactiveTenantLabel.Text = "0%";
             expiredTenantLabel.Text = "0%";
         }
-
-        // =========================================
-        // DATABASE HELPER
-        // =========================================
-
         private DataTable GetReportData(string query)
         {
             return AppDB.Instance.TableData(query);
@@ -363,13 +309,7 @@ namespace _4C_s_Management_System
             return Convert.ToInt32(SafeDouble(value));
         }
 
-        // =========================================
         // 1. MONTHLY REVENUE OVERVIEW
-        // CHART: DB_MonthlyRevenue
-        // DATASET: LineMonthlyRev
-        // TABLE: PaymentTbl
-        // =========================================
-
         private void LoadMonthlyRevenue()
         {
             string query = @"
@@ -416,7 +356,6 @@ namespace _4C_s_Management_System
             DB_MonthlyRevenue.Update();
 
             // TOTAL COLLECTION
-
             string totalQuery = @"
                 SELECT ISNULL(SUM(AmountPaid), 0)
                 FROM PaymentTbl;";
@@ -428,18 +367,11 @@ namespace _4C_s_Management_System
                 SafeDouble(totalResult);
 
             // DISPLAY TOTAL COLLECTION WITH PESO SIGN
-
             DB_TotalCollection_LBL.Text =
                 "₱ " + totalCollection.ToString("N2");
         }
 
-        // =========================================
         // 2. ROOM STATUS
-        // CHART: DB_StatusChart
-        // DATASET: gunaDoughnutRoomStatus
-        // TABLE: TBLRoom
-        // =========================================
-
         private void LoadRoomStatus()
         {
             string query = @"
@@ -576,10 +508,7 @@ namespace _4C_s_Management_System
                 FormatRoomPercentage(reserved, grandTotal);
         }
 
-        // =========================================
         // ROOM STATUS PERCENTAGE
-        // =========================================
-
         private string FormatRoomPercentage(
             int count,
             int grandTotal)
@@ -591,11 +520,7 @@ namespace _4C_s_Management_System
             return $"{count:N0} ({percentage:0.00}%)";
         }
 
-        // =========================================
         // 3. REVENUE BY PROPERTY TYPE
-        // TABLES: PaymentTbl, ReservationTbl, TBLRoom
-        // =========================================
-
         private void LoadPropertyRevenue()
         {
             string query = @"
