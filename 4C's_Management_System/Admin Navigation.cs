@@ -22,8 +22,8 @@ namespace _4C_s_Management_System
         public void designBTN(
           Guna2Button BWC1, Guna2Button BWTC2, Guna2Button BWTC3,
           Guna2Button BWTC4, Guna2Button BWTC5, Guna2Button BWTC6,
-          Guna2Button BWTC7, Guna2Button BWTC8, Guna2Button BWTC9
-          //Guna2Button BWTC10, Guna2Button BWTC11, Guna2Button BWTC12 
+          Guna2Button BWTC7, Guna2Button BWTC8, Guna2Button BWTC9,
+          Guna2Button BWTC10
           )
         {
             BWC1.FillColor = Color.FromArgb(212, 167, 44);
@@ -36,10 +36,7 @@ namespace _4C_s_Management_System
             BWTC7.FillColor = Color.Transparent;
             BWTC8.FillColor = Color.Transparent;
             BWTC9.FillColor = Color.Transparent;
-            //BWTC10.FillColor = Color.Transparent;
-            //BWTC11.FillColor = Color.Transparent;
-            //BWTC12.FillColor = Color.Transparent;
-
+            BWTC10.FillColor = Color.Transparent;
         }
 
         private void UserNav_Panel_shift_Paint(object sender, PaintEventArgs e)
@@ -59,7 +56,8 @@ namespace _4C_s_Management_System
               UserNav_PaymentBtn,
               UserNav_ReservationBtn,
               userNav_DashboardBtn,
-              UserNav_MaintenanceBtn
+              UserNav_MaintenanceBtn,
+              btn_branch
               );
 
             try
@@ -84,8 +82,8 @@ namespace _4C_s_Management_System
            UserNav_ReservationBtn,
            userNav_RoomsBtn,
            userNav_DashboardBtn,
-           UserNav_MaintenanceBtn
-
+           UserNav_MaintenanceBtn,
+           btn_branch
            );
 
             try
@@ -110,9 +108,8 @@ namespace _4C_s_Management_System
               UserNav_LogoutBtn,
               UserNav_PaymentBtn,
               UserNav_ReservationBtn,
-              UserNav_MaintenanceBtn
-              //User_Control_ReportsBtn,
-              //UserNav_AdminBtn
+              UserNav_MaintenanceBtn,
+              btn_branch
               );
 
             try
@@ -137,9 +134,8 @@ namespace _4C_s_Management_System
               UserNav_CustomerBtn,
               UserNav_LogoutBtn,
               UserNav_PaymentBtn,
-              UserNav_MaintenanceBtn
-              //User_Control_ReportsBtn,
-              //UserNav_AdminBtn
+              UserNav_MaintenanceBtn,
+              btn_branch
               );
 
             try
@@ -164,9 +160,8 @@ namespace _4C_s_Management_System
               UserNav_TenantsBtn,
               UserNav_CustomerBtn,
               UserNav_LogoutBtn,
-              UserNav_MaintenanceBtn
-              //User_Control_ReportsBtn,
-              //UserNav_AdminBtn
+              UserNav_MaintenanceBtn,
+              btn_branch
               );
 
             try
@@ -191,9 +186,8 @@ namespace _4C_s_Management_System
              UserNav_Staff_Btn,
              UserNav_CustomerBtn,
              UserNav_LogoutBtn,
-             UserNav_MaintenanceBtn
-             //User_Control_ReportsBtn,
-             //UserNav_AdminBtn
+             UserNav_MaintenanceBtn,
+             btn_branch
              );
 
             try
@@ -218,9 +212,8 @@ namespace _4C_s_Management_System
              userNav_RoomsBtn,
              UserNav_Staff_Btn,
              UserNav_CustomerBtn,
-             UserNav_LogoutBtn
-             //User_Control_ReportsBtn,
-             //UserNav_AdminBtn
+             UserNav_LogoutBtn,
+             btn_branch
              );
 
             try
@@ -252,9 +245,8 @@ namespace _4C_s_Management_System
              userNav_DashboardBtn,
              userNav_RoomsBtn,
              UserNav_Staff_Btn,
-             UserNav_LogoutBtn
-             //User_Control_ReportsBtn,
-             //UserNav_AdminBtn
+             UserNav_LogoutBtn,
+             btn_branch
              );
 
             try
@@ -276,6 +268,20 @@ namespace _4C_s_Management_System
 
         private void btn_branch_Click(object sender, EventArgs e)
         {
+
+            designBTN(
+             btn_branch,
+             UserNav_CustomerBtn,
+             UserNav_MaintenanceBtn,
+             UserNav_TenantsBtn,
+             UserNav_PaymentBtn,
+             UserNav_ReservationBtn,
+             userNav_DashboardBtn,
+             userNav_RoomsBtn,
+             UserNav_Staff_Btn,
+             UserNav_LogoutBtn
+             );
+
             try
             {
                 UserControl_Admin_Branch rm = new UserControl_Admin_Branch();
