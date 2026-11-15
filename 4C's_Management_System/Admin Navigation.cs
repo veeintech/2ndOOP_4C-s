@@ -235,5 +235,45 @@ namespace _4C_s_Management_System
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void UserNav_LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrontPage fp = new FrontPage();
+            fp.Show();
+        }
+
+        private void UserNav_CustomerBtn_Click(object sender, EventArgs e)
+        {
+            designBTN(
+             UserNav_CustomerBtn,
+             UserNav_MaintenanceBtn,
+             UserNav_TenantsBtn,
+             UserNav_PaymentBtn,
+             UserNav_ReservationBtn,
+             userNav_DashboardBtn,
+             userNav_RoomsBtn,
+             //UserNav_Staff_Btn,
+             UserNav_LogoutBtn
+             //User_Control_ReportsBtn,
+             //UserNav_AdminBtn
+             );
+
+            try
+            {
+                UserControl_Admin_Customer rm = new UserControl_Admin_Customer();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void Admin_Navigation_Load(object sender, EventArgs e)
+        {
+            UserControl_Admin_DB db = new UserControl_Admin_DB();
+            MainControlClass.ShowControl(db, UserNav_Panel_shift);
+        }
     }
 }

@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using _4C_s_Management_System.Classess;
-using Microsoft.Data.SqlClient;
 
 namespace _4C_s_Management_System
 {
     public partial class UserControlLI : UserControl
     {
-        
         public UserControlLI()
         {
             InitializeComponent();
@@ -22,41 +15,92 @@ namespace _4C_s_Management_System
 
         public string branchid = string.Empty;
 
+        // =========================================
+        // SIGN UP BUTTON
+        // =========================================
+
         private void LOGIN_signupbtn_Click(object sender, EventArgs e)
         {
             UserControlSU su = new UserControlSU();
             MainControlClass.ShowControl(su, this.Parent);
         }
+
+        // =========================================
+        // LOGIN BUTTON
+        // =========================================
+
         private void LOGIN_loginBtn_Click(object sender, EventArgs e)
         {
             string username = LOGIN_usernameTxt.Text.Trim();
             string password = LOGIN_passwordtxt.Text;
 
-            if(username == "System Admin" && password == "sysad123")
-            {
-                this.Hide();
-                Admin_Navigation ad = new Admin_Navigation();
-                ad.Show();
-            }
+            // =====================================
+            // VALIDATE INPUT
+            // =====================================
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show(
                     "Please fill in all fields.",
                     "Missing Information",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                    MessageBoxIcon.Warning
+                );
                 return;
             }
 
+            // =====================================
+            // SYSTEM ADMIN LOGIN
+            // =====================================
+
+            if (username == "System Admin" && password == "sysad123")
+            {
+                try
+                {
+                    Form? loginForm = FindForm();
+
+                    Admin_Navigation admin = new Admin_Navigation();
+
+                    if (loginForm != null)
+                    {
+                        admin.FormClosed += (s, args) =>
+                        {
+                            loginForm.Close();
+                        };
+                    }
+
+                    admin.Show();
+
+                    loginForm?.Hide();
+
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "Unable to open System Admin dashboard: " + ex.Message,
+                        "Login Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                    return;
+                }
+            }
+
+            // =====================================
+            // BRANCH ADMIN / USER LOGIN
+            // =====================================
+
             try
             {
-                const string statusCheckQuery =
-                    "SELECT Status FROM UserTbl WHERE UserName = @Username AND Password = @Password";
-                const string loginQuery =
-                    "SELECT 1 FROM UserTbl WHERE UserName = @Username AND Password = @Password";
-                const string branchQuery =
-                    "SELECT BranchId FROM UserTbl WHERE UserName = @Username AND Password = @Password";
+                const string loginQuery = @"
+                    SELECT
+                        Status,
+                        BranchId
+                    FROM UserTbl
+                    WHERE UserName = @Username
+                    AND Password = @Password";
 
                 var parameters = new
                 {
@@ -64,34 +108,54 @@ namespace _4C_s_Management_System
                     Password = password
                 };
 
-                var result = AppDB.Instance.Scalar(loginQuery, parameters);
+                var result = AppDB.Instance.TableData(
+                    loginQuery,
+                    parameters
+                );
 
-                if (result is null || result == DBNull.Value)
+                // =================================
+                // CHECK USER ACCOUNT
+                // =================================
+
+                if (result.Rows.Count == 0)
                 {
                     MessageBox.Show(
                         "Invalid username or password.",
                         "Login Failed",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        MessageBoxIcon.Error
+                    );
                     return;
                 }
 
-                var statusResult = AppDB.Instance.Scalar(statusCheckQuery, parameters);
+                // =================================
+                // CHECK ACCOUNT STATUS
+                // =================================
 
-                if (statusResult is not null &&
-                    statusResult != DBNull.Value &&
-                    statusResult.ToString() == "Inactive")
+                string status = Convert.ToString(
+                    result.Rows[0]["Status"]
+                ) ?? "";
+
+                if (status.Equals(
+                    "Inactive",
+                    StringComparison.OrdinalIgnoreCase))
                 {
                     MessageBox.Show(
                         "Your account is inactive. Please contact the administrator.",
                         "Account Inactive",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                        MessageBoxIcon.Warning
+                    );
                     return;
                 }
 
-                var branchResult = AppDB.Instance.Scalar(branchQuery, parameters);
-                string branchId = branchResult?.ToString() ?? string.Empty;
+                // =================================
+                // GET BRANCH ID
+                // =================================
+
+                string branchId = Convert.ToString(
+                    result.Rows[0]["BranchId"]
+                ) ?? "";
 
                 if (string.IsNullOrWhiteSpace(branchId))
                 {
@@ -99,33 +163,49 @@ namespace _4C_s_Management_System
                         "No branch is assigned to this account.",
                         "Login Error",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                        MessageBoxIcon.Error
+                    );
                     return;
                 }
 
                 branchid = branchId;
+
                 AccessBranch_ByForm.SetBranch(branchId);
 
-                Form? loginForm = FindForm();
-                var dashboard = new UserNavigation();
+                // =================================
+                // OPEN USER NAVIGATION
+                // =================================
 
-                if (loginForm is not null)
+                Form? loginForm = FindForm();
+
+                UserNavigation dashboard = new UserNavigation();
+
+                if (loginForm != null)
                 {
-                    dashboard.FormClosed += (_, _) => loginForm.Close();
+                    dashboard.FormClosed += (s, args) =>
+                    {
+                        loginForm.Close();
+                    };
                 }
 
                 dashboard.Show();
+
                 loginForm?.Hide();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
                     ex.Message,
-                    "Error",
+                    "Login Error",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    MessageBoxIcon.Error
+                );
             }
         }
+
+        // =========================================
+        // SHOW PASSWORD
+        // =========================================
 
         private void LOGIN_openeyeBtn_Click_1(object sender, EventArgs e)
         {
@@ -133,11 +213,20 @@ namespace _4C_s_Management_System
             LOGIN_closedeyeBtn.BringToFront();
         }
 
+        // =========================================
+        // HIDE PASSWORD
+        // =========================================
+
         private void LOGIN_closedeyeBtn_Click(object sender, EventArgs e)
         {
             LOGIN_passwordtxt.PasswordChar = '*';
             LOGIN_openeyeBtn.BringToFront();
         }
+
+        // =========================================
+        // USERCONTROL LOAD
+        // =========================================
+
         private void UserControlLI_Load(object sender, EventArgs e)
         {
 

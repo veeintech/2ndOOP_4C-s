@@ -328,6 +328,7 @@
             UserNav_LogoutBtn.TabIndex = 11;
             UserNav_LogoutBtn.Text = "Log Out";
             UserNav_LogoutBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_LogoutBtn.Click += UserNav_LogoutBtn_Click;
             // 
             // UserNav_ReservationBtn
             // 
@@ -472,6 +473,7 @@
             UserNav_CustomerBtn.TabIndex = 4;
             UserNav_CustomerBtn.Text = "Customers";
             UserNav_CustomerBtn.TextAlign = HorizontalAlignment.Left;
+            UserNav_CustomerBtn.Click += UserNav_CustomerBtn_Click;
             // 
             // userNav_RoomsBtn
             // 
@@ -603,7 +605,9 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Admin_Navigation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin_Navigation";
+            Load += Admin_Navigation_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox12).EndInit();
