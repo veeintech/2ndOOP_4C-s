@@ -22,8 +22,8 @@ namespace _4C_s_Management_System
         public void designBTN(
           Guna2Button BWC1, Guna2Button BWTC2, Guna2Button BWTC3,
           Guna2Button BWTC4, Guna2Button BWTC5, Guna2Button BWTC6,
-          Guna2Button BWTC7, Guna2Button BWTC8/*, Guna2Button BWTC9,
-          Guna2Button BWTC10, Guna2Button BWTC11*/
+          Guna2Button BWTC7, Guna2Button BWTC8, Guna2Button BWTC9
+          //Guna2Button BWTC10, Guna2Button BWTC11, Guna2Button BWTC12 
           )
         {
             BWC1.FillColor = Color.FromArgb(212, 167, 44);
@@ -35,9 +35,10 @@ namespace _4C_s_Management_System
             BWTC6.FillColor = Color.Transparent;
             BWTC7.FillColor = Color.Transparent;
             BWTC8.FillColor = Color.Transparent;
-            //BWTC9.FillColor = Color.Transparent;
+            BWTC9.FillColor = Color.Transparent;
             //BWTC10.FillColor = Color.Transparent;
             //BWTC11.FillColor = Color.Transparent;
+            //BWTC12.FillColor = Color.Transparent;
 
         }
 
@@ -51,7 +52,7 @@ namespace _4C_s_Management_System
         {
             designBTN(
               userNav_RoomsBtn,
-              //UserNav_Staff_Btn,
+              UserNav_Staff_Btn,
               UserNav_TenantsBtn,
               UserNav_CustomerBtn,
               UserNav_LogoutBtn,
@@ -59,8 +60,6 @@ namespace _4C_s_Management_System
               UserNav_ReservationBtn,
               userNav_DashboardBtn,
               UserNav_MaintenanceBtn
-              //User_Control_ReportsBtn,
-              //UserNav_AdminBtn
               );
 
             try
@@ -80,14 +79,13 @@ namespace _4C_s_Management_System
            UserNav_Staff_Btn,
            UserNav_TenantsBtn,
            UserNav_CustomerBtn,
-           //UserNav_LogoutBtn,
+           UserNav_LogoutBtn,
            UserNav_PaymentBtn,
            UserNav_ReservationBtn,
            userNav_RoomsBtn,
            userNav_DashboardBtn,
            UserNav_MaintenanceBtn
-           //User_Control_ReportsBtn
-           //UserNav_AdminBtn
+
            );
 
             try
@@ -106,7 +104,7 @@ namespace _4C_s_Management_System
             designBTN(
               userNav_DashboardBtn,
               userNav_RoomsBtn,
-              //UserNav_Staff_Btn,
+              UserNav_Staff_Btn,
               UserNav_TenantsBtn,
               UserNav_CustomerBtn,
               UserNav_LogoutBtn,
@@ -134,7 +132,7 @@ namespace _4C_s_Management_System
               UserNav_ReservationBtn,
               userNav_DashboardBtn,
               userNav_RoomsBtn,
-              //UserNav_Staff_Btn,
+              UserNav_Staff_Btn,
               UserNav_TenantsBtn,
               UserNav_CustomerBtn,
               UserNav_LogoutBtn,
@@ -162,7 +160,7 @@ namespace _4C_s_Management_System
               UserNav_ReservationBtn,
               userNav_DashboardBtn,
               userNav_RoomsBtn,
-              //UserNav_Staff_Btn,
+              UserNav_Staff_Btn,
               UserNav_TenantsBtn,
               UserNav_CustomerBtn,
               UserNav_LogoutBtn,
@@ -190,7 +188,7 @@ namespace _4C_s_Management_System
              UserNav_ReservationBtn,
              userNav_DashboardBtn,
              userNav_RoomsBtn,
-             //UserNav_Staff_Btn,
+             UserNav_Staff_Btn,
              UserNav_CustomerBtn,
              UserNav_LogoutBtn,
              UserNav_MaintenanceBtn
@@ -218,7 +216,7 @@ namespace _4C_s_Management_System
              UserNav_ReservationBtn,
              userNav_DashboardBtn,
              userNav_RoomsBtn,
-             //UserNav_Staff_Btn,
+             UserNav_Staff_Btn,
              UserNav_CustomerBtn,
              UserNav_LogoutBtn
              //User_Control_ReportsBtn,
@@ -253,7 +251,7 @@ namespace _4C_s_Management_System
              UserNav_ReservationBtn,
              userNav_DashboardBtn,
              userNav_RoomsBtn,
-             //UserNav_Staff_Btn,
+             UserNav_Staff_Btn,
              UserNav_LogoutBtn
              //User_Control_ReportsBtn,
              //UserNav_AdminBtn
@@ -274,6 +272,19 @@ namespace _4C_s_Management_System
         {
             UserControl_Admin_DB db = new UserControl_Admin_DB();
             MainControlClass.ShowControl(db, UserNav_Panel_shift);
+        }
+
+        private void btn_branch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserControl_Admin_Branch rm = new UserControl_Admin_Branch();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

@@ -1,0 +1,22 @@
+if (dt.Rows.Count > 0)
+{
+	DataRow row = dt.Rows[0];
+
+	BR_totalLbl.Text = row["TotalBranches"] == DBNull.Value
+		? "0"
+		: row["TotalBranches"].ToString();
+
+	BR_activeLbl.Text = row["ActiveBranches"] == DBNull.Value
+		? "0"
+		: row["ActiveBranches"].ToString();
+
+	BR_inactiveLbl.Text = row["InactiveBranches"] == DBNull.Value
+		? "0"
+		: row["InactiveBranches"].ToString();
+}
+else
+{
+	BR_totalLbl.Text = "0";
+	BR_activeLbl.Text = "0";
+	BR_inactiveLbl.Text = "0";
+}
