@@ -13,6 +13,10 @@ namespace _4C_s_Management_System
 {
     public partial class UserControlReports : UserControl
     {
+        // =========================================
+        // THEME COLORS
+        // =========================================
+
         private static readonly Color Maroon =
             Color.FromArgb(128, 0, 32);
 
@@ -24,7 +28,11 @@ namespace _4C_s_Management_System
 
         private const string ZeroText = "0 (00.00%)";
 
-        // Summary card labels (names from the designer)
+        // IMPORTANT:
+        // Palitan kung iba ang branch column name sa StaffTbl.
+        private const string StaffBranchColumn = "BranchID";
+
+        // Summary card labels
         private const string LblTotalRevenue = "guna2HtmlLabel5";
         private const string LblTotalStaff = "guna2HtmlLabel23";
         private const string LblOccupancyRate = "guna2HtmlLabel3";
@@ -138,8 +146,11 @@ namespace _4C_s_Management_System
             // Payroll data is not yet available.
             SetGunaChart5ToZero();
 
-            // Attendance data is not yet available.
+            // Attendance: Present and Absent only.
             SetGunaChart7ToZero();
+            LoadAttendanceReports();
+
+            // Working Hours data
             SetGunaChart8ToZero();
         }
 
@@ -172,11 +183,9 @@ namespace _4C_s_Management_System
             guna2HtmlLabel78.Text = ZeroText;
             guna2HtmlLabel76.Text = ZeroText;
 
-            // Attendance labels
+            // Attendance labels: Present and Absent only
             guna2HtmlLabel66.Text = ZeroText;
             guna2HtmlLabel64.Text = ZeroText;
-            guna2HtmlLabel62.Text = ZeroText;
-            guna2HtmlLabel60.Text = ZeroText;
 
             // Apartment revenue
             guna2ProgressBar3.Value = 0;
@@ -603,7 +612,8 @@ namespace _4C_s_Management_System
         }
 
         // =========================================
-        // GUNACHART7 - ATTENDANCE ZERO VALUES
+        // GUNACHART7 - ATTENDANCE
+        // PRESENT AND ABSENT ONLY
         // gunaDoughnutDataset3
         // =========================================
 
@@ -620,17 +630,13 @@ namespace _4C_s_Management_System
             string[] labels =
             {
                 "Present",
-                "Absent",
-                "Late",
-                "On Leave"
+                "Absent"
             };
 
             Color[] colors =
             {
                 Maroon,
-                Color.IndianRed,
-                Color.Brown,
-                Color.FromArgb(205, 92, 92)
+                Color.IndianRed
             };
 
             for (int i = 0; i < labels.Length; i++)
@@ -650,8 +656,118 @@ namespace _4C_s_Management_System
 
             guna2HtmlLabel66.Text = ZeroText;
             guna2HtmlLabel64.Text = ZeroText;
-            guna2HtmlLabel62.Text = ZeroText;
-            guna2HtmlLabel60.Text = ZeroText;
+        }
+
+        // =========================================
+        // LOAD ATTENDANCE REPORT
+        //
+        // AttendanceTbl:
+        // AttendanceID
+        // StaffID
+        // Date
+        // Time_IN
+        // Time_OUT
+        //
+        // Present = may attendance record today
+        // Absent = walang attendance record today
+        //
+        // Branch is obtained from StaffTbl.
+        // =========================================
+
+        private void LoadAttendanceReports()
+        {
+            string attendanceQuery = $@"
+                SELECT
+                    'Present' AS Label,
+                    COUNT(*) AS Total
+                FROM StaffTbl S
+                WHERE S.[{StaffBranchColumn}] = @BranchId
+                    AND EXISTS
+                    (
+                        SELECT 1
+                        FROM AttendanceTbl A
+                        WHERE A.StaffID = S.StaffID
+                            AND A.[Date] = CAST(GETDATE() AS DATE)
+                    )
+
+                UNION ALL
+
+                SELECT
+                    'Absent' AS Label,
+                    COUNT(*) AS Total
+                FROM StaffTbl S
+                WHERE S.[{StaffBranchColumn}] = @BranchId
+                    AND NOT EXISTS
+                    (
+                        SELECT 1
+                        FROM AttendanceTbl A
+                        WHERE A.StaffID = S.StaffID
+                            AND A.[Date] = CAST(GETDATE() AS DATE)
+                    );";
+
+            DataTable data = GetReportData(attendanceQuery);
+
+            double present = 0;
+            double absent = 0;
+
+            foreach (DataRow row in data.Rows)
+            {
+                string label = Convert.ToString(row["Label"]) ?? "";
+                double total = SafeDouble(row["Total"]);
+
+                if (Normalize(label) == Normalize("Present"))
+                    present = total;
+
+                else if (Normalize(label) == Normalize("Absent"))
+                    absent = total;
+            }
+
+            double grandTotal = present + absent;
+
+            double presentPercentage = grandTotal > 0
+                ? present / grandTotal * 100
+                : 0;
+
+            double absentPercentage = grandTotal > 0
+                ? absent / grandTotal * 100
+                : 0;
+
+            // Update chart dataset
+            gunaChart7.Datasets.Clear();
+
+            gunaDoughnutDataset3.DataPoints.Clear();
+            gunaDoughnutDataset3.FillColors.Clear();
+
+            gunaDoughnutDataset3.TargetChart = gunaChart7;
+            gunaDoughnutDataset3.Label = "Attendance";
+
+            gunaDoughnutDataset3.DataPoints.Add(
+                new LPoint
+                {
+                    Label = "Present",
+                    Y = present
+                });
+
+            gunaDoughnutDataset3.FillColors.Add(Maroon);
+
+            gunaDoughnutDataset3.DataPoints.Add(
+                new LPoint
+                {
+                    Label = "Absent",
+                    Y = absent
+                });
+
+            gunaDoughnutDataset3.FillColors.Add(Color.IndianRed);
+
+            gunaChart7.Datasets.Add(gunaDoughnutDataset3);
+            gunaChart7.Update();
+
+            // Update attendance summary labels
+            guna2HtmlLabel66.Text =
+                $"{present:0} ({presentPercentage:00.00}%)";
+
+            guna2HtmlLabel64.Text =
+                $"{absent:0} ({absentPercentage:00.00}%)";
         }
 
         // =========================================
@@ -896,7 +1012,6 @@ namespace _4C_s_Management_System
                     FORMAT(DateCompleted, 'MMM yyyy')
                 ORDER BY SortYear, SortMonth;";
 
-            // gunaChart3 CONNECTED TO gunaBarDataset3
             LoadBarChart(
                 gunaChart3,
                 monthlyMaintenanceQuery,
@@ -1027,8 +1142,6 @@ namespace _4C_s_Management_System
 
         // =========================================
         // PRINT REPORT
-        // Connect PrintIcon_Click to the print icon's Click event
-        // (Properties > Events > Click)
         // =========================================
 
         private class ReportSection
@@ -1088,13 +1201,18 @@ namespace _4C_s_Management_System
             };
 
             double total = 0;
+
             foreach (LPoint p in points)
                 total += p.Y;
 
             foreach (LPoint p in points)
             {
-                double pct = total > 0 ? p.Y / total * 100 : 0;
-                s.Rows.Add(new[] { p.Label, $"{p.Y:0} ({pct:0.00}%)" });
+                double pct = total > 0
+                    ? p.Y / total * 100
+                    : 0;
+
+                s.Rows.Add(
+                    new[] { p.Label, $"{p.Y:0} ({pct:0.00}%)" });
             }
 
             if (s.Rows.Count == 0)
@@ -1114,15 +1232,27 @@ namespace _4C_s_Management_System
                 Col1 = "Metric",
                 Col2 = "Value"
             };
-            summary.Rows.Add(new[] { "Total Revenue", GetText(LblTotalRevenue) });
-            summary.Rows.Add(new[] { "Total Staff", GetText(LblTotalStaff) });
-            summary.Rows.Add(new[] { "Occupancy Rate", GetText(LblOccupancyRate) });
-            summary.Rows.Add(new[] { "Pending / Ongoing Maintenance", GetText(LblMaintenance) });
+
+            summary.Rows.Add(
+                new[] { "Total Revenue", GetText(LblTotalRevenue) });
+
+            summary.Rows.Add(
+                new[] { "Total Staff", GetText(LblTotalStaff) });
+
+            summary.Rows.Add(
+                new[] { "Occupancy Rate", GetText(LblOccupancyRate) });
+
+            summary.Rows.Add(
+                new[] { "Pending / Ongoing Maintenance", GetText(LblMaintenance) });
+
             list.Add(summary);
 
             // Financial
-            AddValueSection(list, "Monthly Total Revenue",
-                "Month", "Revenue",
+            AddValueSection(
+                list,
+                "Monthly Total Revenue",
+                "Month",
+                "Revenue",
                 gunaBarDataset1.DataPoints,
                 v => v.ToString("N2"));
 
@@ -1132,57 +1262,102 @@ namespace _4C_s_Management_System
                 Col1 = "Property Type",
                 Col2 = "Revenue (Share)"
             };
-            property.Rows.Add(new[] { "Apartment", guna2HtmlLabel33.Text + " (" + guna2HtmlLabel32.Text + ")" });
-            property.Rows.Add(new[] { "Hotel", guna2HtmlLabel35.Text + " (" + guna2HtmlLabel37.Text + ")" });
-            property.Rows.Add(new[] { "Transient", guna2HtmlLabel34.Text + " (" + guna2HtmlLabel36.Text + ")" });
+
+            property.Rows.Add(
+                new[] { "Apartment", guna2HtmlLabel33.Text + " (" + guna2HtmlLabel32.Text + ")" });
+
+            property.Rows.Add(
+                new[] { "Hotel", guna2HtmlLabel35.Text + " (" + guna2HtmlLabel37.Text + ")" });
+
+            property.Rows.Add(
+                new[] { "Transient", guna2HtmlLabel34.Text + " (" + guna2HtmlLabel36.Text + ")" });
+
             list.Add(property);
 
             // Rooms
-            AddStatusSection(list, "Room Occupancy Status",
-                "Status", gunaDoughnutDataset2.DataPoints);
+            AddStatusSection(
+                list,
+                "Room Occupancy Status",
+                "Status",
+                gunaDoughnutDataset2.DataPoints);
 
-            AddValueSection(list, "Occupancy Rate per Room Type",
-                "Room Type", "Occupancy Rate",
+            AddValueSection(
+                list,
+                "Occupancy Rate per Room Type",
+                "Room Type",
+                "Occupancy Rate",
                 gunaBarDataset6.DataPoints,
                 v => v.ToString("0.##") + "%");
 
             // Maintenance
-            AddStatusSection(list, "Maintenance Status",
-                "Status", gunaDoughnutDataset6.DataPoints);
+            AddStatusSection(
+                list,
+                "Maintenance Status",
+                "Status",
+                gunaDoughnutDataset6.DataPoints);
 
-            AddValueSection(list, "Completed Maintenance per Month",
-                "Month", "Completed",
+            AddValueSection(
+                list,
+                "Completed Maintenance per Month",
+                "Month",
+                "Completed",
                 gunaBarDataset3.DataPoints,
                 v => v.ToString("0"));
 
             // Reservations
-            AddStatusSection(list, "Reservation Status",
-                "Status", gunaDoughnutDataset5.DataPoints);
+            AddStatusSection(
+                list,
+                "Reservation Status",
+                "Status",
+                gunaDoughnutDataset5.DataPoints);
 
-            AddValueSection(list, "Reservations per Month",
-                "Month", "Reservations",
+            AddValueSection(
+                list,
+                "Reservations per Month",
+                "Month",
+                "Reservations",
                 gunaBarDataset5.DataPoints,
                 v => v.ToString("0"));
 
             // Tenants
-            AddStatusSection(list, "Tenant Status",
-                "Status", gunaDoughnutDataset4.DataPoints);
+            AddStatusSection(
+                list,
+                "Tenant Status",
+                "Status",
+                gunaDoughnutDataset4.DataPoints);
 
-            AddValueSection(list, "Rental Income per Month",
-                "Month", "Income",
+            AddValueSection(
+                list,
+                "Rental Income per Month",
+                "Month",
+                "Income",
                 gunaBarDataset4.DataPoints,
                 v => v.ToString("N2"));
 
+            // Attendance
+            AddStatusSection(
+                list,
+                "Attendance Summary",
+                "Attendance Status",
+                gunaDoughnutDataset3.DataPoints);
+
             return list;
         }
+
+        // =========================================
+        // PRINT BUTTON
+        // =========================================
 
         private void PrintIcon_Click(object sender, EventArgs e)
         {
             try
             {
                 PrintDocument pd = new PrintDocument();
+
                 pd.DocumentName = "4C's Management System - Reports";
-                pd.DefaultPageSettings.Margins = new Margins(60, 60, 60, 60);
+
+                pd.DefaultPageSettings.Margins =
+                    new Margins(60, 60, 60, 60);
 
                 pd.BeginPrint += (s, ev) =>
                 {
@@ -1211,7 +1386,13 @@ namespace _4C_s_Management_System
             }
         }
 
-        private void ReportPrintPage(object sender, PrintPageEventArgs e)
+        // =========================================
+        // PRINT PAGE
+        // =========================================
+
+        private void ReportPrintPage(
+            object sender,
+            PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
             Rectangle m = e.MarginBounds;
@@ -1222,58 +1403,109 @@ namespace _4C_s_Management_System
             const float rowH = 24f;
             float bottom = m.Bottom - 25f;
 
-            using (Font titleFont = new Font("Georgia", 22, FontStyle.Bold))
-            using (Font smallTitleFont = new Font("Georgia", 12, FontStyle.Bold))
-            using (Font subFont = new Font("Segoe UI", 9))
-            using (Font secFont = new Font("Georgia", 13, FontStyle.Bold))
-            using (Font headFont = new Font("Segoe UI", 10, FontStyle.Bold))
-            using (Font rowFont = new Font("Segoe UI", 10))
-            using (Brush maroonBrush = new SolidBrush(Maroon))
-            using (Brush grayBrush = new SolidBrush(Color.Gray))
-            using (Brush blackBrush = new SolidBrush(Color.Black))
-            using (Brush whiteBrush = new SolidBrush(Color.White))
-            using (Brush stripeBrush = new SolidBrush(Color.FromArgb(250, 244, 236)))
-            using (Pen mustardPen = new Pen(Mustard, 2f))
-            using (Pen linePen = new Pen(Color.LightGray))
+            using (Font titleFont =
+                new Font("Georgia", 22, FontStyle.Bold))
+
+            using (Font smallTitleFont =
+                new Font("Georgia", 12, FontStyle.Bold))
+
+            using (Font subFont =
+                new Font("Segoe UI", 9))
+
+            using (Font secFont =
+                new Font("Georgia", 13, FontStyle.Bold))
+
+            using (Font headFont =
+                new Font("Segoe UI", 10, FontStyle.Bold))
+
+            using (Font rowFont =
+                new Font("Segoe UI", 10))
+
+            using (Brush maroonBrush =
+                new SolidBrush(Maroon))
+
+            using (Brush grayBrush =
+                new SolidBrush(Color.Gray))
+
+            using (Brush blackBrush =
+                new SolidBrush(Color.Black))
+
+            using (Brush whiteBrush =
+                new SolidBrush(Color.White))
+
+            using (Brush stripeBrush =
+                new SolidBrush(Color.FromArgb(250, 244, 236)))
+
+            using (Pen mustardPen =
+                new Pen(Mustard, 2f))
+
+            using (Pen linePen =
+                new Pen(Color.LightGray))
             {
                 float y = m.Top;
 
-                // ---------- PAGE HEADER ----------
+                // PAGE HEADER
                 if (_printPage == 1)
                 {
-                    g.DrawString("Reports", titleFont, maroonBrush, m.Left, y);
+                    g.DrawString(
+                        "Reports",
+                        titleFont,
+                        maroonBrush,
+                        m.Left,
+                        y);
+
                     y += 40;
 
                     g.DrawString(
                         "4C's Management System",
-                        subFont, blackBrush, m.Left, y);
+                        subFont,
+                        blackBrush,
+                        m.Left,
+                        y);
+
                     y += 16;
 
                     g.DrawString(
-                        "Generated: " + DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt")
-                        + "    |    Branch ID: " + AccessBranch_ByForm.BranchId,
-                        subFont, grayBrush, m.Left, y);
+                        "Generated: " +
+                        DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt") +
+                        "    |    Branch ID: " +
+                        AccessBranch_ByForm.BranchId,
+                        subFont,
+                        grayBrush,
+                        m.Left,
+                        y);
+
                     y += 22;
                 }
                 else
                 {
                     g.DrawString(
                         "4C's Management System - Reports",
-                        smallTitleFont, maroonBrush, m.Left, y);
+                        smallTitleFont,
+                        maroonBrush,
+                        m.Left,
+                        y);
+
                     y += 24;
                 }
 
-                g.DrawLine(mustardPen, m.Left, y, m.Right, y);
+                g.DrawLine(
+                    mustardPen,
+                    m.Left,
+                    y,
+                    m.Right,
+                    y);
+
                 y += 16;
 
                 float yStart = y;
 
-                // ---------- SECTIONS ----------
+                // REPORT SECTIONS
                 while (_printSection < _printSections.Count)
                 {
-                    ReportSection s = _printSections[_printSection];
+                    ReportSection s =
+                        _printSections[_printSection];
 
-                    // Keep title + header + at least one row together
                     float needed = 28 + rowH + rowH;
 
                     if (y + needed > bottom && y > yStart)
@@ -1286,39 +1518,89 @@ namespace _4C_s_Management_System
                         ? s.Title
                         : s.Title + " (continued)";
 
-                    g.DrawString(title, secFont, maroonBrush, m.Left, y);
+                    g.DrawString(
+                        title,
+                        secFont,
+                        maroonBrush,
+                        m.Left,
+                        y);
+
                     y += 28;
 
-                    // Table header
-                    g.FillRectangle(maroonBrush, m.Left, y, m.Width, rowH);
-                    g.DrawString(s.Col1, headFont, whiteBrush, m.Left + 8, y + 4);
+                    // TABLE HEADER
+                    g.FillRectangle(
+                        maroonBrush,
+                        m.Left,
+                        y,
+                        m.Width,
+                        rowH);
 
-                    StringFormat right = new StringFormat { Alignment = StringAlignment.Far };
                     g.DrawString(
-                        s.Col2, headFont, whiteBrush,
-                        new RectangleF(m.Left, y + 4, m.Width - 8, rowH),
+                        s.Col1,
+                        headFont,
+                        whiteBrush,
+                        m.Left + 8,
+                        y + 4);
+
+                    StringFormat right =
+                        new StringFormat
+                        {
+                            Alignment = StringAlignment.Far
+                        };
+
+                    g.DrawString(
+                        s.Col2,
+                        headFont,
+                        whiteBrush,
+                        new RectangleF(
+                            m.Left,
+                            y + 4,
+                            m.Width - 8,
+                            rowH),
                         right);
+
                     y += rowH;
 
-                    // Rows
+                    // TABLE ROWS
                     while (_printRow < s.Rows.Count)
                     {
                         if (y + rowH > bottom)
                             break;
 
                         if (_printRow % 2 == 1)
-                            g.FillRectangle(stripeBrush, m.Left, y, m.Width, rowH);
+                        {
+                            g.FillRectangle(
+                                stripeBrush,
+                                m.Left,
+                                y,
+                                m.Width,
+                                rowH);
+                        }
 
                         g.DrawString(
-                            s.Rows[_printRow][0], rowFont, blackBrush,
-                            m.Left + 8, y + 4);
+                            s.Rows[_printRow][0],
+                            rowFont,
+                            blackBrush,
+                            m.Left + 8,
+                            y + 4);
 
                         g.DrawString(
-                            s.Rows[_printRow][1], rowFont, blackBrush,
-                            new RectangleF(m.Left, y + 4, m.Width - 8, rowH),
+                            s.Rows[_printRow][1],
+                            rowFont,
+                            blackBrush,
+                            new RectangleF(
+                                m.Left,
+                                y + 4,
+                                m.Width - 8,
+                                rowH),
                             right);
 
-                        g.DrawLine(linePen, m.Left, y + rowH, m.Right, y + rowH);
+                        g.DrawLine(
+                            linePen,
+                            m.Left,
+                            y + rowH,
+                            m.Right,
+                            y + rowH);
 
                         y += rowH;
                         _printRow++;
@@ -1334,20 +1616,34 @@ namespace _4C_s_Management_System
 
                     _printSection++;
                     _printRow = 0;
+
                     y += 18;
                 }
 
-                // ---------- FOOTER ----------
-                using (StringFormat center = new StringFormat { Alignment = StringAlignment.Center })
+                // FOOTER
+                using (StringFormat center =
+                    new StringFormat
+                    {
+                        Alignment = StringAlignment.Center
+                    })
                 {
                     g.DrawString(
                         "Page " + _printPage,
-                        subFont, grayBrush,
-                        new RectangleF(m.Left, m.Bottom - 10, m.Width, 20),
+                        subFont,
+                        grayBrush,
+                        new RectangleF(
+                            m.Left,
+                            m.Bottom - 10,
+                            m.Width,
+                            20),
                         center);
                 }
             }
         }
+
+        // =========================================
+        // TEXTBOX EVENT
+        // =========================================
 
         private void guna2TextBox1_TextChanged(
             object sender,
