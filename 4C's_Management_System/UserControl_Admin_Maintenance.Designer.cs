@@ -61,7 +61,23 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            roomtypelbl = new Guna.UI2.WinForms.Guna2ComboBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            MM_roomTypeCB = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             inproglbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -80,12 +96,26 @@
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            statuCB = new Guna.UI2.WinForms.Guna2ComboBox();
-            searchlbl = new Guna.UI2.WinForms.Guna2TextBox();
+            MM_statusCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            MM_searchTxt = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            maintenanceDGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            MM_MaintenanceDGV = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            RM_status_panel = new Guna.UI2.WinForms.Guna2Panel();
+            guna2vSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
+            guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
+            MM_detailsPanel = new Guna.UI2.WinForms.Guna2Panel();
+            MM_descriptiontxt = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            MM_roomIDtxt = new Guna.UI2.WinForms.Guna2TextBox();
+            MM_maintenanceIDtxt = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            MM_acceptBtn = new Guna.UI2.WinForms.Guna2Button();
+            MM_rejectBtn = new Guna.UI2.WinForms.Guna2Button();
+            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
@@ -96,30 +126,33 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)maintenanceDGV).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MM_MaintenanceDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
+            RM_status_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox13).BeginInit();
+            MM_detailsPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // roomtypelbl
+            // MM_roomTypeCB
             // 
-            roomtypelbl.BackColor = Color.White;
-            roomtypelbl.BorderColor = Color.FromArgb(138, 10, 46);
-            roomtypelbl.BorderThickness = 2;
-            roomtypelbl.CustomizableEdges = customizableEdges1;
-            roomtypelbl.DrawMode = DrawMode.OwnerDrawFixed;
-            roomtypelbl.DropDownStyle = ComboBoxStyle.DropDownList;
-            roomtypelbl.FocusedColor = Color.FromArgb(94, 148, 255);
-            roomtypelbl.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            roomtypelbl.Font = new Font("Segoe UI", 10F);
-            roomtypelbl.ForeColor = Color.FromArgb(68, 88, 112);
-            roomtypelbl.ItemHeight = 30;
-            roomtypelbl.Items.AddRange(new object[] { "All Room", "Hotel ", "Aparment", "Transient" });
-            roomtypelbl.Location = new Point(561, 21);
-            roomtypelbl.Name = "roomtypelbl";
-            roomtypelbl.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            roomtypelbl.Size = new Size(280, 36);
-            roomtypelbl.TabIndex = 71;
-            roomtypelbl.SelectedIndexChanged += roomtypeSIC;
+            MM_roomTypeCB.BackColor = Color.White;
+            MM_roomTypeCB.BorderColor = Color.FromArgb(138, 10, 46);
+            MM_roomTypeCB.BorderThickness = 2;
+            MM_roomTypeCB.CustomizableEdges = customizableEdges1;
+            MM_roomTypeCB.DrawMode = DrawMode.OwnerDrawFixed;
+            MM_roomTypeCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            MM_roomTypeCB.FocusedColor = Color.FromArgb(94, 148, 255);
+            MM_roomTypeCB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_roomTypeCB.Font = new Font("Segoe UI", 10F);
+            MM_roomTypeCB.ForeColor = Color.FromArgb(68, 88, 112);
+            MM_roomTypeCB.ItemHeight = 30;
+            MM_roomTypeCB.Items.AddRange(new object[] { "All Room", "Hotel ", "Aparment", "Transient" });
+            MM_roomTypeCB.Location = new Point(408, 20);
+            MM_roomTypeCB.Name = "MM_roomTypeCB";
+            MM_roomTypeCB.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            MM_roomTypeCB.Size = new Size(187, 36);
+            MM_roomTypeCB.TabIndex = 71;
+            MM_roomTypeCB.SelectedIndexChanged += roomtypeSIC;
             // 
             // guna2HtmlLabel8
             // 
@@ -373,52 +406,52 @@
             guna2HtmlLabel2.TabIndex = 60;
             guna2HtmlLabel2.Text = "Track and manage room and facility maintenance";
             // 
-            // statuCB
+            // MM_statusCB
             // 
-            statuCB.BackColor = Color.White;
-            statuCB.BorderColor = Color.FromArgb(138, 10, 46);
-            statuCB.BorderThickness = 2;
-            statuCB.CustomizableEdges = customizableEdges19;
-            statuCB.DrawMode = DrawMode.OwnerDrawFixed;
-            statuCB.DropDownStyle = ComboBoxStyle.DropDownList;
-            statuCB.FocusedColor = Color.FromArgb(94, 148, 255);
-            statuCB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            statuCB.Font = new Font("Segoe UI", 10F);
-            statuCB.ForeColor = Color.FromArgb(68, 88, 112);
-            statuCB.ItemHeight = 30;
-            statuCB.Items.AddRange(new object[] { "All Status", "Pending ", "Approved", "In Progress", "Completed", "Cancelled", "Rejected" });
-            statuCB.Location = new Point(874, 22);
-            statuCB.Name = "statuCB";
-            statuCB.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            statuCB.Size = new Size(280, 36);
-            statuCB.TabIndex = 69;
-            statuCB.SelectedIndexChanged += roomstatusSIC;
+            MM_statusCB.BackColor = Color.White;
+            MM_statusCB.BorderColor = Color.FromArgb(138, 10, 46);
+            MM_statusCB.BorderThickness = 2;
+            MM_statusCB.CustomizableEdges = customizableEdges19;
+            MM_statusCB.DrawMode = DrawMode.OwnerDrawFixed;
+            MM_statusCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            MM_statusCB.FocusedColor = Color.FromArgb(94, 148, 255);
+            MM_statusCB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_statusCB.Font = new Font("Segoe UI", 10F);
+            MM_statusCB.ForeColor = Color.FromArgb(68, 88, 112);
+            MM_statusCB.ItemHeight = 30;
+            MM_statusCB.Items.AddRange(new object[] { "All Status", "Pending ", "Approved", "In Progress", "Completed", "Cancelled", "Rejected" });
+            MM_statusCB.Location = new Point(604, 20);
+            MM_statusCB.Name = "MM_statusCB";
+            MM_statusCB.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            MM_statusCB.Size = new Size(187, 36);
+            MM_statusCB.TabIndex = 69;
+            MM_statusCB.SelectedIndexChanged += roomstatusSIC;
             // 
-            // searchlbl
+            // MM_searchTxt
             // 
-            searchlbl.BackColor = Color.White;
-            searchlbl.BorderColor = Color.Maroon;
-            searchlbl.BorderRadius = 6;
-            searchlbl.BorderThickness = 2;
-            searchlbl.CustomizableEdges = customizableEdges21;
-            searchlbl.DefaultText = "";
-            searchlbl.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            searchlbl.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            searchlbl.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            searchlbl.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            searchlbl.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchlbl.Font = new Font("Segoe UI", 9F);
-            searchlbl.ForeColor = Color.FromArgb(64, 64, 64);
-            searchlbl.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            searchlbl.Location = new Point(62, 21);
-            searchlbl.Margin = new Padding(3, 4, 3, 4);
-            searchlbl.Name = "searchlbl";
-            searchlbl.PlaceholderText = "Search room number";
-            searchlbl.SelectedText = "";
-            searchlbl.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            searchlbl.Size = new Size(355, 37);
-            searchlbl.TabIndex = 68;
-            searchlbl.TextChanged += searchTC;
+            MM_searchTxt.BackColor = Color.White;
+            MM_searchTxt.BorderColor = Color.Maroon;
+            MM_searchTxt.BorderRadius = 6;
+            MM_searchTxt.BorderThickness = 2;
+            MM_searchTxt.CustomizableEdges = customizableEdges21;
+            MM_searchTxt.DefaultText = "";
+            MM_searchTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            MM_searchTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            MM_searchTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            MM_searchTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            MM_searchTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_searchTxt.Font = new Font("Segoe UI", 9F);
+            MM_searchTxt.ForeColor = Color.FromArgb(64, 64, 64);
+            MM_searchTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_searchTxt.Location = new Point(62, 21);
+            MM_searchTxt.Margin = new Padding(3, 4, 3, 4);
+            MM_searchTxt.Name = "MM_searchTxt";
+            MM_searchTxt.PlaceholderText = "Search room number";
+            MM_searchTxt.SelectedText = "";
+            MM_searchTxt.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            MM_searchTxt.Size = new Size(310, 37);
+            MM_searchTxt.TabIndex = 68;
+            MM_searchTxt.TextChanged += searchTC;
             // 
             // guna2PictureBox1
             // 
@@ -441,28 +474,29 @@
             guna2Panel6.BorderColor = Color.Silver;
             guna2Panel6.BorderRadius = 15;
             guna2Panel6.BorderThickness = 2;
-            guna2Panel6.Controls.Add(maintenanceDGV);
-            guna2Panel6.Controls.Add(roomtypelbl);
-            guna2Panel6.Controls.Add(statuCB);
+            guna2Panel6.Controls.Add(MM_MaintenanceDGV);
+            guna2Panel6.Controls.Add(MM_roomTypeCB);
+            guna2Panel6.Controls.Add(MM_statusCB);
             guna2Panel6.Controls.Add(guna2PictureBox6);
-            guna2Panel6.Controls.Add(searchlbl);
+            guna2Panel6.Controls.Add(MM_searchTxt);
             guna2Panel6.CustomizableEdges = customizableEdges27;
             guna2Panel6.Location = new Point(52, 213);
             guna2Panel6.Name = "guna2Panel6";
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2Panel6.Size = new Size(1177, 528);
+            guna2Panel6.Size = new Size(809, 528);
             guna2Panel6.TabIndex = 65;
             // 
-            // maintenanceDGV
+            // MM_MaintenanceDGV
             // 
-            maintenanceDGV.AllowUserToResizeRows = false;
+            MM_MaintenanceDGV.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 218, 88);
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.Maroon;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 128, 128);
             dataGridViewCellStyle1.SelectionForeColor = Color.Maroon;
-            maintenanceDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            maintenanceDGV.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            MM_MaintenanceDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            MM_MaintenanceDGV.BackgroundColor = Color.LightGray;
+            MM_MaintenanceDGV.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.Maroon;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -470,9 +504,9 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.Maroon;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            maintenanceDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            maintenanceDGV.ColumnHeadersHeight = 30;
-            maintenanceDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            MM_MaintenanceDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            MM_MaintenanceDGV.ColumnHeadersHeight = 30;
+            MM_MaintenanceDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -480,11 +514,11 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 128, 128);
             dataGridViewCellStyle3.SelectionForeColor = Color.Maroon;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            maintenanceDGV.DefaultCellStyle = dataGridViewCellStyle3;
-            maintenanceDGV.GridColor = Color.FromArgb(231, 229, 255);
-            maintenanceDGV.Location = new Point(20, 85);
-            maintenanceDGV.Name = "maintenanceDGV";
-            maintenanceDGV.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            MM_MaintenanceDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            MM_MaintenanceDGV.GridColor = Color.FromArgb(231, 229, 255);
+            MM_MaintenanceDGV.Location = new Point(20, 77);
+            MM_MaintenanceDGV.Name = "MM_MaintenanceDGV";
+            MM_MaintenanceDGV.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
@@ -492,26 +526,27 @@
             dataGridViewCellStyle4.SelectionBackColor = Color.White;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            maintenanceDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            maintenanceDGV.RowHeadersVisible = false;
-            maintenanceDGV.RowHeadersWidth = 51;
-            maintenanceDGV.RowTemplate.Height = 30;
-            maintenanceDGV.Size = new Size(1125, 398);
-            maintenanceDGV.TabIndex = 72;
-            maintenanceDGV.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(255, 218, 88);
-            maintenanceDGV.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            maintenanceDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Maroon;
-            maintenanceDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
-            maintenanceDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Maroon;
-            maintenanceDGV.ThemeStyle.HeaderStyle.BackColor = Color.Maroon;
-            maintenanceDGV.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            maintenanceDGV.ThemeStyle.HeaderStyle.Height = 30;
-            maintenanceDGV.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.None;
-            maintenanceDGV.ThemeStyle.RowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            maintenanceDGV.ThemeStyle.RowsStyle.ForeColor = Color.Maroon;
-            maintenanceDGV.ThemeStyle.RowsStyle.Height = 30;
-            maintenanceDGV.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
-            maintenanceDGV.ThemeStyle.RowsStyle.SelectionForeColor = Color.Maroon;
+            MM_MaintenanceDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            MM_MaintenanceDGV.RowHeadersVisible = false;
+            MM_MaintenanceDGV.RowHeadersWidth = 51;
+            MM_MaintenanceDGV.RowTemplate.Height = 30;
+            MM_MaintenanceDGV.Size = new Size(767, 426);
+            MM_MaintenanceDGV.TabIndex = 72;
+            MM_MaintenanceDGV.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(255, 218, 88);
+            MM_MaintenanceDGV.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MM_MaintenanceDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Maroon;
+            MM_MaintenanceDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            MM_MaintenanceDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Maroon;
+            MM_MaintenanceDGV.ThemeStyle.BackColor = Color.LightGray;
+            MM_MaintenanceDGV.ThemeStyle.HeaderStyle.BackColor = Color.Maroon;
+            MM_MaintenanceDGV.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MM_MaintenanceDGV.ThemeStyle.HeaderStyle.Height = 30;
+            MM_MaintenanceDGV.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.None;
+            MM_MaintenanceDGV.ThemeStyle.RowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MM_MaintenanceDGV.ThemeStyle.RowsStyle.ForeColor = Color.Maroon;
+            MM_MaintenanceDGV.ThemeStyle.RowsStyle.Height = 30;
+            MM_MaintenanceDGV.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            MM_MaintenanceDGV.ThemeStyle.RowsStyle.SelectionForeColor = Color.Maroon;
             // 
             // guna2PictureBox6
             // 
@@ -527,13 +562,237 @@
             guna2PictureBox6.TabIndex = 70;
             guna2PictureBox6.TabStop = false;
             // 
+            // RM_status_panel
+            // 
+            RM_status_panel.BackColor = Color.White;
+            RM_status_panel.BorderColor = Color.Silver;
+            RM_status_panel.BorderRadius = 15;
+            RM_status_panel.BorderThickness = 2;
+            RM_status_panel.Controls.Add(guna2vSeparator1);
+            RM_status_panel.Controls.Add(guna2PictureBox13);
+            RM_status_panel.Controls.Add(MM_detailsPanel);
+            RM_status_panel.Controls.Add(guna2Separator1);
+            RM_status_panel.Controls.Add(guna2HtmlLabel11);
+            RM_status_panel.CustomizableEdges = customizableEdges43;
+            RM_status_panel.Location = new Point(883, 213);
+            RM_status_panel.Name = "RM_status_panel";
+            RM_status_panel.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            RM_status_panel.Size = new Size(362, 528);
+            RM_status_panel.TabIndex = 98;
+            // 
+            // guna2vSeparator1
+            // 
+            guna2vSeparator1.BackColor = Color.Transparent;
+            guna2vSeparator1.FillColor = Color.Maroon;
+            guna2vSeparator1.FillThickness = 3;
+            guna2vSeparator1.Location = new Point(50, 17);
+            guna2vSeparator1.Name = "guna2vSeparator1";
+            guna2vSeparator1.Size = new Size(8, 23);
+            guna2vSeparator1.TabIndex = 104;
+            // 
+            // guna2PictureBox13
+            // 
+            guna2PictureBox13.BackColor = Color.Transparent;
+            guna2PictureBox13.BackgroundImageLayout = ImageLayout.Zoom;
+            guna2PictureBox13.BorderRadius = 20;
+            guna2PictureBox13.CustomizableEdges = customizableEdges29;
+            guna2PictureBox13.FillColor = Color.Transparent;
+            guna2PictureBox13.Image = Properties.Resources.info2;
+            guna2PictureBox13.ImageRotate = 0F;
+            guna2PictureBox13.Location = new Point(16, 9);
+            guna2PictureBox13.Name = "guna2PictureBox13";
+            guna2PictureBox13.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2PictureBox13.Size = new Size(36, 38);
+            guna2PictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox13.TabIndex = 103;
+            guna2PictureBox13.TabStop = false;
+            // 
+            // MM_detailsPanel
+            // 
+            MM_detailsPanel.BackColor = Color.White;
+            MM_detailsPanel.BorderColor = Color.Silver;
+            MM_detailsPanel.BorderRadius = 15;
+            MM_detailsPanel.BorderThickness = 2;
+            MM_detailsPanel.Controls.Add(MM_descriptiontxt);
+            MM_detailsPanel.Controls.Add(guna2HtmlLabel5);
+            MM_detailsPanel.Controls.Add(MM_roomIDtxt);
+            MM_detailsPanel.Controls.Add(MM_maintenanceIDtxt);
+            MM_detailsPanel.Controls.Add(guna2HtmlLabel15);
+            MM_detailsPanel.Controls.Add(guna2HtmlLabel16);
+            MM_detailsPanel.Controls.Add(MM_acceptBtn);
+            MM_detailsPanel.Controls.Add(MM_rejectBtn);
+            MM_detailsPanel.CustomizableEdges = customizableEdges41;
+            MM_detailsPanel.Location = new Point(16, 65);
+            MM_detailsPanel.Name = "MM_detailsPanel";
+            MM_detailsPanel.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            MM_detailsPanel.Size = new Size(330, 444);
+            MM_detailsPanel.TabIndex = 100;
+            // 
+            // MM_descriptiontxt
+            // 
+            MM_descriptiontxt.BorderColor = Color.Maroon;
+            MM_descriptiontxt.CustomizableEdges = customizableEdges31;
+            MM_descriptiontxt.DefaultText = "";
+            MM_descriptiontxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            MM_descriptiontxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            MM_descriptiontxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            MM_descriptiontxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            MM_descriptiontxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_descriptiontxt.Font = new Font("Segoe UI", 9F);
+            MM_descriptiontxt.ForeColor = Color.Black;
+            MM_descriptiontxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_descriptiontxt.Location = new Point(17, 218);
+            MM_descriptiontxt.Margin = new Padding(3, 4, 3, 4);
+            MM_descriptiontxt.Multiline = true;
+            MM_descriptiontxt.Name = "MM_descriptiontxt";
+            MM_descriptiontxt.PlaceholderText = "....";
+            MM_descriptiontxt.SelectedText = "";
+            MM_descriptiontxt.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            MM_descriptiontxt.Size = new Size(290, 109);
+            MM_descriptiontxt.TabIndex = 173;
+            // 
+            // guna2HtmlLabel5
+            // 
+            guna2HtmlLabel5.BackColor = Color.Transparent;
+            guna2HtmlLabel5.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel5.ForeColor = Color.Black;
+            guna2HtmlLabel5.Location = new Point(17, 190);
+            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            guna2HtmlLabel5.Size = new Size(95, 23);
+            guna2HtmlLabel5.TabIndex = 171;
+            guna2HtmlLabel5.Text = "Description";
+            // 
+            // MM_roomIDtxt
+            // 
+            MM_roomIDtxt.BorderColor = Color.Maroon;
+            MM_roomIDtxt.CustomizableEdges = customizableEdges33;
+            MM_roomIDtxt.DefaultText = "";
+            MM_roomIDtxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            MM_roomIDtxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            MM_roomIDtxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            MM_roomIDtxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            MM_roomIDtxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_roomIDtxt.Font = new Font("Segoe UI", 9F);
+            MM_roomIDtxt.ForeColor = Color.Black;
+            MM_roomIDtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_roomIDtxt.Location = new Point(17, 134);
+            MM_roomIDtxt.Margin = new Padding(3, 4, 3, 4);
+            MM_roomIDtxt.Name = "MM_roomIDtxt";
+            MM_roomIDtxt.PlaceholderText = "RM-0001-0001";
+            MM_roomIDtxt.SelectedText = "";
+            MM_roomIDtxt.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            MM_roomIDtxt.Size = new Size(290, 36);
+            MM_roomIDtxt.TabIndex = 170;
+            // 
+            // MM_maintenanceIDtxt
+            // 
+            MM_maintenanceIDtxt.BorderColor = Color.Maroon;
+            MM_maintenanceIDtxt.CustomizableEdges = customizableEdges35;
+            MM_maintenanceIDtxt.DefaultText = "";
+            MM_maintenanceIDtxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            MM_maintenanceIDtxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            MM_maintenanceIDtxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            MM_maintenanceIDtxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            MM_maintenanceIDtxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_maintenanceIDtxt.Font = new Font("Segoe UI", 9F);
+            MM_maintenanceIDtxt.ForeColor = Color.Black;
+            MM_maintenanceIDtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            MM_maintenanceIDtxt.Location = new Point(17, 53);
+            MM_maintenanceIDtxt.Margin = new Padding(3, 4, 3, 4);
+            MM_maintenanceIDtxt.Name = "MM_maintenanceIDtxt";
+            MM_maintenanceIDtxt.PlaceholderText = "MNT-0001-001";
+            MM_maintenanceIDtxt.ReadOnly = true;
+            MM_maintenanceIDtxt.SelectedText = "";
+            MM_maintenanceIDtxt.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            MM_maintenanceIDtxt.Size = new Size(290, 36);
+            MM_maintenanceIDtxt.TabIndex = 169;
+            // 
+            // guna2HtmlLabel15
+            // 
+            guna2HtmlLabel15.BackColor = Color.Transparent;
+            guna2HtmlLabel15.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel15.ForeColor = Color.Black;
+            guna2HtmlLabel15.Location = new Point(17, 25);
+            guna2HtmlLabel15.Name = "guna2HtmlLabel15";
+            guna2HtmlLabel15.Size = new Size(133, 23);
+            guna2HtmlLabel15.TabIndex = 17;
+            guna2HtmlLabel15.Text = "Maintenance ID";
+            // 
+            // guna2HtmlLabel16
+            // 
+            guna2HtmlLabel16.BackColor = Color.Transparent;
+            guna2HtmlLabel16.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel16.ForeColor = Color.Black;
+            guna2HtmlLabel16.Location = new Point(17, 108);
+            guna2HtmlLabel16.Name = "guna2HtmlLabel16";
+            guna2HtmlLabel16.Size = new Size(79, 23);
+            guna2HtmlLabel16.TabIndex = 18;
+            guna2HtmlLabel16.Text = "Room ID";
+            // 
+            // MM_acceptBtn
+            // 
+            MM_acceptBtn.BorderRadius = 7;
+            MM_acceptBtn.CustomizableEdges = customizableEdges37;
+            MM_acceptBtn.DisabledState.BorderColor = Color.DarkGray;
+            MM_acceptBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            MM_acceptBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            MM_acceptBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            MM_acceptBtn.FillColor = Color.Maroon;
+            MM_acceptBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MM_acceptBtn.ForeColor = Color.White;
+            MM_acceptBtn.Location = new Point(17, 347);
+            MM_acceptBtn.Name = "MM_acceptBtn";
+            MM_acceptBtn.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            MM_acceptBtn.Size = new Size(290, 35);
+            MM_acceptBtn.TabIndex = 121;
+            MM_acceptBtn.Text = "Accept";
+            // 
+            // MM_rejectBtn
+            // 
+            MM_rejectBtn.BorderRadius = 7;
+            MM_rejectBtn.CustomizableEdges = customizableEdges39;
+            MM_rejectBtn.DisabledState.BorderColor = Color.DarkGray;
+            MM_rejectBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            MM_rejectBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            MM_rejectBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            MM_rejectBtn.FillColor = Color.Maroon;
+            MM_rejectBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MM_rejectBtn.ForeColor = Color.White;
+            MM_rejectBtn.Location = new Point(17, 391);
+            MM_rejectBtn.Name = "MM_rejectBtn";
+            MM_rejectBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            MM_rejectBtn.Size = new Size(290, 35);
+            MM_rejectBtn.TabIndex = 119;
+            MM_rejectBtn.Text = "Reject";
+            // 
+            // guna2Separator1
+            // 
+            guna2Separator1.BackColor = Color.Transparent;
+            guna2Separator1.FillColor = Color.Maroon;
+            guna2Separator1.Location = new Point(19, 42);
+            guna2Separator1.Name = "guna2Separator1";
+            guna2Separator1.Size = new Size(320, 12);
+            guna2Separator1.TabIndex = 99;
+            // 
+            // guna2HtmlLabel11
+            // 
+            guna2HtmlLabel11.BackColor = Color.Transparent;
+            guna2HtmlLabel11.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel11.ForeColor = Color.Maroon;
+            guna2HtmlLabel11.Location = new Point(60, 15);
+            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            guna2HtmlLabel11.Size = new Size(211, 28);
+            guna2HtmlLabel11.TabIndex = 13;
+            guna2HtmlLabel11.Text = "Maintenance Details";
+            // 
             // UserControl_Admin_Maintenance
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            AutoScrollMinSize = new Size(0, 1228);
+            AutoScrollMinSize = new Size(0, 636);
             BackColor = Color.FromArgb(255, 249, 239);
+            Controls.Add(RM_status_panel);
             Controls.Add(guna2Panel1);
             Controls.Add(guna2Panel4);
             Controls.Add(guna2Panel3);
@@ -543,7 +802,7 @@
             Controls.Add(guna2PictureBox1);
             Controls.Add(guna2Panel6);
             Name = "UserControl_Admin_Maintenance";
-            Size = new Size(1101, 608);
+            Size = new Size(1227, 636);
             Load += UserControl_Admin_Maintenance_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
             guna2Panel1.ResumeLayout(false);
@@ -559,15 +818,20 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)maintenanceDGV).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MM_MaintenanceDGV).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
+            RM_status_panel.ResumeLayout(false);
+            RM_status_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox13).EndInit();
+            MM_detailsPanel.ResumeLayout(false);
+            MM_detailsPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ComboBox roomtypelbl;
+        private Guna.UI2.WinForms.Guna2ComboBox MM_roomTypeCB;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel inproglbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
@@ -586,11 +850,25 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2ComboBox statuCB;
-        private Guna.UI2.WinForms.Guna2TextBox searchlbl;
+        private Guna.UI2.WinForms.Guna2ComboBox MM_statusCB;
+        private Guna.UI2.WinForms.Guna2TextBox MM_searchTxt;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
-        private Guna.UI2.WinForms.Guna2DataGridView maintenanceDGV;
+        private Guna.UI2.WinForms.Guna2DataGridView MM_MaintenanceDGV;
+        private Guna.UI2.WinForms.Guna2Panel RM_status_panel;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox13;
+        private Guna.UI2.WinForms.Guna2Panel MM_detailsPanel;
+        private Guna.UI2.WinForms.Guna2TextBox MM_descriptiontxt;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2TextBox MM_roomIDtxt;
+        private Guna.UI2.WinForms.Guna2TextBox MM_maintenanceIDtxt;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
+        private Guna.UI2.WinForms.Guna2Button MM_acceptBtn;
+        private Guna.UI2.WinForms.Guna2Button MM_rejectBtn;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
     }
 }
