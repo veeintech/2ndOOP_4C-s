@@ -165,13 +165,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges127 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges134 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges135 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges130 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges131 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges132 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges133 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -312,11 +312,11 @@
             guna2PictureBox17 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel43 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
+            dgv_attendance = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox20 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Separator6 = new Guna.UI2.WinForms.Guna2Separator();
             guna2HtmlLabel53 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            dgv_attendance = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox14).BeginInit();
@@ -371,8 +371,8 @@
             ((System.ComponentModel.ISupportInitialize)Staff_Directory_Dgv).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox17).BeginInit();
             guna2Panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox20).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_attendance).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox20).BeginInit();
             SuspendLayout();
             // 
             // guna2DateTimePicker1
@@ -2450,6 +2450,41 @@
             guna2Panel19.Size = new Size(1233, 401);
             guna2Panel19.TabIndex = 114;
             // 
+            // dgv_attendance
+            // 
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dgv_attendance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgv_attendance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dgv_attendance.ColumnHeadersHeight = 4;
+            dgv_attendance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            dgv_attendance.DefaultCellStyle = dataGridViewCellStyle9;
+            dgv_attendance.GridColor = Color.FromArgb(231, 229, 255);
+            dgv_attendance.Location = new Point(22, 76);
+            dgv_attendance.Name = "dgv_attendance";
+            dgv_attendance.RowHeadersVisible = false;
+            dgv_attendance.RowHeadersWidth = 51;
+            dgv_attendance.Size = new Size(1189, 307);
+            dgv_attendance.TabIndex = 118;
+            dgv_attendance.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgv_attendance.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgv_attendance.ThemeStyle.HeaderStyle.Height = 4;
+            dgv_attendance.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgv_attendance.ThemeStyle.RowsStyle.Height = 29;
+            // 
             // guna2TextBox6
             // 
             guna2TextBox6.BackColor = Color.White;
@@ -2509,46 +2544,12 @@
             guna2HtmlLabel53.TabIndex = 21;
             guna2HtmlLabel53.Text = "Attendance Log";
             // 
-            // dgv_attendance
-            // 
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dgv_attendance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgv_attendance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dgv_attendance.ColumnHeadersHeight = 4;
-            dgv_attendance.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            dgv_attendance.DefaultCellStyle = dataGridViewCellStyle9;
-            dgv_attendance.GridColor = Color.FromArgb(231, 229, 255);
-            dgv_attendance.Location = new Point(22, 76);
-            dgv_attendance.Name = "dgv_attendance";
-            dgv_attendance.RowHeadersVisible = false;
-            dgv_attendance.RowHeadersWidth = 51;
-            dgv_attendance.Size = new Size(1189, 307);
-            dgv_attendance.TabIndex = 118;
-            dgv_attendance.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            dgv_attendance.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            dgv_attendance.ThemeStyle.HeaderStyle.Height = 4;
-            dgv_attendance.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            dgv_attendance.ThemeStyle.RowsStyle.Height = 29;
-            // 
             // UserControl_Admin_Staff
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            AutoScrollMinSize = new Size(0, 1972);
             BackColor = Color.FromArgb(255, 249, 239);
             Controls.Add(guna2Panel19);
             Controls.Add(guna2Panel17);
@@ -2643,8 +2644,8 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox17).EndInit();
             guna2Panel19.ResumeLayout(false);
             guna2Panel19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox20).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_attendance).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox20).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
