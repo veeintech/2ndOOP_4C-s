@@ -151,10 +151,8 @@
             guna2HtmlLabel63 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            DB_TotalCollection_LBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            DB_activeResultLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             DB_OccupiedRoomLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -178,15 +176,12 @@
             LineMonthlyRev = new Guna.Charts.WinForms.GunaLineDataset();
             guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            DB_appartmentResultLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            DB_transientResultLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            DB_HotelResultLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel41 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel40 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel39 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             DB_TransientProgBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             DB_HotelProgBar = new Guna.UI2.WinForms.Guna2ProgressBar();
-            DB_AppartmentProgBar = new Guna.UI2.WinForms.Guna2ProgressBar();
+            DB_ApartmentProgBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -211,8 +206,6 @@
             BarReservations = new Guna.Charts.WinForms.GunaBarDataset();
             guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            DB_expiredResultLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            DB_inactiveResultLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -223,16 +216,14 @@
             guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel32 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel22 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            DB_TotalCollection_LBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox15).BeginInit();
             guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).BeginInit();
@@ -327,17 +318,6 @@
             guna2Panel4.Size = new Size(225, 142);
             guna2Panel4.TabIndex = 46;
             // 
-            // DB_TotalCollection_LBL
-            // 
-            DB_TotalCollection_LBL.BackColor = Color.Transparent;
-            DB_TotalCollection_LBL.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DB_TotalCollection_LBL.Location = new Point(31, 96);
-            DB_TotalCollection_LBL.Margin = new Padding(4, 3, 4, 3);
-            DB_TotalCollection_LBL.Name = "DB_TotalCollection_LBL";
-            DB_TotalCollection_LBL.Size = new Size(102, 40);
-            DB_TotalCollection_LBL.TabIndex = 35;
-            DB_TotalCollection_LBL.Text = "_ _ _ _ ";
-            // 
             // guna2PictureBox8
             // 
             guna2PictureBox8.BackColor = Color.Transparent;
@@ -365,18 +345,6 @@
             guna2HtmlLabel8.Size = new Size(117, 23);
             guna2HtmlLabel8.TabIndex = 21;
             guna2HtmlLabel8.Text = "Total Collection";
-            // 
-            // DB_activeResultLBL
-            // 
-            DB_activeResultLBL.BackColor = Color.Transparent;
-            DB_activeResultLBL.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DB_activeResultLBL.ForeColor = Color.Maroon;
-            DB_activeResultLBL.Location = new Point(354, 79);
-            DB_activeResultLBL.Margin = new Padding(4, 3, 4, 3);
-            DB_activeResultLBL.Name = "DB_activeResultLBL";
-            DB_activeResultLBL.Size = new Size(33, 21);
-            DB_activeResultLBL.TabIndex = 55;
-            DB_activeResultLBL.Text = "67%";
             // 
             // guna2Panel3
             // 
@@ -592,52 +560,53 @@
             // guna2PictureBox2
             // 
             guna2PictureBox2.BackColor = Color.Transparent;
+            guna2PictureBox2.BackgroundImage = (Image)resources.GetObject("guna2PictureBox2.BackgroundImage");
             guna2PictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             guna2PictureBox2.CustomizableEdges = customizableEdges21;
             guna2PictureBox2.ErrorImage = null;
             guna2PictureBox2.FillColor = Color.Transparent;
             guna2PictureBox2.ImageRotate = 0F;
             guna2PictureBox2.InitialImage = null;
-            guna2PictureBox2.Location = new Point(19, 19);
+            guna2PictureBox2.Location = new Point(28, 17);
             guna2PictureBox2.Name = "guna2PictureBox2";
             guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2PictureBox2.Size = new Size(59, 47);
+            guna2PictureBox2.Size = new Size(59, 54);
             guna2PictureBox2.TabIndex = 36;
             guna2PictureBox2.TabStop = false;
             // 
             // DB_TimeLbl
             // 
             DB_TimeLbl.BackColor = Color.Transparent;
-            DB_TimeLbl.Font = new Font("Baskerville Old Face", 18F, FontStyle.Bold);
+            DB_TimeLbl.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DB_TimeLbl.ForeColor = Color.FromArgb(248, 250, 252);
             DB_TimeLbl.Location = new Point(31, 99);
             DB_TimeLbl.Margin = new Padding(4, 3, 4, 3);
             DB_TimeLbl.Name = "DB_TimeLbl";
-            DB_TimeLbl.Size = new Size(67, 36);
+            DB_TimeLbl.Size = new Size(51, 28);
             DB_TimeLbl.TabIndex = 41;
             DB_TimeLbl.Text = "____";
             // 
             // DB_DateLbl
             // 
             DB_DateLbl.BackColor = Color.Transparent;
-            DB_DateLbl.Font = new Font("Baskerville Old Face", 18F, FontStyle.Bold);
+            DB_DateLbl.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DB_DateLbl.ForeColor = Color.FromArgb(248, 250, 252);
-            DB_DateLbl.Location = new Point(31, 61);
+            DB_DateLbl.Location = new Point(31, 71);
             DB_DateLbl.Margin = new Padding(4, 3, 4, 3);
             DB_DateLbl.Name = "DB_DateLbl";
-            DB_DateLbl.Size = new Size(67, 36);
+            DB_DateLbl.Size = new Size(55, 28);
             DB_DateLbl.TabIndex = 40;
             DB_DateLbl.Text = "____";
             // 
             // RM_DateTitleLbl
             // 
             RM_DateTitleLbl.BackColor = Color.Transparent;
-            RM_DateTitleLbl.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RM_DateTitleLbl.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RM_DateTitleLbl.ForeColor = Color.FromArgb(142, 202, 230);
-            RM_DateTitleLbl.Location = new Point(85, 27);
+            RM_DateTitleLbl.Location = new Point(94, 40);
             RM_DateTitleLbl.Margin = new Padding(4, 3, 4, 3);
             RM_DateTitleLbl.Name = "RM_DateTitleLbl";
-            RM_DateTitleLbl.Size = new Size(123, 28);
+            RM_DateTitleLbl.Size = new Size(113, 28);
             RM_DateTitleLbl.TabIndex = 38;
             RM_DateTitleLbl.Text = "Date Today";
             // 
@@ -735,15 +704,12 @@
             guna2Panel10.BorderColor = Color.Silver;
             guna2Panel10.BorderRadius = 15;
             guna2Panel10.BorderThickness = 2;
-            guna2Panel10.Controls.Add(DB_appartmentResultLBL);
-            guna2Panel10.Controls.Add(DB_transientResultLBL);
-            guna2Panel10.Controls.Add(DB_HotelResultLBL);
             guna2Panel10.Controls.Add(guna2HtmlLabel41);
             guna2Panel10.Controls.Add(guna2HtmlLabel40);
             guna2Panel10.Controls.Add(guna2HtmlLabel39);
             guna2Panel10.Controls.Add(DB_TransientProgBar);
             guna2Panel10.Controls.Add(DB_HotelProgBar);
-            guna2Panel10.Controls.Add(DB_AppartmentProgBar);
+            guna2Panel10.Controls.Add(DB_ApartmentProgBar);
             guna2Panel10.Controls.Add(guna2HtmlLabel19);
             guna2Panel10.CustomBorderColor = Color.Silver;
             guna2Panel10.CustomBorderThickness = new Padding(0, 0, 3, 3);
@@ -756,42 +722,6 @@
             guna2Panel10.ShadowDecoration.CustomizableEdges = customizableEdges34;
             guna2Panel10.Size = new Size(406, 327);
             guna2Panel10.TabIndex = 56;
-            // 
-            // DB_appartmentResultLBL
-            // 
-            DB_appartmentResultLBL.BackColor = Color.Transparent;
-            DB_appartmentResultLBL.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DB_appartmentResultLBL.ForeColor = Color.Maroon;
-            DB_appartmentResultLBL.Location = new Point(355, 79);
-            DB_appartmentResultLBL.Margin = new Padding(4, 3, 4, 3);
-            DB_appartmentResultLBL.Name = "DB_appartmentResultLBL";
-            DB_appartmentResultLBL.Size = new Size(33, 21);
-            DB_appartmentResultLBL.TabIndex = 46;
-            DB_appartmentResultLBL.Text = "67%";
-            // 
-            // DB_transientResultLBL
-            // 
-            DB_transientResultLBL.BackColor = Color.Transparent;
-            DB_transientResultLBL.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DB_transientResultLBL.ForeColor = Color.Maroon;
-            DB_transientResultLBL.Location = new Point(356, 243);
-            DB_transientResultLBL.Margin = new Padding(4, 3, 4, 3);
-            DB_transientResultLBL.Name = "DB_transientResultLBL";
-            DB_transientResultLBL.Size = new Size(32, 21);
-            DB_transientResultLBL.TabIndex = 45;
-            DB_transientResultLBL.Text = "55%";
-            // 
-            // DB_HotelResultLBL
-            // 
-            DB_HotelResultLBL.BackColor = Color.Transparent;
-            DB_HotelResultLBL.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DB_HotelResultLBL.ForeColor = Color.Maroon;
-            DB_HotelResultLBL.Location = new Point(355, 159);
-            DB_HotelResultLBL.Margin = new Padding(4, 3, 4, 3);
-            DB_HotelResultLBL.Name = "DB_HotelResultLBL";
-            DB_HotelResultLBL.Size = new Size(33, 21);
-            DB_HotelResultLBL.TabIndex = 44;
-            DB_HotelResultLBL.Text = "48%";
             // 
             // guna2HtmlLabel41
             // 
@@ -825,9 +755,9 @@
             guna2HtmlLabel39.Location = new Point(26, 77);
             guna2HtmlLabel39.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel39.Name = "guna2HtmlLabel39";
-            guna2HtmlLabel39.Size = new Size(88, 23);
+            guna2HtmlLabel39.Size = new Size(79, 23);
             guna2HtmlLabel39.TabIndex = 32;
-            guna2HtmlLabel39.Text = "Appartment";
+            guna2HtmlLabel39.Text = "Apartment";
             // 
             // DB_TransientProgBar
             // 
@@ -863,22 +793,22 @@
             DB_HotelProgBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             DB_HotelProgBar.Value = 48;
             // 
-            // DB_AppartmentProgBar
+            // DB_ApartmentProgBar
             // 
-            DB_AppartmentProgBar.BorderRadius = 10;
-            DB_AppartmentProgBar.CustomizableEdges = customizableEdges31;
-            DB_AppartmentProgBar.FillColor = Color.PeachPuff;
-            DB_AppartmentProgBar.Location = new Point(26, 107);
-            DB_AppartmentProgBar.Name = "DB_AppartmentProgBar";
-            DB_AppartmentProgBar.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
-            DB_AppartmentProgBar.ProgressColor = Color.Maroon;
-            DB_AppartmentProgBar.ProgressColor2 = Color.White;
-            DB_AppartmentProgBar.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            DB_AppartmentProgBar.Size = new Size(362, 20);
-            DB_AppartmentProgBar.TabIndex = 34;
-            DB_AppartmentProgBar.Text = "guna2ProgressBar1";
-            DB_AppartmentProgBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            DB_AppartmentProgBar.Value = 67;
+            DB_ApartmentProgBar.BorderRadius = 10;
+            DB_ApartmentProgBar.CustomizableEdges = customizableEdges31;
+            DB_ApartmentProgBar.FillColor = Color.PeachPuff;
+            DB_ApartmentProgBar.Location = new Point(26, 107);
+            DB_ApartmentProgBar.Name = "DB_ApartmentProgBar";
+            DB_ApartmentProgBar.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.Solid;
+            DB_ApartmentProgBar.ProgressColor = Color.Maroon;
+            DB_ApartmentProgBar.ProgressColor2 = Color.White;
+            DB_ApartmentProgBar.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            DB_ApartmentProgBar.Size = new Size(362, 20);
+            DB_ApartmentProgBar.TabIndex = 34;
+            DB_ApartmentProgBar.Text = "guna2ProgressBar1";
+            DB_ApartmentProgBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            DB_ApartmentProgBar.Value = 67;
             // 
             // guna2HtmlLabel19
             // 
@@ -930,7 +860,7 @@
             guna2HtmlLabel23.BackColor = Color.Transparent;
             guna2HtmlLabel23.Font = new Font("Berlin Sans FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel23.ForeColor = SystemColors.ControlDarkDark;
-            guna2HtmlLabel23.Location = new Point(243, 287);
+            guna2HtmlLabel23.Location = new Point(243, 284);
             guna2HtmlLabel23.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel23.Name = "guna2HtmlLabel23";
             guna2HtmlLabel23.Size = new Size(89, 19);
@@ -941,7 +871,7 @@
             // 
             guna2CirclePictureBox4.FillColor = Color.Gainsboro;
             guna2CirclePictureBox4.ImageRotate = 0F;
-            guna2CirclePictureBox4.Location = new Point(209, 263);
+            guna2CirclePictureBox4.Location = new Point(209, 260);
             guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
             guna2CirclePictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges35;
             guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -954,7 +884,7 @@
             guna2HtmlLabel25.BackColor = Color.Transparent;
             guna2HtmlLabel25.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel25.ForeColor = Color.Maroon;
-            guna2HtmlLabel25.Location = new Point(244, 263);
+            guna2HtmlLabel25.Location = new Point(244, 260);
             guna2HtmlLabel25.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel25.Name = "guna2HtmlLabel25";
             guna2HtmlLabel25.Size = new Size(139, 21);
@@ -967,7 +897,7 @@
             DB_StatusChart.Legend.Display = false;
             chartFont9.FontName = "Arial";
             DB_StatusChart.Legend.LabelFont = chartFont9;
-            DB_StatusChart.Location = new Point(13, 78);
+            DB_StatusChart.Location = new Point(13, 72);
             DB_StatusChart.Name = "DB_StatusChart";
             DB_StatusChart.Size = new Size(180, 196);
             DB_StatusChart.TabIndex = 61;
@@ -1031,7 +961,7 @@
             ROO_ReservedLBL.BackColor = Color.Transparent;
             ROO_ReservedLBL.Font = new Font("Berlin Sans FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ROO_ReservedLBL.ForeColor = SystemColors.ControlDarkDark;
-            ROO_ReservedLBL.Location = new Point(244, 226);
+            ROO_ReservedLBL.Location = new Point(244, 223);
             ROO_ReservedLBL.Margin = new Padding(4, 3, 4, 3);
             ROO_ReservedLBL.Name = "ROO_ReservedLBL";
             ROO_ReservedLBL.Size = new Size(89, 19);
@@ -1042,7 +972,7 @@
             // 
             guna2CirclePictureBox3.FillColor = Color.SandyBrown;
             guna2CirclePictureBox3.ImageRotate = 0F;
-            guna2CirclePictureBox3.Location = new Point(210, 202);
+            guna2CirclePictureBox3.Location = new Point(210, 199);
             guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
             guna2CirclePictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges36;
             guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -1055,7 +985,7 @@
             guna2HtmlLabel54.BackColor = Color.Transparent;
             guna2HtmlLabel54.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel54.ForeColor = Color.Maroon;
-            guna2HtmlLabel54.Location = new Point(245, 202);
+            guna2HtmlLabel54.Location = new Point(245, 199);
             guna2HtmlLabel54.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel54.Name = "guna2HtmlLabel54";
             guna2HtmlLabel54.Size = new Size(66, 21);
@@ -1067,7 +997,7 @@
             ROO_AvailableLBL.BackColor = Color.Transparent;
             ROO_AvailableLBL.Font = new Font("Berlin Sans FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ROO_AvailableLBL.ForeColor = SystemColors.ControlDarkDark;
-            ROO_AvailableLBL.Location = new Point(245, 163);
+            ROO_AvailableLBL.Location = new Point(245, 160);
             ROO_AvailableLBL.Margin = new Padding(4, 3, 4, 3);
             ROO_AvailableLBL.Name = "ROO_AvailableLBL";
             ROO_AvailableLBL.Size = new Size(89, 19);
@@ -1078,7 +1008,7 @@
             // 
             guna2CirclePictureBox2.FillColor = Color.FromArgb(212, 167, 44);
             guna2CirclePictureBox2.ImageRotate = 0F;
-            guna2CirclePictureBox2.Location = new Point(210, 136);
+            guna2CirclePictureBox2.Location = new Point(210, 133);
             guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges37;
             guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -1091,7 +1021,7 @@
             guna2HtmlLabel50.BackColor = Color.Transparent;
             guna2HtmlLabel50.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel50.ForeColor = Color.Maroon;
-            guna2HtmlLabel50.Location = new Point(245, 136);
+            guna2HtmlLabel50.Location = new Point(245, 133);
             guna2HtmlLabel50.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel50.Name = "guna2HtmlLabel50";
             guna2HtmlLabel50.Size = new Size(70, 21);
@@ -1103,7 +1033,7 @@
             ROO_OccupiedLBL.BackColor = Color.Transparent;
             ROO_OccupiedLBL.Font = new Font("Berlin Sans FB", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ROO_OccupiedLBL.ForeColor = SystemColors.ControlDarkDark;
-            ROO_OccupiedLBL.Location = new Point(246, 96);
+            ROO_OccupiedLBL.Location = new Point(246, 93);
             ROO_OccupiedLBL.Margin = new Padding(4, 3, 4, 3);
             ROO_OccupiedLBL.Name = "ROO_OccupiedLBL";
             ROO_OccupiedLBL.Size = new Size(89, 19);
@@ -1114,7 +1044,7 @@
             // 
             guna2CirclePictureBox1.FillColor = Color.Maroon;
             guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(209, 69);
+            guna2CirclePictureBox1.Location = new Point(209, 66);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges38;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -1139,7 +1069,7 @@
             guna2HtmlLabel48.BackColor = Color.Transparent;
             guna2HtmlLabel48.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel48.ForeColor = Color.Maroon;
-            guna2HtmlLabel48.Location = new Point(244, 69);
+            guna2HtmlLabel48.Location = new Point(244, 66);
             guna2HtmlLabel48.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel48.Name = "guna2HtmlLabel48";
             guna2HtmlLabel48.Size = new Size(65, 21);
@@ -1250,9 +1180,6 @@
             guna2Panel6.BorderColor = Color.Silver;
             guna2Panel6.BorderRadius = 15;
             guna2Panel6.BorderThickness = 2;
-            guna2Panel6.Controls.Add(DB_activeResultLBL);
-            guna2Panel6.Controls.Add(DB_expiredResultLBL);
-            guna2Panel6.Controls.Add(DB_inactiveResultLBL);
             guna2Panel6.Controls.Add(guna2HtmlLabel9);
             guna2Panel6.Controls.Add(guna2HtmlLabel10);
             guna2Panel6.Controls.Add(guna2HtmlLabel12);
@@ -1271,30 +1198,6 @@
             guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges50;
             guna2Panel6.Size = new Size(406, 327);
             guna2Panel6.TabIndex = 58;
-            // 
-            // DB_expiredResultLBL
-            // 
-            DB_expiredResultLBL.BackColor = Color.Transparent;
-            DB_expiredResultLBL.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DB_expiredResultLBL.ForeColor = Color.Maroon;
-            DB_expiredResultLBL.Location = new Point(355, 243);
-            DB_expiredResultLBL.Margin = new Padding(4, 3, 4, 3);
-            DB_expiredResultLBL.Name = "DB_expiredResultLBL";
-            DB_expiredResultLBL.Size = new Size(32, 21);
-            DB_expiredResultLBL.TabIndex = 54;
-            DB_expiredResultLBL.Text = "55%";
-            // 
-            // DB_inactiveResultLBL
-            // 
-            DB_inactiveResultLBL.BackColor = Color.Transparent;
-            DB_inactiveResultLBL.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DB_inactiveResultLBL.ForeColor = Color.Maroon;
-            DB_inactiveResultLBL.Location = new Point(354, 159);
-            DB_inactiveResultLBL.Margin = new Padding(4, 3, 4, 3);
-            DB_inactiveResultLBL.Name = "DB_inactiveResultLBL";
-            DB_inactiveResultLBL.Size = new Size(33, 21);
-            DB_inactiveResultLBL.TabIndex = 53;
-            DB_inactiveResultLBL.Text = "48%";
             // 
             // guna2HtmlLabel9
             // 
@@ -1403,7 +1306,6 @@
             guna2Panel7.BorderThickness = 2;
             guna2Panel7.Controls.Add(guna2HtmlLabel5);
             guna2Panel7.Controls.Add(guna2HtmlLabel1);
-            guna2Panel7.Controls.Add(guna2HtmlLabel32);
             guna2Panel7.Controls.Add(guna2HtmlLabel22);
             guna2Panel7.CustomBorderColor = Color.Silver;
             guna2Panel7.CustomBorderThickness = new Padding(0, 0, 3, 3);
@@ -1441,18 +1343,6 @@
             guna2HtmlLabel1.TabIndex = 48;
             guna2HtmlLabel1.Text = null;
             // 
-            // guna2HtmlLabel32
-            // 
-            guna2HtmlLabel32.BackColor = Color.Transparent;
-            guna2HtmlLabel32.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel32.ForeColor = Color.Gray;
-            guna2HtmlLabel32.Location = new Point(491, 24);
-            guna2HtmlLabel32.Margin = new Padding(4, 3, 4, 3);
-            guna2HtmlLabel32.Name = "guna2HtmlLabel32";
-            guna2HtmlLabel32.Size = new Size(96, 21);
-            guna2HtmlLabel32.TabIndex = 47;
-            guna2HtmlLabel32.Text = "Next 30 Days";
-            // 
             // guna2HtmlLabel22
             // 
             guna2HtmlLabel22.BackColor = Color.Transparent;
@@ -1471,7 +1361,6 @@
             guna2Panel8.BorderColor = Color.Silver;
             guna2Panel8.BorderRadius = 15;
             guna2Panel8.BorderThickness = 2;
-            guna2Panel8.Controls.Add(guna2HtmlLabel13);
             guna2Panel8.Controls.Add(guna2HtmlLabel14);
             guna2Panel8.CustomBorderColor = Color.Silver;
             guna2Panel8.CustomBorderThickness = new Padding(0, 0, 3, 3);
@@ -1484,18 +1373,6 @@
             guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges54;
             guna2Panel8.Size = new Size(616, 327);
             guna2Panel8.TabIndex = 58;
-            // 
-            // guna2HtmlLabel13
-            // 
-            guna2HtmlLabel13.BackColor = Color.Transparent;
-            guna2HtmlLabel13.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel13.ForeColor = Color.Gray;
-            guna2HtmlLabel13.Location = new Point(491, 21);
-            guna2HtmlLabel13.Margin = new Padding(4, 3, 4, 3);
-            guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            guna2HtmlLabel13.Size = new Size(96, 21);
-            guna2HtmlLabel13.TabIndex = 49;
-            guna2HtmlLabel13.Text = "Next 30 Days";
             // 
             // guna2HtmlLabel14
             // 
@@ -1515,7 +1392,6 @@
             guna2Panel12.BorderColor = Color.Silver;
             guna2Panel12.BorderRadius = 15;
             guna2Panel12.BorderThickness = 2;
-            guna2Panel12.Controls.Add(guna2HtmlLabel15);
             guna2Panel12.Controls.Add(guna2HtmlLabel16);
             guna2Panel12.CustomBorderColor = Color.Silver;
             guna2Panel12.CustomBorderThickness = new Padding(0, 0, 3, 3);
@@ -1528,18 +1404,6 @@
             guna2Panel12.ShadowDecoration.CustomizableEdges = customizableEdges56;
             guna2Panel12.Size = new Size(616, 327);
             guna2Panel12.TabIndex = 58;
-            // 
-            // guna2HtmlLabel15
-            // 
-            guna2HtmlLabel15.BackColor = Color.Transparent;
-            guna2HtmlLabel15.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel15.ForeColor = Color.Gray;
-            guna2HtmlLabel15.Location = new Point(491, 22);
-            guna2HtmlLabel15.Margin = new Padding(4, 3, 4, 3);
-            guna2HtmlLabel15.Name = "guna2HtmlLabel15";
-            guna2HtmlLabel15.Size = new Size(96, 21);
-            guna2HtmlLabel15.TabIndex = 47;
-            guna2HtmlLabel15.Text = "Next 30 Days";
             // 
             // guna2HtmlLabel16
             // 
@@ -1583,6 +1447,17 @@
             guna2HtmlLabel21.Size = new Size(241, 28);
             guna2HtmlLabel21.TabIndex = 33;
             guna2HtmlLabel21.Text = "Staff Attendance Today";
+            // 
+            // DB_TotalCollection_LBL
+            // 
+            DB_TotalCollection_LBL.BackColor = Color.Transparent;
+            DB_TotalCollection_LBL.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DB_TotalCollection_LBL.Location = new Point(31, 94);
+            DB_TotalCollection_LBL.Margin = new Padding(4, 3, 4, 3);
+            DB_TotalCollection_LBL.Name = "DB_TotalCollection_LBL";
+            DB_TotalCollection_LBL.Size = new Size(48, 40);
+            DB_TotalCollection_LBL.TabIndex = 32;
+            DB_TotalCollection_LBL.Text = "_ _";
             // 
             // UserControl_Admin_DB
             // 
@@ -1661,9 +1536,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel63;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DB_TotalCollection_LBL;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DB_activeResultLBL;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
@@ -1686,15 +1559,12 @@
         private Guna.Charts.WinForms.GunaChart gunaChart3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DB_appartmentResultLBL;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DB_transientResultLBL;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DB_HotelResultLBL;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel41;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel40;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel39;
         private Guna.UI2.WinForms.Guna2ProgressBar DB_TransientProgBar;
         private Guna.UI2.WinForms.Guna2ProgressBar DB_HotelProgBar;
-        private Guna.UI2.WinForms.Guna2ProgressBar DB_AppartmentProgBar;
+        private Guna.UI2.WinForms.Guna2ProgressBar DB_ApartmentProgBar;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private Guna.UI2.WinForms.Guna2HtmlLabel ROO_TotalRoomLBL;
@@ -1721,9 +1591,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel38;
         private Guna.Charts.WinForms.GunaBarDataset BarReservations;
         private Guna.Charts.WinForms.GunaChart DB_Reservations;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DB_expiredResultLBL
-            ;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DB_inactiveResultLBL;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
@@ -1732,20 +1599,18 @@
         private Guna.UI2.WinForms.Guna2ProgressBar DB_ActiveProgBar;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel22;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel32;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel21;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel23;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel DB_TotalCollection_LBL;
     }
 }

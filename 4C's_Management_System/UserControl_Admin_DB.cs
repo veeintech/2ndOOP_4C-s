@@ -1,4 +1,6 @@
-﻿
+﻿using Guna.Charts.WinForms;
+using System.Data;
+using System.Globalization;
 using System;
 using System.Data;
 using System.Drawing;
@@ -37,6 +39,18 @@ namespace _4C_s_Management_System
         // =========================================
 
         private System.Windows.Forms.Timer dashboardTimer;
+
+        // =========================================
+        // PROGRESS BAR RESULT LABELS
+        // =========================================
+
+        private Guna.UI2.WinForms.Guna2HtmlLabel apartmentRevenueLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel hotelRevenueLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel transientRevenueLabel;
+
+        private Guna.UI2.WinForms.Guna2HtmlLabel activeTenantLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel inactiveTenantLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel expiredTenantLabel;
 
         // =========================================
         // CONSTRUCTOR
@@ -133,6 +147,134 @@ namespace _4C_s_Management_System
         }
 
         // =========================================
+        // CREATE RESULT LABEL
+        // POSITION: UPPER RIGHT
+        // =========================================
+
+        private Guna.UI2.WinForms.Guna2HtmlLabel CreateProgressResultLabel(
+            Control alignmentLabel,
+            string labelName,
+            string initialText)
+        {
+            Guna.UI2.WinForms.Guna2HtmlLabel resultLabel =
+                new Guna.UI2.WinForms.Guna2HtmlLabel();
+
+            resultLabel.Name = labelName;
+            resultLabel.Text = initialText;
+
+            resultLabel.Font = new Font(
+                "Segoe UI",
+                9F,
+                FontStyle.Bold);
+
+            resultLabel.ForeColor = DarkMaroon;
+            resultLabel.BackColor = Color.Transparent;
+
+            resultLabel.AutoSize = false;
+
+            resultLabel.Size = new Size(
+                120,
+                alignmentLabel.Height);
+
+            resultLabel.TextAlignment =
+                ContentAlignment.MiddleRight;
+
+            Control parent = alignmentLabel.Parent;
+
+            if (parent != null)
+            {
+                parent.Controls.Add(resultLabel);
+
+                resultLabel.Location = new Point(
+                    Math.Max(
+                        0,
+                        parent.ClientSize.Width - resultLabel.Width - 25),
+                    alignmentLabel.Top);
+
+                resultLabel.Anchor =
+                    AnchorStyles.Top | AnchorStyles.Right;
+
+                resultLabel.BringToFront();
+
+                parent.SizeChanged += (s, e) =>
+                {
+                    if (!resultLabel.IsDisposed)
+                    {
+                        resultLabel.Location = new Point(
+                            Math.Max(
+                                0,
+                                parent.ClientSize.Width -
+                                resultLabel.Width - 25),
+                            alignmentLabel.Top);
+                    }
+                };
+            }
+
+            return resultLabel;
+        }
+
+        // =========================================
+        // INITIALIZE RESULT LABELS
+        // =========================================
+
+        private void InitializeProgressResultLabels()
+        {
+            if (apartmentRevenueLabel == null)
+            {
+                apartmentRevenueLabel =
+                    CreateProgressResultLabel(
+                        guna2HtmlLabel39,
+                        "ApartmentRevenueResult",
+                        "₱ 0.00");
+            }
+
+            if (hotelRevenueLabel == null)
+            {
+                hotelRevenueLabel =
+                    CreateProgressResultLabel(
+                        guna2HtmlLabel40,
+                        "HotelRevenueResult",
+                        "₱ 0.00");
+            }
+
+            if (transientRevenueLabel == null)
+            {
+                transientRevenueLabel =
+                    CreateProgressResultLabel(
+                        guna2HtmlLabel41,
+                        "TransientRevenueResult",
+                        "₱ 0.00");
+            }
+
+            if (activeTenantLabel == null)
+            {
+                activeTenantLabel =
+                    CreateProgressResultLabel(
+                        guna2HtmlLabel12,
+                        "ActiveTenantResult",
+                        "0%");
+            }
+
+            if (inactiveTenantLabel == null)
+            {
+                inactiveTenantLabel =
+                    CreateProgressResultLabel(
+                        guna2HtmlLabel10,
+                        "InactiveTenantResult",
+                        "0%");
+            }
+
+            if (expiredTenantLabel == null)
+            {
+                expiredTenantLabel =
+                    CreateProgressResultLabel(
+                        guna2HtmlLabel9,
+                        "ExpiredTenantResult",
+                        "0%");
+            }
+        }
+
+        // =========================================
         // DEFAULT VALUES
         // =========================================
 
@@ -142,6 +284,7 @@ namespace _4C_s_Management_System
             DB_availableRoomLBLL.Text = "0";
             DB_OccupiedRoomLBL.Text = "0";
 
+            // TOTAL COLLECTION WITH PESO SIGN
             DB_TotalCollection_LBL.Text = "₱ 0.00";
 
             ROO_TotalRoomLBL.Text = "0";
@@ -149,13 +292,11 @@ namespace _4C_s_Management_System
             ROO_OccupiedLBL.Text = "0 (0.00%)";
             ROO_ReservedLBL.Text = "0 (0.00%)";
 
-            DB_appartmentResultLBL.Text = "₱ 0.00";
-            DB_HotelResultLBL.Text = "₱ 0.00";
-            DB_transientResultLBL.Text = "₱ 0.00";
+            // PROPERTY REVENUE PROGRESS BARS
 
-            DB_AppartmentProgBar.Minimum = 0;
-            DB_AppartmentProgBar.Maximum = 100;
-            DB_AppartmentProgBar.Value = 0;
+            DB_ApartmentProgBar.Minimum = 0;
+            DB_ApartmentProgBar.Maximum = 100;
+            DB_ApartmentProgBar.Value = 0;
 
             DB_HotelProgBar.Minimum = 0;
             DB_HotelProgBar.Maximum = 100;
@@ -165,9 +306,7 @@ namespace _4C_s_Management_System
             DB_TransientProgBar.Maximum = 100;
             DB_TransientProgBar.Value = 0;
 
-            DB_activeResultLBL.Text = "0%";
-            DB_inactiveResultLBL.Text = "0%";
-            DB_expiredResultLBL.Text = "0%";
+            // TENANT STATUS PROGRESS BARS
 
             DB_ActiveProgBar.Minimum = 0;
             DB_ActiveProgBar.Maximum = 100;
@@ -180,6 +319,18 @@ namespace _4C_s_Management_System
             DB_ExpiredProgBar.Minimum = 0;
             DB_ExpiredProgBar.Maximum = 100;
             DB_ExpiredProgBar.Value = 0;
+
+            // INITIALIZE RESULT LABELS
+
+            InitializeProgressResultLabels();
+
+            apartmentRevenueLabel.Text = "₱ 0.00";
+            hotelRevenueLabel.Text = "₱ 0.00";
+            transientRevenueLabel.Text = "₱ 0.00";
+
+            activeTenantLabel.Text = "0%";
+            inactiveTenantLabel.Text = "0%";
+            expiredTenantLabel.Text = "0%";
         }
 
         // =========================================
@@ -264,12 +415,7 @@ namespace _4C_s_Management_System
             DB_MonthlyRevenue.Datasets.Add(LineMonthlyRev);
             DB_MonthlyRevenue.Update();
 
-            // =====================================
             // TOTAL COLLECTION
-            // SOURCE: PaymentTbl
-            // COLUMN: AmountPaid
-            // LABEL: DB_TotalCollection_LBL
-            // =====================================
 
             string totalQuery = @"
                 SELECT ISNULL(SUM(AmountPaid), 0)
@@ -280,6 +426,8 @@ namespace _4C_s_Management_System
 
             double totalCollection =
                 SafeDouble(totalResult);
+
+            // DISPLAY TOTAL COLLECTION WITH PESO SIGN
 
             DB_TotalCollection_LBL.Text =
                 "₱ " + totalCollection.ToString("N2");
@@ -363,20 +511,12 @@ namespace _4C_s_Management_System
                 }
             }
 
-            // =====================================
-            // GET TOTAL ROOMS DIRECTLY FROM TBLRoom
-            // =====================================
-
             string totalRoomQuery = @"
                 SELECT COUNT(*)
                 FROM TBLRoom;";
 
             int grandTotal = SafeInt(
                 AppDB.Instance.Scalar(totalRoomQuery));
-
-            // =====================================
-            // DOUGHNUT CHART DATA
-            // =====================================
 
             gunaDoughnutRoomStatus.DataPoints.Add(
                 new LPoint
@@ -414,25 +554,14 @@ namespace _4C_s_Management_System
             DB_StatusChart.Datasets.Add(gunaDoughnutRoomStatus);
             DB_StatusChart.Update();
 
-            // =====================================
-            // ADMIN DASHBOARD ROOM SUMMARY LABELS
-            // =====================================
-
-            // TOTAL ROOM
             DB_totalRoomLBL.Text =
                 grandTotal.ToString("N0");
 
-            // TOTAL AVAILABLE ROOM
             DB_availableRoomLBLL.Text =
                 available.ToString("N0");
 
-            // TOTAL OCCUPIED ROOM
             DB_OccupiedRoomLBL.Text =
                 occupied.ToString("N0");
-
-            // =====================================
-            // ROOM OVERVIEW LABELS
-            // =====================================
 
             ROO_TotalRoomLBL.Text =
                 grandTotal.ToString("N0");
@@ -523,24 +652,24 @@ namespace _4C_s_Management_System
             UpdatePropertyRevenue(
                 apartmentRevenue,
                 grandTotal,
-                DB_AppartmentProgBar,
-                DB_appartmentResultLBL);
+                DB_ApartmentProgBar,
+                apartmentRevenueLabel);
 
             UpdatePropertyRevenue(
                 hotelRevenue,
                 grandTotal,
                 DB_HotelProgBar,
-                DB_HotelResultLBL);
+                hotelRevenueLabel);
 
             UpdatePropertyRevenue(
                 transientRevenue,
                 grandTotal,
                 DB_TransientProgBar,
-                DB_transientResultLBL);
+                transientRevenueLabel);
         }
 
         // =========================================
-        // UPDATE PROPERTY PROGRESS BAR
+        // UPDATE PROPERTY REVENUE PROGRESS BAR
         // =========================================
 
         private void UpdatePropertyRevenue(
@@ -702,13 +831,15 @@ namespace _4C_s_Management_System
             DB_ExpiredProgBar.Maximum = 100;
             DB_ExpiredProgBar.Value = expiredPercentage;
 
-            DB_activeResultLBL.Text =
+            // DISPLAY PERCENTAGES AT UPPER RIGHT
+
+            activeTenantLabel.Text =
                 activePercentage + "%";
 
-            DB_inactiveResultLBL.Text =
+            inactiveTenantLabel.Text =
                 inactivePercentage + "%";
 
-            DB_expiredResultLBL.Text =
+            expiredTenantLabel.Text =
                 expiredPercentage + "%";
         }
 
@@ -756,6 +887,8 @@ namespace _4C_s_Management_System
 
             DataTable data = GetReportData(query);
 
+            // REMOVE PREVIOUSLY GENERATED CONTROLS
+
             for (int i = guna2Panel7.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = guna2Panel7.Controls[i];
@@ -769,7 +902,30 @@ namespace _4C_s_Management_System
             }
 
             guna2HtmlLabel22.Text = "Contracts Ending Soon";
-            guna2HtmlLabel32.Text = "Next 30 Days";
+
+            // DYNAMIC NEXT 30 DAYS SUBTITLE
+
+            Guna.UI2.WinForms.Guna2HtmlLabel next30DaysLabel =
+                new Guna.UI2.WinForms.Guna2HtmlLabel();
+
+            next30DaysLabel.Text = "Next 30 Days";
+
+            next30DaysLabel.Font =
+                new Font("Segoe UI", 10F, FontStyle.Regular);
+
+            next30DaysLabel.ForeColor =
+                Color.FromArgb(90, 90, 90);
+
+            next30DaysLabel.BackColor = Color.Transparent;
+            next30DaysLabel.AutoSize = true;
+
+            next30DaysLabel.Location = new Point(
+                Math.Max(25, guna2Panel7.Width - 130),
+                38);
+
+            next30DaysLabel.Tag = "ContractRow";
+
+            guna2Panel7.Controls.Add(next30DaysLabel);
 
             if (data.Rows.Count == 0)
             {
@@ -942,6 +1098,8 @@ namespace _4C_s_Management_System
             int openCount = SafeInt(
                 AppDB.Instance.Scalar(countQuery));
 
+            // REMOVE PREVIOUSLY GENERATED CONTROLS
+
             for (int i = guna2Panel8.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = guna2Panel8.Controls[i];
@@ -954,25 +1112,14 @@ namespace _4C_s_Management_System
                 }
             }
 
-            Guna.UI2.WinForms.Guna2HtmlLabel titleLabel =
-                new Guna.UI2.WinForms.Guna2HtmlLabel();
-
-            titleLabel.Text = "Pending Maintenance";
-            titleLabel.Font =
-                new Font("Georgia", 16F, FontStyle.Bold);
-
-            titleLabel.ForeColor = Maroon;
-            titleLabel.BackColor = Color.Transparent;
-            titleLabel.Location = new Point(25, 28);
-            titleLabel.AutoSize = true;
-            titleLabel.Tag = "MaintenanceRow";
-
-            guna2Panel8.Controls.Add(titleLabel);
+            // COUNT LABEL ONLY
+            // TITLE IS ALREADY IN DESIGNER
 
             Guna.UI2.WinForms.Guna2HtmlLabel countLabel =
                 new Guna.UI2.WinForms.Guna2HtmlLabel();
 
             countLabel.Text = openCount + " open";
+
             countLabel.Font =
                 new Font("Segoe UI", 10F);
 
@@ -1072,6 +1219,7 @@ namespace _4C_s_Management_System
                     new Guna.UI2.WinForms.Guna2HtmlLabel();
 
                 dateLabel.Text = reportedDate;
+
                 dateLabel.Font =
                     new Font("Segoe UI", 9.5F);
 
@@ -1085,6 +1233,7 @@ namespace _4C_s_Management_System
                     new Guna.UI2.WinForms.Guna2Panel();
 
                 statusPanel.Size = new Size(84, 30);
+
                 statusPanel.Location = new Point(
                     guna2Panel8.Width - 110,
                     y + 4);
@@ -1186,6 +1335,8 @@ namespace _4C_s_Management_System
                     P.PaymentID DESC;";
 
             DataTable data = GetReportData(query);
+
+            // REMOVE PREVIOUSLY GENERATED CONTROLS
 
             for (int i = guna2Panel12.Controls.Count - 1; i >= 0; i--)
             {
@@ -1330,26 +1481,14 @@ namespace _4C_s_Management_System
 
         private void LoadStaffAttendance()
         {
-            // Present: Time_IN <= 08:00 AM
-            // Late: Time_IN >= 08:01 AM
-            // Absent: No Time_IN record today
-
             string query = @"
                 SELECT
                     COUNT(
                         CASE
                             WHEN A.Time_IN IS NOT NULL
-                                 AND A.Time_IN <= '08:00:00'
                             THEN 1
                         END
                     ) AS PresentCount,
-
-                    COUNT(
-                        CASE
-                            WHEN A.Time_IN >= '08:01:00'
-                            THEN 1
-                        END
-                    ) AS LateCount,
 
                     COUNT(
                         CASE
@@ -1372,7 +1511,6 @@ namespace _4C_s_Management_System
             DataTable data = GetReportData(query);
 
             int present = 0;
-            int late = 0;
             int absent = 0;
 
             if (data.Rows.Count > 0)
@@ -1380,13 +1518,13 @@ namespace _4C_s_Management_System
                 DataRow row = data.Rows[0];
 
                 present = SafeInt(row["PresentCount"]);
-                late = SafeInt(row["LateCount"]);
                 absent = SafeInt(row["AbsentCount"]);
             }
 
             Guna.UI2.WinForms.Guna2Panel panel = guna2Panel13;
 
-            // Remove previously generated attendance controls
+            // REMOVE PREVIOUSLY GENERATED CONTROLS
+
             for (int i = panel.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = panel.Controls[i];
@@ -1399,7 +1537,8 @@ namespace _4C_s_Management_System
                 }
             }
 
-            // Update existing designer subtitle if available
+            // UPDATE EXISTING DESIGNER SUBTITLE
+
             Guna.UI2.WinForms.Guna2HtmlLabel designerSubHeader = null;
 
             foreach (Control control in panel.Controls)
@@ -1441,40 +1580,30 @@ namespace _4C_s_Management_System
                 panel.Controls.Add(countHeader);
             }
 
-            // Attendance status items
+            // PRESENT AND ABSENT ONLY
+
             var items = new[]
             {
                 new
                 {
                     Name = "Present",
-                    Count = present,
-                    Fill = Color.FromArgb(222, 240, 230),
-                    Text = Color.FromArgb(35, 110, 70)
+                    Count = present
                 },
-
-                new
-                {
-                    Name = "Late",
-                    Count = late,
-                    Fill = Color.FromArgb(250, 236, 190),
-                    Text = Color.FromArgb(145, 100, 0)
-                },
-
                 new
                 {
                     Name = "Absent",
-                    Count = absent,
-                    Fill = Color.FromArgb(250, 220, 220),
-                    Text = Color.FromArgb(190, 35, 35)
+                    Count = absent
                 }
             };
 
-            int startY = 75;
-            int rowSpacing = 58;
+            int startY = 85;
+            int rowSpacing = 85;
 
             for (int i = 0; i < items.Length; i++)
             {
                 int y = startY + (i * rowSpacing);
+
+                // STATUS LABEL
 
                 Guna.UI2.WinForms.Guna2HtmlLabel nameLabel =
                     new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -1482,29 +1611,39 @@ namespace _4C_s_Management_System
                 nameLabel.Text = items[i].Name;
 
                 nameLabel.Font =
-                    new Font("Segoe UI", 11F, FontStyle.Regular);
+                    new Font("Segoe UI", 11F, FontStyle.Bold);
 
                 nameLabel.ForeColor =
                     Color.FromArgb(35, 35, 35);
 
                 nameLabel.BackColor = Color.Transparent;
-                nameLabel.AutoSize = true;
-                nameLabel.Location = new Point(25, y + 4);
+                nameLabel.AutoSize = false;
+
+                nameLabel.Size = new Size(
+                    Math.Max(100, panel.Width - 50),
+                    25);
+
+                nameLabel.Location = new Point(25, y);
+
+                nameLabel.TextAlignment =
+                    ContentAlignment.MiddleCenter;
+
                 nameLabel.Tag = "StaffRow";
+
+                // YELLOW COUNT PILL
 
                 Guna.UI2.WinForms.Guna2Panel pill =
                     new Guna.UI2.WinForms.Guna2Panel();
 
-                pill.Size = new Size(52, 30);
-                pill.BorderRadius = 15;
-                pill.FillColor = items[i].Fill;
+                pill.Size = new Size(65, 32);
+                pill.BorderRadius = 16;
+
+                pill.FillColor =
+                    Color.FromArgb(255, 240, 195);
 
                 pill.Location = new Point(
-                    panel.Width - 25 - pill.Width,
-                    y);
-
-                pill.Anchor =
-                    AnchorStyles.Top | AnchorStyles.Right;
+                    (panel.Width - pill.Width) / 2,
+                    y + 29);
 
                 pill.Tag = "StaffRow";
 
@@ -1516,7 +1655,9 @@ namespace _4C_s_Management_System
                 countLabel.Font =
                     new Font("Segoe UI", 10F, FontStyle.Bold);
 
-                countLabel.ForeColor = items[i].Text;
+                countLabel.ForeColor =
+                    Color.FromArgb(145, 100, 0);
+
                 countLabel.BackColor = Color.Transparent;
                 countLabel.Dock = DockStyle.Fill;
 
@@ -1527,6 +1668,8 @@ namespace _4C_s_Management_System
 
                 panel.Controls.Add(nameLabel);
                 panel.Controls.Add(pill);
+
+                // DIVIDER
 
                 if (i < items.Length - 1)
                 {
@@ -1540,7 +1683,7 @@ namespace _4C_s_Management_System
                         1);
 
                     divider.Location =
-                        new Point(25, y + 42);
+                        new Point(25, y + 72);
 
                     divider.Anchor =
                         AnchorStyles.Top |
