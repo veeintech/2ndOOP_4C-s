@@ -1588,6 +1588,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoScrollMinSize = new Size(0, 1717);
             BackColor = Color.FromArgb(255, 249, 239);
             Controls.Add(guna2Panel13);
             Controls.Add(guna2Panel12);

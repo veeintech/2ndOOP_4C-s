@@ -175,8 +175,6 @@ namespace _4C_s_Management_System
             // Attendance labels
             guna2HtmlLabel66.Text = ZeroText;
             guna2HtmlLabel64.Text = ZeroText;
-            guna2HtmlLabel62.Text = ZeroText;
-            guna2HtmlLabel60.Text = ZeroText;
 
             // Apartment revenue
             guna2ProgressBar3.Value = 0;
@@ -650,8 +648,6 @@ namespace _4C_s_Management_System
 
             guna2HtmlLabel66.Text = ZeroText;
             guna2HtmlLabel64.Text = ZeroText;
-            guna2HtmlLabel62.Text = ZeroText;
-            guna2HtmlLabel60.Text = ZeroText;
         }
 
         // =========================================
