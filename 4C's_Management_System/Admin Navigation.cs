@@ -23,7 +23,7 @@ namespace _4C_s_Management_System
           Guna2Button BWC1, Guna2Button BWTC2, Guna2Button BWTC3,
           Guna2Button BWTC4, Guna2Button BWTC5, Guna2Button BWTC6,
           Guna2Button BWTC7, Guna2Button BWTC8, Guna2Button BWTC9,
-          Guna2Button BWTC10
+          Guna2Button BWTC10, Guna2Button BWTC11
           )
         {
             BWC1.FillColor = Color.FromArgb(212, 167, 44);
@@ -37,6 +37,7 @@ namespace _4C_s_Management_System
             BWTC8.FillColor = Color.Transparent;
             BWTC9.FillColor = Color.Transparent;
             BWTC10.FillColor = Color.Transparent;
+            BWTC11.FillColor = Color.Transparent;
         }
 
         private void UserNav_Panel_shift_Paint(object sender, PaintEventArgs e)
@@ -57,7 +58,8 @@ namespace _4C_s_Management_System
               UserNav_ReservationBtn,
               userNav_DashboardBtn,
               UserNav_MaintenanceBtn,
-              btn_branch
+              btn_branch,
+                btn_task
               );
 
             try
@@ -83,7 +85,8 @@ namespace _4C_s_Management_System
            userNav_RoomsBtn,
            userNav_DashboardBtn,
            UserNav_MaintenanceBtn,
-           btn_branch
+           btn_branch,
+           btn_task
            );
 
             try
@@ -109,7 +112,8 @@ namespace _4C_s_Management_System
               UserNav_PaymentBtn,
               UserNav_ReservationBtn,
               UserNav_MaintenanceBtn,
-              btn_branch
+              btn_branch,
+                btn_task
               );
 
             try
@@ -135,7 +139,8 @@ namespace _4C_s_Management_System
               UserNav_LogoutBtn,
               UserNav_PaymentBtn,
               UserNav_MaintenanceBtn,
-              btn_branch
+              btn_branch,
+                btn_task
               );
 
             try
@@ -161,7 +166,8 @@ namespace _4C_s_Management_System
               UserNav_CustomerBtn,
               UserNav_LogoutBtn,
               UserNav_MaintenanceBtn,
-              btn_branch
+              btn_branch,
+                btn_task
               );
 
             try
@@ -187,7 +193,8 @@ namespace _4C_s_Management_System
              UserNav_CustomerBtn,
              UserNav_LogoutBtn,
              UserNav_MaintenanceBtn,
-             btn_branch
+             btn_branch,
+                btn_task
              );
 
             try
@@ -213,7 +220,8 @@ namespace _4C_s_Management_System
              UserNav_Staff_Btn,
              UserNav_CustomerBtn,
              UserNav_LogoutBtn,
-             btn_branch
+             btn_branch,
+                btn_task
              );
 
             try
@@ -246,7 +254,8 @@ namespace _4C_s_Management_System
              userNav_RoomsBtn,
              UserNav_Staff_Btn,
              UserNav_LogoutBtn,
-             btn_branch
+             btn_branch,
+                btn_task
              );
 
             try
@@ -279,12 +288,40 @@ namespace _4C_s_Management_System
              userNav_DashboardBtn,
              userNav_RoomsBtn,
              UserNav_Staff_Btn,
-             UserNav_LogoutBtn
+             UserNav_LogoutBtn,
+                 btn_task
              );
 
             try
             {
                 UserControl_Admin_Branch rm = new UserControl_Admin_Branch();
+                MainControlClass.ShowControl(rm, UserNav_Panel_shift);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+   
+        private void btn_task_Click(object sender, EventArgs e)
+        {
+            designBTN(
+                 btn_task,
+             btn_branch,
+             UserNav_CustomerBtn,
+             UserNav_MaintenanceBtn,
+             UserNav_TenantsBtn,
+             UserNav_PaymentBtn,
+             UserNav_ReservationBtn,
+             userNav_DashboardBtn,
+             userNav_RoomsBtn,
+             UserNav_Staff_Btn,
+             UserNav_LogoutBtn
+             );
+
+            try
+            {
+                UserControl_Admin_Task_Manager rm = new UserControl_Admin_Task_Manager();
                 MainControlClass.ShowControl(rm, UserNav_Panel_shift);
             }
             catch (Exception ex)

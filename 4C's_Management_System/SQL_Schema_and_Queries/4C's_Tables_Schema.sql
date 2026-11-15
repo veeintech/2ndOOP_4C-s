@@ -200,3 +200,34 @@ CREATE TABLE [dbo].[AttendanceTbl] (
     CONSTRAINT [FK_AttendanceTbl_StaffTbl] FOREIGN KEY ([StaffID]) REFERENCES [dbo].[StaffTbl] ([StaffID])
 );
 
+
+-- ==========================================
+-- 11. TaskTbl
+-- ==========================================
+CREATE TABLE [dbo].[TaskTbl] (
+    [TaskID]       VARCHAR (20)  NOT NULL,
+    [TaskName]     VARCHAR (100) NOT NULL,
+    [Description]  NVARCHAR (500) NULL,
+    [StaffID]      VARCHAR (20)  NOT NULL,
+    [BranchID]     VARCHAR (15)  NOT NULL,
+    [DateAssigned] DATETIME     DEFAULT (GETDATE()) NOT NULL,
+    [Deadline]     DATETIME     NOT NULL,
+    [Status]       VARCHAR (20) DEFAULT ('Pending') NOT NULL,
+
+    PRIMARY KEY CLUSTERED ([TaskID] ASC),
+
+    CONSTRAINT [FK_TaskTbl_StaffTbl]
+        FOREIGN KEY ([StaffID])
+        REFERENCES [dbo].[StaffTbl] ([StaffID]),
+
+    CONSTRAINT [FK_TaskTbl_BranchTbl]
+        FOREIGN KEY ([BranchID])
+        REFERENCES [dbo].[BranchTbl] ([BranchId]),
+
+    CONSTRAINT [CK_TaskTbl_Status]
+        CHECK ([Status] IN
+        ('Pending', 'In Progress', 'Completed', 'Cancelled'))
+);
+);
+
+

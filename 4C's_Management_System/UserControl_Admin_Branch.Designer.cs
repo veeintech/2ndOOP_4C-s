@@ -474,6 +474,7 @@
             BR_statustxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             BR_statustxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_statustxt.Font = new Font("Segoe UI", 9F);
+            BR_statustxt.ForeColor = Color.Black;
             BR_statustxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_statustxt.Location = new Point(17, 299);
             BR_statustxt.Margin = new Padding(3, 4, 3, 4);
@@ -495,6 +496,7 @@
             BR_addresstxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             BR_addresstxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_addresstxt.Font = new Font("Segoe UI", 9F);
+            BR_addresstxt.ForeColor = Color.Black;
             BR_addresstxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_addresstxt.Location = new Point(17, 218);
             BR_addresstxt.Margin = new Padding(3, 4, 3, 4);
@@ -538,6 +540,7 @@
             BR_branchnametxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             BR_branchnametxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_branchnametxt.Font = new Font("Segoe UI", 9F);
+            BR_branchnametxt.ForeColor = Color.Black;
             BR_branchnametxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_branchnametxt.Location = new Point(17, 134);
             BR_branchnametxt.Margin = new Padding(3, 4, 3, 4);
@@ -559,6 +562,7 @@
             BR_branchidtxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             BR_branchidtxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_branchidtxt.Font = new Font("Segoe UI", 9F);
+            BR_branchidtxt.ForeColor = Color.Black;
             BR_branchidtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             BR_branchidtxt.Location = new Point(17, 53);
             BR_branchidtxt.Margin = new Padding(3, 4, 3, 4);

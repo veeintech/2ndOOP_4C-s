@@ -885,9 +885,9 @@
             guna2HtmlLabel2.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.Location = new Point(133, 87);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(379, 23);
+            guna2HtmlLabel2.Size = new Size(342, 23);
             guna2HtmlLabel2.TabIndex = 93;
-            guna2HtmlLabel2.Text = "Manage your admin account and branch information.";
+            guna2HtmlLabel2.Text = "Manage admin account and branch information.";
             // 
             // guna2PictureBox1
             // 
