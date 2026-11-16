@@ -72,6 +72,8 @@
             Guna.Charts.WinForms.LPoint lPoint9 = new Guna.Charts.WinForms.LPoint();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -105,8 +107,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges65 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             TM_agreementendtxt = new Guna.UI2.WinForms.Guna2DateTimePicker();
             TM_agreementstartTXT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             TM_deleteBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -149,6 +149,7 @@
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             gunaBarDataset1 = new Guna.Charts.WinForms.GunaBarDataset();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             TM_branchidtxt = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2CirclePictureBox9 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -168,7 +169,6 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox6).BeginInit();
@@ -256,7 +256,7 @@
             TM_statustxt.FocusedColor = Color.FromArgb(94, 148, 255);
             TM_statustxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_statustxt.Font = new Font("Segoe UI", 10F);
-            TM_statustxt.ForeColor = Color.FromArgb(68, 88, 112);
+            TM_statustxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_statustxt.ItemHeight = 30;
             TM_statustxt.Items.AddRange(new object[] { "Active", "Pending", "Inactive" });
             TM_statustxt.Location = new Point(819, 205);
@@ -317,7 +317,7 @@
             TM_tenantidtxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_tenantidtxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_tenantidtxt.Font = new Font("Segoe UI", 9F);
-            TM_tenantidtxt.ForeColor = Color.FromArgb(64, 64, 64);
+            TM_tenantidtxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_tenantidtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_tenantidtxt.Location = new Point(819, 88);
             TM_tenantidtxt.Margin = new Padding(3, 4, 3, 4);
@@ -387,6 +387,7 @@
             TM_monthlyrenttxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_monthlyrenttxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_monthlyrenttxt.Font = new Font("Segoe UI", 9F);
+            TM_monthlyrenttxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_monthlyrenttxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_monthlyrenttxt.Location = new Point(819, 166);
             TM_monthlyrenttxt.Margin = new Padding(3, 4, 3, 4);
@@ -487,7 +488,7 @@
             TM_fullnametxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_fullnametxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_fullnametxt.Font = new Font("Segoe UI", 9F);
-            TM_fullnametxt.ForeColor = Color.FromArgb(64, 64, 64);
+            TM_fullnametxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_fullnametxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_fullnametxt.Location = new Point(233, 88);
             TM_fullnametxt.Margin = new Padding(3, 4, 3, 4);
@@ -565,6 +566,7 @@
             TM_AdressTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_AdressTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_AdressTxt.Font = new Font("Segoe UI", 9F);
+            TM_AdressTxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_AdressTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_AdressTxt.Location = new Point(233, 166);
             TM_AdressTxt.Margin = new Padding(3, 4, 3, 4);
@@ -607,6 +609,7 @@
             TM_contacttxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_contacttxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_contacttxt.Font = new Font("Segoe UI", 9F);
+            TM_contacttxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_contacttxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_contacttxt.Location = new Point(233, 126);
             TM_contacttxt.Margin = new Padding(3, 4, 3, 4);
@@ -821,6 +824,28 @@
             guna2Panel2.Size = new Size(1237, 343);
             guna2Panel2.TabIndex = 93;
             // 
+            // guna2Button2
+            // 
+            guna2Button2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            guna2Button2.BackColor = Color.Transparent;
+            guna2Button2.BorderColor = Color.Silver;
+            guna2Button2.BorderRadius = 6;
+            guna2Button2.BorderThickness = 1;
+            guna2Button2.CustomizableEdges = customizableEdges33;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Teal;
+            guna2Button2.Font = new Font("Baskerville Old Face", 10.2F);
+            guna2Button2.ForeColor = Color.WhiteSmoke;
+            guna2Button2.Location = new Point(977, 264);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            guna2Button2.Size = new Size(130, 35);
+            guna2Button2.TabIndex = 136;
+            guna2Button2.Text = "Clear";
+            // 
             // TM_branchidtxt
             // 
             TM_branchidtxt.BorderColor = Color.Maroon;
@@ -833,7 +858,7 @@
             TM_branchidtxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_branchidtxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_branchidtxt.Font = new Font("Segoe UI", 9F);
-            TM_branchidtxt.ForeColor = Color.FromArgb(64, 64, 64);
+            TM_branchidtxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_branchidtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_branchidtxt.Location = new Point(819, 128);
             TM_branchidtxt.Margin = new Padding(3, 4, 3, 4);
@@ -1186,28 +1211,6 @@
             guna2PictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox6.TabIndex = 92;
             guna2PictureBox6.TabStop = false;
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            guna2Button2.BackColor = Color.Transparent;
-            guna2Button2.BorderColor = Color.Silver;
-            guna2Button2.BorderRadius = 6;
-            guna2Button2.BorderThickness = 1;
-            guna2Button2.CustomizableEdges = customizableEdges33;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.Teal;
-            guna2Button2.Font = new Font("Baskerville Old Face", 10.2F);
-            guna2Button2.ForeColor = Color.WhiteSmoke;
-            guna2Button2.Location = new Point(977, 264);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            guna2Button2.Size = new Size(130, 35);
-            guna2Button2.TabIndex = 136;
-            guna2Button2.Text = "Clear";
             // 
             // UserControl_Admin_Tenants
             // 
