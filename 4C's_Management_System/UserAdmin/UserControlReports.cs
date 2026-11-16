@@ -455,7 +455,7 @@ namespace _4C_s_Management_System
             DataTable rev = GetReportData(@"
                 SELECT SUM(ISNULL(AmountPaid, 0)) AS Total
                 FROM PaymentTbl
-                WHERE 1 = 1"
+                WHERE PaymentStatus = 'Paid'"
                 + BranchFilter("BranchID") + ";");
 
             double totalRevenue =
@@ -544,7 +544,8 @@ namespace _4C_s_Management_System
                     YEAR(PaymentDate) AS SortYear,
                     MONTH(PaymentDate) AS SortMonth
                 FROM PaymentTbl
-                WHERE PaymentDate IS NOT NULL"
+                WHERE PaymentDate IS NOT NULL
+                    AND PaymentStatus = 'Paid'"
                 + BranchFilter("BranchID") + @"
                 GROUP BY
                     YEAR(PaymentDate),
@@ -901,7 +902,8 @@ namespace _4C_s_Management_System
                     ON P.ReservationID = Res.ReservationId
                 INNER JOIN TBLRoom R
                     ON Res.RoomId = R.RoomId
-                WHERE P.ReservationID IS NOT NULL"
+                WHERE P.ReservationID IS NOT NULL
+                    AND P.PaymentStatus = 'Paid'"
                 + BranchFilter("P.BranchID") + @"
                 GROUP BY R.RoomType;";
 
@@ -1104,7 +1106,8 @@ namespace _4C_s_Management_System
                     MONTH(PaymentDate) AS SortMonth
                 FROM PaymentTbl
                 WHERE TenantID IS NOT NULL
-                    AND PaymentDate IS NOT NULL"
+                    AND PaymentDate IS NOT NULL
+                    AND PaymentStatus = 'Paid'"
                 + BranchFilter("BranchID") + @"
                 GROUP BY
                     YEAR(PaymentDate),

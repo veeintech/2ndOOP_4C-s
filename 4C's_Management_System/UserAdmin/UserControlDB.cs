@@ -1,5 +1,4 @@
-﻿
-using _4C_s_Management_System.Classess;
+﻿using _4C_s_Management_System.Classess;
 using Guna.Charts.WinForms;
 using Guna.UI2.WinForms;
 using System;
@@ -54,9 +53,6 @@ namespace _4C_s_Management_System
             // DATE AND TIME TIMER
             RM_Timer.Interval = 1000;
             RM_Timer.Tick += RM_Timer_Tick;
-
-            // INITIAL TOTAL COLLECTION VALUE
-            DB_TotalCollection_LBL.Text = "₱ 0.00";
         }
 
         // =========================================
@@ -92,9 +88,6 @@ namespace _4C_s_Management_System
             object sender,
             EventArgs e)
         {
-            // SHOW DEFAULT VALUE FIRST
-            DB_TotalCollection_LBL.Text = "₱ 0.00";
-
             RefreshData();
 
             RM_Panel_DateTime.FillColor =
@@ -498,9 +491,6 @@ namespace _4C_s_Management_System
         {
             try
             {
-                // DEFAULT VALUE
-                DB_TotalCollection_LBL.Text = "₱ 0.00";
-
                 const string query = @"
                     SELECT
                         ISNULL(SUM(AmountPaid), 0)
@@ -527,8 +517,6 @@ namespace _4C_s_Management_System
             }
             catch (Exception ex)
             {
-                DB_TotalCollection_LBL.Text = "₱ 0.00";
-
                 MessageBox.Show(
                     "Error loading Total Collection:\n\n" +
                     ex.Message,
