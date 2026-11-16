@@ -68,15 +68,20 @@ CREATE TABLE [dbo].[TenantTbl] (
 
 CREATE TABLE [dbo].[UserTbl] (
     [UserId]   VARCHAR (20)  NOT NULL,
+	[StaffId]  VARCHAR (20)  NOT NULL,
     [BranchId] VARCHAR (15)  NOT NULL,
     [UserName] VARCHAR (30)  NOT NULL,
     [Password] VARCHAR (255) NOT NULL,
     [Role]     VARCHAR (20)  NOT NULL,
     [Status]   VARCHAR (10)  NOT NULL,
+
     CONSTRAINT [PK_UserTbl] PRIMARY KEY CLUSTERED ([UserId] ASC),
-    CONSTRAINT [FK_UserTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId]),
-    CONSTRAINT [UQ_UserTbl_UserName] UNIQUE ([UserName])
+	CONSTRAINT [FK_UserTbl_StaffId] FOREIGN KEY ([StaffId]) REFERENCES [dbo].[StaffTbl] ([StaffID]),
+	CONSTRAINT [UQ_UserTbl_UserName] UNIQUE NONCLUSTERED ([UserName] ASC),
+    CONSTRAINT [FK_UserTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
 );
+
+
 
 -- ==========================================
 -- 6. ReservationTbl
@@ -163,26 +168,20 @@ CREATE TABLE [dbo].[PaymentTbl] (
 -- 9. StaffTbl
 -- ==========================================
 
-CREATE TABLE dbo.StaffTbl
-(
-    StaffID VARCHAR(20) NOT NULL PRIMARY KEY,
-    BranchID VARCHAR(15) NOT NULL,
-    FullName VARCHAR(100) NOT NULL,
-    ContactNumber VARCHAR(20) NOT NULL,
-    Email VARCHAR(100) NOT NULL,
-    Address VARCHAR(100) NOT NULL,
-    Gender CHAR(1) NOT NULL,
-    JobPosition VARCHAR(30),
-    DateHired DATETIME,
-    SalaryRate DECIMAL(10,2),
-    Status VARCHAR(30) NOT NULL,
-
-    CONSTRAINT FK_StaffTbl_BranchTbl
-        FOREIGN KEY (BranchID)
-        REFERENCES dbo.BranchTbl(BranchId),
-
-    CONSTRAINT CK_StaffTbl_SalaryRate
-        CHECK (SalaryRate IS NULL OR SalaryRate >= 0)
+CREATE TABLE [dbo].[StaffTbl] (
+    [StaffID]       VARCHAR (20)    NOT NULL,
+    [BranchID]      VARCHAR (15)    NOT NULL,
+    [FullName]      VARCHAR (100)   NOT NULL,
+    [ContactNumber] VARCHAR (12)    NOT NULL,
+    [Email]         VARCHAR (40)    NOT NULL,
+    [Adress]        VARCHAR (100)   NOT NULL,
+    [Gender]        CHAR (1)        NOT NULL,
+    [JobPosition]   VARCHAR (30)    NULL,
+    [Datehired]     DATETIME        NULL,
+    [SalaryRate]    DECIMAL (10, 2) NULL,
+    [Status]        VARCHAR (30)    NOT NULL,
+    PRIMARY KEY CLUSTERED ([StaffID] ASC),
+    CONSTRAINT [FK_StaffTbl_BranchTbl] FOREIGN KEY ([BranchID]) REFERENCES [dbo].[BranchTbl] ([BranchId])
 );
 
 -- ==========================================

@@ -172,7 +172,6 @@
             guna2PictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox8.TabIndex = 138;
             guna2PictureBox8.TabStop = false;
-            guna2PictureBox8.Click += guna2PictureBox8_Click;
             // 
             // RR_searchresID
             // 
@@ -701,7 +700,6 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 128, 128);
             dataGridViewCellStyle1.SelectionForeColor = Color.Maroon;
             dgv_monitoring.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgv_monitoring.BackgroundColor = Color.Silver;
             dgv_monitoring.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.Maroon;
@@ -743,7 +741,6 @@
             dgv_monitoring.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Maroon;
             dgv_monitoring.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
             dgv_monitoring.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Maroon;
-            dgv_monitoring.ThemeStyle.BackColor = Color.Silver;
             dgv_monitoring.ThemeStyle.HeaderStyle.BackColor = Color.Maroon;
             dgv_monitoring.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dgv_monitoring.ThemeStyle.HeaderStyle.Height = 30;
@@ -1113,6 +1110,7 @@
             Controls.Add(guna2Panel1);
             Name = "UserControl_Admin_Reservations";
             Size = new Size(1332, 1248);
+            Load += UserControl_Admin_Reservations_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox8).EndInit();
             RR_Panelstatus.ResumeLayout(false);
             RR_Panelstatus.PerformLayout();
