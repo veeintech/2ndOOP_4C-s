@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Data;
 using System.Globalization;
 using System.Net.Mail;
@@ -10,9 +9,9 @@ namespace _4C_s_Management_System
 {
     public partial class UserControlStaff : UserControl
     {
-        // =========================
+        // ==========================================
         // VARIABLES
-        // =========================
+        // ==========================================
 
         public string branchid = AccessBranch_ByForm.BranchId;
 
@@ -35,9 +34,9 @@ namespace _4C_s_Management_System
             DGV_Attendance.DataError += DGV_Attendance_DataError;
         }
 
-        // =====================================================
+        // ==========================================
         // CONVERT SQL TIME TO TIMEONLY
-        // =====================================================
+        // ==========================================
 
         private TimeOnly? ConvertToTimeOnly(object value)
         {
@@ -63,9 +62,9 @@ namespace _4C_s_Management_System
             return null;
         }
 
-        // =====================================================
+        // ==========================================
         // AUTOMATIC DAILY ATTENDANCE GENERATION
-        // =====================================================
+        // ==========================================
 
         public void EnsureDailyAttendanceRecords()
         {
@@ -168,9 +167,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // CREATE ATTENDANCE WHEN STAFF IS ACTIVATED
-        // =====================================================
+        // ==========================================
 
         public void CreateAttendanceForActivatedStaff(string staffID)
         {
@@ -265,9 +264,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // LOAD ATTENDANCE GRID
-        // =====================================================
+        // ==========================================
 
         public void loadattendance()
         {
@@ -324,9 +323,6 @@ namespace _4C_s_Management_System
                     DGV_Attendance.Columns["Date"]
                         .DefaultCellStyle.Format = "MMM dd, yyyy";
 
-                    // Do not set "hh:mm tt" directly on SQL TIME columns.
-                    // The CellFormatting event handles their display.
-
                     DGV_Attendance.ClearSelection();
                 }
             }
@@ -341,9 +337,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // ATTENDANCE GRID TIME FORMATTING
-        // =====================================================
+        // ==========================================
 
         private void DGV_Attendance_CellFormatting(
             object sender,
@@ -375,9 +371,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // ATTENDANCE GRID DATA ERROR
-        // =====================================================
+        // ==========================================
 
         private void DGV_Attendance_DataError(
             object sender,
@@ -387,9 +383,9 @@ namespace _4C_s_Management_System
             e.Cancel = false;
         }
 
-        // =====================================================
+        // ==========================================
         // FORM LOAD
-        // =====================================================
+        // ==========================================
 
         private void UserControlStaff_Load(object sender, EventArgs e)
         {
@@ -435,9 +431,9 @@ namespace _4C_s_Management_System
             UpdateAttendanceButtons();
         }
 
-        // =====================================================
+        // ==========================================
         // LOAD SELECTED STAFF ATTENDANCE FOR TODAY
-        // =====================================================
+        // ==========================================
 
         private void LoadSelectedStaffAttendance()
         {
@@ -500,9 +496,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // UPDATE TIME IN / TIME OUT BUTTON STATES
-        // =====================================================
+        // ==========================================
 
         private void UpdateAttendanceButtons()
         {
@@ -584,9 +580,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // LOAD STAFF
-        // =====================================================
+        // ==========================================
 
         private void LoadStaff()
         {
@@ -684,9 +680,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // DASHBOARD COUNTS
-        // =====================================================
+        // ==========================================
 
         private void LoadStaffCounts()
         {
@@ -744,9 +740,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // GET GENDER VALUE
-        // =====================================================
+        // ==========================================
 
         private string GetGenderValue()
         {
@@ -758,10 +754,6 @@ namespace _4C_s_Management_System
 
             return "";
         }
-
-        // =====================================================
-        // DISPLAY GENDER VALUE
-        // =====================================================
 
         private string GetGenderText(object value)
         {
@@ -780,9 +772,9 @@ namespace _4C_s_Management_System
             return "";
         }
 
-        // =====================================================
+        // ==========================================
         // GET CONTACT NUMBER
-        // =====================================================
+        // ==========================================
 
         private string GetContactDigits()
         {
@@ -798,9 +790,9 @@ namespace _4C_s_Management_System
             return digits;
         }
 
-        // =====================================================
+        // ==========================================
         // VALIDATE STAFF INPUT
-        // =====================================================
+        // ==========================================
 
         private bool ValidateStaffInput()
         {
@@ -813,8 +805,7 @@ namespace _4C_s_Management_System
 
             if (txt_fullname.Text.Trim().Length > 100)
             {
-                MessageBox.Show(
-                    "Full Name cannot exceed 100 characters.");
+                MessageBox.Show("Full Name cannot exceed 100 characters.");
                 txt_fullname.Focus();
                 return false;
             }
@@ -854,8 +845,7 @@ namespace _4C_s_Management_System
 
             if (emailText.Length > 40)
             {
-                MessageBox.Show(
-                    "Email cannot exceed 40 characters.");
+                MessageBox.Show("Email cannot exceed 40 characters.");
                 txt_email.Focus();
                 return false;
             }
@@ -866,16 +856,14 @@ namespace _4C_s_Management_System
 
                 if (email.Address != emailText)
                 {
-                    MessageBox.Show(
-                        "Please enter a valid Email Address.");
+                    MessageBox.Show("Please enter a valid Email Address.");
                     txt_email.Focus();
                     return false;
                 }
             }
             catch
             {
-                MessageBox.Show(
-                    "Please enter a valid Email Address.");
+                MessageBox.Show("Please enter a valid Email Address.");
                 txt_email.Focus();
                 return false;
             }
@@ -889,8 +877,7 @@ namespace _4C_s_Management_System
 
             if (txt_address.Text.Trim().Length > 100)
             {
-                MessageBox.Show(
-                    "Address cannot exceed 100 characters.");
+                MessageBox.Show("Address cannot exceed 100 characters.");
                 txt_address.Focus();
                 return false;
             }
@@ -904,8 +891,7 @@ namespace _4C_s_Management_System
 
             if (cb_job.Text.Trim().Length > 30)
             {
-                MessageBox.Show(
-                    "Job Position cannot exceed 30 characters.");
+                MessageBox.Show("Job Position cannot exceed 30 characters.");
                 cb_job.Focus();
                 return false;
             }
@@ -913,9 +899,9 @@ namespace _4C_s_Management_System
             return true;
         }
 
-        // =====================================================
+        // ==========================================
         // CHECK DUPLICATE STAFF ID
-        // =====================================================
+        // ==========================================
 
         private bool StaffIDExists(string staffID)
         {
@@ -934,9 +920,9 @@ namespace _4C_s_Management_System
             return count > 0;
         }
 
-        // =====================================================
+        // ==========================================
         // ADD STAFF
-        // =====================================================
+        // ==========================================
 
         private void btn_add_staff_Click(object sender, EventArgs e)
         {
@@ -965,7 +951,6 @@ namespace _4C_s_Management_System
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning
                     );
-
                     return;
                 }
 
@@ -977,7 +962,6 @@ namespace _4C_s_Management_System
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning
                     );
-
                     return;
                 }
 
@@ -1056,9 +1040,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // SELECT STAFF FROM STAFF GRID
-        // =====================================================
+        // ==========================================
 
         private void dgv_staff_CellClick(
             object sender,
@@ -1128,7 +1112,6 @@ namespace _4C_s_Management_System
                 DisplayRightPanel();
 
                 LoadSelectedStaffAttendance();
-
                 UpdateAttendanceButtons();
             }
             catch (Exception ex)
@@ -1142,9 +1125,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // RIGHT PANEL DETAILS
-        // =====================================================
+        // ==========================================
 
         private void DisplayRightPanel()
         {
@@ -1171,9 +1154,9 @@ namespace _4C_s_Management_System
             lbl_salary.Text = txt_salary.Text;
         }
 
-        // =====================================================
+        // ==========================================
         // ENABLE / DISABLE FIELDS
-        // =====================================================
+        // ==========================================
 
         private void SetFieldsEnabled(bool enabled)
         {
@@ -1194,9 +1177,9 @@ namespace _4C_s_Management_System
                 string.IsNullOrWhiteSpace(selectedStaffID);
         }
 
-        // =====================================================
+        // ==========================================
         // EDIT STAFF
-        // =====================================================
+        // ==========================================
 
         private void btn_edit_Click_1(object sender, EventArgs e)
         {
@@ -1216,9 +1199,9 @@ namespace _4C_s_Management_System
             SetFieldsEnabled(true);
         }
 
-        // =====================================================
+        // ==========================================
         // UPDATE STAFF
-        // =====================================================
+        // ==========================================
 
         private void btn_ud_Click(object sender, EventArgs e)
         {
@@ -1266,10 +1249,18 @@ namespace _4C_s_Management_System
                         return;
                     }
 
+                    if (salaryValue < 0)
+                    {
+                        MessageBox.Show(
+                            "Salary Rate cannot be negative.");
+
+                        txt_salary.Focus();
+                        return;
+                    }
+
                     salary = salaryValue;
                 }
 
-                // Datehired is intentionally NOT updated here.
                 const string query = @"
                     UPDATE dbo.StaffTbl
                     SET
@@ -1332,9 +1323,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // CLEAR FORM
-        // =====================================================
+        // ==========================================
 
         private void ClearFields()
         {
@@ -1386,9 +1377,9 @@ namespace _4C_s_Management_System
             DGV_Attendance.ClearSelection();
         }
 
-        // =====================================================
+        // ==========================================
         // SELECT ATTENDANCE RECORD
-        // =====================================================
+        // ==========================================
 
         private void attendance_celllClick(
             object sender,
@@ -1447,9 +1438,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // TIME IN
-        // =====================================================
+        // ==========================================
 
         private void btn_timein_Click(object sender, EventArgs e)
         {
@@ -1536,9 +1527,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // TIME OUT
-        // =====================================================
+        // ==========================================
 
         private void btn_timeout_Click(object sender, EventArgs e)
         {
@@ -1625,9 +1616,9 @@ namespace _4C_s_Management_System
             }
         }
 
-        // =====================================================
+        // ==========================================
         // OTHER EVENTS
-        // =====================================================
+        // ==========================================
 
         private void guna2Panel11_Paint(
             object sender,
@@ -1647,9 +1638,10 @@ namespace _4C_s_Management_System
         {
         }
 
-        private void panel2_staff_info_Paint(object sender, PaintEventArgs e)
+        private void panel2_staff_info_Paint(
+            object sender,
+            PaintEventArgs e)
         {
-
         }
     }
 }

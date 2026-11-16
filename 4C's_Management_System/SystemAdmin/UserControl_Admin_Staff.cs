@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _4C_s_Management_System
@@ -18,31 +14,48 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
 
+            // FORM LOAD
             this.Load -= UserControl_Admin_Staff_Load;
             this.Load += UserControl_Admin_Staff_Load;
 
+            // BUTTON EVENTS
             btnAddStaff.Click -= btnAddStaff_Click;
             btnAddStaff.Click += btnAddStaff_Click;
 
-            btnUpdate.Click -= btnUpdate_Click;
-            btnUpdate.Click += btnUpdate_Click;
+            btnUpdate.Click -= btnUpdate_Click_1;
+            btnUpdate.Click += btnUpdate_Click_1;
 
-            btnDelete.Click -= btnDelete_Click;
-            btnDelete.Click += btnDelete_Click;
+            btnDelete.Click -= btnDelete_Click_1;
+            btnDelete.Click += btnDelete_Click_1;
 
-            btnclear.Click -= btnclear_Click;
-            btnclear.Click += btnclear_Click;
+            btnclear.Click -= btnclear_Click_1;
+            btnclear.Click += btnclear_Click_1;
 
-            btnReject.Click -= btnReject_Click;
-            btnReject.Click += btnReject_Click;
+            btnApprove.Click -= btnApprove_Click;
+            btnApprove.Click += btnApprove_Click;
 
+            btnReject.Click -= btnReject_Click_1;
+            btnReject.Click += btnReject_Click_1;
+
+            // DATAGRID EVENTS
+            Request_Dgv.CellClick -= Request_Dgv_CellClick;
+            Request_Dgv.CellClick += Request_Dgv_CellClick;
+
+            Staff_Directory_Dgv.CellClick -= Staff_Directory_Dgv_CellClick;
+            Staff_Directory_Dgv.CellClick += Staff_Directory_Dgv_CellClick;
+
+            // SEARCH EVENTS
             txtSearchStaff.TextChanged -= txtSearchStaff_TextChanged;
             txtSearchStaff.TextChanged += txtSearchStaff_TextChanged;
 
             txtSearchAttendance.TextChanged -= txtSearchAttendance_TextChanged;
             txtSearchAttendance.TextChanged += txtSearchAttendance_TextChanged;
 
+            // GENDER EVENTS
+            rdoMale.CheckedChanged -= Gender_CheckedChanged;
             rdoMale.CheckedChanged += Gender_CheckedChanged;
+
+            rdoFemale.CheckedChanged -= Gender_CheckedChanged;
             rdoFemale.CheckedChanged += Gender_CheckedChanged;
         }
 
@@ -52,16 +65,18 @@ namespace _4C_s_Management_System
 
         private void UserControl_Admin_Staff_Load(object sender, EventArgs e)
         {
+            cbEmploymentStatus.Items.Clear();
+            cbEmploymentStatus.Items.Add("Active");
+            cbEmploymentStatus.Items.Add("Inactive");
+            cbEmploymentStatus.Items.Add("Pending");
+
+            cbEmploymentStatus.SelectedItem = "Active";
+
+            txtStaffID.ReadOnly = true;
+
             LoadBranches();
             LoadStaffData();
             LoadAttendance();
-
-            cbEmploymentStatus.Items.Clear();
-            cbEmploymentStatus.Items.Add("Pending");
-            cbEmploymentStatus.Items.Add("Active");
-            cbEmploymentStatus.Items.Add("Inactive");
-
-            cbEmploymentStatus.SelectedItem = "Active";
 
             btnApprove.Visible = false;
             btnReject.Visible = false;
@@ -76,7 +91,9 @@ namespace _4C_s_Management_System
             try
             {
                 DataTable dt = AppDB.Instance.TableData(
-                    "SELECT BranchId, BranchName FROM BranchTbl ORDER BY BranchName");
+                    @"SELECT BranchId, BranchName
+                      FROM BranchTbl
+                      ORDER BY BranchName");
 
                 cbBranch.DisplayMember = "BranchName";
                 cbBranch.ValueMember = "BranchId";
@@ -100,17 +117,17 @@ namespace _4C_s_Management_System
                 string query = @"
                     SELECT
                         s.StaffID,
-                        s.BranchID,
-                        b.BranchName,
                         s.FullName,
+                        b.BranchName,
+                        s.Gender,
+                        s.Adress,
+                        s.JobPosition,
+                        s.Status,
+                        s.BranchID,
                         s.ContactNumber,
                         s.Email,
-                        s.Adress,
-                        s.Gender,
-                        s.JobPosition,
                         s.Datehired,
-                        s.SalaryRate,
-                        s.Status
+                        s.SalaryRate
                     FROM StaffTbl s
                     LEFT JOIN BranchTbl b
                         ON s.BranchID = b.BranchId
@@ -140,12 +157,59 @@ namespace _4C_s_Management_System
                 Request_Dgv.DataSource = pending;
                 Staff_Directory_Dgv.DataSource = directory;
 
+                FormatStaffGrid(Request_Dgv);
+                FormatStaffGrid(Staff_Directory_Dgv);
+
                 UpdateStaffSummary(dt);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading staff: " + ex.Message);
             }
+        }
+
+        // ==========================================
+        // FORMAT STAFF DATAGRIDVIEW
+        // ==========================================
+
+        private void FormatStaffGrid(DataGridView dgv)
+        {
+            string[] visibleColumns =
+            {
+                "StaffID",
+                "FullName",
+                "BranchName",
+                "Gender",
+                "Adress",
+                "JobPosition",
+                "Status"
+            };
+
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                column.Visible = visibleColumns.Contains(column.Name);
+            }
+
+            if (dgv.Columns.Contains("StaffID"))
+                dgv.Columns["StaffID"].HeaderText = "Staff ID";
+
+            if (dgv.Columns.Contains("FullName"))
+                dgv.Columns["FullName"].HeaderText = "Full Name";
+
+            if (dgv.Columns.Contains("BranchName"))
+                dgv.Columns["BranchName"].HeaderText = "Branch";
+
+            if (dgv.Columns.Contains("Gender"))
+                dgv.Columns["Gender"].HeaderText = "Gender";
+
+            if (dgv.Columns.Contains("Adress"))
+                dgv.Columns["Adress"].HeaderText = "Address";
+
+            if (dgv.Columns.Contains("JobPosition"))
+                dgv.Columns["JobPosition"].HeaderText = "Position";
+
+            if (dgv.Columns.Contains("Status"))
+                dgv.Columns["Status"].HeaderText = "Status";
         }
 
         // ==========================================
@@ -190,9 +254,12 @@ namespace _4C_s_Management_System
         // SELECT PENDING REQUEST
         // ==========================================
 
-        private void Request_Dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Request_Dgv_CellClick(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0)
+                return;
 
             DataGridViewRow row = Request_Dgv.Rows[e.RowIndex];
 
@@ -206,9 +273,12 @@ namespace _4C_s_Management_System
         // SELECT STAFF DIRECTORY
         // ==========================================
 
-        private void Staff_Directory_Dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Staff_Directory_Dgv_CellClick(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0)
+                return;
 
             DataGridViewRow row = Staff_Directory_Dgv.Rows[e.RowIndex];
 
@@ -220,47 +290,72 @@ namespace _4C_s_Management_System
 
         // ==========================================
         // DISPLAY SELECTED STAFF
-        // RIGHT PANEL + LOWER EDIT FORM
         // ==========================================
 
         private void DisplaySelectedStaff(DataGridViewRow row)
         {
-            selectedStaffID = Convert.ToString(row.Cells["StaffID"].Value) ?? "";
+            selectedStaffID =
+                Convert.ToString(row.Cells["StaffID"].Value) ?? "";
 
             string staffID = selectedStaffID;
-            string fullName = Convert.ToString(row.Cells["FullName"].Value) ?? "";
-            string branchID = Convert.ToString(row.Cells["BranchID"].Value) ?? "";
-            string branchName = Convert.ToString(row.Cells["BranchName"].Value) ?? "";
-            string contact = Convert.ToString(row.Cells["ContactNumber"].Value) ?? "";
-            string email = Convert.ToString(row.Cells["Email"].Value) ?? "";
-            string address = Convert.ToString(row.Cells["Adress"].Value) ?? "";
-            string gender = Convert.ToString(row.Cells["Gender"].Value) ?? "";
-            string position = Convert.ToString(row.Cells["JobPosition"].Value) ?? "";
-            string status = Convert.ToString(row.Cells["Status"].Value) ?? "";
 
-            // RIGHT PANEL - DISPLAY ONLY
+            string fullName =
+                Convert.ToString(row.Cells["FullName"].Value) ?? "";
+
+            string branchID =
+                Convert.ToString(row.Cells["BranchID"].Value) ?? "";
+
+            string branchName =
+                Convert.ToString(row.Cells["BranchName"].Value) ?? "";
+
+            string contact =
+                Convert.ToString(row.Cells["ContactNumber"].Value) ?? "";
+
+            string email =
+                Convert.ToString(row.Cells["Email"].Value) ?? "";
+
+            string address =
+                Convert.ToString(row.Cells["Adress"].Value) ?? "";
+
+            string gender =
+                Convert.ToString(row.Cells["Gender"].Value) ?? "";
+
+            string position =
+                Convert.ToString(row.Cells["JobPosition"].Value) ?? "";
+
+            string status =
+                Convert.ToString(row.Cells["Status"].Value) ?? "";
+
+            // RIGHT PANEL
 
             lblInfoFullName.Text = fullName;
             lblInfoName.Text = fullName;
             lblInfoStaffID.Text = staffID;
             lblEmpStaffID.Text = staffID;
             lblEmpBranch.Text = branchName;
+
             lblInfoContact.Text = contact;
             lblInfoEmail.Text = email;
             lblInfoAddress.Text = address;
-            lblInfoGender.Text = gender == "M" ? "Male" :
-                                 gender == "F" ? "Female" : "";
+
+            lblInfoGender.Text =
+                gender == "M" ? "Male" :
+                gender == "F" ? "Female" : "";
 
             lblInfoStatus.Text = status;
             lblEmpStatus.Text = status;
 
-            // LOWER PANEL - EDITABLE FORM
+            // LOWER EDIT FORM
 
             txtStaffID.Text = staffID;
             txtFullName.Text = fullName;
             txtContact.Text = contact;
             txtEmail.Text = email;
             txtAddress.Text = address;
+
+            displaynon();
+
+            txtStaffID.ReadOnly = true;
 
             if (cbBranch.DataSource != null)
                 cbBranch.SelectedValue = branchID;
@@ -282,10 +377,15 @@ namespace _4C_s_Management_System
             rdoMale.Checked = gender == "M";
             rdoFemale.Checked = gender == "F";
 
-            if (row.Cells["Datehired"].Value != DBNull.Value &&
-                row.Cells["Datehired"].Value != null)
+            if (row.Cells["Datehired"].Value != null &&
+                row.Cells["Datehired"].Value != DBNull.Value)
             {
-                dtpDateHired.Value = Convert.ToDateTime(row.Cells["Datehired"].Value);
+                dtpDateHired.Value =
+                    Convert.ToDateTime(row.Cells["Datehired"].Value);
+            }
+            else
+            {
+                dtpDateHired.Value = DateTime.Today;
             }
 
             txtSalaryRate.Text =
@@ -307,7 +407,7 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
-        // GET SELECTED GENDER
+        // GET GENDER
         // ==========================================
 
         private string GetGender()
@@ -327,13 +427,17 @@ namespace _4C_s_Management_System
 
         private bool ValidateStaffForm()
         {
-            if (string.IsNullOrWhiteSpace(txtStaffID.Text) ||
-                string.IsNullOrWhiteSpace(txtFullName.Text) ||
+            // STAFF ID IS AUTO-GENERATED.
+            // HINDI NA ITO KASAMA SA REQUIRED VALIDATION.
+
+            if (string.IsNullOrWhiteSpace(txtFullName.Text) ||
                 string.IsNullOrWhiteSpace(txtContact.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtAddress.Text))
             {
-                MessageBox.Show("Please complete all required staff information.");
+                MessageBox.Show(
+                    "Please complete all required staff information.");
+
                 return false;
             }
 
@@ -349,13 +453,28 @@ namespace _4C_s_Management_System
                 return false;
             }
 
-            if (!decimal.TryParse(txtSalaryRate.Text, out decimal salary))
+            if (cbEmploymentStatus.SelectedIndex < 0)
             {
-                if (!string.IsNullOrWhiteSpace(txtSalaryRate.Text))
-                {
-                    MessageBox.Show("Please enter a valid salary rate.");
-                    return false;
-                }
+                MessageBox.Show("Please select an employment status.");
+                return false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtSalaryRate.Text) &&
+                !decimal.TryParse(txtSalaryRate.Text, out _))
+            {
+                MessageBox.Show("Please enter a valid salary rate.");
+                return false;
+            }
+
+            if (txtContact.Text.Length > 12 ||
+                txtEmail.Text.Length > 40 ||
+                txtAddress.Text.Length > 100 ||
+                txtFullName.Text.Length > 100)
+            {
+                MessageBox.Show(
+                    "Some information exceeds the allowed database length.");
+
+                return false;
             }
 
             return true;
@@ -370,7 +489,7 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
-        // ADD STAFF - SYSTEM ADMIN
+        // ADD STAFF - AUTO GENERATED ID
         // ==========================================
 
         private void btnAddStaff_Click(object sender, EventArgs e)
@@ -380,13 +499,29 @@ namespace _4C_s_Management_System
 
             try
             {
-                string status = Convert.ToString(cbEmploymentStatus.SelectedItem) ?? "Active";
+                string status =
+                    Convert.ToString(cbEmploymentStatus.SelectedItem) ?? "Active";
 
-                if (status == "Pending")
+                if (status.Equals("Pending", StringComparison.OrdinalIgnoreCase))
                 {
-                    MessageBox.Show("Admin-added staff must be Active or Inactive.");
+                    MessageBox.Show(
+                        "Admin-added staff must be Active or Inactive.");
+
                     return;
                 }
+
+                string branchID =
+                    Convert.ToString(cbBranch.SelectedValue) ?? "";
+
+                if (string.IsNullOrWhiteSpace(branchID))
+                {
+                    MessageBox.Show("Please select a valid branch.");
+                    return;
+                }
+
+                // AUTOMATIC STAFF ID GENERATION
+                string newStaffID =
+                    IDGenerator.GenerateNextID("STF", branchID);
 
                 string query = @"
                     INSERT INTO StaffTbl
@@ -420,8 +555,8 @@ namespace _4C_s_Management_System
 
                 AppDB.Instance.CUD(query, new
                 {
-                    StaffID = txtStaffID.Text.Trim(),
-                    BranchID = cbBranch.SelectedValue,
+                    StaffID = newStaffID,
+                    BranchID = branchID,
                     FullName = txtFullName.Text.Trim(),
                     ContactNumber = txtContact.Text.Trim(),
                     Email = txtEmail.Text.Trim(),
@@ -433,7 +568,10 @@ namespace _4C_s_Management_System
                     Status = status
                 });
 
-                MessageBox.Show("Staff successfully added.");
+                txtStaffID.Text = newStaffID;
+
+                MessageBox.Show(
+                    "Staff successfully added.\nStaff ID: " + newStaffID);
 
                 LoadStaffData();
                 ClearForm();
@@ -445,10 +583,10 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
-        // UPDATE STAFF - LOWER FORM
+        // UPDATE STAFF
         // ==========================================
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(selectedStaffID))
             {
@@ -476,7 +614,7 @@ namespace _4C_s_Management_System
                         Status = @Status
                     WHERE StaffID = @StaffID";
 
-                AppDB.Instance.CUD(query, new
+                int affected = AppDB.Instance.CUD(query, new
                 {
                     StaffID = selectedStaffID,
                     BranchID = cbBranch.SelectedValue,
@@ -491,7 +629,10 @@ namespace _4C_s_Management_System
                     Status = Convert.ToString(cbEmploymentStatus.SelectedItem)
                 });
 
-                MessageBox.Show("Staff information successfully updated.");
+                if (affected > 0)
+                    MessageBox.Show("Staff information successfully updated.");
+                else
+                    MessageBox.Show("No staff record was updated.");
 
                 LoadStaffData();
                 ClearForm();
@@ -506,7 +647,7 @@ namespace _4C_s_Management_System
         // DELETE STAFF
         // ==========================================
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(selectedStaffID))
             {
@@ -525,18 +666,23 @@ namespace _4C_s_Management_System
 
             try
             {
-                AppDB.Instance.CUD(
+                int affected = AppDB.Instance.CUD(
                     "DELETE FROM StaffTbl WHERE StaffID = @StaffID",
                     new { StaffID = selectedStaffID });
 
-                MessageBox.Show("Staff successfully deleted.");
+                if (affected > 0)
+                    MessageBox.Show("Staff successfully deleted.");
+                else
+                    MessageBox.Show("No staff record was deleted.");
 
                 LoadStaffData();
                 ClearForm();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error deleting staff: " + ex.Message);
+                MessageBox.Show(
+                    "Error deleting staff: " + ex.Message +
+                    "\n\nNote: This staff may have related records in other tables.");
             }
         }
 
@@ -554,17 +700,21 @@ namespace _4C_s_Management_System
 
             try
             {
-                AppDB.Instance.CUD(
+                int affected = AppDB.Instance.CUD(
                     @"UPDATE StaffTbl
                       SET Status = @Status
-                      WHERE StaffID = @StaffID AND Status = 'Pending'",
+                      WHERE StaffID = @StaffID
+                      AND Status = 'Pending'",
                     new
                     {
                         Status = "Active",
                         StaffID = selectedStaffID
                     });
 
-                MessageBox.Show("Staff request approved.");
+                if (affected > 0)
+                    MessageBox.Show("Staff request approved.");
+                else
+                    MessageBox.Show("This request is no longer pending.");
 
                 LoadStaffData();
                 ClearForm();
@@ -579,7 +729,7 @@ namespace _4C_s_Management_System
         // REJECT REQUEST
         // ==========================================
 
-        private void btnReject_Click(object sender, EventArgs e)
+        private void btnReject_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(selectedStaffID))
             {
@@ -598,17 +748,21 @@ namespace _4C_s_Management_System
 
             try
             {
-                AppDB.Instance.CUD(
+                int affected = AppDB.Instance.CUD(
                     @"UPDATE StaffTbl
                       SET Status = @Status
-                      WHERE StaffID = @StaffID AND Status = 'Pending'",
+                      WHERE StaffID = @StaffID
+                      AND Status = 'Pending'",
                     new
                     {
                         Status = "Rejected",
                         StaffID = selectedStaffID
                     });
 
-                MessageBox.Show("Staff request rejected.");
+                if (affected > 0)
+                    MessageBox.Show("Staff request rejected.");
+                else
+                    MessageBox.Show("This request is no longer pending.");
 
                 LoadStaffData();
                 ClearForm();
@@ -620,10 +774,10 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
-        // CLEAR FORM
+        // CLEAR BUTTON
         // ==========================================
 
-        private void btnclear_Click(object sender, EventArgs e)
+        private void btnclear_Click_1(object sender, EventArgs e)
         {
             ClearForm();
         }
@@ -633,6 +787,8 @@ namespace _4C_s_Management_System
             selectedStaffID = "";
 
             txtStaffID.Clear();
+            txtStaffID.ReadOnly = true;
+
             txtFullName.Clear();
             txtContact.Clear();
             txtEmail.Clear();
@@ -662,6 +818,9 @@ namespace _4C_s_Management_System
 
             btnApprove.Visible = false;
             btnReject.Visible = false;
+
+            Request_Dgv.ClearSelection();
+            Staff_Directory_Dgv.ClearSelection();
         }
 
         // ==========================================
@@ -677,17 +836,17 @@ namespace _4C_s_Management_System
                 string query = @"
                     SELECT
                         s.StaffID,
-                        s.BranchID,
-                        b.BranchName,
                         s.FullName,
+                        b.BranchName,
+                        s.Gender,
+                        s.Adress,
+                        s.JobPosition,
+                        s.Status,
+                        s.BranchID,
                         s.ContactNumber,
                         s.Email,
-                        s.Adress,
-                        s.Gender,
-                        s.JobPosition,
                         s.Datehired,
-                        s.SalaryRate,
-                        s.Status
+                        s.SalaryRate
                     FROM StaffTbl s
                     LEFT JOIN BranchTbl b
                         ON s.BranchID = b.BranchId
@@ -695,6 +854,7 @@ namespace _4C_s_Management_System
                         s.StaffID LIKE @Search
                         OR s.FullName LIKE @Search
                         OR s.Email LIKE @Search
+                        OR b.BranchName LIKE @Search
                     ORDER BY s.FullName";
 
                 DataTable dt = AppDB.Instance.TableData(
@@ -708,14 +868,23 @@ namespace _4C_s_Management_System
                 {
                     string status = Convert.ToString(row["Status"]) ?? "";
 
-                    if (status == "Pending")
+                    if (status.Equals("Pending", StringComparison.OrdinalIgnoreCase))
+                    {
                         pending.ImportRow(row);
-                    else if (status == "Active" || status == "Inactive")
+                    }
+                    else if (
+                        status.Equals("Active", StringComparison.OrdinalIgnoreCase) ||
+                        status.Equals("Inactive", StringComparison.OrdinalIgnoreCase))
+                    {
                         directory.ImportRow(row);
+                    }
                 }
 
                 Request_Dgv.DataSource = pending;
                 Staff_Directory_Dgv.DataSource = directory;
+
+                FormatStaffGrid(Request_Dgv);
+                FormatStaffGrid(Staff_Directory_Dgv);
             }
             catch (Exception ex)
             {
@@ -744,7 +913,8 @@ namespace _4C_s_Management_System
                         ON a.StaffID = s.StaffID
                     ORDER BY a.[Date] DESC";
 
-                dgv_attendance.DataSource = AppDB.Instance.TableData(query);
+                dgv_attendance.DataSource =
+                    AppDB.Instance.TableData(query);
             }
             catch (Exception ex)
             {
@@ -756,7 +926,9 @@ namespace _4C_s_Management_System
         // SEARCH ATTENDANCE
         // ==========================================
 
-        private void txtSearchAttendance_TextChanged(object sender, EventArgs e)
+        private void txtSearchAttendance_TextChanged(
+            object sender,
+            EventArgs e)
         {
             try
             {
@@ -779,13 +951,36 @@ namespace _4C_s_Management_System
                         OR CONVERT(VARCHAR(10), a.[Date], 101) LIKE @Search
                     ORDER BY a.[Date] DESC";
 
-                dgv_attendance.DataSource = AppDB.Instance.TableData(
-                    query,
-                    new { Search = "%" + search + "%" });
+                dgv_attendance.DataSource =
+                    AppDB.Instance.TableData(
+                        query,
+                        new { Search = "%" + search + "%" });
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error searching attendance: " + ex.Message);
+            }
+        }
+
+        public void displaynon()
+        {
+            const string query = @"
+        SELECT Datehired, SalaryRate
+        FROM StaffTbl
+        WHERE StaffID = @StaffID";
+
+            DataTable dt = AppDB.Instance.TableData(query, new
+            {
+                StaffID = selectedStaffID
+            });
+
+            if (dt.Rows.Count > 0)
+            {
+                lblEmpDateHired.Text =
+                    Convert.ToDateTime(dt.Rows[0]["Datehired"]).ToString("MMMM dd, yyyy");
+
+                lblEmpSalaryRate.Text =
+                    Convert.ToDecimal(dt.Rows[0]["SalaryRate"]).ToString("N2");
             }
         }
     }
