@@ -1646,5 +1646,10 @@ namespace _4C_s_Management_System
             PaintEventArgs e)
         {
         }
+
+        private void panel2_staff_info_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

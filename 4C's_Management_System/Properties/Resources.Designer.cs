@@ -1483,6 +1483,16 @@ namespace _4C_s_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Starter_pfp {
+            get {
+                object obj = ResourceManager.GetObject("Starter pfp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap t {
             get {
                 object obj = ResourceManager.GetObject("t", resourceCulture);

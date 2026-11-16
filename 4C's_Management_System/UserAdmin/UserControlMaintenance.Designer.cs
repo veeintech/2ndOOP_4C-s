@@ -305,6 +305,7 @@
             // txb_remarks
             // 
             txb_remarks.BorderColor = Color.Maroon;
+            txb_remarks.BorderRadius = 7;
             txb_remarks.CustomizableEdges = customizableEdges7;
             txb_remarks.DefaultText = "";
             txb_remarks.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -357,6 +358,7 @@
             // txb_issue
             // 
             txb_issue.BorderColor = Color.Maroon;
+            txb_issue.BorderRadius = 7;
             txb_issue.CustomizableEdges = customizableEdges11;
             txb_issue.DefaultText = "";
             txb_issue.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -467,6 +469,7 @@
             // txb_Room_id
             // 
             txb_Room_id.BorderColor = Color.Maroon;
+            txb_Room_id.BorderRadius = 7;
             txb_Room_id.CustomizableEdges = customizableEdges19;
             txb_Room_id.DefaultText = "";
             txb_Room_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -480,7 +483,7 @@
             txb_Room_id.Location = new Point(263, 132);
             txb_Room_id.Margin = new Padding(3, 4, 3, 4);
             txb_Room_id.Name = "txb_Room_id";
-            txb_Room_id.PlaceholderText = "";
+            txb_Room_id.PlaceholderText = "RM-001-001";
             txb_Room_id.SelectedText = "";
             txb_Room_id.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txb_Room_id.Size = new Size(370, 36);
@@ -490,6 +493,7 @@
             // 
             tb_maintenance_id.BackColor = Color.LightGray;
             tb_maintenance_id.BorderColor = Color.Maroon;
+            tb_maintenance_id.BorderRadius = 7;
             tb_maintenance_id.CustomizableEdges = customizableEdges21;
             tb_maintenance_id.DefaultText = "";
             tb_maintenance_id.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -503,7 +507,7 @@
             tb_maintenance_id.Location = new Point(263, 86);
             tb_maintenance_id.Margin = new Padding(3, 4, 3, 4);
             tb_maintenance_id.Name = "tb_maintenance_id";
-            tb_maintenance_id.PlaceholderText = "";
+            tb_maintenance_id.PlaceholderText = "MTN-001-001";
             tb_maintenance_id.ReadOnly = true;
             tb_maintenance_id.SelectedText = "";
             tb_maintenance_id.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -1262,7 +1266,7 @@
             PL_Maintenance_Status.Location = new Point(222, 193);
             PL_Maintenance_Status.Name = "PL_Maintenance_Status";
             PL_Maintenance_Status.ShadowDecoration.CustomizableEdges = customizableEdges75;
-            PL_Maintenance_Status.Size = new Size(92, 27);
+            PL_Maintenance_Status.Size = new Size(107, 27);
             PL_Maintenance_Status.TabIndex = 98;
             // 
             // guna2CircleButton1
@@ -1364,7 +1368,7 @@
             remarks_info.Font = new Font("Berlin Sans FB", 10.2F);
             remarks_info.ForeColor = Color.Black;
             remarks_info.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            remarks_info.Location = new Point(140, 403);
+            remarks_info.Location = new Point(191, 403);
             remarks_info.Margin = new Padding(0);
             remarks_info.Multiline = true;
             remarks_info.Name = "remarks_info";
@@ -1372,7 +1376,7 @@
             remarks_info.ReadOnly = true;
             remarks_info.SelectedText = "";
             remarks_info.ShadowDecoration.CustomizableEdges = customizableEdges77;
-            remarks_info.Size = new Size(189, 89);
+            remarks_info.Size = new Size(138, 89);
             remarks_info.TabIndex = 25;
             // 
             // guna2Separator3

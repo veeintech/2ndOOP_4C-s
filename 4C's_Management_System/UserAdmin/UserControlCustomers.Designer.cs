@@ -585,6 +585,7 @@
             // CM_fullnameTxt
             // 
             CM_fullnameTxt.BorderColor = Color.Maroon;
+            CM_fullnameTxt.BorderRadius = 7;
             CM_fullnameTxt.CustomizableEdges = customizableEdges27;
             CM_fullnameTxt.DefaultText = "";
             CM_fullnameTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -652,6 +653,7 @@
             // CM_conManTxt
             // 
             CM_conManTxt.BorderColor = Color.Maroon;
+            CM_conManTxt.BorderRadius = 7;
             CM_conManTxt.CustomizableEdges = customizableEdges31;
             CM_conManTxt.DefaultText = "";
             CM_conManTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -697,6 +699,7 @@
             // CM_AddressTxt
             // 
             CM_AddressTxt.BorderColor = Color.Maroon;
+            CM_AddressTxt.BorderRadius = 7;
             CM_AddressTxt.CustomizableEdges = customizableEdges34;
             CM_AddressTxt.DefaultText = "";
             CM_AddressTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -847,6 +850,7 @@
             // CM_CustomeridTxt
             // 
             CM_CustomeridTxt.BorderColor = Color.Maroon;
+            CM_CustomeridTxt.BorderRadius = 7;
             CM_CustomeridTxt.CustomizableEdges = customizableEdges43;
             CM_CustomeridTxt.DefaultText = "";
             CM_CustomeridTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -894,6 +898,7 @@
             // 
             CM_AccomTypeTxt.BackColor = Color.Transparent;
             CM_AccomTypeTxt.BorderColor = Color.Maroon;
+            CM_AccomTypeTxt.BorderRadius = 7;
             CM_AccomTypeTxt.CustomizableEdges = customizableEdges46;
             CM_AccomTypeTxt.DrawMode = DrawMode.OwnerDrawFixed;
             CM_AccomTypeTxt.DropDownStyle = ComboBoxStyle.DropDownList;

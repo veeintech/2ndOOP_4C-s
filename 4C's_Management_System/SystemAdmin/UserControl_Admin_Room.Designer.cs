@@ -1018,10 +1018,10 @@
             panel_status.Controls.Add(statusLBLL);
             panel_status.CustomizableEdges = customizableEdges42;
             panel_status.FillColor = Color.FromArgb(192, 255, 192);
-            panel_status.Location = new Point(226, 193);
+            panel_status.Location = new Point(211, 193);
             panel_status.Name = "panel_status";
             panel_status.ShadowDecoration.CustomizableEdges = customizableEdges43;
-            panel_status.Size = new Size(88, 27);
+            panel_status.Size = new Size(112, 27);
             panel_status.TabIndex = 98;
             // 
             // guna2CircleButton1
@@ -1113,6 +1113,7 @@
             // BranchIdTXT
             // 
             BranchIdTXT.BorderColor = Color.Maroon;
+            BranchIdTXT.BorderRadius = 7;
             BranchIdTXT.CustomizableEdges = customizableEdges48;
             BranchIdTXT.DefaultText = "";
             BranchIdTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1146,6 +1147,7 @@
             // RoomidTXT
             // 
             RoomidTXT.BorderColor = Color.Maroon;
+            RoomidTXT.BorderRadius = 7;
             RoomidTXT.CustomizableEdges = customizableEdges50;
             RoomidTXT.DefaultText = "";
             RoomidTXT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1213,6 +1215,7 @@
             // rateTxt
             // 
             rateTxt.BorderColor = Color.Maroon;
+            rateTxt.BorderRadius = 7;
             rateTxt.CustomizableEdges = customizableEdges56;
             rateTxt.DefaultText = "";
             rateTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1235,6 +1238,7 @@
             // 
             rd_capacity.BackColor = Color.Transparent;
             rd_capacity.BorderColor = Color.Maroon;
+            rd_capacity.BorderRadius = 7;
             rd_capacity.CustomizableEdges = customizableEdges58;
             rd_capacity.DrawMode = DrawMode.OwnerDrawFixed;
             rd_capacity.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1254,6 +1258,7 @@
             // 
             rd_roomtype.BackColor = Color.Transparent;
             rd_roomtype.BorderColor = Color.Maroon;
+            rd_roomtype.BorderRadius = 7;
             rd_roomtype.CustomizableEdges = customizableEdges60;
             rd_roomtype.DrawMode = DrawMode.OwnerDrawFixed;
             rd_roomtype.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1331,6 +1336,7 @@
             // 
             statusTxt.BackColor = Color.Transparent;
             statusTxt.BorderColor = Color.Maroon;
+            statusTxt.BorderRadius = 7;
             statusTxt.CustomizableEdges = customizableEdges66;
             statusTxt.DrawMode = DrawMode.OwnerDrawFixed;
             statusTxt.DropDownStyle = ComboBoxStyle.DropDownList;

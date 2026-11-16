@@ -726,7 +726,7 @@
             // 
             // guna2CirclePictureBox11
             // 
-            guna2CirclePictureBox11.Image = Properties.Resources.placeholder_icon;
+            guna2CirclePictureBox11.Image = Properties.Resources.Starter_pfp;
             guna2CirclePictureBox11.ImageRotate = 0F;
             guna2CirclePictureBox11.Location = new Point(55, 32);
             guna2CirclePictureBox11.Name = "guna2CirclePictureBox11";

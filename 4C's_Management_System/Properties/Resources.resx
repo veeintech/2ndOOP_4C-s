@@ -142,9 +142,6 @@
   <data name="home2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bytesize--print" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\bytesize--print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="branch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\branch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,8 +163,8 @@
   <data name="new user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\new user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hotel room" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\hotel room.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\new user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gender" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\gender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +196,11 @@
   <data name="fa6-solid--bullhorn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\fa6-solid--bullhorn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agreement s" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\agreement s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="df" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\df.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="briefcase1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\briefcase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="staffers2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\staffers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -216,9 +216,6 @@
   </data>
   <data name="briefcase" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\briefcase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coolicons--file-text-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\coolicons--file-text-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="open door" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\open door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +235,8 @@
   <data name="failed2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\failed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="b2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fill location2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\fill location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -255,9 +252,6 @@
   </data>
   <data name="fill location" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\fill location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eos-icons--admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\eos-icons--admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,11 +280,14 @@
   <data name="cardcheck-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\cardcheck-circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bx--task" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\bx--task.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="beldeng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\beldeng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="beldeng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\beldeng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\user3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,8 +304,8 @@
   <data name="pending2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\pending2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\calll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg yelloworangegold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg yelloworangegold1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,8 +334,8 @@
   <data name="staffers1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\staffers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="calll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\calll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\user.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -358,8 +355,8 @@
   <data name="pending" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\pending.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="failed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\failed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eos-icons--admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\eos-icons--admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="d1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -397,6 +394,9 @@
   <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\dl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -409,8 +409,8 @@
   <data name="gender1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\gender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="briefcase1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\briefcase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bytesize--print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\bytesize--print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\user3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -421,11 +421,14 @@
   <data name="kama1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\kama.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bed.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\bed.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="userx1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\userx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bbq" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\bbq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -448,14 +451,14 @@
   <data name="LogSignpanel_LineArt-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\LogSignpanel_LineArt-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="df" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\df.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="location1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\new user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="t" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -468,9 +471,6 @@
   </data>
   <data name="wallet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\wallet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -487,11 +487,17 @@
   <data name="03" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\ma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hotel room" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\hotel room.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RM bed2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\RM bed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -505,11 +511,8 @@
   <data name="bd5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\bd5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="b2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fluent--status-24-filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\fluent--status-24-filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -517,8 +520,8 @@
   <data name="door2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\door2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="failed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\failed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ux1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\ux.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -547,8 +550,8 @@
   <data name="staffers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\staffers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="beldeng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\beldeng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="agreement s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\agreement s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pepol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\pepol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -565,8 +568,8 @@
   <data name="clipboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\clipboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bed.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\bed.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="coolicons--file-text-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\coolicons--file-text-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tenant1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\tenant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -595,7 +598,7 @@
   <data name="02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\4C's\icons\0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx--task" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\4C's\icons\bx--task.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Starter pfp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\4C's\icons\Starter pfp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

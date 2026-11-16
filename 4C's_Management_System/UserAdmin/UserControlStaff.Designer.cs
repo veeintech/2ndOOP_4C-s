@@ -694,6 +694,7 @@
             panel2_staff_info.ShadowDecoration.CustomizableEdges = customizableEdges33;
             panel2_staff_info.Size = new Size(332, 649);
             panel2_staff_info.TabIndex = 62;
+            panel2_staff_info.Paint += panel2_staff_info_Paint;
             // 
             // guna2Separator7
             // 
@@ -890,7 +891,7 @@
             lbl_jbp.BackColor = Color.Transparent;
             lbl_jbp.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_jbp.ForeColor = Color.Black;
-            lbl_jbp.Location = new Point(86, 224);
+            lbl_jbp.Location = new Point(163, 230);
             lbl_jbp.Name = "lbl_jbp";
             lbl_jbp.Size = new Size(38, 22);
             lbl_jbp.TabIndex = 96;
@@ -920,7 +921,7 @@
             lbl_name.BackColor = Color.Transparent;
             lbl_name.Font = new Font("Berlin Sans FB Demi", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_name.ForeColor = Color.Black;
-            lbl_name.Location = new Point(66, 199);
+            lbl_name.Location = new Point(156, 199);
             lbl_name.Name = "lbl_name";
             lbl_name.Size = new Size(53, 29);
             lbl_name.TabIndex = 91;
@@ -1272,7 +1273,7 @@
             // 
             guna2Panel10.BackColor = Color.White;
             guna2Panel10.BorderColor = Color.Silver;
-            guna2Panel10.BorderRadius = 15;
+            guna2Panel10.BorderRadius = 7;
             guna2Panel10.BorderThickness = 2;
             guna2Panel10.Controls.Add(Female_RB);
             guna2Panel10.Controls.Add(Male_RB);
@@ -1374,6 +1375,7 @@
             // txt_contact
             // 
             txt_contact.BorderColor = Color.Maroon;
+            txt_contact.BorderRadius = 7;
             txt_contact.CustomizableEdges = customizableEdges59;
             txt_contact.DefaultText = "";
             txt_contact.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1382,6 +1384,7 @@
             txt_contact.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txt_contact.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_contact.Font = new Font("Segoe UI", 9F);
+            txt_contact.ForeColor = Color.Black;
             txt_contact.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_contact.Location = new Point(273, 221);
             txt_contact.Margin = new Padding(3, 4, 3, 4);
@@ -1462,13 +1465,14 @@
             // 
             cb_job.BackColor = Color.Transparent;
             cb_job.BorderColor = Color.Maroon;
+            cb_job.BorderRadius = 7;
             cb_job.CustomizableEdges = customizableEdges67;
             cb_job.DrawMode = DrawMode.OwnerDrawFixed;
             cb_job.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_job.FocusedColor = Color.FromArgb(94, 148, 255);
             cb_job.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cb_job.Font = new Font("Segoe UI", 10F);
-            cb_job.ForeColor = Color.FromArgb(68, 88, 112);
+            cb_job.ForeColor = Color.Black;
             cb_job.ItemHeight = 30;
             cb_job.Items.AddRange(new object[] { "General Manager", "", "", "", "", "Assistant Manager", "", "", "", "", "Room Manager", "Front Desk Officer", "", "", "", "", "Receptionist", "", "", "", "", "Housekeeping Staff", "", "", "", "", "Maintenance Staff", "", "", "", "", "Security Guard", "", "", "", "", "Cashier", "", "", "", "", "Accounting Staff" });
             cb_job.Location = new Point(881, 96);
@@ -1529,6 +1533,7 @@
             // txt_address
             // 
             txt_address.BorderColor = Color.Maroon;
+            txt_address.BorderRadius = 7;
             txt_address.CustomizableEdges = customizableEdges72;
             txt_address.DefaultText = "";
             txt_address.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1537,6 +1542,7 @@
             txt_address.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txt_address.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_address.Font = new Font("Segoe UI", 9F);
+            txt_address.ForeColor = Color.Black;
             txt_address.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_address.Location = new Point(273, 311);
             txt_address.Margin = new Padding(3, 4, 3, 4);
@@ -1560,6 +1566,7 @@
             // txt_salary
             // 
             txt_salary.BorderColor = Color.Maroon;
+            txt_salary.BorderRadius = 7;
             txt_salary.CustomizableEdges = customizableEdges74;
             txt_salary.DefaultText = "";
             txt_salary.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1568,6 +1575,7 @@
             txt_salary.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txt_salary.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_salary.Font = new Font("Segoe UI", 9F);
+            txt_salary.ForeColor = Color.Black;
             txt_salary.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_salary.Location = new Point(881, 143);
             txt_salary.Margin = new Padding(3, 4, 3, 4);
@@ -1592,6 +1600,7 @@
             // txt_email
             // 
             txt_email.BorderColor = Color.Maroon;
+            txt_email.BorderRadius = 7;
             txt_email.CustomizableEdges = customizableEdges76;
             txt_email.DefaultText = "";
             txt_email.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1600,6 +1609,7 @@
             txt_email.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txt_email.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_email.Font = new Font("Segoe UI", 9F);
+            txt_email.ForeColor = Color.Black;
             txt_email.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_email.Location = new Point(273, 266);
             txt_email.Margin = new Padding(3, 4, 3, 4);
@@ -1645,6 +1655,7 @@
             // txt_fullname
             // 
             txt_fullname.BorderColor = Color.Maroon;
+            txt_fullname.BorderRadius = 7;
             txt_fullname.CustomizableEdges = customizableEdges79;
             txt_fullname.DefaultText = "";
             txt_fullname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1653,7 +1664,7 @@
             txt_fullname.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txt_fullname.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_fullname.Font = new Font("Segoe UI", 9F);
-            txt_fullname.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_fullname.ForeColor = Color.Black;
             txt_fullname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_fullname.Location = new Point(273, 102);
             txt_fullname.Margin = new Padding(3, 4, 3, 4);
@@ -1742,6 +1753,7 @@
             // txt_staffID
             // 
             txt_staffID.BorderColor = Color.Maroon;
+            txt_staffID.BorderRadius = 7;
             txt_staffID.CustomizableEdges = customizableEdges83;
             txt_staffID.DefaultText = "";
             txt_staffID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -1750,6 +1762,7 @@
             txt_staffID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txt_staffID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_staffID.Font = new Font("Segoe UI", 9F);
+            txt_staffID.ForeColor = Color.Black;
             txt_staffID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txt_staffID.Location = new Point(273, 140);
             txt_staffID.Margin = new Padding(3, 4, 3, 4);

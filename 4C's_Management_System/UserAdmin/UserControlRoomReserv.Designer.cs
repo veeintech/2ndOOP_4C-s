@@ -735,7 +735,7 @@
             RR_totalpriceLBL.BackColor = Color.Transparent;
             RR_totalpriceLBL.Font = new Font("Berlin Sans FB", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RR_totalpriceLBL.ForeColor = Color.Maroon;
-            RR_totalpriceLBL.Location = new Point(221, 434);
+            RR_totalpriceLBL.Location = new Point(201, 441);
             RR_totalpriceLBL.Margin = new Padding(4, 3, 4, 3);
             RR_totalpriceLBL.Name = "RR_totalpriceLBL";
             RR_totalpriceLBL.Size = new Size(58, 31);
@@ -930,9 +930,9 @@
             RR_ResIDLBL.Location = new Point(30, 68);
             RR_ResIDLBL.Margin = new Padding(4, 3, 4, 3);
             RR_ResIDLBL.Name = "RR_ResIDLBL";
-            RR_ResIDLBL.Size = new Size(125, 36);
+            RR_ResIDLBL.Size = new Size(55, 36);
             RR_ResIDLBL.TabIndex = 27;
-            RR_ResIDLBL.Text = "RSV-1042";
+            RR_ResIDLBL.Text = "----";
             // 
             // guna2HtmlLabel11
             // 
@@ -1064,16 +1064,16 @@
             RR_tenantidTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             RR_tenantidTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_tenantidTxt.Font = new Font("Segoe UI", 9F);
-            RR_tenantidTxt.ForeColor = Color.FromArgb(64, 64, 64);
+            RR_tenantidTxt.ForeColor = Color.Black;
             RR_tenantidTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_tenantidTxt.Location = new Point(864, 88);
             RR_tenantidTxt.Margin = new Padding(3, 4, 3, 4);
             RR_tenantidTxt.Name = "RR_tenantidTxt";
-            RR_tenantidTxt.PlaceholderText = "Malapote, Jeovel Andrie M.";
+            RR_tenantidTxt.PlaceholderText = "TEN-000-000";
             RR_tenantidTxt.ReadOnly = true;
             RR_tenantidTxt.SelectedText = "";
             RR_tenantidTxt.ShadowDecoration.CustomizableEdges = customizableEdges39;
-            RR_tenantidTxt.Size = new Size(190, 30);
+            RR_tenantidTxt.Size = new Size(322, 30);
             RR_tenantidTxt.TabIndex = 140;
             // 
             // RR_Timecheckout_TXT
@@ -1084,12 +1084,12 @@
             RR_Timecheckout_TXT.FillColor = Color.White;
             RR_Timecheckout_TXT.Font = new Font("Segoe UI", 9F);
             RR_Timecheckout_TXT.Format = DateTimePickerFormat.Time;
-            RR_Timecheckout_TXT.Location = new Point(418, 263);
+            RR_Timecheckout_TXT.Location = new Point(450, 262);
             RR_Timecheckout_TXT.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             RR_Timecheckout_TXT.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             RR_Timecheckout_TXT.Name = "RR_Timecheckout_TXT";
             RR_Timecheckout_TXT.ShadowDecoration.CustomizableEdges = customizableEdges41;
-            RR_Timecheckout_TXT.Size = new Size(144, 36);
+            RR_Timecheckout_TXT.Size = new Size(182, 36);
             RR_Timecheckout_TXT.TabIndex = 138;
             RR_Timecheckout_TXT.Value = new DateTime(2026, 11, 7, 18, 52, 51, 476);
             // 
@@ -1101,12 +1101,12 @@
             RR_Timecheckin_TXT.FillColor = Color.White;
             RR_Timecheckin_TXT.Font = new Font("Segoe UI", 9F);
             RR_Timecheckin_TXT.Format = DateTimePickerFormat.Time;
-            RR_Timecheckin_TXT.Location = new Point(418, 217);
+            RR_Timecheckin_TXT.Location = new Point(450, 216);
             RR_Timecheckin_TXT.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             RR_Timecheckin_TXT.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             RR_Timecheckin_TXT.Name = "RR_Timecheckin_TXT";
             RR_Timecheckin_TXT.ShadowDecoration.CustomizableEdges = customizableEdges43;
-            RR_Timecheckin_TXT.Size = new Size(144, 36);
+            RR_Timecheckin_TXT.Size = new Size(182, 36);
             RR_Timecheckin_TXT.TabIndex = 137;
             RR_Timecheckin_TXT.Value = new DateTime(2026, 11, 7, 18, 52, 51, 476);
             // 
@@ -1184,7 +1184,7 @@
             RR_checkOutDateTxt.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             RR_checkOutDateTxt.Name = "RR_checkOutDateTxt";
             RR_checkOutDateTxt.ShadowDecoration.CustomizableEdges = customizableEdges51;
-            RR_checkOutDateTxt.Size = new Size(144, 36);
+            RR_checkOutDateTxt.Size = new Size(195, 36);
             RR_checkOutDateTxt.TabIndex = 133;
             RR_checkOutDateTxt.Value = new DateTime(2026, 11, 7, 18, 10, 47, 59);
             // 
@@ -1201,7 +1201,7 @@
             RR_checkInDateTXT.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             RR_checkInDateTXT.Name = "RR_checkInDateTXT";
             RR_checkInDateTXT.ShadowDecoration.CustomizableEdges = customizableEdges53;
-            RR_checkInDateTXT.Size = new Size(144, 36);
+            RR_checkInDateTXT.Size = new Size(195, 36);
             RR_checkInDateTXT.TabIndex = 132;
             RR_checkInDateTXT.Value = new DateTime(2026, 11, 7, 18, 52, 51, 476);
             // 
@@ -1217,16 +1217,16 @@
             RR_ReserIDTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             RR_ReserIDTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_ReserIDTxt.Font = new Font("Segoe UI", 9F);
-            RR_ReserIDTxt.ForeColor = Color.FromArgb(64, 64, 64);
+            RR_ReserIDTxt.ForeColor = Color.Black;
             RR_ReserIDTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            RR_ReserIDTxt.Location = new Point(864, 123);
+            RR_ReserIDTxt.Location = new Point(864, 128);
             RR_ReserIDTxt.Margin = new Padding(3, 4, 3, 4);
             RR_ReserIDTxt.Name = "RR_ReserIDTxt";
-            RR_ReserIDTxt.PlaceholderText = "CUS-0000001";
+            RR_ReserIDTxt.PlaceholderText = "RES-0000001";
             RR_ReserIDTxt.ReadOnly = true;
             RR_ReserIDTxt.SelectedText = "";
             RR_ReserIDTxt.ShadowDecoration.CustomizableEdges = customizableEdges55;
-            RR_ReserIDTxt.Size = new Size(190, 30);
+            RR_ReserIDTxt.Size = new Size(322, 30);
             RR_ReserIDTxt.TabIndex = 131;
             // 
             // guna2HtmlLabel3
@@ -1274,6 +1274,7 @@
             RR_RoomIdTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             RR_RoomIdTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_RoomIdTxt.Font = new Font("Segoe UI", 9F);
+            RR_RoomIdTxt.ForeColor = Color.Black;
             RR_RoomIdTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_RoomIdTxt.Location = new Point(249, 126);
             RR_RoomIdTxt.Margin = new Padding(3, 4, 3, 4);
@@ -1308,7 +1309,7 @@
             RR_resTypetxt.FocusedColor = Color.FromArgb(94, 148, 255);
             RR_resTypetxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_resTypetxt.Font = new Font("Segoe UI", 10F);
-            RR_resTypetxt.ForeColor = Color.FromArgb(68, 88, 112);
+            RR_resTypetxt.ForeColor = Color.Black;
             RR_resTypetxt.ItemHeight = 30;
             RR_resTypetxt.Items.AddRange(new object[] { "Hotel", "Transient", "Apartment" });
             RR_resTypetxt.Location = new Point(249, 165);
@@ -1398,7 +1399,7 @@
             RR_customertxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             RR_customertxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_customertxt.Font = new Font("Segoe UI", 9F);
-            RR_customertxt.ForeColor = Color.FromArgb(64, 64, 64);
+            RR_customertxt.ForeColor = Color.Black;
             RR_customertxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             RR_customertxt.Location = new Point(250, 84);
             RR_customertxt.Margin = new Padding(3, 4, 3, 4);
@@ -1406,7 +1407,7 @@
             RR_customertxt.PlaceholderText = "Malapote, Jeovel Andrie M.";
             RR_customertxt.SelectedText = "";
             RR_customertxt.ShadowDecoration.CustomizableEdges = customizableEdges66;
-            RR_customertxt.Size = new Size(144, 30);
+            RR_customertxt.Size = new Size(382, 30);
             RR_customertxt.TabIndex = 92;
             // 
             // guna2HtmlLabel36

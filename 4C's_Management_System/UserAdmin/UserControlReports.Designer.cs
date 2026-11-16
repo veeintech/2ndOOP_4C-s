@@ -1196,11 +1196,11 @@
             guna2Panel10.CustomizableEdges = customizableEdges35;
             guna2Panel10.FillColor = Color.FromArgb(253, 253, 248);
             guna2Panel10.ForeColor = Color.Maroon;
-            guna2Panel10.Location = new Point(542, 25);
+            guna2Panel10.Location = new Point(525, 30);
             guna2Panel10.Margin = new Padding(4, 3, 4, 3);
             guna2Panel10.Name = "guna2Panel10";
             guna2Panel10.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            guna2Panel10.Size = new Size(464, 362);
+            guna2Panel10.Size = new Size(487, 362);
             guna2Panel10.TabIndex = 52;
             // 
             // guna2ProgressBar3
@@ -1386,11 +1386,11 @@
             guna2Panel2.CustomBorderThickness = new Padding(0, 0, 3, 3);
             guna2Panel2.CustomizableEdges = customizableEdges37;
             guna2Panel2.FillColor = Color.FromArgb(253, 253, 248);
-            guna2Panel2.Location = new Point(48, 25);
+            guna2Panel2.Location = new Point(31, 30);
             guna2Panel2.Margin = new Padding(4, 3, 4, 3);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            guna2Panel2.Size = new Size(466, 362);
+            guna2Panel2.Size = new Size(489, 362);
             guna2Panel2.TabIndex = 41;
             // 
             // gunaChart4
