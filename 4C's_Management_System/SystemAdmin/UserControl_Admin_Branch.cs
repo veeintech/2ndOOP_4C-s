@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _4C_s_Management_System
@@ -15,13 +10,20 @@ namespace _4C_s_Management_System
         public UserControl_Admin_Branch()
         {
             InitializeComponent();
+
             BR_AddBtn.Click += BR_AddBtn_Click;
             BR_UpdateBtn.Click += BR_UpdateBtn_Click;
             BR_DeleteBtn.Click += BR_DeleteBtn_Click;
+            ClearBtn.Click += ClearBtn_Click;
+
             BR_BranchDGV.CellClick += BR_BranchDGV_CellClick;
             BR_filterCB.SelectedIndexChanged += BR_filterCB_SelectedIndexChanged;
             BR_searchTxt.TextChanged += BR_searchTxt_TextChanged;
         }
+
+        // =====================================================
+        // USERCONTROL LOAD
+        // =====================================================
 
         private void UserControl_Admin_Branch_Load(object sender, EventArgs e)
         {
@@ -46,6 +48,10 @@ namespace _4C_s_Management_System
             LoadBranchSummary();
         }
 
+        // =====================================================
+        // LOAD BRANCHES
+        // =====================================================
+
         private void LoadBranches()
         {
             try
@@ -62,16 +68,26 @@ namespace _4C_s_Management_System
                 {
                     Search = "%" + BR_searchTxt.Text.Trim() + "%",
                     Status = string.IsNullOrWhiteSpace(BR_filterCB.Text)
-                        ? "All" : BR_filterCB.Text
+                        ? "All"
+                        : BR_filterCB.Text
                 });
 
                 BR_BranchDGV.DataSource = dt;
+                BR_BranchDGV.ClearSelection();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to load branches.\n" + ex.Message);
+                MessageBox.Show(
+                    "Unable to load branches.\n" + ex.Message,
+                    "Branch Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
+        // =====================================================
+        // BRANCH SUMMARY
+        // =====================================================
 
         private void LoadBranchSummary()
         {
@@ -88,16 +104,29 @@ namespace _4C_s_Management_System
 
                 if (dt.Rows.Count > 0)
                 {
-                    BR_totalLbl.Text = dt.Rows[0]["TotalBranches"].ToString();
-                    BR_activeLbl.Text = dt.Rows[0]["ActiveBranches"].ToString();
-                    BR_inactiveLbl.Text = dt.Rows[0]["InactiveBranches"].ToString();
+                    BR_totalLbl.Text =
+                        dt.Rows[0]["TotalBranches"].ToString();
+
+                    BR_activeLbl.Text =
+                        dt.Rows[0]["ActiveBranches"].ToString();
+
+                    BR_inactiveLbl.Text =
+                        dt.Rows[0]["InactiveBranches"].ToString();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to load branch summary.\n" + ex.Message);
+                MessageBox.Show(
+                    "Unable to load branch summary.\n" + ex.Message,
+                    "Branch Summary Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
+        // =====================================================
+        // GENERATE BRANCH ID
+        // =====================================================
 
         private string GenerateBranchID()
         {
@@ -108,17 +137,26 @@ namespace _4C_s_Management_System
                 FROM dbo.BranchTbl
                 WHERE BranchId LIKE 'BRC-%'";
 
-            int nextNumber = Convert.ToInt32(AppDB.Instance.Scalar(query));
+            int nextNumber =
+                Convert.ToInt32(AppDB.Instance.Scalar(query));
 
             return "BRC-" + nextNumber.ToString("D3");
         }
+
+        // =====================================================
+        // ADD BRANCH
+        // =====================================================
 
         private void BR_AddBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(BR_branchnametxt.Text) ||
                 string.IsNullOrWhiteSpace(BR_addresstxt.Text))
             {
-                MessageBox.Show("Please complete the branch details.");
+                MessageBox.Show(
+                    "Please complete the branch details.",
+                    "Missing Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -142,7 +180,12 @@ namespace _4C_s_Management_System
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Branch added successfully!\nBranch ID: " + branchID);
+                    MessageBox.Show(
+                        "Branch added successfully!\nBranch ID: " + branchID,
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
                     ClearFields();
                     LoadBranches();
                     LoadBranchSummary();
@@ -150,28 +193,49 @@ namespace _4C_s_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to add branch.\n" + ex.Message);
+                MessageBox.Show(
+                    "Unable to add branch.\n" + ex.Message,
+                    "Add Branch Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
+        // =====================================================
+        // UPDATE BRANCH
+        // =====================================================
 
         private void BR_UpdateBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(BR_branchidtxt.Text))
             {
-                MessageBox.Show("Please select a branch first.");
+                MessageBox.Show(
+                    "Please select a branch first.",
+                    "No Branch Selected",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(BR_branchnametxt.Text) ||
                 string.IsNullOrWhiteSpace(BR_addresstxt.Text))
             {
-                MessageBox.Show("Please complete the branch details.");
+                MessageBox.Show(
+                    "Please complete the branch details.",
+                    "Missing Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
-            if (BR_statustxt.Text != "Active" && BR_statustxt.Text != "Inactive")
+            if (BR_statustxt.Text != "Active" &&
+                BR_statustxt.Text != "Inactive")
             {
-                MessageBox.Show("Status must be Active or Inactive.");
+                MessageBox.Show(
+                    "Status must be Active or Inactive.",
+                    "Invalid Status",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -194,23 +258,44 @@ namespace _4C_s_Management_System
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Branch updated successfully!");
+                    MessageBox.Show(
+                        "Branch updated successfully!",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
                     ClearFields();
                     LoadBranches();
                     LoadBranchSummary();
                 }
+                else
+                {
+                    MessageBox.Show("No branch record was updated.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to update branch.\n" + ex.Message);
+                MessageBox.Show(
+                    "Unable to update branch.\n" + ex.Message,
+                    "Update Branch Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
+        // =====================================================
+        // DELETE BRANCH
+        // =====================================================
 
         private void BR_DeleteBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(BR_branchidtxt.Text))
             {
-                MessageBox.Show("Please select a branch first.");
+                MessageBox.Show(
+                    "Please select a branch first.",
+                    "No Branch Selected",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -236,41 +321,89 @@ namespace _4C_s_Management_System
 
                 if (result > 0)
                 {
-                    MessageBox.Show("Branch deleted successfully!");
+                    MessageBox.Show(
+                        "Branch deleted successfully!",
+                        "Success",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
                     ClearFields();
                     LoadBranches();
                     LoadBranchSummary();
+                }
+                else
+                {
+                    MessageBox.Show("No branch record was deleted.");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Unable to delete branch. It may still have related records.\n" + ex.Message);
+                    "Unable to delete branch. It may still have related records.\n" + ex.Message,
+                    "Delete Branch Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
-        private void BR_BranchDGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        // =====================================================
+        // CLEAR BUTTON
+        // =====================================================
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        // =====================================================
+        // DATAGRIDVIEW CELL CLICK
+        // =====================================================
+
+        private void BR_BranchDGV_CellClick(
+            object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
 
-            DataGridViewRow row = BR_BranchDGV.Rows[e.RowIndex];
+            DataGridViewRow row =
+                BR_BranchDGV.Rows[e.RowIndex];
 
-            BR_branchidtxt.Text = row.Cells["BranchId"].Value?.ToString();
-            BR_branchnametxt.Text = row.Cells["BranchName"].Value?.ToString();
-            BR_addresstxt.Text = row.Cells["Address"].Value?.ToString();
-            BR_statustxt.Text = row.Cells["Status"].Value?.ToString();
+            BR_branchidtxt.Text =
+                row.Cells["BranchId"].Value?.ToString() ?? "";
+
+            BR_branchnametxt.Text =
+                row.Cells["BranchName"].Value?.ToString() ?? "";
+
+            BR_addresstxt.Text =
+                row.Cells["Address"].Value?.ToString() ?? "";
+
+            BR_statustxt.Text =
+                row.Cells["Status"].Value?.ToString() ?? "";
         }
 
-        private void BR_filterCB_SelectedIndexChanged(object sender, EventArgs e)
+        // =====================================================
+        // FILTER BRANCHES
+        // =====================================================
+
+        private void BR_filterCB_SelectedIndexChanged(
+            object sender, EventArgs e)
         {
             LoadBranches();
         }
 
-        private void BR_searchTxt_TextChanged(object sender, EventArgs e)
+        // =====================================================
+        // SEARCH BRANCHES
+        // =====================================================
+
+        private void BR_searchTxt_TextChanged(
+            object sender, EventArgs e)
         {
             LoadBranches();
         }
+
+        // =====================================================
+        // CLEAR FIELDS
+        // =====================================================
 
         private void ClearFields()
         {
@@ -278,8 +411,8 @@ namespace _4C_s_Management_System
             BR_branchnametxt.Clear();
             BR_addresstxt.Clear();
             BR_statustxt.Clear();
+
+            BR_BranchDGV.ClearSelection();
         }
     }
-    
 }
-

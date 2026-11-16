@@ -61,14 +61,12 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -77,6 +75,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             MM_roomTypeCB = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             inproglbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -116,6 +118,7 @@
             MM_rejectBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
@@ -573,10 +576,10 @@
             RM_status_panel.Controls.Add(MM_detailsPanel);
             RM_status_panel.Controls.Add(guna2Separator1);
             RM_status_panel.Controls.Add(guna2HtmlLabel11);
-            RM_status_panel.CustomizableEdges = customizableEdges43;
+            RM_status_panel.CustomizableEdges = customizableEdges45;
             RM_status_panel.Location = new Point(867, 219);
             RM_status_panel.Name = "RM_status_panel";
-            RM_status_panel.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            RM_status_panel.ShadowDecoration.CustomizableEdges = customizableEdges46;
             RM_status_panel.Size = new Size(362, 528);
             RM_status_panel.TabIndex = 98;
             // 
@@ -613,6 +616,7 @@
             MM_detailsPanel.BorderColor = Color.Silver;
             MM_detailsPanel.BorderRadius = 15;
             MM_detailsPanel.BorderThickness = 2;
+            MM_detailsPanel.Controls.Add(guna2Button1);
             MM_detailsPanel.Controls.Add(MM_descriptiontxt);
             MM_detailsPanel.Controls.Add(guna2HtmlLabel5);
             MM_detailsPanel.Controls.Add(MM_roomIDtxt);
@@ -621,17 +625,17 @@
             MM_detailsPanel.Controls.Add(guna2HtmlLabel16);
             MM_detailsPanel.Controls.Add(MM_acceptBtn);
             MM_detailsPanel.Controls.Add(MM_rejectBtn);
-            MM_detailsPanel.CustomizableEdges = customizableEdges41;
+            MM_detailsPanel.CustomizableEdges = customizableEdges43;
             MM_detailsPanel.Location = new Point(16, 65);
             MM_detailsPanel.Name = "MM_detailsPanel";
-            MM_detailsPanel.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            MM_detailsPanel.ShadowDecoration.CustomizableEdges = customizableEdges44;
             MM_detailsPanel.Size = new Size(330, 444);
             MM_detailsPanel.TabIndex = 100;
             // 
             // MM_descriptiontxt
             // 
             MM_descriptiontxt.BorderColor = Color.Maroon;
-            MM_descriptiontxt.CustomizableEdges = customizableEdges31;
+            MM_descriptiontxt.CustomizableEdges = customizableEdges33;
             MM_descriptiontxt.DefaultText = "";
             MM_descriptiontxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             MM_descriptiontxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -641,13 +645,13 @@
             MM_descriptiontxt.Font = new Font("Segoe UI", 9F);
             MM_descriptiontxt.ForeColor = Color.Black;
             MM_descriptiontxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            MM_descriptiontxt.Location = new Point(18, 214);
+            MM_descriptiontxt.Location = new Point(18, 192);
             MM_descriptiontxt.Margin = new Padding(3, 4, 3, 4);
             MM_descriptiontxt.Multiline = true;
             MM_descriptiontxt.Name = "MM_descriptiontxt";
             MM_descriptiontxt.PlaceholderText = "....";
             MM_descriptiontxt.SelectedText = "";
-            MM_descriptiontxt.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            MM_descriptiontxt.ShadowDecoration.CustomizableEdges = customizableEdges34;
             MM_descriptiontxt.Size = new Size(290, 109);
             MM_descriptiontxt.TabIndex = 173;
             // 
@@ -656,7 +660,7 @@
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel5.ForeColor = Color.Black;
-            guna2HtmlLabel5.Location = new Point(18, 186);
+            guna2HtmlLabel5.Location = new Point(18, 164);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(95, 23);
             guna2HtmlLabel5.TabIndex = 171;
@@ -665,7 +669,7 @@
             // MM_roomIDtxt
             // 
             MM_roomIDtxt.BorderColor = Color.Maroon;
-            MM_roomIDtxt.CustomizableEdges = customizableEdges33;
+            MM_roomIDtxt.CustomizableEdges = customizableEdges35;
             MM_roomIDtxt.DefaultText = "";
             MM_roomIDtxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             MM_roomIDtxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -675,19 +679,19 @@
             MM_roomIDtxt.Font = new Font("Segoe UI", 9F);
             MM_roomIDtxt.ForeColor = Color.Black;
             MM_roomIDtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            MM_roomIDtxt.Location = new Point(18, 130);
+            MM_roomIDtxt.Location = new Point(18, 115);
             MM_roomIDtxt.Margin = new Padding(3, 4, 3, 4);
             MM_roomIDtxt.Name = "MM_roomIDtxt";
             MM_roomIDtxt.PlaceholderText = "RM-0001-0001";
             MM_roomIDtxt.SelectedText = "";
-            MM_roomIDtxt.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            MM_roomIDtxt.ShadowDecoration.CustomizableEdges = customizableEdges36;
             MM_roomIDtxt.Size = new Size(290, 36);
             MM_roomIDtxt.TabIndex = 170;
             // 
             // MM_maintenanceIDtxt
             // 
             MM_maintenanceIDtxt.BorderColor = Color.Maroon;
-            MM_maintenanceIDtxt.CustomizableEdges = customizableEdges35;
+            MM_maintenanceIDtxt.CustomizableEdges = customizableEdges37;
             MM_maintenanceIDtxt.DefaultText = "";
             MM_maintenanceIDtxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             MM_maintenanceIDtxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -697,13 +701,13 @@
             MM_maintenanceIDtxt.Font = new Font("Segoe UI", 9F);
             MM_maintenanceIDtxt.ForeColor = Color.Black;
             MM_maintenanceIDtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            MM_maintenanceIDtxt.Location = new Point(18, 49);
+            MM_maintenanceIDtxt.Location = new Point(18, 41);
             MM_maintenanceIDtxt.Margin = new Padding(3, 4, 3, 4);
             MM_maintenanceIDtxt.Name = "MM_maintenanceIDtxt";
             MM_maintenanceIDtxt.PlaceholderText = "MNT-0001-001";
             MM_maintenanceIDtxt.ReadOnly = true;
             MM_maintenanceIDtxt.SelectedText = "";
-            MM_maintenanceIDtxt.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            MM_maintenanceIDtxt.ShadowDecoration.CustomizableEdges = customizableEdges38;
             MM_maintenanceIDtxt.Size = new Size(290, 36);
             MM_maintenanceIDtxt.TabIndex = 169;
             // 
@@ -712,7 +716,7 @@
             guna2HtmlLabel15.BackColor = Color.Transparent;
             guna2HtmlLabel15.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel15.ForeColor = Color.Black;
-            guna2HtmlLabel15.Location = new Point(18, 21);
+            guna2HtmlLabel15.Location = new Point(18, 13);
             guna2HtmlLabel15.Name = "guna2HtmlLabel15";
             guna2HtmlLabel15.Size = new Size(133, 23);
             guna2HtmlLabel15.TabIndex = 17;
@@ -723,7 +727,7 @@
             guna2HtmlLabel16.BackColor = Color.Transparent;
             guna2HtmlLabel16.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel16.ForeColor = Color.Black;
-            guna2HtmlLabel16.Location = new Point(18, 104);
+            guna2HtmlLabel16.Location = new Point(18, 89);
             guna2HtmlLabel16.Name = "guna2HtmlLabel16";
             guna2HtmlLabel16.Size = new Size(79, 23);
             guna2HtmlLabel16.TabIndex = 18;
@@ -732,7 +736,7 @@
             // MM_acceptBtn
             // 
             MM_acceptBtn.BorderRadius = 7;
-            MM_acceptBtn.CustomizableEdges = customizableEdges37;
+            MM_acceptBtn.CustomizableEdges = customizableEdges39;
             MM_acceptBtn.DisabledState.BorderColor = Color.DarkGray;
             MM_acceptBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             MM_acceptBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -740,9 +744,9 @@
             MM_acceptBtn.FillColor = Color.Maroon;
             MM_acceptBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MM_acceptBtn.ForeColor = Color.White;
-            MM_acceptBtn.Location = new Point(18, 343);
+            MM_acceptBtn.Location = new Point(18, 316);
             MM_acceptBtn.Name = "MM_acceptBtn";
-            MM_acceptBtn.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            MM_acceptBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
             MM_acceptBtn.Size = new Size(290, 35);
             MM_acceptBtn.TabIndex = 121;
             MM_acceptBtn.Text = "Accept";
@@ -750,7 +754,7 @@
             // MM_rejectBtn
             // 
             MM_rejectBtn.BorderRadius = 7;
-            MM_rejectBtn.CustomizableEdges = customizableEdges39;
+            MM_rejectBtn.CustomizableEdges = customizableEdges41;
             MM_rejectBtn.DisabledState.BorderColor = Color.DarkGray;
             MM_rejectBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             MM_rejectBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -758,9 +762,9 @@
             MM_rejectBtn.FillColor = Color.Maroon;
             MM_rejectBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MM_rejectBtn.ForeColor = Color.White;
-            MM_rejectBtn.Location = new Point(18, 387);
+            MM_rejectBtn.Location = new Point(18, 395);
             MM_rejectBtn.Name = "MM_rejectBtn";
-            MM_rejectBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            MM_rejectBtn.ShadowDecoration.CustomizableEdges = customizableEdges42;
             MM_rejectBtn.Size = new Size(290, 35);
             MM_rejectBtn.TabIndex = 119;
             MM_rejectBtn.Text = "Reject";
@@ -784,6 +788,24 @@
             guna2HtmlLabel11.Size = new Size(211, 28);
             guna2HtmlLabel11.TabIndex = 13;
             guna2HtmlLabel11.Text = "Maintenance Details";
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 7;
+            guna2Button1.CustomizableEdges = customizableEdges31;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.Maroon;
+            guna2Button1.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(18, 355);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2Button1.Size = new Size(290, 35);
+            guna2Button1.TabIndex = 174;
+            guna2Button1.Text = "Clear";
             // 
             // UserControl_Admin_Maintenance
             // 
@@ -870,5 +892,6 @@
         private Guna.UI2.WinForms.Guna2Button MM_rejectBtn;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

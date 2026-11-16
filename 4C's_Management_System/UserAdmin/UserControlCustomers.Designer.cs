@@ -71,10 +71,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -82,8 +80,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             CM_InactiveLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             CM_totalcusLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -131,6 +133,7 @@
             guna2CirclePictureBox8 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             CM_AccomTypeTxt = new Guna.UI2.WinForms.Guna2ComboBox();
             CM_CustomerstatCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
@@ -767,10 +770,10 @@
             CM_AddCusBtn.FillColor = Color.Maroon;
             CM_AddCusBtn.Font = new Font("Baskerville Old Face", 10.2F);
             CM_AddCusBtn.ForeColor = Color.WhiteSmoke;
-            CM_AddCusBtn.Location = new Point(914, 206);
+            CM_AddCusBtn.Location = new Point(910, 206);
             CM_AddCusBtn.Name = "CM_AddCusBtn";
             CM_AddCusBtn.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            CM_AddCusBtn.Size = new Size(130, 35);
+            CM_AddCusBtn.Size = new Size(90, 35);
             CM_AddCusBtn.TabIndex = 72;
             CM_AddCusBtn.Text = "Add";
             CM_AddCusBtn.Click += CM_AddCusBtn_Click;
@@ -781,6 +784,7 @@
             guna2Panel2.BorderColor = Color.Silver;
             guna2Panel2.BorderRadius = 15;
             guna2Panel2.BorderThickness = 2;
+            guna2Panel2.Controls.Add(guna2Button1);
             guna2Panel2.Controls.Add(CM_deleteBtn);
             guna2Panel2.Controls.Add(CM_UpdateBtn);
             guna2Panel2.Controls.Add(CM_CustomeridTxt);
@@ -802,17 +806,17 @@
             guna2Panel2.Controls.Add(guna2HtmlLabel13);
             guna2Panel2.Controls.Add(CM_conManTxt);
             guna2Panel2.Controls.Add(guna2CirclePictureBox2);
-            guna2Panel2.CustomizableEdges = customizableEdges48;
+            guna2Panel2.CustomizableEdges = customizableEdges50;
             guna2Panel2.Location = new Point(53, 752);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges49;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges51;
             guna2Panel2.Size = new Size(1237, 263);
             guna2Panel2.TabIndex = 80;
             // 
             // CM_deleteBtn
             // 
             CM_deleteBtn.BorderRadius = 7;
-            CM_deleteBtn.CustomizableEdges = customizableEdges39;
+            CM_deleteBtn.CustomizableEdges = customizableEdges41;
             CM_deleteBtn.DisabledState.BorderColor = Color.DarkGray;
             CM_deleteBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             CM_deleteBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -820,10 +824,10 @@
             CM_deleteBtn.FillColor = Color.Maroon;
             CM_deleteBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CM_deleteBtn.ForeColor = Color.White;
-            CM_deleteBtn.Location = new Point(1068, 206);
+            CM_deleteBtn.Location = new Point(1126, 206);
             CM_deleteBtn.Name = "CM_deleteBtn";
-            CM_deleteBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            CM_deleteBtn.Size = new Size(130, 35);
+            CM_deleteBtn.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            CM_deleteBtn.Size = new Size(90, 35);
             CM_deleteBtn.TabIndex = 34;
             CM_deleteBtn.Text = "Delete";
             CM_deleteBtn.Click += CM_deleteBtn_Click;
@@ -831,7 +835,7 @@
             // CM_UpdateBtn
             // 
             CM_UpdateBtn.BorderRadius = 6;
-            CM_UpdateBtn.CustomizableEdges = customizableEdges41;
+            CM_UpdateBtn.CustomizableEdges = customizableEdges43;
             CM_UpdateBtn.DisabledState.BorderColor = Color.DarkGray;
             CM_UpdateBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             CM_UpdateBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -839,10 +843,10 @@
             CM_UpdateBtn.FillColor = Color.Maroon;
             CM_UpdateBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CM_UpdateBtn.ForeColor = Color.White;
-            CM_UpdateBtn.Location = new Point(760, 206);
+            CM_UpdateBtn.Location = new Point(796, 206);
             CM_UpdateBtn.Name = "CM_UpdateBtn";
-            CM_UpdateBtn.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            CM_UpdateBtn.Size = new Size(130, 35);
+            CM_UpdateBtn.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            CM_UpdateBtn.Size = new Size(90, 35);
             CM_UpdateBtn.TabIndex = 127;
             CM_UpdateBtn.Text = "Update";
             CM_UpdateBtn.Click += CM_UpdateBtn_Click;
@@ -867,7 +871,7 @@
             CM_CustomeridTxt.PlaceholderText = "CUS-0000001";
             CM_CustomeridTxt.ReadOnly = true;
             CM_CustomeridTxt.SelectedText = "";
-            CM_CustomeridTxt.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            CM_CustomeridTxt.ShadowDecoration.CustomizableEdges = customizableEdges46;
             CM_CustomeridTxt.Size = new Size(365, 30);
             CM_CustomeridTxt.TabIndex = 125;
             // 
@@ -887,7 +891,7 @@
             guna2CirclePictureBox8.ImageRotate = 0F;
             guna2CirclePictureBox8.Location = new Point(687, 84);
             guna2CirclePictureBox8.Name = "guna2CirclePictureBox8";
-            guna2CirclePictureBox8.ShadowDecoration.CustomizableEdges = customizableEdges45;
+            guna2CirclePictureBox8.ShadowDecoration.CustomizableEdges = customizableEdges47;
             guna2CirclePictureBox8.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox8.Size = new Size(37, 33);
             guna2CirclePictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -910,7 +914,7 @@
             CM_AccomTypeTxt.Items.AddRange(new object[] { "Hotel", "Apartment", "Transient" });
             CM_AccomTypeTxt.Location = new Point(273, 202);
             CM_AccomTypeTxt.Name = "CM_AccomTypeTxt";
-            CM_AccomTypeTxt.ShadowDecoration.CustomizableEdges = customizableEdges47;
+            CM_AccomTypeTxt.ShadowDecoration.CustomizableEdges = customizableEdges49;
             CM_AccomTypeTxt.Size = new Size(394, 36);
             CM_AccomTypeTxt.TabIndex = 105;
             // 
@@ -919,7 +923,7 @@
             CM_CustomerstatCB.BackColor = Color.White;
             CM_CustomerstatCB.BorderColor = Color.FromArgb(138, 10, 46);
             CM_CustomerstatCB.BorderThickness = 2;
-            CM_CustomerstatCB.CustomizableEdges = customizableEdges50;
+            CM_CustomerstatCB.CustomizableEdges = customizableEdges52;
             CM_CustomerstatCB.DrawMode = DrawMode.OwnerDrawFixed;
             CM_CustomerstatCB.DropDownStyle = ComboBoxStyle.DropDownList;
             CM_CustomerstatCB.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -930,10 +934,32 @@
             CM_CustomerstatCB.Items.AddRange(new object[] { "All status", "Pending", "Reserve", "Checked-In", "Checked-Out", "Canceled" });
             CM_CustomerstatCB.Location = new Point(687, 215);
             CM_CustomerstatCB.Name = "CM_CustomerstatCB";
-            CM_CustomerstatCB.ShadowDecoration.CustomizableEdges = customizableEdges51;
+            CM_CustomerstatCB.ShadowDecoration.CustomizableEdges = customizableEdges53;
             CM_CustomerstatCB.Size = new Size(280, 36);
             CM_CustomerstatCB.TabIndex = 85;
             CM_CustomerstatCB.SelectedIndexChanged += CM_selectedindexchange_stat;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            guna2Button1.BackColor = Color.Transparent;
+            guna2Button1.BorderColor = Color.Silver;
+            guna2Button1.BorderRadius = 6;
+            guna2Button1.BorderThickness = 1;
+            guna2Button1.CustomizableEdges = customizableEdges39;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.Maroon;
+            guna2Button1.Font = new Font("Baskerville Old Face", 10.2F);
+            guna2Button1.ForeColor = Color.WhiteSmoke;
+            guna2Button1.Location = new Point(1019, 206);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            guna2Button1.Size = new Size(90, 35);
+            guna2Button1.TabIndex = 128;
+            guna2Button1.Text = "Clear";
             // 
             // UserControlCustomers
             // 
@@ -1035,5 +1061,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
         private Guna.UI2.WinForms.Guna2ComboBox CM_CustomerstatCB;
         private Guna.UI2.WinForms.Guna2Button CM_deleteBtn;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

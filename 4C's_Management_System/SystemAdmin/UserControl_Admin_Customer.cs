@@ -24,6 +24,9 @@ namespace _4C_s_Management_System
             InitializeComponent();
 
             this.Load += UserControlCustomer_Load;
+        
+            // CLEAR BUTTON EVENT
+            guna2Button2.Click += guna2Button2_Click;
         }
 
         // ==========================================
@@ -47,21 +50,24 @@ namespace _4C_s_Management_System
             loadtable();
         }
 
+        // ==========================================
+        // LOAD CUSTOMER TABLE
+        // ==========================================
         public void loadtable()
         {
             try
             {
                 const string rquery = @"
-            SELECT
-                CustomerID,
-                Fullname,
-                ContactNumber,
-                Address,
-                CustomerType,
-                CustomerStatus,
-                BranchId
-            FROM CustomerTbl
-            ORDER BY CustomerID ASC;";
+                    SELECT
+                        CustomerID,
+                        Fullname,
+                        ContactNumber,
+                        Address,
+                        CustomerType,
+                        CustomerStatus,
+                        BranchId
+                    FROM CustomerTbl
+                    ORDER BY CustomerID ASC;";
 
                 DataTable data = AppDB.Instance.TableData(
                     rquery,
@@ -376,6 +382,16 @@ namespace _4C_s_Management_System
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        // ==========================================
+        // CLEAR BUTTON
+        // BUTTON: guna2Button2
+        // ==========================================
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
 
         // ==========================================

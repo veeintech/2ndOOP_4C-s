@@ -80,8 +80,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             PaidLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel24 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -141,7 +139,7 @@
             payM_payBTN = new Guna.UI2.WinForms.Guna2Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            shift_panel = new Guna.UI2.WinForms.Guna2Panel();
+            shift_panel = new Panel();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel4.SuspendLayout();
@@ -1001,12 +999,9 @@
             // 
             // shift_panel
             // 
-            shift_panel.BorderColor = Color.Maroon;
-            shift_panel.BorderThickness = 4;
-            shift_panel.CustomizableEdges = customizableEdges49;
-            shift_panel.Location = new Point(422, 87);
+            shift_panel.Location = new Point(419, 87);
             shift_panel.Name = "shift_panel";
-            shift_panel.ShadowDecoration.CustomizableEdges = customizableEdges50;
+            shift_panel.Padding = new Padding(3);
             shift_panel.Size = new Size(451, 590);
             shift_panel.TabIndex = 59;
             // 
@@ -1122,6 +1117,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView PaymentDGV;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private Guna.UI2.WinForms.Guna2Panel shift_panel;
+        private Panel shift_panel;
     }
 }
