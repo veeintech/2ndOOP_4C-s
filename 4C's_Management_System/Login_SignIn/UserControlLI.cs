@@ -97,7 +97,8 @@ namespace _4C_s_Management_System
                 const string loginQuery = @"
                     SELECT
                         Status,
-                        BranchId
+                        BranchId,
+                        StaffId
                     FROM UserTbl
                     WHERE UserName = @Username
                     AND Password = @Password";
@@ -155,6 +156,10 @@ namespace _4C_s_Management_System
 
                 string branchId = Convert.ToString(
                     result.Rows[0]["BranchId"]
+                ) ?? "";
+
+                string staffid = Convert.ToString(
+                    result.Rows[0]["StaffId"]
                 ) ?? "";
 
                 if (string.IsNullOrWhiteSpace(branchId))
@@ -231,5 +236,6 @@ namespace _4C_s_Management_System
         {
             LOGIN_openeyeBtn.BringToFront();
         }
+
     }
 }
