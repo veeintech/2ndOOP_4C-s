@@ -348,11 +348,24 @@ namespace _4C_s_Management_System
 
         // =====================================================
         // CLEAR BUTTON
+        // BRANCH DETAILS ONLY
         // =====================================================
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            ClearFields();
+            ClearBranchDetails();
+        }
+
+        // =====================================================
+        // CLEAR BRANCH DETAILS ONLY
+        // =====================================================
+
+        private void ClearBranchDetails()
+        {
+            BR_branchidtxt.Clear();
+            BR_branchnametxt.Clear();
+            BR_addresstxt.Clear();
+            BR_statustxt.Clear();
         }
 
         // =====================================================
@@ -403,14 +416,12 @@ namespace _4C_s_Management_System
 
         // =====================================================
         // CLEAR FIELDS
+        // USED BY ADD, UPDATE, DELETE AND LOAD
         // =====================================================
 
         private void ClearFields()
         {
-            BR_branchidtxt.Clear();
-            BR_branchnametxt.Clear();
-            BR_addresstxt.Clear();
-            BR_statustxt.Clear();
+            ClearBranchDetails();
 
             BR_BranchDGV.ClearSelection();
         }

@@ -25,6 +25,9 @@ namespace _4C_s_Management_System
             InitializeComponent();
 
             this.Load += UserControlTenants_Load;
+
+            guna2Button2.Click -= guna2Button2_Click;
+            guna2Button2.Click += guna2Button2_Click;
         }
 
         // ==========================================
@@ -36,7 +39,7 @@ namespace _4C_s_Management_System
             if (TM_tenantstatusCB.Items.Count > 0)
                 TM_tenantstatusCB.SelectedIndex = 0;
 
-            ClearFields();
+            ClearTenantDetails();
 
             ApplyTenantFilters();
             LoadRoomsdisplay();
@@ -316,7 +319,7 @@ namespace _4C_s_Management_System
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    ClearFields();
+                    ClearTenantDetails();
 
                     ApplyTenantFilters();
                     LoadRoomsdisplay();
@@ -341,10 +344,21 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
-        // CLEAR FIELDS
+        // CLEAR BUTTON
+        // Button Name: guna2Button2
+        // TENANT DETAILS ONLY
         // ==========================================
 
-        public void ClearFields()
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            ClearTenantDetails();
+        }
+
+        // ==========================================
+        // CLEAR TENANT DETAILS ONLY
+        // ==========================================
+
+        private void ClearTenantDetails()
         {
             tenantBranchId = "";
 
@@ -360,8 +374,6 @@ namespace _4C_s_Management_System
             TM_agreementendtxt.Value = DateTime.Today;
 
             TM_statustxt.SelectedIndex = -1;
-
-            TM_TenantDGV.ClearSelection();
         }
 
         // ==========================================
@@ -575,7 +587,7 @@ namespace _4C_s_Management_System
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    ClearFields();
+                    ClearTenantDetails();
 
                     ApplyTenantFilters();
                     LoadRoomsdisplay();
@@ -728,7 +740,7 @@ namespace _4C_s_Management_System
                 if (data == null)
                 {
                     TM_TenantDGV.DataSource = null;
-                    ClearFields();
+                    ClearTenantDetails();
                     return;
                 }
 
@@ -769,7 +781,7 @@ namespace _4C_s_Management_System
                 }
                 else
                 {
-                    ClearFields();
+                    ClearTenantDetails();
                 }
             }
             catch (Exception ex)

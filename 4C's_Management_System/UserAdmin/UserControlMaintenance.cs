@@ -45,6 +45,42 @@ namespace _4C_s_Management_System
 
             btn_end_task.Click -= btn_end_task_Click;
             btn_end_task.Click += btn_end_task_Click;
+
+            // CLEAR BUTTON
+            btn_clear.Click -= btn_clear_Click;
+            btn_clear.Click += btn_clear_Click;
+        }
+
+        // ==========================================
+        // CLEAR BUTTON - MAINTENANCE DETAILS ONLY
+        // ==========================================
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            ClearMaintenanceDetails();
+        }
+
+        // ==========================================
+        // CLEAR MAINTENANCE DETAILS
+        // DOES NOT AFFECT DATAGRIDVIEW
+        // ==========================================
+
+        private void ClearMaintenanceDetails()
+        {
+            tb_maintenance_id.Clear();
+            txb_Room_id.Clear();
+            txb_issue.Clear();
+            txb_remarks.Clear();
+
+            maintenance_id_info.Text = "";
+            mtn_issue_info.Text = "";
+            Rm_no_LBL.Text = "";
+
+            Date_std_info.Text = "";
+            date_ctd_info.Text = "";
+
+            remarks_info.Text = "";
+            Maintenance_StatusLBL.Text = "";
         }
 
         // ==========================================
@@ -742,7 +778,7 @@ namespace _4C_s_Management_System
         }
 
         // ==========================================
-        // CLEAR FIELDS
+        // CLEAR FIELDS - EXISTING CANCEL BEHAVIOR
         // ==========================================
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -752,20 +788,7 @@ namespace _4C_s_Management_System
 
         private void ClearFields()
         {
-            tb_maintenance_id.Clear();
-            txb_Room_id.Clear();
-            txb_issue.Clear();
-            txb_remarks.Clear();
-
-            maintenance_id_info.Text = "";
-            mtn_issue_info.Text = "";
-            Rm_no_LBL.Text = "";
-
-            Date_std_info.Text = "";
-            date_ctd_info.Text = "";
-
-            remarks_info.Text = "";
-            Maintenance_StatusLBL.Text = "";
+            ClearMaintenanceDetails();
 
             DGV_MAINTENANCE.ClearSelection();
         }

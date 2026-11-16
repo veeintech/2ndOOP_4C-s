@@ -35,6 +35,8 @@ namespace _4C_s_Management_System
             TM_addBtn.Click += TM_addBtn_Click;
             TM_editBtn.Click += TM_editBtn_Click;
             TM_deleteBtn.Click += TM_deleteBtn_Click;
+
+            guna2Button1.Click += guna2Button1_Click;
         }
 
         // ==========================================
@@ -382,6 +384,30 @@ namespace _4C_s_Management_System
             TM_deadlineDTP.Value = DateTime.Now.AddDays(1);
 
             TM_statusDetailsCB.SelectedIndex = -1;
+        }
+
+        // ==========================================
+        // CLEAR BUTTON
+        // TASK DETAILS ONLY
+        // ==========================================
+        private void guna2Button1_Click(object? sender, EventArgs e)
+        {
+            loading = true;
+
+            ClearDetails();
+
+            loading = false;
+
+            selectedTaskID = "";
+            currentMode = "";
+            newTaskID = "";
+
+            SetDetailsEditable(false);
+
+            TM_addBtn.Text = "Add";
+            TM_editBtn.Text = "Edit";
+
+            UpdateButtons();
         }
 
         // ==========================================

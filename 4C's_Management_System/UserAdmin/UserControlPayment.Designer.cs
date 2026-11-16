@@ -76,6 +76,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -140,6 +142,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             shift_panel = new Panel();
+            ClearBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel4.SuspendLayout();
@@ -289,7 +292,7 @@
             PM_refundBTN.FillColor = Color.Maroon;
             PM_refundBTN.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PM_refundBTN.ForeColor = Color.White;
-            PM_refundBTN.Location = new Point(175, 46);
+            PM_refundBTN.Location = new Point(176, 8);
             PM_refundBTN.Name = "PM_refundBTN";
             PM_refundBTN.ShadowDecoration.CustomizableEdges = customizableEdges10;
             PM_refundBTN.Size = new Size(149, 35);
@@ -308,7 +311,7 @@
             PM_PrintRecieptBTN.FillColor = Color.FromArgb(183, 122, 50);
             PM_PrintRecieptBTN.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PM_PrintRecieptBTN.ForeColor = Color.White;
-            PM_PrintRecieptBTN.Location = new Point(20, 46);
+            PM_PrintRecieptBTN.Location = new Point(20, 48);
             PM_PrintRecieptBTN.Name = "PM_PrintRecieptBTN";
             PM_PrintRecieptBTN.ShadowDecoration.CustomizableEdges = customizableEdges12;
             PM_PrintRecieptBTN.Size = new Size(149, 35);
@@ -968,20 +971,21 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.Controls.Add(ClearBtn);
             guna2Panel2.Controls.Add(PM_PrintRecieptBTN);
             guna2Panel2.Controls.Add(payM_payBTN);
             guna2Panel2.Controls.Add(PM_refundBTN);
-            guna2Panel2.CustomizableEdges = customizableEdges47;
+            guna2Panel2.CustomizableEdges = customizableEdges49;
             guna2Panel2.Location = new Point(937, 681);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges48;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges50;
             guna2Panel2.Size = new Size(347, 91);
             guna2Panel2.TabIndex = 58;
             // 
             // payM_payBTN
             // 
             payM_payBTN.BorderRadius = 7;
-            payM_payBTN.CustomizableEdges = customizableEdges45;
+            payM_payBTN.CustomizableEdges = customizableEdges47;
             payM_payBTN.DisabledState.BorderColor = Color.DarkGray;
             payM_payBTN.DisabledState.CustomBorderColor = Color.DarkGray;
             payM_payBTN.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -989,10 +993,10 @@
             payM_payBTN.FillColor = Color.Green;
             payM_payBTN.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             payM_payBTN.ForeColor = Color.White;
-            payM_payBTN.Location = new Point(20, 6);
+            payM_payBTN.Location = new Point(21, 8);
             payM_payBTN.Name = "payM_payBTN";
-            payM_payBTN.ShadowDecoration.CustomizableEdges = customizableEdges46;
-            payM_payBTN.Size = new Size(304, 35);
+            payM_payBTN.ShadowDecoration.CustomizableEdges = customizableEdges48;
+            payM_payBTN.Size = new Size(149, 35);
             payM_payBTN.TabIndex = 34;
             payM_payBTN.Text = "Pay";
             payM_payBTN.Click += payM_payBTN_Click;
@@ -1004,6 +1008,24 @@
             shift_panel.Padding = new Padding(3);
             shift_panel.Size = new Size(451, 590);
             shift_panel.TabIndex = 59;
+            // 
+            // ClearBtn
+            // 
+            ClearBtn.BorderRadius = 7;
+            ClearBtn.CustomizableEdges = customizableEdges45;
+            ClearBtn.DisabledState.BorderColor = Color.DarkGray;
+            ClearBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            ClearBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ClearBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ClearBtn.FillColor = Color.LightSeaGreen;
+            ClearBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ClearBtn.ForeColor = Color.White;
+            ClearBtn.Location = new Point(176, 48);
+            ClearBtn.Name = "ClearBtn";
+            ClearBtn.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            ClearBtn.Size = new Size(149, 35);
+            ClearBtn.TabIndex = 35;
+            ClearBtn.Text = "Clear";
             // 
             // UserControlPayment
             // 
@@ -1118,5 +1140,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private Panel shift_panel;
+        private Guna.UI2.WinForms.Guna2Button ClearBtn;
     }
 }

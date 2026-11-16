@@ -25,7 +25,6 @@ namespace _4C_s_Management_System
         {
             InitializeComponent();
 
-            // CLEAR BUTTON
             guna2Button1.Click -= guna2Button1_Click;
             guna2Button1.Click += guna2Button1_Click;
         }
@@ -887,6 +886,7 @@ namespace _4C_s_Management_System
         // ========================================
         // CLEAR BUTTON
         // Button Name: guna2Button1
+        // ROOM DETAILS ONLY
         // ========================================
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -894,8 +894,8 @@ namespace _4C_s_Management_System
             ClearRoomInputFields();
             ClearRoomDetails();
 
-            RoomDGV.ClearSelection();
-            RoomDGV.CurrentCell = null;
+            // HUWAG I-CLEAR ANG RoomDGV.
+            // Mananatili ang records at current selection.
         }
 
         // ========================================
@@ -916,9 +916,5 @@ namespace _4C_s_Management_System
 
             roomId = "";
         }
-
-        // ========================================
-        // END OF USER CONTROL
-        // ========================================
     }
 }

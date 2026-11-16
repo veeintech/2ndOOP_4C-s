@@ -246,13 +246,15 @@ namespace _4C_s_Management_System
         // =========================================
         // CLEAR BUTTON
         // Button Name: guna2Button1
+        // Maintenance Details ONLY
         // =========================================
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             ClearDetails();
 
-            MM_MaintenanceDGV.ClearSelection();
+            // Hindi gagalawin ang DataGridView.
+            // Mananatili ang selected row at records.
         }
 
         // =========================================

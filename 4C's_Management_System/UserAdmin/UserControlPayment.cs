@@ -20,9 +20,21 @@ namespace _4C_s_Management_System
 
             printDocument.PrintPage += printDocument_PrintPage;
 
+            // CLEAR BUTTON
+            ClearBtn.Click += ClearBtn_Click;
+
             // SHIFT PANEL BORDER DESIGN
             shift_panel.Visible = false;
             shift_panel.Padding = new Padding(3);
+        }
+
+        // =====================================================
+        // CLEAR BUTTON - PAYMENT DETAILS ONLY
+        // =====================================================
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            ClearPaymentDetails();
         }
 
         // =====================================================

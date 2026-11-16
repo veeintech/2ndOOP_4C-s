@@ -24,8 +24,9 @@ namespace _4C_s_Management_System
             InitializeComponent();
 
             this.Load += UserControlCustomer_Load;
-        
+
             // CLEAR BUTTON EVENT
+            guna2Button2.Click -= guna2Button2_Click;
             guna2Button2.Click += guna2Button2_Click;
         }
 
@@ -53,6 +54,7 @@ namespace _4C_s_Management_System
         // ==========================================
         // LOAD CUSTOMER TABLE
         // ==========================================
+
         public void loadtable()
         {
             try
@@ -387,18 +389,20 @@ namespace _4C_s_Management_System
         // ==========================================
         // CLEAR BUTTON
         // BUTTON: guna2Button2
+        // CUSTOMER DETAILS ONLY
         // ==========================================
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            ClearFields();
+            ClearCustomerDetails();
         }
 
         // ==========================================
-        // CLEAR FIELDS
+        // CLEAR CUSTOMER DETAILS ONLY
+        // DOES NOT AFFECT DATAGRIDVIEW
         // ==========================================
 
-        public void ClearFields()
+        private void ClearCustomerDetails()
         {
             customerBranchId = "";
 
@@ -410,6 +414,16 @@ namespace _4C_s_Management_System
 
             CM_AccomTypeTxt.SelectedIndex = -1;
             CM_statustxt.SelectedIndex = -1;
+        }
+
+        // ==========================================
+        // CLEAR FIELDS
+        // FOR OTHER OPERATIONS
+        // ==========================================
+
+        public void ClearFields()
+        {
+            ClearCustomerDetails();
 
             CM_CustomerDGV.ClearSelection();
         }
