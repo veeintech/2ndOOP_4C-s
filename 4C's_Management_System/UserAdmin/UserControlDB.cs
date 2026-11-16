@@ -1,4 +1,5 @@
-﻿using _4C_s_Management_System.Classess;
+﻿
+using _4C_s_Management_System.Classess;
 using Guna.Charts.WinForms;
 using Guna.UI2.WinForms;
 using System;
@@ -416,18 +417,10 @@ namespace _4C_s_Management_System
 
                 string[] monthNames =
                 {
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                    "July",
-                    "August",
-                    "September",
-                    "October",
-                    "November",
-                    "December"
+                    "January", "February", "March",
+                    "April", "May", "June",
+                    "July", "August", "September",
+                    "October", "November", "December"
                 };
 
                 decimal[] monthlyIncome = new decimal[12];
@@ -1012,11 +1005,11 @@ namespace _4C_s_Management_System
             {
                 Text = "Recent Payments",
                 Font = new Font(
-                    "Segoe UI",
-                    12,
+                    "Baskerville Old Face",
+                    13.8f,
                     FontStyle.Bold
                 ),
-                ForeColor = RecentDark,
+                ForeColor = Color.FromArgb(128, 0, 32),
                 Location = new Point(12, 10),
                 AutoSize = true
             };
@@ -1412,11 +1405,11 @@ namespace _4C_s_Management_System
                 {
                     Text = "Maintenance Reports",
                     Font = new Font(
-                        "Segoe UI",
-                        12,
+                        "Baskerville Old Face",
+                        13.8f,
                         FontStyle.Bold
                     ),
-                    ForeColor = MaintenanceDark,
+                    ForeColor = Color.FromArgb(128, 0, 32),
                     Location = new Point(12, 10),
                     AutoSize = true
                 };

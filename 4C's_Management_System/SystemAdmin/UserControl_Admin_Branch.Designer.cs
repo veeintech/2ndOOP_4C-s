@@ -49,34 +49,36 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             BR_totalLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -115,6 +117,7 @@
             guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             BR_BranchDGV = new DataGridView();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            ClearBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -369,7 +372,7 @@
             BR_UpdateBtn.FillColor = Color.Maroon;
             BR_UpdateBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BR_UpdateBtn.ForeColor = Color.White;
-            BR_UpdateBtn.Location = new Point(17, 407);
+            BR_UpdateBtn.Location = new Point(17, 403);
             BR_UpdateBtn.Name = "BR_UpdateBtn";
             BR_UpdateBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
             BR_UpdateBtn.Size = new Size(290, 35);
@@ -387,7 +390,7 @@
             BR_DeleteBtn.FillColor = Color.Maroon;
             BR_DeleteBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BR_DeleteBtn.ForeColor = Color.White;
-            BR_DeleteBtn.Location = new Point(17, 464);
+            BR_DeleteBtn.Location = new Point(17, 497);
             BR_DeleteBtn.Name = "BR_DeleteBtn";
             BR_DeleteBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
             BR_DeleteBtn.Size = new Size(290, 35);
@@ -405,10 +408,10 @@
             RM_status_panel.Controls.Add(guna2Panel2);
             RM_status_panel.Controls.Add(guna2Separator1);
             RM_status_panel.Controls.Add(guna2HtmlLabel11);
-            RM_status_panel.CustomizableEdges = customizableEdges33;
+            RM_status_panel.CustomizableEdges = customizableEdges35;
             RM_status_panel.Location = new Point(937, 130);
             RM_status_panel.Name = "RM_status_panel";
-            RM_status_panel.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            RM_status_panel.ShadowDecoration.CustomizableEdges = customizableEdges36;
             RM_status_panel.Size = new Size(362, 628);
             RM_status_panel.TabIndex = 97;
             // 
@@ -445,6 +448,7 @@
             guna2Panel2.BorderColor = Color.Silver;
             guna2Panel2.BorderRadius = 15;
             guna2Panel2.BorderThickness = 2;
+            guna2Panel2.Controls.Add(ClearBtn);
             guna2Panel2.Controls.Add(BR_statustxt);
             guna2Panel2.Controls.Add(BR_addresstxt);
             guna2Panel2.Controls.Add(guna2HtmlLabel3);
@@ -456,17 +460,17 @@
             guna2Panel2.Controls.Add(BR_AddBtn);
             guna2Panel2.Controls.Add(BR_UpdateBtn);
             guna2Panel2.Controls.Add(BR_DeleteBtn);
-            guna2Panel2.CustomizableEdges = customizableEdges31;
+            guna2Panel2.CustomizableEdges = customizableEdges33;
             guna2Panel2.Location = new Point(16, 65);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges34;
             guna2Panel2.Size = new Size(330, 544);
             guna2Panel2.TabIndex = 100;
             // 
             // BR_statustxt
             // 
             BR_statustxt.BorderColor = Color.Maroon;
-            BR_statustxt.CustomizableEdges = customizableEdges23;
+            BR_statustxt.CustomizableEdges = customizableEdges25;
             BR_statustxt.DefaultText = "";
             BR_statustxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             BR_statustxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -481,14 +485,14 @@
             BR_statustxt.Name = "BR_statustxt";
             BR_statustxt.PlaceholderText = "Active/Inactive";
             BR_statustxt.SelectedText = "";
-            BR_statustxt.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            BR_statustxt.ShadowDecoration.CustomizableEdges = customizableEdges26;
             BR_statustxt.Size = new Size(290, 36);
             BR_statustxt.TabIndex = 174;
             // 
             // BR_addresstxt
             // 
             BR_addresstxt.BorderColor = Color.Maroon;
-            BR_addresstxt.CustomizableEdges = customizableEdges25;
+            BR_addresstxt.CustomizableEdges = customizableEdges27;
             BR_addresstxt.DefaultText = "";
             BR_addresstxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             BR_addresstxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -503,7 +507,7 @@
             BR_addresstxt.Name = "BR_addresstxt";
             BR_addresstxt.PlaceholderText = "Sitio 2, Barangay Earth, Mars Milky Way";
             BR_addresstxt.SelectedText = "";
-            BR_addresstxt.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            BR_addresstxt.ShadowDecoration.CustomizableEdges = customizableEdges28;
             BR_addresstxt.Size = new Size(290, 36);
             BR_addresstxt.TabIndex = 173;
             // 
@@ -532,7 +536,7 @@
             // BR_branchnametxt
             // 
             BR_branchnametxt.BorderColor = Color.Maroon;
-            BR_branchnametxt.CustomizableEdges = customizableEdges27;
+            BR_branchnametxt.CustomizableEdges = customizableEdges29;
             BR_branchnametxt.DefaultText = "";
             BR_branchnametxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             BR_branchnametxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -547,14 +551,14 @@
             BR_branchnametxt.Name = "BR_branchnametxt";
             BR_branchnametxt.PlaceholderText = "Malapote Management Corp.";
             BR_branchnametxt.SelectedText = "";
-            BR_branchnametxt.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            BR_branchnametxt.ShadowDecoration.CustomizableEdges = customizableEdges30;
             BR_branchnametxt.Size = new Size(290, 36);
             BR_branchnametxt.TabIndex = 170;
             // 
             // BR_branchidtxt
             // 
             BR_branchidtxt.BorderColor = Color.Maroon;
-            BR_branchidtxt.CustomizableEdges = customizableEdges29;
+            BR_branchidtxt.CustomizableEdges = customizableEdges31;
             BR_branchidtxt.DefaultText = "";
             BR_branchidtxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             BR_branchidtxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -570,7 +574,7 @@
             BR_branchidtxt.PlaceholderText = "BRC-002";
             BR_branchidtxt.ReadOnly = true;
             BR_branchidtxt.SelectedText = "";
-            BR_branchidtxt.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            BR_branchidtxt.ShadowDecoration.CustomizableEdges = customizableEdges32;
             BR_branchidtxt.Size = new Size(290, 36);
             BR_branchidtxt.TabIndex = 169;
             // 
@@ -619,12 +623,12 @@
             // guna2PictureBox8
             // 
             guna2PictureBox8.BackColor = Color.Transparent;
-            guna2PictureBox8.CustomizableEdges = customizableEdges35;
+            guna2PictureBox8.CustomizableEdges = customizableEdges37;
             guna2PictureBox8.Image = Properties.Resources.gse;
             guna2PictureBox8.ImageRotate = 0F;
-            guna2PictureBox8.Location = new Point(16, 17);
+            guna2PictureBox8.Location = new Point(16, 24);
             guna2PictureBox8.Name = "guna2PictureBox8";
-            guna2PictureBox8.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            guna2PictureBox8.ShadowDecoration.CustomizableEdges = customizableEdges38;
             guna2PictureBox8.Size = new Size(41, 36);
             guna2PictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox8.TabIndex = 28;
@@ -636,7 +640,7 @@
             BR_searchTxt.BorderColor = Color.FromArgb(138, 10, 46);
             BR_searchTxt.BorderRadius = 6;
             BR_searchTxt.BorderThickness = 2;
-            BR_searchTxt.CustomizableEdges = customizableEdges37;
+            BR_searchTxt.CustomizableEdges = customizableEdges39;
             BR_searchTxt.DefaultText = "";
             BR_searchTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             BR_searchTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -646,12 +650,12 @@
             BR_searchTxt.Font = new Font("Segoe UI", 9F);
             BR_searchTxt.ForeColor = Color.FromArgb(64, 64, 64);
             BR_searchTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            BR_searchTxt.Location = new Point(63, 16);
+            BR_searchTxt.Location = new Point(75, 23);
             BR_searchTxt.Margin = new Padding(3, 4, 3, 4);
             BR_searchTxt.Name = "BR_searchTxt";
             BR_searchTxt.PlaceholderText = "Search Branch ID or Name";
             BR_searchTxt.SelectedText = "";
-            BR_searchTxt.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            BR_searchTxt.ShadowDecoration.CustomizableEdges = customizableEdges40;
             BR_searchTxt.Size = new Size(230, 37);
             BR_searchTxt.TabIndex = 27;
             // 
@@ -660,7 +664,7 @@
             BR_filterCB.BackColor = Color.White;
             BR_filterCB.BorderColor = Color.FromArgb(138, 10, 46);
             BR_filterCB.BorderThickness = 2;
-            BR_filterCB.CustomizableEdges = customizableEdges39;
+            BR_filterCB.CustomizableEdges = customizableEdges41;
             BR_filterCB.DrawMode = DrawMode.OwnerDrawFixed;
             BR_filterCB.DropDownStyle = ComboBoxStyle.DropDownList;
             BR_filterCB.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -669,9 +673,9 @@
             BR_filterCB.ForeColor = Color.FromArgb(68, 88, 112);
             BR_filterCB.ItemHeight = 30;
             BR_filterCB.Items.AddRange(new object[] { "Active", "Inactive" });
-            BR_filterCB.Location = new Point(687, 16);
+            BR_filterCB.Location = new Point(682, 24);
             BR_filterCB.Name = "BR_filterCB";
-            BR_filterCB.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            BR_filterCB.ShadowDecoration.CustomizableEdges = customizableEdges42;
             BR_filterCB.Size = new Size(178, 36);
             BR_filterCB.TabIndex = 36;
             // 
@@ -684,10 +688,10 @@
             guna2Panel7.BorderRadius = 15;
             guna2Panel7.BorderThickness = 2;
             guna2Panel7.Controls.Add(BR_BranchDGV);
-            guna2Panel7.CustomizableEdges = customizableEdges41;
+            guna2Panel7.CustomizableEdges = customizableEdges43;
             guna2Panel7.Location = new Point(16, 81);
             guna2Panel7.Name = "guna2Panel7";
-            guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges44;
             guna2Panel7.Size = new Size(849, 398);
             guna2Panel7.TabIndex = 37;
             // 
@@ -754,12 +758,30 @@
             guna2Panel6.Controls.Add(BR_filterCB);
             guna2Panel6.Controls.Add(BR_searchTxt);
             guna2Panel6.Controls.Add(guna2PictureBox8);
-            guna2Panel6.CustomizableEdges = customizableEdges43;
+            guna2Panel6.CustomizableEdges = customizableEdges45;
             guna2Panel6.Location = new Point(35, 248);
             guna2Panel6.Name = "guna2Panel6";
-            guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges46;
             guna2Panel6.Size = new Size(884, 510);
             guna2Panel6.TabIndex = 96;
+            // 
+            // ClearBtn
+            // 
+            ClearBtn.BorderRadius = 7;
+            ClearBtn.CustomizableEdges = customizableEdges23;
+            ClearBtn.DisabledState.BorderColor = Color.DarkGray;
+            ClearBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            ClearBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ClearBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ClearBtn.FillColor = Color.Maroon;
+            ClearBtn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ClearBtn.ForeColor = Color.White;
+            ClearBtn.Location = new Point(17, 451);
+            ClearBtn.Name = "ClearBtn";
+            ClearBtn.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            ClearBtn.Size = new Size(290, 35);
+            ClearBtn.TabIndex = 175;
+            ClearBtn.Text = "Clear";
             // 
             // UserControl_Admin_Branch
             // 
@@ -865,5 +887,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel BR_totalLbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel BR_activeLbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel BR_inactiveLbl;
+        private Guna.UI2.WinForms.Guna2Button ClearBtn;
     }
 }

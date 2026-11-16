@@ -24,6 +24,10 @@ namespace _4C_s_Management_System
         public UserControl_Admin_Room()
         {
             InitializeComponent();
+
+            // CLEAR BUTTON
+            guna2Button1.Click -= guna2Button1_Click;
+            guna2Button1.Click += guna2Button1_Click;
         }
 
         // ========================================
@@ -586,8 +590,6 @@ namespace _4C_s_Management_System
             {
                 string branchId = BranchIdTXT.Text.Trim();
 
-                // VALIDATE BRANCH ID FIRST
-
                 if (string.IsNullOrWhiteSpace(branchId))
                 {
                     MessageBox.Show(
@@ -598,8 +600,6 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // GENERATE ROOM ID
-
                 string newRoomId =
                     IDGenerator.GenerateNextID("RM", branchId);
 
@@ -608,8 +608,6 @@ namespace _4C_s_Management_System
                 string roomType = rd_roomtype.Text.Trim();
                 string capacity = rd_capacity.Text.Trim();
                 string status = statusTxt.Text.Trim();
-
-                // VALIDATION
 
                 if (string.IsNullOrWhiteSpace(newRoomId) ||
                     string.IsNullOrWhiteSpace(roomType) ||
@@ -639,8 +637,6 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // CONFIRMATION
-
                 DialogResult confirm = MessageBox.Show(
                     "Are you sure you want to add this room?",
                     "Confirm Add Room",
@@ -649,8 +645,6 @@ namespace _4C_s_Management_System
 
                 if (confirm != DialogResult.Yes)
                     return;
-
-                // INSERT ROOM
 
                 const string query = @"
                     INSERT INTO TBLRoom
@@ -721,8 +715,6 @@ namespace _4C_s_Management_System
                 string capacity = rd_capacity.Text.Trim();
                 string status = statusTxt.Text.Trim();
 
-                // VALIDATION
-
                 if (string.IsNullOrWhiteSpace(oldRoomId))
                 {
                     MessageBox.Show(
@@ -762,8 +754,6 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // CONFIRMATION
-
                 DialogResult confirm = MessageBox.Show(
                     "Are you sure you want to update this room?",
                     "Confirm Update",
@@ -772,8 +762,6 @@ namespace _4C_s_Management_System
 
                 if (confirm != DialogResult.Yes)
                     return;
-
-                // UPDATE ROOM
 
                 const string query = @"
                     UPDATE TBLRoom
@@ -832,8 +820,6 @@ namespace _4C_s_Management_System
                 string selectedRoomId = roomId;
                 string branchId = BranchIdTXT.Text.Trim();
 
-                // VALIDATION
-
                 if (string.IsNullOrWhiteSpace(selectedRoomId))
                 {
                     MessageBox.Show(
@@ -854,8 +840,6 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // CONFIRMATION
-
                 DialogResult confirm = MessageBox.Show(
                     "Are you sure you want to delete Room " + selectedRoomId + "?",
                     "Confirm Delete",
@@ -864,8 +848,6 @@ namespace _4C_s_Management_System
 
                 if (confirm != DialogResult.Yes)
                     return;
-
-                // DELETE ROOM
 
                 const string query = @"
                     DELETE FROM TBLRoom
@@ -900,6 +882,20 @@ namespace _4C_s_Management_System
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        // ========================================
+        // CLEAR BUTTON
+        // Button Name: guna2Button1
+        // ========================================
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ClearRoomInputFields();
+            ClearRoomDetails();
+
+            RoomDGV.ClearSelection();
+            RoomDGV.CurrentCell = null;
         }
 
         // ========================================

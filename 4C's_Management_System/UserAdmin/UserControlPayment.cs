@@ -1,22 +1,16 @@
 ﻿
 using _4C_s_Management_System.Classess;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace _4C_s_Management_System
 {
     public partial class UserControlPayment : UserControl
     {
-        PrintDocument printDocument = new PrintDocument();
+        private PrintDocument printDocument = new PrintDocument();
 
         public string branchid = AccessBranch_ByForm.BranchId;
 
@@ -25,10 +19,14 @@ namespace _4C_s_Management_System
             InitializeComponent();
 
             printDocument.PrintPage += printDocument_PrintPage;
+
+            // SHIFT PANEL BORDER DESIGN
+            shift_panel.Visible = false;
+            shift_panel.Padding = new Padding(3);
         }
 
         // =====================================================
-        // OPEN PAYMENT SHELL AND LOAD CHILD USERCONTROL
+        // OPEN PAYMENT PANEL
         // =====================================================
 
         private void payM_payBTN_Click(object sender, EventArgs e)
@@ -39,18 +37,23 @@ namespace _4C_s_Management_System
 
                 if (string.IsNullOrWhiteSpace(id))
                 {
-                    MessageBox.Show("Please select a payment first.");
+                    MessageBox.Show(
+                        "Please select a payment first.",
+                        "Payment",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                     return;
                 }
 
                 AccessBranch_ByForm.SetPayment(id);
 
-                // CONFIGURE SHELL BORDER
-                shift_panel.BorderThickness = 3;
-                shift_panel.BorderColor = Color.Goldenrod;
+                // CLEAR PREVIOUS CHILD CONTROL
+                shift_panel.Controls.Clear();
+
+                // APPLY BORDER DESIGN
                 shift_panel.Padding = new Padding(3);
 
-                // SHOW SHELL
+                // SHOW PAYMENT SHELL
                 shift_panel.Visible = true;
                 shift_panel.BringToFront();
 
@@ -58,11 +61,11 @@ namespace _4C_s_Management_System
                 UserControl_payment_panel paymentControl =
                     new UserControl_payment_panel();
 
-                // LISTEN TO CHILD EVENT
+                // LISTEN TO PAYMENT ACCEPTED EVENT
                 paymentControl.PaymentAccepted +=
                     PaymentControl_PaymentAccepted;
 
-                // LOAD CHILD INSIDE SHELL
+                // LOAD CHILD INSIDE shift_panel
                 MainControlClass.ShowControl(
                     paymentControl,
                     shift_panel);
@@ -71,12 +74,16 @@ namespace _4C_s_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(
+                    "Unable to open payment panel: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
         // =====================================================
-        // EVENT RECEIVED FROM CHILD USERCONTROL
+        // PAYMENT ACCEPTED EVENT
         // =====================================================
 
         private void PaymentControl_PaymentAccepted(
@@ -84,31 +91,63 @@ namespace _4C_s_Management_System
         {
             try
             {
-                // REFRESH PAYMENT DATAGRIDVIEW
-                loadDGV();
+                HidePaymentShell();
 
-                // REFRESH PAYMENT SUMMARY
+                loadDGV();
                 dislplayLabel();
 
-                // SELECT FIRST ROW
-                if (PaymentDGV.Rows.Count > 0)
-                {
-                    PaymentDGV.ClearSelection();
-
-                    PaymentDGV.CurrentCell =
-                        PaymentDGV.Rows[0].Cells[0];
-
-                    PaymentDGV.Rows[0].Selected = true;
-
-                    // REFRESH PAYMENT DETAILS
-                    loaddisplay();
-                }
+                SelectFirstPayment();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Unable to refresh payment records: " + ex.Message);
+                    "Unable to refresh payment records: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
+        }
+
+        // =====================================================
+        // SELECT FIRST PAYMENT
+        // =====================================================
+
+        private void SelectFirstPayment()
+        {
+            if (PaymentDGV.Rows.Count > 0)
+            {
+                PaymentDGV.ClearSelection();
+
+                PaymentDGV.CurrentCell =
+                    PaymentDGV.Rows[0].Cells[0];
+
+                PaymentDGV.Rows[0].Selected = true;
+
+                loaddisplay();
+            }
+            else
+            {
+                ClearPaymentDetails();
+            }
+        }
+
+        // =====================================================
+        // CLEAR PAYMENT DETAILS
+        // =====================================================
+
+        private void ClearPaymentDetails()
+        {
+            PM_PaymentIdLBL.Text = "";
+            SUM_totalamLbl.Text = "";
+            SUM_PaymentLBL.Text = "";
+            SUM_paymentMethodLBL.Text = "";
+            SUM_paymentDateLBL.Text = "";
+            PaymentDateLBL.Text = "";
+
+            StatusLbl.Text = "";
+            FullnameLbl.Text = "";
+            AdreessLBL.Text = "";
+            CallNumLBL.Text = "";
         }
 
         // =====================================================
@@ -375,8 +414,7 @@ namespace _4C_s_Management_System
                     1,
                     1,
                     this.Width - 3,
-                    this.Height - 3
-                );
+                    this.Height - 3);
             }
         }
 
@@ -386,6 +424,7 @@ namespace _4C_s_Management_System
 
         public void HidePaymentShell()
         {
+            shift_panel.Controls.Clear();
             shift_panel.Visible = false;
         }
 
@@ -396,11 +435,13 @@ namespace _4C_s_Management_System
         private void UserControlPayment_Load(
             object sender, EventArgs e)
         {
+            branchid = AccessBranch_ByForm.BranchId;
+
             shift_panel.Visible = false;
 
             loadDGV();
-            loaddisplay();
             dislplayLabel();
+            SelectFirstPayment();
         }
 
         // =====================================================
@@ -444,58 +485,63 @@ namespace _4C_s_Management_System
 
         public void dislplayLabel()
         {
-            const string query =
-                "SELECT PaymentStatus, " +
-                "COUNT(*) AS TotalCount, " +
-                "ISNULL(SUM(AmountPaid), 0) AS TotalAmount " +
-                "FROM PaymentTbl " +
-                "WHERE BranchID = @BranchID " +
-                "GROUP BY PaymentStatus";
-
-            var statusData = AppDB.Instance.TableData(
-                query,
-                new { BranchID = branchid });
-
-            int pending = 0;
-            int paid = 0;
-            int refunded = 0;
-
-            decimal pendingAmount = 0;
-            decimal paidAmount = 0;
-            decimal refundedAmount = 0;
-
-            foreach (DataRow row in statusData.Rows)
+            try
             {
-                string status =
-                    Convert.ToString(row["PaymentStatus"]) ?? "";
+                const string query =
+                    "SELECT PaymentStatus, " +
+                    "COUNT(*) AS TotalCount, " +
+                    "ISNULL(SUM(AmountPaid), 0) AS TotalAmount " +
+                    "FROM PaymentTbl " +
+                    "WHERE BranchID = @BranchID " +
+                    "GROUP BY PaymentStatus";
 
-                int total = Convert.ToInt32(row["TotalCount"]);
+                var statusData = AppDB.Instance.TableData(
+                    query,
+                    new { BranchID = branchid });
 
-                decimal amount =
-                    Convert.ToDecimal(row["TotalAmount"]);
+                int pending = 0;
+                int paid = 0;
+                int refunded = 0;
 
-                if (status == "Pending")
+                decimal paidAmount = 0;
+
+                foreach (DataRow row in statusData.Rows)
                 {
-                    pending = total;
-                    pendingAmount = amount;
+                    string status =
+                        Convert.ToString(row["PaymentStatus"]) ?? "";
+
+                    int total =
+                        Convert.ToInt32(row["TotalCount"]);
+
+                    decimal amount =
+                        Convert.ToDecimal(row["TotalAmount"]);
+
+                    if (status == "Pending")
+                    {
+                        pending = total;
+                    }
+                    else if (status == "Paid")
+                    {
+                        paid = total;
+                        paidAmount = amount;
+                    }
+                    else if (status == "Refunded")
+                    {
+                        refunded = total;
+                    }
                 }
-                else if (status == "Paid")
-                {
-                    paid = total;
-                    paidAmount = amount;
-                }
-                else if (status == "Refunded")
-                {
-                    refunded = total;
-                    refundedAmount = amount;
-                }
+
+                PendingLbl.Text = pending.ToString();
+                PaidLbl.Text = paid.ToString();
+                RefundedLBL.Text = refunded.ToString();
+
+                TotalPaymentLbl.Text = paidAmount.ToString("C2");
             }
-
-            PendingLbl.Text = pending.ToString();
-            PaidLbl.Text = paid.ToString();
-            RefundedLBL.Text = refunded.ToString();
-
-            TotalPaymentLbl.Text = paidAmount.ToString("C2");
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Unable to load payment summary: " + ex.Message);
+            }
         }
 
         // =====================================================
@@ -517,6 +563,7 @@ namespace _4C_s_Management_System
                 return;
 
             PM_PaymentIdLBL.Text = paymentid;
+
             SUM_totalamLbl.Text =
                 row.Cells[2].Value?.ToString() ?? "";
 
@@ -543,9 +590,6 @@ namespace _4C_s_Management_System
                 MessageBox.Show("Payment record not found.");
                 return;
             }
-
-            string reservationid =
-                Convert.ToString(paymentData.Rows[0]["ReservationID"]) ?? "";
 
             string tenantid =
                 Convert.ToString(paymentData.Rows[0]["TenantID"]) ?? "";
@@ -664,7 +708,6 @@ namespace _4C_s_Management_System
         // REFUND PAYMENT
         // =====================================================
 
-
         private void PM_refundBTN_Click(object sender, EventArgs e)
         {
             string paymentid = PM_PaymentIdLBL.Text.Trim();
@@ -676,7 +719,6 @@ namespace _4C_s_Management_System
                 return;
             }
 
-            // CHECK PAYMENT STATUS
             if (status != "Paid")
             {
                 MessageBox.Show(
@@ -689,23 +731,19 @@ namespace _4C_s_Management_System
 
             try
             {
-                // =========================================
-                // CHECK RESERVATION AND CUSTOMER STATUS
-                // =========================================
-
                 const string checkQuery = @"
-            SELECT
-                R.ReservationStatus,
-                R.ResStartDate,
-                C.CustomerStatus
-            FROM PaymentTbl P
-            INNER JOIN ReservationTbl R
-                ON P.ReservationID = R.ReservationID
-                AND P.BranchID = R.BranchID
-            LEFT JOIN CustomerTbl C
-                ON P.CustomerID = C.CustomerID
-            WHERE P.PaymentID = @PaymentID
-            AND P.BranchID = @BranchID";
+                    SELECT
+                        R.ReservationStatus,
+                        R.ResStartDate,
+                        C.CustomerStatus
+                    FROM PaymentTbl P
+                    INNER JOIN ReservationTbl R
+                        ON P.ReservationID = R.ReservationID
+                        AND P.BranchID = R.BranchID
+                    LEFT JOIN CustomerTbl C
+                        ON P.CustomerID = C.CustomerID
+                    WHERE P.PaymentID = @PaymentID
+                    AND P.BranchID = @BranchID";
 
                 var reservationData = AppDB.Instance.TableData(
                     checkQuery,
@@ -727,16 +765,10 @@ namespace _4C_s_Management_System
 
                 DataRow row = reservationData.Rows[0];
 
-                string reservationStatus =
-                    Convert.ToString(row["ReservationStatus"]) ?? "";
-
                 string customerStatus =
                     Convert.ToString(row["CustomerStatus"]) ?? "";
 
-                // =========================================
-                // VALIDATION 1: CUSTOMER MUST NOT BE CHECKED IN
-                // =========================================
-
+                // CUSTOMER MUST NOT BE CHECKED IN
                 if (customerStatus == "Checked In")
                 {
                     MessageBox.Show(
@@ -747,10 +779,7 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // =========================================
-                // VALIDATION 2: RESERVATION MUST BE RESERVED
-                // =========================================
-
+                // CUSTOMER MUST BE RESERVED
                 if (customerStatus != "Reserved")
                 {
                     MessageBox.Show(
@@ -761,10 +790,7 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // =========================================
-                // VALIDATION 3: START DATE MUST BE IN FUTURE
-                // =========================================
-
+                // CHECK RESERVATION START DATE
                 if (row["ResStartDate"] == DBNull.Value)
                 {
                     MessageBox.Show(
@@ -788,10 +814,7 @@ namespace _4C_s_Management_System
                     return;
                 }
 
-                // =========================================
                 // CONFIRM REFUND
-                // =========================================
-
                 DialogResult confirm = MessageBox.Show(
                     "Are you sure you want to refund this payment?",
                     "Confirm Refund",
@@ -801,10 +824,7 @@ namespace _4C_s_Management_System
                 if (confirm != DialogResult.Yes)
                     return;
 
-                // =========================================
                 // UPDATE PAYMENT STATUS
-                // =========================================
-
                 const string updateQuery = @"
                     UPDATE PaymentTbl
                     SET PaymentStatus = @PaymentStatus
@@ -829,18 +849,20 @@ namespace _4C_s_Management_System
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    // REFRESH PAYMENT DETAILS
                     loadDGV();
                     dislplayLabel();
 
-                    // RESELECT PAYMENT
+                    // RESELECT REFUNDED PAYMENT
                     foreach (DataGridViewRow dgvRow in PaymentDGV.Rows)
                     {
                         if (Convert.ToString(
                             dgvRow.Cells[0].Value) == paymentid)
                         {
+                            PaymentDGV.ClearSelection();
+
                             dgvRow.Selected = true;
                             PaymentDGV.CurrentCell = dgvRow.Cells[0];
+
                             loaddisplay();
                             break;
                         }
@@ -862,7 +884,6 @@ namespace _4C_s_Management_System
             }
         }
 
-
         // =====================================================
         // SEARCH PAYMENT
         // =====================================================
@@ -882,17 +903,28 @@ namespace _4C_s_Management_System
                 "ISNULL(TenantID, '') LIKE @Search OR " +
                 "PaymentStatus LIKE @Search OR " +
                 "PaymentMethod LIKE @Search" +
-                ")";
+                ") " +
+                "ORDER BY PaymentDate DESC";
 
-            var data = AppDB.Instance.TableData(
-                query,
-                new
-                {
-                    BranchID = branchid,
-                    Search = "%" + search + "%"
-                });
+            try
+            {
+                var data = AppDB.Instance.TableData(
+                    query,
+                    new
+                    {
+                        BranchID = branchid,
+                        Search = "%" + search + "%"
+                    });
 
-            PaymentDGV.DataSource = data;
+                PaymentDGV.DataSource = data;
+
+                SelectFirstPayment();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Search Error: " + ex.Message);
+            }
         }
 
         // =====================================================
@@ -916,16 +948,30 @@ namespace _4C_s_Management_System
 
             query += "ORDER BY PaymentDate DESC";
 
-            var data = AppDB.Instance.TableData(
-                query,
-                new
-                {
-                    BranchID = branchid,
-                    PaymentStatus = status
-                });
+            try
+            {
+                var data = AppDB.Instance.TableData(
+                    query,
+                    new
+                    {
+                        BranchID = branchid,
+                        PaymentStatus = status
+                    });
 
-            PaymentDGV.DataSource = data;
+                PaymentDGV.DataSource = data;
+
+                SelectFirstPayment();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Unable to sort payments: " + ex.Message);
+            }
         }
+
+        // =====================================================
+        // STATUS COMBOBOX
+        // =====================================================
 
         private void Status_SelectedIndexChanged(
             object sender, EventArgs e)

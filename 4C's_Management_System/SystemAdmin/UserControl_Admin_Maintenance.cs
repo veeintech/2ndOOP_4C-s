@@ -31,6 +31,10 @@ namespace _4C_s_Management_System
 
             MM_rejectBtn.Click -= MM_rejectBtn_Click;
             MM_rejectBtn.Click += MM_rejectBtn_Click;
+
+            // CLEAR BUTTON
+            guna2Button1.Click -= guna2Button1_Click;
+            guna2Button1.Click += guna2Button1_Click;
         }
 
         // =========================================
@@ -237,6 +241,18 @@ namespace _4C_s_Management_System
 
             MM_acceptBtn.Enabled = isPending;
             MM_rejectBtn.Enabled = isPending;
+        }
+
+        // =========================================
+        // CLEAR BUTTON
+        // Button Name: guna2Button1
+        // =========================================
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ClearDetails();
+
+            MM_MaintenanceDGV.ClearSelection();
         }
 
         // =========================================

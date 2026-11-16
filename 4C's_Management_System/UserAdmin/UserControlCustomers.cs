@@ -14,6 +14,9 @@ namespace _4C_s_Management_System
         public UserControlCustomers()
         {
             InitializeComponent();
+
+            // CLEAR BUTTON EVENT
+            guna2Button1.Click += guna2Button1_Click;
         }
 
         // =====================================================
@@ -259,6 +262,16 @@ namespace _4C_s_Management_System
         }
 
         // =====================================================
+        // CLEAR BUTTON
+        // BUTTON NAME: guna2Button1
+        // =====================================================
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        // =====================================================
         // CLEAR FIELDS
         // =====================================================
 
@@ -268,6 +281,7 @@ namespace _4C_s_Management_System
             CM_fullnameTxt.Clear();
             CM_conManTxt.Clear();
             CM_AddressTxt.Clear();
+
             CM_AccomTypeTxt.SelectedIndex = -1;
 
             CM_CustomerDGV.ClearSelection();
@@ -448,6 +462,7 @@ namespace _4C_s_Management_System
                 };
 
                 // FILTER CUSTOMER TYPE
+
                 if (CM_custypeCB.SelectedIndex > 0 &&
                     CM_custypeCB.SelectedItem != null)
                 {
@@ -459,6 +474,7 @@ namespace _4C_s_Management_System
                 }
 
                 // FILTER CUSTOMER STATUS
+
                 if (CM_CustomerstatCB.SelectedIndex > 0 &&
                     CM_CustomerstatCB.SelectedItem != null)
                 {
@@ -470,6 +486,7 @@ namespace _4C_s_Management_System
                 }
 
                 // SEARCH CUSTOMER DETAILS
+
                 string searchText = Cm_searchLbl.Text.Trim();
 
                 if (!string.IsNullOrWhiteSpace(searchText))
@@ -486,6 +503,7 @@ namespace _4C_s_Management_System
                 }
 
                 // FINAL QUERY
+
                 string query = @"
                     SELECT
                         CustomerID,
