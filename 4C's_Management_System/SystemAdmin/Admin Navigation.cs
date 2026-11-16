@@ -273,6 +273,20 @@ namespace _4C_s_Management_System
         {
             UserControl_Admin_DB db = new UserControl_Admin_DB();
             MainControlClass.ShowControl(db, UserNav_Panel_shift);
+
+            designBTN(
+              userNav_DashboardBtn,
+              userNav_RoomsBtn,
+              UserNav_Staff_Btn,
+              UserNav_TenantsBtn,
+              UserNav_CustomerBtn,
+              UserNav_LogoutBtn,
+              UserNav_PaymentBtn,
+              UserNav_ReservationBtn,
+              UserNav_MaintenanceBtn,
+              btn_branch,
+                btn_task
+              );
         }
 
         private void btn_branch_Click(object sender, EventArgs e)

@@ -229,7 +229,7 @@ namespace _4C_s_Management_System
 
         private void UserControlLI_Load(object sender, EventArgs e)
         {
-
+            LOGIN_openeyeBtn.BringToFront();
         }
     }
 }

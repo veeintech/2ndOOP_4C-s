@@ -53,6 +53,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -78,6 +82,9 @@
             userControl_terms_condition1 = new UserControl_terms_condition();
             userControl_terms_condition2 = new UserControl_terms_condition();
             LBL_TAC = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            ijaiusi = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            TXTStaffID = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox13).BeginInit();
@@ -85,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)SU_closedeyeBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2HtmlLabel10
@@ -92,7 +100,7 @@
             guna2HtmlLabel10.BackColor = Color.Transparent;
             guna2HtmlLabel10.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel10.ForeColor = Color.FromArgb(139, 0, 21);
-            guna2HtmlLabel10.Location = new Point(252, 674);
+            guna2HtmlLabel10.Location = new Point(252, 765);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             guna2HtmlLabel10.Size = new Size(175, 21);
             guna2HtmlLabel10.TabIndex = 50;
@@ -103,7 +111,7 @@
             guna2HtmlLabel12.BackColor = Color.Transparent;
             guna2HtmlLabel12.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel12.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2HtmlLabel12.Location = new Point(175, 360);
+            guna2HtmlLabel12.Location = new Point(175, 451);
             guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             guna2HtmlLabel12.Size = new Size(77, 25);
             guna2HtmlLabel12.TabIndex = 47;
@@ -116,7 +124,7 @@
             guna2PictureBox11.FillColor = Color.Transparent;
             guna2PictureBox11.Image = (Image)resources.GetObject("guna2PictureBox11.Image");
             guna2PictureBox11.ImageRotate = 0F;
-            guna2PictureBox11.Location = new Point(146, 358);
+            guna2PictureBox11.Location = new Point(146, 449);
             guna2PictureBox11.Name = "guna2PictureBox11";
             guna2PictureBox11.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2PictureBox11.Size = new Size(23, 27);
@@ -129,7 +137,7 @@
             guna2HtmlLabel13.BackColor = Color.Transparent;
             guna2HtmlLabel13.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel13.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2HtmlLabel13.Location = new Point(175, 271);
+            guna2HtmlLabel13.Location = new Point(175, 362);
             guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             guna2HtmlLabel13.Size = new Size(85, 25);
             guna2HtmlLabel13.TabIndex = 45;
@@ -142,7 +150,7 @@
             guna2PictureBox12.FillColor = Color.Transparent;
             guna2PictureBox12.Image = Properties.Resources.buser;
             guna2PictureBox12.ImageRotate = 0F;
-            guna2PictureBox12.Location = new Point(146, 269);
+            guna2PictureBox12.Location = new Point(146, 360);
             guna2PictureBox12.Name = "guna2PictureBox12";
             guna2PictureBox12.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2PictureBox12.Size = new Size(23, 27);
@@ -155,7 +163,7 @@
             guna2HtmlLabel14.BackColor = Color.Transparent;
             guna2HtmlLabel14.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel14.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2HtmlLabel14.Location = new Point(175, 183);
+            guna2HtmlLabel14.Location = new Point(175, 171);
             guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             guna2HtmlLabel14.Size = new Size(87, 25);
             guna2HtmlLabel14.TabIndex = 43;
@@ -168,7 +176,7 @@
             guna2PictureBox13.FillColor = Color.Transparent;
             guna2PictureBox13.Image = (Image)resources.GetObject("guna2PictureBox13.Image");
             guna2PictureBox13.ImageRotate = 0F;
-            guna2PictureBox13.Location = new Point(146, 181);
+            guna2PictureBox13.Location = new Point(146, 169);
             guna2PictureBox13.Name = "guna2PictureBox13";
             guna2PictureBox13.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2PictureBox13.Size = new Size(23, 27);
@@ -192,7 +200,7 @@
             SU_branchidtxt.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SU_branchidtxt.ForeColor = Color.Black;
             SU_branchidtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            SU_branchidtxt.Location = new Point(146, 214);
+            SU_branchidtxt.Location = new Point(146, 202);
             SU_branchidtxt.Margin = new Padding(4);
             SU_branchidtxt.Name = "SU_branchidtxt";
             SU_branchidtxt.PlaceholderText = "e.g., Branch1";
@@ -217,7 +225,7 @@
             SU_usernametxt.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SU_usernametxt.ForeColor = Color.Black;
             SU_usernametxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            SU_usernametxt.Location = new Point(146, 303);
+            SU_usernametxt.Location = new Point(146, 394);
             SU_usernametxt.Margin = new Padding(4);
             SU_usernametxt.Name = "SU_usernametxt";
             SU_usernametxt.PlaceholderText = "e.g., jamalapote_21";
@@ -233,7 +241,7 @@
             SU_openedeyeBtn.FillColor = Color.Transparent;
             SU_openedeyeBtn.Image = Properties.Resources.akar_icons__eye;
             SU_openedeyeBtn.ImageRotate = 0F;
-            SU_openedeyeBtn.Location = new Point(576, 403);
+            SU_openedeyeBtn.Location = new Point(576, 494);
             SU_openedeyeBtn.Name = "SU_openedeyeBtn";
             SU_openedeyeBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             SU_openedeyeBtn.Size = new Size(44, 27);
@@ -258,7 +266,7 @@
             SU_passwordtxt.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SU_passwordtxt.ForeColor = Color.Black;
             SU_passwordtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            SU_passwordtxt.Location = new Point(149, 392);
+            SU_passwordtxt.Location = new Point(149, 483);
             SU_passwordtxt.Margin = new Padding(4);
             SU_passwordtxt.Name = "SU_passwordtxt";
             SU_passwordtxt.PasswordChar = '*';
@@ -278,7 +286,7 @@
             SU_trmconCB.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             SU_trmconCB.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SU_trmconCB.ForeColor = Color.FromArgb(74, 14, 14);
-            SU_trmconCB.Location = new Point(149, 546);
+            SU_trmconCB.Location = new Point(149, 637);
             SU_trmconCB.Name = "SU_trmconCB";
             SU_trmconCB.Size = new Size(18, 17);
             SU_trmconCB.TabIndex = 37;
@@ -305,7 +313,7 @@
             SU_createaccBtn.HoverState.FillColor = Color.FromArgb(192, 0, 0);
             SU_createaccBtn.HoverState.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SU_createaccBtn.HoverState.ForeColor = Color.White;
-            SU_createaccBtn.Location = new Point(191, 615);
+            SU_createaccBtn.Location = new Point(191, 706);
             SU_createaccBtn.Name = "SU_createaccBtn";
             SU_createaccBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
             SU_createaccBtn.Size = new Size(379, 40);
@@ -342,7 +350,7 @@
             SU_closedeyeBtn.FillColor = Color.Transparent;
             SU_closedeyeBtn.Image = Properties.Resources.akar_icons__eye_closed;
             SU_closedeyeBtn.ImageRotate = 0F;
-            SU_closedeyeBtn.Location = new Point(576, 403);
+            SU_closedeyeBtn.Location = new Point(576, 494);
             SU_closedeyeBtn.Name = "SU_closedeyeBtn";
             SU_closedeyeBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
             SU_closedeyeBtn.Size = new Size(44, 27);
@@ -356,7 +364,7 @@
             LOGIN_lblsignup.BackColor = Color.Transparent;
             LOGIN_lblsignup.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             LOGIN_lblsignup.ForeColor = Color.FromArgb(139, 0, 21);
-            LOGIN_lblsignup.Location = new Point(433, 675);
+            LOGIN_lblsignup.Location = new Point(433, 766);
             LOGIN_lblsignup.Name = "LOGIN_lblsignup";
             LOGIN_lblsignup.Size = new Size(54, 21);
             LOGIN_lblsignup.TabIndex = 53;
@@ -370,7 +378,7 @@
             guna2PictureBox4.FillColor = Color.Transparent;
             guna2PictureBox4.Image = Properties.Resources.akar_icons__eye_closed;
             guna2PictureBox4.ImageRotate = 0F;
-            guna2PictureBox4.Location = new Point(544, 493);
+            guna2PictureBox4.Location = new Point(544, 584);
             guna2PictureBox4.Name = "guna2PictureBox4";
             guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2PictureBox4.Size = new Size(89, 27);
@@ -383,7 +391,7 @@
             guna2HtmlLabel11.BackColor = Color.Transparent;
             guna2HtmlLabel11.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel11.ForeColor = Color.FromArgb(74, 14, 14);
-            guna2HtmlLabel11.Location = new Point(175, 450);
+            guna2HtmlLabel11.Location = new Point(175, 541);
             guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             guna2HtmlLabel11.Size = new Size(149, 25);
             guna2HtmlLabel11.TabIndex = 49;
@@ -396,7 +404,7 @@
             guna2PictureBox2.FillColor = Color.Transparent;
             guna2PictureBox2.Image = (Image)resources.GetObject("guna2PictureBox2.Image");
             guna2PictureBox2.ImageRotate = 0F;
-            guna2PictureBox2.Location = new Point(146, 448);
+            guna2PictureBox2.Location = new Point(146, 539);
             guna2PictureBox2.Name = "guna2PictureBox2";
             guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2PictureBox2.Size = new Size(23, 27);
@@ -420,7 +428,7 @@
             SU_conpasstxt.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SU_conpasstxt.ForeColor = Color.Black;
             SU_conpasstxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            SU_conpasstxt.Location = new Point(146, 482);
+            SU_conpasstxt.Location = new Point(146, 573);
             SU_conpasstxt.Margin = new Padding(4);
             SU_conpasstxt.Name = "SU_conpasstxt";
             SU_conpasstxt.PasswordChar = '*';
@@ -452,7 +460,7 @@
             // 
             userControl_terms_condition2.BackColor = Color.FromArgb(232, 218, 194);
             userControl_terms_condition2.BorderStyle = BorderStyle.FixedSingle;
-            userControl_terms_condition2.Location = new Point(210, 138);
+            userControl_terms_condition2.Location = new Point(191, 128);
             userControl_terms_condition2.Name = "userControl_terms_condition2";
             userControl_terms_condition2.Size = new Size(344, 530);
             userControl_terms_condition2.TabIndex = 54;
@@ -461,12 +469,63 @@
             // 
             LBL_TAC.BackColor = Color.Transparent;
             LBL_TAC.Font = new Font("Berlin Sans FB", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            LBL_TAC.Location = new Point(175, 546);
+            LBL_TAC.Location = new Point(175, 637);
             LBL_TAC.Name = "LBL_TAC";
             LBL_TAC.Size = new Size(247, 21);
             LBL_TAC.TabIndex = 55;
             LBL_TAC.Text = " I agree to the Terms and Condition";
             LBL_TAC.Click += LBL_TAC_Click;
+            // 
+            // ijaiusi
+            // 
+            ijaiusi.BackColor = Color.Transparent;
+            ijaiusi.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ijaiusi.ForeColor = Color.FromArgb(74, 14, 14);
+            ijaiusi.Location = new Point(175, 263);
+            ijaiusi.Name = "ijaiusi";
+            ijaiusi.Size = new Size(66, 25);
+            ijaiusi.TabIndex = 58;
+            ijaiusi.Text = "Staff ID";
+            // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.BackColor = Color.Transparent;
+            guna2PictureBox1.CustomizableEdges = customizableEdges25;
+            guna2PictureBox1.FillColor = Color.Transparent;
+            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(146, 261);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2PictureBox1.Size = new Size(23, 27);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox1.TabIndex = 57;
+            guna2PictureBox1.TabStop = false;
+            // 
+            // TXTStaffID
+            // 
+            TXTStaffID.BackColor = Color.Transparent;
+            TXTStaffID.BorderColor = Color.FromArgb(224, 224, 224);
+            TXTStaffID.BorderRadius = 5;
+            TXTStaffID.BorderThickness = 2;
+            TXTStaffID.CustomizableEdges = customizableEdges27;
+            TXTStaffID.DefaultText = "";
+            TXTStaffID.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            TXTStaffID.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            TXTStaffID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            TXTStaffID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TXTStaffID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TXTStaffID.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TXTStaffID.ForeColor = Color.Black;
+            TXTStaffID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TXTStaffID.Location = new Point(146, 294);
+            TXTStaffID.Margin = new Padding(4);
+            TXTStaffID.Name = "TXTStaffID";
+            TXTStaffID.PlaceholderText = "e.g., STF-000-000";
+            TXTStaffID.SelectedText = "";
+            TXTStaffID.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            TXTStaffID.Size = new Size(487, 50);
+            TXTStaffID.TabIndex = 56;
             // 
             // UserControlSU
             // 
@@ -476,6 +535,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(userControl_terms_condition2);
+            Controls.Add(ijaiusi);
+            Controls.Add(guna2PictureBox1);
+            Controls.Add(TXTStaffID);
             Controls.Add(LBL_TAC);
             Controls.Add(SU_openedeyeBtn);
             Controls.Add(SU_closedeyeBtn);
@@ -510,6 +572,7 @@
             ((System.ComponentModel.ISupportInitialize)SU_closedeyeBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -547,5 +610,8 @@
         private UserControl_terms_condition userControl_terms_condition1;
         private UserControl_terms_condition userControl_terms_condition2;
         private Guna.UI2.WinForms.Guna2HtmlLabel LBL_TAC;
+        private Guna.UI2.WinForms.Guna2HtmlLabel ijaiusi;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox TXTStaffID;
     }
 }

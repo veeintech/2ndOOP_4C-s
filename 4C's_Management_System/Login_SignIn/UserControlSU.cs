@@ -1,7 +1,9 @@
 ﻿
-using System;
-using System.Windows.Forms;
 using _4C_s_Management_System.Classess;
+using System;
+using System.Drawing.Text;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace _4C_s_Management_System
 {
@@ -42,11 +44,13 @@ namespace _4C_s_Management_System
         private void SU_createaccBtn_Click_1(object sender, EventArgs e)
         {
             string branchid = SU_branchidtxt.Text.Trim();
+            string staffid = TXTStaffID.Text.Trim();
             string password = SU_passwordtxt.Text;
             string username = SU_usernametxt.Text.Trim();
             string confirmPassword = SU_conpasstxt.Text;
 
             if (string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(staffid) ||
                 string.IsNullOrWhiteSpace(password) ||
                 string.IsNullOrWhiteSpace(confirmPassword) ||
                 string.IsNullOrWhiteSpace(branchid))
@@ -55,6 +59,18 @@ namespace _4C_s_Management_System
                     "Missing Information",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (checkstaff(staffid, branchid) < 1)
+            {
+                MessageBox.Show(
+                    "Staff ID does not exist or is not assigned to this branch.",
+                    "Invalid Staff",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
                 return;
             }
 
@@ -162,5 +178,26 @@ namespace _4C_s_Management_System
             userControl_terms_condition2.Visible = false;
             SU_trmconCB.Checked = false;
         }
+
+
+
+        public int checkstaff(string staff, string branchid)
+        {
+            const string staffq =
+                "SELECT COUNT(*) FROM StaffTbl " +
+                "WHERE StaffID = @staff AND BranchID = @branchid";
+
+            int res = Convert.ToInt32(
+                AppDB.Instance.Scalar(staffq, new
+                {
+                    staff = staff,
+                    branchid = branchid
+                })
+            );
+
+            return res > 0 ? 1 : 0;
+        }
+
+
     }
 }

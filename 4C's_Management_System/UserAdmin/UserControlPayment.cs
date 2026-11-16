@@ -174,13 +174,50 @@ namespace _4C_s_Management_System
                 return;
             }
 
-            using (PrintPreviewDialog preview = new PrintPreviewDialog())
+            if (PrinterSettings.InstalledPrinters.Count == 0)
             {
-                preview.Document = printDocument;
-                preview.Width = 900;
-                preview.Height = 700;
+                MessageBox.Show(
+                    "No printers are installed. Install a printer in Windows before opening print preview.",
+                    "Printer unavailable",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
 
-                preview.ShowDialog();
+            if (!printDocument.PrinterSettings.IsValid)
+            {
+                printDocument.PrinterSettings.PrinterName =
+                    PrinterSettings.InstalledPrinters[0];
+            }
+
+            if (!printDocument.PrinterSettings.IsValid)
+            {
+                MessageBox.Show(
+                    "No usable printer is available. Check the installed printer and its driver in Windows.",
+                    "Printer unavailable",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (PrintPreviewDialog preview = new PrintPreviewDialog())
+                {
+                    preview.Document = printDocument;
+                    preview.Width = 900;
+                    preview.Height = 700;
+
+                    preview.ShowDialog();
+                }
+            }
+            catch (InvalidPrinterException)
+            {
+                MessageBox.Show(
+                    "Windows could not access the selected printer. Check the printer installation and driver, then try again.",
+                    "Printer unavailable",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
 
