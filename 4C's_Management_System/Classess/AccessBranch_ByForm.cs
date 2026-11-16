@@ -8,8 +8,10 @@ namespace _4C_s_Management_System.Classess
 {
     internal class AccessBranch_ByForm
     {
-        public static string BranchId = "BRC-001";//{ get; private set; } = string.Empty;
+        public static string BranchId { get; private set; } = string.Empty;
         public static string PaymentId { get; private set; } = string.Empty;
+
+        public static string StaffId { get; private set; } = string.Empty;
 
         public static bool x { get; set; } = false;
 
@@ -21,7 +23,7 @@ namespace _4C_s_Management_System.Classess
         // Store the branch after successful login
         public static void SetBranch(string branchId)
         {
-            BranchId = "BRC-001";
+            BranchId = branchId;
         }
 
         // Clear the branch when logging out
@@ -37,6 +39,8 @@ namespace _4C_s_Management_System.Classess
         {
             PaymentId = Payment;
         }
+
+
 
         public static void ClearPaymentID()
         {
