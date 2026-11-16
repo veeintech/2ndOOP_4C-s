@@ -228,6 +228,5 @@ CREATE TABLE [dbo].[TaskTbl] (
         CHECK ([Status] IN
         ('Pending', 'In Progress', 'Completed', 'Cancelled'))
 );
-);
 
 

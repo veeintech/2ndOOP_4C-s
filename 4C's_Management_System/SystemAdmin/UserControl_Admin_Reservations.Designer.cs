@@ -196,7 +196,7 @@
             RR_searchresID.PlaceholderText = "Search reservation ID";
             RR_searchresID.SelectedText = "";
             RR_searchresID.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            RR_searchresID.Size = new Size(241, 37);
+            RR_searchresID.Size = new Size(264, 37);
             RR_searchresID.TabIndex = 137;
             // 
             // RR_priceLBL
@@ -1099,6 +1099,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(255, 249, 239);
             Controls.Add(guna2Panel7);
             Controls.Add(guna2Panel3);
