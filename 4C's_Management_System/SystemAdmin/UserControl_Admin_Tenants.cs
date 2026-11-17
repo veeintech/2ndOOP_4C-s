@@ -120,6 +120,27 @@ namespace _4C_s_Management_System
         // DATAGRIDVIEW CELL CLICK
         // ==========================================
 
+        private void tendgv_cellconClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridViewRow row =
+                TM_TenantDGV.Rows[e.RowIndex];
+
+            if (row.IsNewRow)
+                return;
+
+            TM_TenantDGV.ClearSelection();
+
+            row.Selected = true;
+
+            TM_TenantDGV.CurrentCell =
+                row.Cells["TenantId"];
+
+            loaddisplay();
+        }
+
         private void tenantDGV_clickcontent(
             object sender,
             DataGridViewCellEventArgs e)
@@ -174,7 +195,7 @@ namespace _4C_s_Management_System
         // ADD TENANT
         // ==========================================
 
-        private void TM_AddCusBtn_Click(object sender, EventArgs e)
+        private void addtentxt_Click(object sender, EventArgs e)
         {
             string branchId =
                 TM_branchidtxt.Text.Trim();
@@ -343,6 +364,11 @@ namespace _4C_s_Management_System
             }
         }
 
+        private void TM_AddCusBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // ==========================================
         // CLEAR BUTTON
         // Button Name: guna2Button2
@@ -380,7 +406,7 @@ namespace _4C_s_Management_System
         // UPDATE TENANT
         // ==========================================
 
-        private void TM_UpdateBtn_Click(object sender, EventArgs e)
+        private void TM_UpdateBtn_Click_1(object sender, EventArgs e)
         {
             string tenantid =
                 TM_tenantidtxt.Text.Trim();
@@ -533,6 +559,11 @@ namespace _4C_s_Management_System
             }
         }
 
+        private void TM_UpdateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         // ==========================================
         // DELETE TENANT
         // ==========================================
@@ -540,7 +571,7 @@ namespace _4C_s_Management_System
         private void TM_deleteBtn_Click(object sender, EventArgs e)
         {
             string tenantid =
-                TM_tenantidtxt.Text.Trim();
+            TM_tenantidtxt.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(tenantid) ||
                 string.IsNullOrWhiteSpace(tenantBranchId))
@@ -610,6 +641,11 @@ namespace _4C_s_Management_System
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+        }
+
+        private void TM_deleteBtn_Click_2(object sender, EventArgs e)
+        {
+            
         }
 
         // ==========================================
@@ -793,5 +829,7 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

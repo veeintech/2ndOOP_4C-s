@@ -40,7 +40,10 @@ namespace _4C_s_Management_System.Classess
             PaymentId = Payment;
         }
 
-
+        public static void Setstaffid(string staffid)
+        {
+            StaffId = staffid;
+        }
 
         public static void ClearPaymentID()
         {

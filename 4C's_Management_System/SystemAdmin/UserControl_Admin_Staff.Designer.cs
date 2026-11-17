@@ -2431,7 +2431,6 @@
             Request_Dgv.ThemeStyle.RowsStyle.ForeColor = Color.Maroon;
             Request_Dgv.ThemeStyle.RowsStyle.Height = 30;
             Request_Dgv.ThemeStyle.RowsStyle.SelectionForeColor = Color.Maroon;
-            Request_Dgv.CellClick += Request_Dgv_CellClick;
             // 
             // guna2HtmlLabel42
             // 
@@ -2615,6 +2614,8 @@
             // 
             // dgv_attendance
             // 
+            dgv_attendance.AllowUserToAddRows = false;
+            dgv_attendance.AllowUserToDeleteRows = false;
             dgv_attendance.AllowUserToResizeRows = false;
             dataGridViewCellStyle9.BackColor = Color.FromArgb(255, 218, 88);
             dataGridViewCellStyle9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -2644,6 +2645,7 @@
             dgv_attendance.GridColor = Color.FromArgb(231, 229, 255);
             dgv_attendance.Location = new Point(22, 76);
             dgv_attendance.Name = "dgv_attendance";
+            dgv_attendance.ReadOnly = true;
             dgv_attendance.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = Color.White;
@@ -2666,11 +2668,13 @@
             dgv_attendance.ThemeStyle.HeaderStyle.BackColor = Color.Maroon;
             dgv_attendance.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dgv_attendance.ThemeStyle.HeaderStyle.Height = 30;
+            dgv_attendance.ThemeStyle.ReadOnly = true;
             dgv_attendance.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.None;
             dgv_attendance.ThemeStyle.RowsStyle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dgv_attendance.ThemeStyle.RowsStyle.ForeColor = Color.Maroon;
             dgv_attendance.ThemeStyle.RowsStyle.Height = 30;
             dgv_attendance.ThemeStyle.RowsStyle.SelectionForeColor = Color.Maroon;
+            dgv_attendance.CellContentClick += attendancedgv_cellClick;
             // 
             // txtSearchAttendance
             // 

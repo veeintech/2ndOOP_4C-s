@@ -72,6 +72,8 @@
             Guna.Charts.WinForms.LPoint lPoint9 = new Guna.Charts.WinForms.LPoint();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -105,8 +107,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges65 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             TM_agreementendtxt = new Guna.UI2.WinForms.Guna2DateTimePicker();
             TM_agreementstartTXT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             TM_deleteBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -149,10 +149,11 @@
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             gunaBarDataset1 = new Guna.Charts.WinForms.GunaBarDataset();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             TM_branchidtxt = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2CirclePictureBox9 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            addtentxt = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -168,7 +169,6 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox6).BeginInit();
@@ -244,6 +244,7 @@
             TM_deleteBtn.Size = new Size(95, 35);
             TM_deleteBtn.TabIndex = 128;
             TM_deleteBtn.Text = "Delete";
+            TM_deleteBtn.Click += TM_deleteBtn_Click;
             // 
             // TM_statustxt
             // 
@@ -282,6 +283,7 @@
             TM_UpdateBtn.Size = new Size(130, 35);
             TM_UpdateBtn.TabIndex = 130;
             TM_UpdateBtn.Text = "Update";
+            TM_UpdateBtn.Click += TM_UpdateBtn_Click_1;
             // 
             // TM_AddCusBtn
             // 
@@ -783,7 +785,7 @@
             guna2Panel2.Controls.Add(TM_branchidtxt);
             guna2Panel2.Controls.Add(guna2HtmlLabel3);
             guna2Panel2.Controls.Add(guna2CirclePictureBox9);
-            guna2Panel2.Controls.Add(guna2Button1);
+            guna2Panel2.Controls.Add(addtentxt);
             guna2Panel2.Controls.Add(TM_agreementendtxt);
             guna2Panel2.Controls.Add(TM_agreementstartTXT);
             guna2Panel2.Controls.Add(TM_deleteBtn);
@@ -820,6 +822,28 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges41;
             guna2Panel2.Size = new Size(1237, 343);
             guna2Panel2.TabIndex = 93;
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            guna2Button2.BackColor = Color.Transparent;
+            guna2Button2.BorderColor = Color.Silver;
+            guna2Button2.BorderRadius = 6;
+            guna2Button2.BorderThickness = 1;
+            guna2Button2.CustomizableEdges = customizableEdges33;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Teal;
+            guna2Button2.Font = new Font("Baskerville Old Face", 10.2F);
+            guna2Button2.ForeColor = Color.WhiteSmoke;
+            guna2Button2.Location = new Point(977, 264);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            guna2Button2.Size = new Size(130, 35);
+            guna2Button2.TabIndex = 136;
+            guna2Button2.Text = "Clear";
             // 
             // TM_branchidtxt
             // 
@@ -868,27 +892,28 @@
             guna2CirclePictureBox9.TabIndex = 134;
             guna2CirclePictureBox9.TabStop = false;
             // 
-            // guna2Button1
+            // addtentxt
             // 
-            guna2Button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderColor = Color.Silver;
-            guna2Button1.BorderRadius = 6;
-            guna2Button1.BorderThickness = 1;
-            guna2Button1.CustomizableEdges = customizableEdges38;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(138, 10, 46);
-            guna2Button1.Font = new Font("Baskerville Old Face", 10.2F);
-            guna2Button1.ForeColor = Color.WhiteSmoke;
-            guna2Button1.Location = new Point(671, 264);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges39;
-            guna2Button1.Size = new Size(130, 35);
-            guna2Button1.TabIndex = 132;
-            guna2Button1.Text = "Add Tenant";
+            addtentxt.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            addtentxt.BackColor = Color.Transparent;
+            addtentxt.BorderColor = Color.Silver;
+            addtentxt.BorderRadius = 6;
+            addtentxt.BorderThickness = 1;
+            addtentxt.CustomizableEdges = customizableEdges38;
+            addtentxt.DisabledState.BorderColor = Color.DarkGray;
+            addtentxt.DisabledState.CustomBorderColor = Color.DarkGray;
+            addtentxt.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            addtentxt.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            addtentxt.FillColor = Color.FromArgb(138, 10, 46);
+            addtentxt.Font = new Font("Baskerville Old Face", 10.2F);
+            addtentxt.ForeColor = Color.WhiteSmoke;
+            addtentxt.Location = new Point(671, 264);
+            addtentxt.Name = "addtentxt";
+            addtentxt.ShadowDecoration.CustomizableEdges = customizableEdges39;
+            addtentxt.Size = new Size(130, 35);
+            addtentxt.TabIndex = 132;
+            addtentxt.Text = "Add Tenant";
+            addtentxt.Click += addtentxt_Click;
             // 
             // guna2Panel1
             // 
@@ -1088,6 +1113,7 @@
             TM_TenantDGV.ThemeStyle.RowsStyle.Height = 30;
             TM_TenantDGV.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(255, 128, 128);
             TM_TenantDGV.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(64, 0, 0);
+            TM_TenantDGV.CellContentClick += tendgv_cellconClick;
             // 
             // guna2Panel4
             // 
@@ -1186,28 +1212,6 @@
             guna2PictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox6.TabIndex = 92;
             guna2PictureBox6.TabStop = false;
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            guna2Button2.BackColor = Color.Transparent;
-            guna2Button2.BorderColor = Color.Silver;
-            guna2Button2.BorderRadius = 6;
-            guna2Button2.BorderThickness = 1;
-            guna2Button2.CustomizableEdges = customizableEdges33;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.Teal;
-            guna2Button2.Font = new Font("Baskerville Old Face", 10.2F);
-            guna2Button2.ForeColor = Color.WhiteSmoke;
-            guna2Button2.Location = new Point(977, 264);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            guna2Button2.Size = new Size(130, 35);
-            guna2Button2.TabIndex = 136;
-            guna2Button2.Text = "Clear";
             // 
             // UserControl_Admin_Tenants
             // 
@@ -1324,5 +1328,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox9;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button addtentxt;
     }
 }

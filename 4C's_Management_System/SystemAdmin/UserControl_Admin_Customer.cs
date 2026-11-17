@@ -258,7 +258,7 @@ namespace _4C_s_Management_System
         // ADD CUSTOMER
         // ==========================================
 
-        private void CM_AddCustomerBtn_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
             string branchId =
                 CM_branchidtxt.Text.Trim();
@@ -432,10 +432,10 @@ namespace _4C_s_Management_System
         // UPDATE CUSTOMER
         // ==========================================
 
-        private void CM_UpdateCustomerBtn_Click(object sender, EventArgs e)
+        private void CM_UpdateBtn_Click(object sender, EventArgs e)
         {
             string customerId =
-                CM_CustomeridTxt.Text.Trim();
+               CM_CustomeridTxt.Text.Trim();
 
             string fullname =
                 CM_fullnameTxt.Text.Trim();
@@ -551,10 +551,10 @@ namespace _4C_s_Management_System
         // DELETE CUSTOMER
         // ==========================================
 
-        private void CM_DeleteCustomerBtn_Click(object sender, EventArgs e)
+        private void CM_deleteBtn_Click(object sender, EventArgs e)
         {
             string customerId =
-                CM_CustomeridTxt.Text.Trim();
+              CM_CustomeridTxt.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(customerId) ||
                 string.IsNullOrWhiteSpace(customerBranchId))
@@ -624,6 +624,7 @@ namespace _4C_s_Management_System
                     MessageBoxIcon.Warning);
             }
         }
+
 
         // ==========================================
         // CUSTOMER STATISTICS
@@ -871,5 +872,6 @@ namespace _4C_s_Management_System
         {
 
         }
+
     }
 }

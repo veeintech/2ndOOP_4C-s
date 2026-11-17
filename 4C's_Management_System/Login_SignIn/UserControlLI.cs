@@ -176,6 +176,7 @@ namespace _4C_s_Management_System
                 branchid = branchId;
 
                 AccessBranch_ByForm.SetBranch(branchId);
+                AccessBranch_ByForm.Setstaffid(staffid);
 
                 // =================================
                 // OPEN USER NAVIGATION
