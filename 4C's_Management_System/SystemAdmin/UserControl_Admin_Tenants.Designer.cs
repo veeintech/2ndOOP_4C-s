@@ -257,7 +257,7 @@
             TM_statustxt.FocusedColor = Color.FromArgb(94, 148, 255);
             TM_statustxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_statustxt.Font = new Font("Segoe UI", 10F);
-            TM_statustxt.ForeColor = Color.FromArgb(68, 88, 112);
+            TM_statustxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_statustxt.ItemHeight = 30;
             TM_statustxt.Items.AddRange(new object[] { "Active", "Pending", "Inactive" });
             TM_statustxt.Location = new Point(819, 205);
@@ -319,7 +319,7 @@
             TM_tenantidtxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_tenantidtxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_tenantidtxt.Font = new Font("Segoe UI", 9F);
-            TM_tenantidtxt.ForeColor = Color.FromArgb(64, 64, 64);
+            TM_tenantidtxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_tenantidtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_tenantidtxt.Location = new Point(819, 88);
             TM_tenantidtxt.Margin = new Padding(3, 4, 3, 4);
@@ -389,6 +389,7 @@
             TM_monthlyrenttxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_monthlyrenttxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_monthlyrenttxt.Font = new Font("Segoe UI", 9F);
+            TM_monthlyrenttxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_monthlyrenttxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_monthlyrenttxt.Location = new Point(819, 166);
             TM_monthlyrenttxt.Margin = new Padding(3, 4, 3, 4);
@@ -489,7 +490,7 @@
             TM_fullnametxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_fullnametxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_fullnametxt.Font = new Font("Segoe UI", 9F);
-            TM_fullnametxt.ForeColor = Color.FromArgb(64, 64, 64);
+            TM_fullnametxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_fullnametxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_fullnametxt.Location = new Point(233, 88);
             TM_fullnametxt.Margin = new Padding(3, 4, 3, 4);
@@ -567,6 +568,7 @@
             TM_AdressTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_AdressTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_AdressTxt.Font = new Font("Segoe UI", 9F);
+            TM_AdressTxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_AdressTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_AdressTxt.Location = new Point(233, 166);
             TM_AdressTxt.Margin = new Padding(3, 4, 3, 4);
@@ -609,6 +611,7 @@
             TM_contacttxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_contacttxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_contacttxt.Font = new Font("Segoe UI", 9F);
+            TM_contacttxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_contacttxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_contacttxt.Location = new Point(233, 126);
             TM_contacttxt.Margin = new Padding(3, 4, 3, 4);
@@ -857,7 +860,7 @@
             TM_branchidtxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_branchidtxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_branchidtxt.Font = new Font("Segoe UI", 9F);
-            TM_branchidtxt.ForeColor = Color.FromArgb(64, 64, 64);
+            TM_branchidtxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_branchidtxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_branchidtxt.Location = new Point(819, 128);
             TM_branchidtxt.Margin = new Padding(3, 4, 3, 4);

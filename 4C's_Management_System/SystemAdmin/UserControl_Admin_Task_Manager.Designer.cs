@@ -66,8 +66,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges70 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+<<<<<<< HEAD
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges67 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges68 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+=======
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges71 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges72 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+>>>>>>> 72ca11b62e2000935213e9c1228ea29a238b5873
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -102,6 +107,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges65 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges66 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+<<<<<<< HEAD
+=======
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges67 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges68 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges69 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges70 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+>>>>>>> 72ca11b62e2000935213e9c1228ea29a238b5873
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             TM_branchCB = new Guna.UI2.WinForms.Guna2ComboBox();
             TM_statusCB = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -138,6 +150,7 @@
             MM_detailsPanel = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             TM_branchDetailsCB = new Guna.UI2.WinForms.Guna2ComboBox();
+            TM_assignedStaffCB = new Guna.UI2.WinForms.Guna2ComboBox();
             TM_deadlineDTP = new Guna.UI2.WinForms.Guna2DateTimePicker();
             TM_dateAssignedDTP = new Guna.UI2.WinForms.Guna2DateTimePicker();
             TM_statusDetailsCB = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -795,13 +808,30 @@
             TM_branchDetailsCB.FocusedColor = Color.FromArgb(94, 148, 255);
             TM_branchDetailsCB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_branchDetailsCB.Font = new Font("Segoe UI", 10F);
-            TM_branchDetailsCB.ForeColor = Color.FromArgb(68, 88, 112);
+            TM_branchDetailsCB.ForeColor = SystemColors.ActiveCaptionText;
             TM_branchDetailsCB.ItemHeight = 30;
             TM_branchDetailsCB.Location = new Point(192, 235);
             TM_branchDetailsCB.Name = "TM_branchDetailsCB";
             TM_branchDetailsCB.ShadowDecoration.CustomizableEdges = customizableEdges36;
             TM_branchDetailsCB.Size = new Size(163, 36);
             TM_branchDetailsCB.TabIndex = 199;
+            // 
+            // TM_assignedStaffCB
+            // 
+            TM_assignedStaffCB.BackColor = Color.Transparent;
+            TM_assignedStaffCB.CustomizableEdges = customizableEdges37;
+            TM_assignedStaffCB.DrawMode = DrawMode.OwnerDrawFixed;
+            TM_assignedStaffCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            TM_assignedStaffCB.FocusedColor = Color.FromArgb(94, 148, 255);
+            TM_assignedStaffCB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TM_assignedStaffCB.Font = new Font("Segoe UI", 10F);
+            TM_assignedStaffCB.ForeColor = SystemColors.ActiveCaptionText;
+            TM_assignedStaffCB.ItemHeight = 30;
+            TM_assignedStaffCB.Location = new Point(192, 200);
+            TM_assignedStaffCB.Name = "TM_assignedStaffCB";
+            TM_assignedStaffCB.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            TM_assignedStaffCB.Size = new Size(161, 36);
+            TM_assignedStaffCB.TabIndex = 198;
             // 
             // TM_deadlineDTP
             // 
@@ -844,7 +874,7 @@
             TM_statusDetailsCB.FocusedColor = Color.FromArgb(94, 148, 255);
             TM_statusDetailsCB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_statusDetailsCB.Font = new Font("Segoe UI", 10F);
-            TM_statusDetailsCB.ForeColor = Color.FromArgb(68, 88, 112);
+            TM_statusDetailsCB.ForeColor = SystemColors.ActiveCaptionText;
             TM_statusDetailsCB.ItemHeight = 30;
             TM_statusDetailsCB.Location = new Point(192, 387);
             TM_statusDetailsCB.Name = "TM_statusDetailsCB";
@@ -863,7 +893,7 @@
             TM_taskNametxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_taskNametxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_taskNametxt.Font = new Font("Segoe UI", 9F);
-            TM_taskNametxt.ForeColor = Color.Black;
+            TM_taskNametxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_taskNametxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_taskNametxt.Location = new Point(192, 60);
             TM_taskNametxt.Margin = new Padding(3, 4, 3, 4);
@@ -989,7 +1019,7 @@
             // TM_taskIDlbl
             // 
             TM_taskIDlbl.BackColor = Color.Transparent;
-            TM_taskIDlbl.ForeColor = Color.Black;
+            TM_taskIDlbl.ForeColor = SystemColors.ActiveCaptionText;
             TM_taskIDlbl.Location = new Point(192, 32);
             TM_taskIDlbl.Name = "TM_taskIDlbl";
             TM_taskIDlbl.Size = new Size(28, 22);
@@ -1007,7 +1037,7 @@
             TM_descriptiontxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TM_descriptiontxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_descriptiontxt.Font = new Font("Segoe UI", 9F);
-            TM_descriptiontxt.ForeColor = Color.Black;
+            TM_descriptiontxt.ForeColor = SystemColors.ActiveCaptionText;
             TM_descriptiontxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TM_descriptiontxt.Location = new Point(192, 114);
             TM_descriptiontxt.Margin = new Padding(3, 4, 3, 4);

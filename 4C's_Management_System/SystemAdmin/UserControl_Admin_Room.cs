@@ -916,5 +916,10 @@ namespace _4C_s_Management_System
 
             roomId = "";
         }
+
+        private void guna2Panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

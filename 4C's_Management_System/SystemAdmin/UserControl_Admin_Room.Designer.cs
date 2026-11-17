@@ -1113,6 +1113,25 @@
             guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges81;
             guna2Panel8.Size = new Size(1267, 332);
             guna2Panel8.TabIndex = 67;
+            guna2Panel8.Paint += guna2Panel8_Paint;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 7;
+            guna2Button1.CustomizableEdges = customizableEdges48;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.Maroon;
+            guna2Button1.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(1000, 225);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges49;
+            guna2Button1.Size = new Size(90, 35);
+            guna2Button1.TabIndex = 172;
+            guna2Button1.Text = "Clear";
             // 
             // guna2Button1
             // 
@@ -1144,6 +1163,7 @@
             BranchIdTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             BranchIdTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             BranchIdTXT.Font = new Font("Segoe UI", 9F);
+            BranchIdTXT.ForeColor = SystemColors.ActiveCaptionText;
             BranchIdTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             BranchIdTXT.Location = new Point(214, 126);
             BranchIdTXT.Margin = new Padding(3, 4, 3, 4);
@@ -1178,6 +1198,7 @@
             RoomidTXT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             RoomidTXT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             RoomidTXT.Font = new Font("Segoe UI", 9F);
+            RoomidTXT.ForeColor = SystemColors.ActiveCaptionText;
             RoomidTXT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             RoomidTXT.Location = new Point(214, 82);
             RoomidTXT.Margin = new Padding(3, 4, 3, 4);
@@ -1247,6 +1268,7 @@
             rateTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             rateTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             rateTxt.Font = new Font("Segoe UI", 9F);
+            rateTxt.ForeColor = SystemColors.ActiveCaptionText;
             rateTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             rateTxt.Location = new Point(828, 88);
             rateTxt.Margin = new Padding(3, 4, 3, 4);
@@ -1268,9 +1290,9 @@
             rd_capacity.FocusedColor = Color.FromArgb(94, 148, 255);
             rd_capacity.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             rd_capacity.Font = new Font("Segoe UI", 10F);
-            rd_capacity.ForeColor = Color.FromArgb(68, 88, 112);
+            rd_capacity.ForeColor = SystemColors.ActiveCaptionText;
             rd_capacity.ItemHeight = 30;
-            rd_capacity.Items.AddRange(new object[] { "Double Room", "Single Room", "Single ", "Double" });
+            rd_capacity.Items.AddRange(new object[] { "Double Room", "Single Room" });
             rd_capacity.Location = new Point(214, 216);
             rd_capacity.Name = "rd_capacity";
             rd_capacity.ShadowDecoration.CustomizableEdges = customizableEdges61;
@@ -1288,7 +1310,7 @@
             rd_roomtype.FocusedColor = Color.FromArgb(94, 148, 255);
             rd_roomtype.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             rd_roomtype.Font = new Font("Segoe UI", 10F);
-            rd_roomtype.ForeColor = Color.FromArgb(68, 88, 112);
+            rd_roomtype.ForeColor = SystemColors.ActiveCaptionText;
             rd_roomtype.ItemHeight = 30;
             rd_roomtype.Items.AddRange(new object[] { "Apartment", "Transient", "Hotel" });
             rd_roomtype.Location = new Point(214, 171);
@@ -1366,7 +1388,7 @@
             statusTxt.FocusedColor = Color.FromArgb(94, 148, 255);
             statusTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             statusTxt.Font = new Font("Segoe UI", 10F);
-            statusTxt.ForeColor = Color.FromArgb(68, 88, 112);
+            statusTxt.ForeColor = SystemColors.ActiveCaptionText;
             statusTxt.ItemHeight = 30;
             statusTxt.Items.AddRange(new object[] { "Available", "Reserved", "Occupied", "Maintenance" });
             statusTxt.Location = new Point(828, 138);
@@ -1442,7 +1464,7 @@
             adddroom_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             adddroom_btn.FillColor = Color.Maroon;
             adddroom_btn.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            adddroom_btn.ForeColor = Color.White;
+            adddroom_btn.ForeColor = SystemColors.ButtonFace;
             adddroom_btn.Location = new Point(756, 225);
             adddroom_btn.Name = "adddroom_btn";
             adddroom_btn.ShadowDecoration.CustomizableEdges = customizableEdges75;

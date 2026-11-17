@@ -22,9 +22,10 @@ CREATE TABLE [dbo].[TBLRoom] (
     [Rate]     DECIMAL (10, 2) NOT NULL,
     [Status]   VARCHAR (15)    NOT NULL,
     CONSTRAINT [PK_TBLRoom] PRIMARY KEY CLUSTERED ([RoomId] ASC),
+    CONSTRAINT [UQ_TBLRoom_Room_Branch] UNIQUE NONCLUSTERED ([RoomId] ASC, [BranchId] ASC),
     CONSTRAINT [FK_TBLRoom_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId]),
-    CONSTRAINT [CK_TBLRoom_Rate] CHECK ([Rate] >= 0)
 );
+
 
 -- ==========================================
 -- 3. CustomerTbl
