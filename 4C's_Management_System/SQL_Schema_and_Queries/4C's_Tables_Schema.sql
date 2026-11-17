@@ -82,8 +82,6 @@ CREATE TABLE [dbo].[UserTbl] (
     CONSTRAINT [FK_UserTbl_BranchTbl] FOREIGN KEY ([BranchId]) REFERENCES [dbo].[BranchTbl] ([BranchId])
 );
 
-
-
 -- ==========================================
 -- 6. ReservationTbl
 -- ==========================================

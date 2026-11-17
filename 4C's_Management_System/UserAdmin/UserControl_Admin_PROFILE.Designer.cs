@@ -87,12 +87,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges62 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges61 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -187,10 +185,7 @@
             RM_Panel_DateTime = new Guna.UI2.WinForms.Guna2Panel();
             RM_TimeLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             RM_DateLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            RM_TimeTitleLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             RM_DateTitleLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2vSeparator3 = new Guna.UI2.WinForms.Guna2VSeparator();
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             RM_Timer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox7).BeginInit();
@@ -226,7 +221,6 @@
             guna2Panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox19).BeginInit();
             RM_Panel_DateTime.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             SuspendLayout();
             // 
@@ -345,7 +339,7 @@
             // 
             guna2HtmlLabel44.BackColor = Color.Transparent;
             guna2HtmlLabel44.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel44.Location = new Point(1040, 194);
+            guna2HtmlLabel44.Location = new Point(1041, 197);
             guna2HtmlLabel44.Name = "guna2HtmlLabel44";
             guna2HtmlLabel44.Size = new Size(33, 25);
             guna2HtmlLabel44.TabIndex = 186;
@@ -355,7 +349,7 @@
             // 
             guna2HtmlLabel45.BackColor = Color.Transparent;
             guna2HtmlLabel45.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel45.Location = new Point(1043, 70);
+            guna2HtmlLabel45.Location = new Point(1041, 75);
             guna2HtmlLabel45.Name = "guna2HtmlLabel45";
             guna2HtmlLabel45.Size = new Size(33, 25);
             guna2HtmlLabel45.TabIndex = 184;
@@ -365,7 +359,7 @@
             // 
             guna2HtmlLabel46.BackColor = Color.Transparent;
             guna2HtmlLabel46.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel46.Location = new Point(1039, 148);
+            guna2HtmlLabel46.Location = new Point(1041, 148);
             guna2HtmlLabel46.Name = "guna2HtmlLabel46";
             guna2HtmlLabel46.Size = new Size(33, 25);
             guna2HtmlLabel46.TabIndex = 185;
@@ -386,7 +380,7 @@
             guna2HtmlLabel38.BackColor = Color.Transparent;
             guna2HtmlLabel38.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel38.ForeColor = Color.Black;
-            guna2HtmlLabel38.Location = new Point(540, 238);
+            guna2HtmlLabel38.Location = new Point(538, 243);
             guna2HtmlLabel38.Name = "guna2HtmlLabel38";
             guna2HtmlLabel38.Size = new Size(28, 25);
             guna2HtmlLabel38.TabIndex = 182;
@@ -396,7 +390,7 @@
             // 
             guna2HtmlLabel39.BackColor = Color.Transparent;
             guna2HtmlLabel39.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel39.Location = new Point(539, 194);
+            guna2HtmlLabel39.Location = new Point(538, 197);
             guna2HtmlLabel39.Name = "guna2HtmlLabel39";
             guna2HtmlLabel39.Size = new Size(28, 25);
             guna2HtmlLabel39.TabIndex = 180;
@@ -406,7 +400,7 @@
             // 
             guna2HtmlLabel40.BackColor = Color.Transparent;
             guna2HtmlLabel40.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel40.Location = new Point(539, 284);
+            guna2HtmlLabel40.Location = new Point(538, 293);
             guna2HtmlLabel40.Name = "guna2HtmlLabel40";
             guna2HtmlLabel40.Size = new Size(28, 25);
             guna2HtmlLabel40.TabIndex = 181;
@@ -416,7 +410,7 @@
             // 
             guna2HtmlLabel41.BackColor = Color.Transparent;
             guna2HtmlLabel41.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel41.Location = new Point(538, 70);
+            guna2HtmlLabel41.Location = new Point(538, 75);
             guna2HtmlLabel41.Name = "guna2HtmlLabel41";
             guna2HtmlLabel41.Size = new Size(28, 25);
             guna2HtmlLabel41.TabIndex = 177;
@@ -426,7 +420,7 @@
             // 
             guna2HtmlLabel42.BackColor = Color.Transparent;
             guna2HtmlLabel42.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel42.Location = new Point(538, 111);
+            guna2HtmlLabel42.Location = new Point(538, 114);
             guna2HtmlLabel42.Name = "guna2HtmlLabel42";
             guna2HtmlLabel42.Size = new Size(28, 25);
             guna2HtmlLabel42.TabIndex = 178;
@@ -436,11 +430,12 @@
             // 
             guna2HtmlLabel43.BackColor = Color.Transparent;
             guna2HtmlLabel43.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel43.Location = new Point(539, 153);
+            guna2HtmlLabel43.Location = new Point(538, 158);
             guna2HtmlLabel43.Name = "guna2HtmlLabel43";
             guna2HtmlLabel43.Size = new Size(28, 25);
             guna2HtmlLabel43.TabIndex = 179;
             guna2HtmlLabel43.Text = ": ---";
+            guna2HtmlLabel43.Click += guna2HtmlLabel43_Click;
             // 
             // guna2Panel7
             // 
@@ -567,7 +562,7 @@
             // 
             guna2HtmlLabel37.BackColor = Color.Transparent;
             guna2HtmlLabel37.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel37.Location = new Point(841, 150);
+            guna2HtmlLabel37.Location = new Point(845, 150);
             guna2HtmlLabel37.Name = "guna2HtmlLabel37";
             guna2HtmlLabel37.Size = new Size(92, 25);
             guna2HtmlLabel37.TabIndex = 171;
@@ -601,7 +596,7 @@
             guna2HtmlLabel11.BackColor = Color.Transparent;
             guna2HtmlLabel11.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel11.ForeColor = Color.Black;
-            guna2HtmlLabel11.Location = new Point(90, 255);
+            guna2HtmlLabel11.Location = new Point(81, 255);
             guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             guna2HtmlLabel11.Size = new Size(126, 22);
             guna2HtmlLabel11.TabIndex = 162;
@@ -614,7 +609,7 @@
             guna2Panel12.Controls.Add(guna2HtmlLabel17);
             guna2Panel12.CustomizableEdges = customizableEdges10;
             guna2Panel12.FillColor = Color.FromArgb(192, 255, 192);
-            guna2Panel12.Location = new Point(90, 283);
+            guna2Panel12.Location = new Point(87, 283);
             guna2Panel12.Name = "guna2Panel12";
             guna2Panel12.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2Panel12.Size = new Size(102, 27);
@@ -666,7 +661,7 @@
             guna2HtmlLabel10.BackColor = Color.Transparent;
             guna2HtmlLabel10.Font = new Font("Berlin Sans FB", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel10.ForeColor = Color.Black;
-            guna2HtmlLabel10.Location = new Point(115, 227);
+            guna2HtmlLabel10.Location = new Point(112, 227);
             guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             guna2HtmlLabel10.Size = new Size(51, 22);
             guna2HtmlLabel10.TabIndex = 161;
@@ -915,11 +910,12 @@
             guna2Panel1.CustomizableEdges = customizableEdges30;
             guna2Panel1.FillColor = Color.White;
             guna2Panel1.ForeColor = Color.Black;
-            guna2Panel1.Location = new Point(36, 1027);
+            guna2Panel1.Location = new Point(30, 1027);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges31;
-            guna2Panel1.Size = new Size(1255, 602);
+            guna2Panel1.Size = new Size(1263, 615);
             guna2Panel1.TabIndex = 94;
+            guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // guna2Panel2
             // 
@@ -932,7 +928,7 @@
             guna2Panel2.CustomizableEdges = customizableEdges26;
             guna2Panel2.FillColor = Color.White;
             guna2Panel2.ForeColor = Color.Black;
-            guna2Panel2.Location = new Point(12, 53);
+            guna2Panel2.Location = new Point(12, 65);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges27;
             guna2Panel2.Size = new Size(1233, 531);
@@ -942,7 +938,7 @@
             // 
             guna2vSeparator1.FillColor = Color.Maroon;
             guna2vSeparator1.FillThickness = 3;
-            guna2vSeparator1.Location = new Point(46, 14);
+            guna2vSeparator1.Location = new Point(46, 18);
             guna2vSeparator1.Name = "guna2vSeparator1";
             guna2vSeparator1.Size = new Size(11, 31);
             guna2vSeparator1.TabIndex = 65;
@@ -952,7 +948,7 @@
             guna2PictureBox2.CustomizableEdges = customizableEdges28;
             guna2PictureBox2.Image = Properties.Resources.basil__clipboard_alt_solid;
             guna2PictureBox2.ImageRotate = 0F;
-            guna2PictureBox2.Location = new Point(14, 6);
+            guna2PictureBox2.Location = new Point(14, 10);
             guna2PictureBox2.Name = "guna2PictureBox2";
             guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges29;
             guna2PictureBox2.Size = new Size(34, 43);
@@ -965,7 +961,7 @@
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Baskerville Old Face", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel3.ForeColor = Color.Maroon;
-            guna2HtmlLabel3.Location = new Point(58, 15);
+            guna2HtmlLabel3.Location = new Point(58, 19);
             guna2HtmlLabel3.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(157, 30);
@@ -1139,7 +1135,7 @@
             guna2HtmlLabel56.BackColor = Color.Transparent;
             guna2HtmlLabel56.Font = new Font("Baskerville Old Face", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel56.ForeColor = Color.Maroon;
-            guna2HtmlLabel56.Location = new Point(544, 658);
+            guna2HtmlLabel56.Location = new Point(555, 658);
             guna2HtmlLabel56.Margin = new Padding(4, 3, 4, 3);
             guna2HtmlLabel56.Name = "guna2HtmlLabel56";
             guna2HtmlLabel56.Size = new Size(210, 30);
@@ -1408,19 +1404,16 @@
             RM_Panel_DateTime.BorderThickness = 2;
             RM_Panel_DateTime.Controls.Add(RM_TimeLbl);
             RM_Panel_DateTime.Controls.Add(RM_DateLbl);
-            RM_Panel_DateTime.Controls.Add(RM_TimeTitleLbl);
             RM_Panel_DateTime.Controls.Add(RM_DateTitleLbl);
-            RM_Panel_DateTime.Controls.Add(guna2PictureBox3);
-            RM_Panel_DateTime.Controls.Add(guna2vSeparator3);
             RM_Panel_DateTime.Controls.Add(guna2PictureBox4);
             RM_Panel_DateTime.CustomBorderColor = Color.Silver;
             RM_Panel_DateTime.CustomBorderThickness = new Padding(0, 0, 3, 3);
-            RM_Panel_DateTime.CustomizableEdges = customizableEdges62;
+            RM_Panel_DateTime.CustomizableEdges = customizableEdges60;
             RM_Panel_DateTime.FillColor = Color.FromArgb(22, 43, 70);
             RM_Panel_DateTime.Location = new Point(28, 707);
             RM_Panel_DateTime.Margin = new Padding(4, 3, 4, 3);
             RM_Panel_DateTime.Name = "RM_Panel_DateTime";
-            RM_Panel_DateTime.ShadowDecoration.CustomizableEdges = customizableEdges63;
+            RM_Panel_DateTime.ShadowDecoration.CustomizableEdges = customizableEdges61;
             RM_Panel_DateTime.Size = new Size(484, 301);
             RM_Panel_DateTime.TabIndex = 109;
             // 
@@ -1429,88 +1422,51 @@
             RM_TimeLbl.BackColor = Color.Transparent;
             RM_TimeLbl.Font = new Font("Baskerville Old Face", 18F, FontStyle.Bold);
             RM_TimeLbl.ForeColor = Color.FromArgb(248, 250, 252);
-            RM_TimeLbl.Location = new Point(276, 173);
+            RM_TimeLbl.Location = new Point(33, 223);
             RM_TimeLbl.Margin = new Padding(4, 3, 4, 3);
             RM_TimeLbl.Name = "RM_TimeLbl";
             RM_TimeLbl.Size = new Size(67, 36);
             RM_TimeLbl.TabIndex = 41;
             RM_TimeLbl.Text = "____";
+            RM_TimeLbl.Click += RM_TimeLbl_Click;
             // 
             // RM_DateLbl
             // 
             RM_DateLbl.BackColor = Color.Transparent;
             RM_DateLbl.Font = new Font("Baskerville Old Face", 18F, FontStyle.Bold);
             RM_DateLbl.ForeColor = Color.FromArgb(248, 250, 252);
-            RM_DateLbl.Location = new Point(33, 173);
+            RM_DateLbl.Location = new Point(33, 122);
             RM_DateLbl.Margin = new Padding(4, 3, 4, 3);
             RM_DateLbl.Name = "RM_DateLbl";
             RM_DateLbl.Size = new Size(67, 36);
             RM_DateLbl.TabIndex = 40;
             RM_DateLbl.Text = "____";
             // 
-            // RM_TimeTitleLbl
-            // 
-            RM_TimeTitleLbl.BackColor = Color.Transparent;
-            RM_TimeTitleLbl.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RM_TimeTitleLbl.ForeColor = Color.FromArgb(142, 202, 230);
-            RM_TimeTitleLbl.Location = new Point(276, 94);
-            RM_TimeTitleLbl.Margin = new Padding(4, 3, 4, 3);
-            RM_TimeTitleLbl.Name = "RM_TimeTitleLbl";
-            RM_TimeTitleLbl.Size = new Size(162, 28);
-            RM_TimeTitleLbl.TabIndex = 39;
-            RM_TimeTitleLbl.Text = "TIME TODAY";
-            // 
             // RM_DateTitleLbl
             // 
             RM_DateTitleLbl.BackColor = Color.Transparent;
-            RM_DateTitleLbl.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RM_DateTitleLbl.Font = new Font("Baskerville Old Face", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RM_DateTitleLbl.ForeColor = Color.FromArgb(142, 202, 230);
-            RM_DateTitleLbl.Location = new Point(33, 97);
+            RM_DateTitleLbl.Location = new Point(98, 28);
             RM_DateTitleLbl.Margin = new Padding(4, 3, 4, 3);
             RM_DateTitleLbl.Name = "RM_DateTitleLbl";
-            RM_DateTitleLbl.Size = new Size(167, 28);
+            RM_DateTitleLbl.Size = new Size(233, 40);
             RM_DateTitleLbl.TabIndex = 38;
             RM_DateTitleLbl.Text = "DATE TODAY";
-            // 
-            // guna2PictureBox3
-            // 
-            guna2PictureBox3.BackColor = Color.Transparent;
-            guna2PictureBox3.BackgroundImage = Properties.Resources.andrsrxn__clock_hour_eight;
-            guna2PictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            guna2PictureBox3.CustomizableEdges = customizableEdges58;
-            guna2PictureBox3.ErrorImage = null;
-            guna2PictureBox3.FillColor = Color.Transparent;
-            guna2PictureBox3.ImageRotate = 0F;
-            guna2PictureBox3.InitialImage = null;
-            guna2PictureBox3.Location = new Point(240, 15);
-            guna2PictureBox3.Name = "guna2PictureBox3";
-            guna2PictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges59;
-            guna2PictureBox3.Size = new Size(77, 58);
-            guna2PictureBox3.TabIndex = 37;
-            guna2PictureBox3.TabStop = false;
-            // 
-            // guna2vSeparator3
-            // 
-            guna2vSeparator3.BackColor = Color.Transparent;
-            guna2vSeparator3.FillThickness = 2;
-            guna2vSeparator3.Location = new Point(218, 19);
-            guna2vSeparator3.Name = "guna2vSeparator3";
-            guna2vSeparator3.Size = new Size(8, 253);
-            guna2vSeparator3.TabIndex = 36;
             // 
             // guna2PictureBox4
             // 
             guna2PictureBox4.BackColor = Color.Transparent;
             guna2PictureBox4.BackgroundImage = Properties.Resources.bxs__calendar;
             guna2PictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            guna2PictureBox4.CustomizableEdges = customizableEdges60;
+            guna2PictureBox4.CustomizableEdges = customizableEdges58;
             guna2PictureBox4.ErrorImage = null;
             guna2PictureBox4.FillColor = Color.Transparent;
             guna2PictureBox4.ImageRotate = 0F;
             guna2PictureBox4.InitialImage = null;
             guna2PictureBox4.Location = new Point(3, 15);
             guna2PictureBox4.Name = "guna2PictureBox4";
-            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges61;
+            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges59;
             guna2PictureBox4.Size = new Size(85, 58);
             guna2PictureBox4.TabIndex = 35;
             guna2PictureBox4.TabStop = false;
@@ -1583,7 +1539,6 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox19).EndInit();
             RM_Panel_DateTime.ResumeLayout(false);
             RM_Panel_DateTime.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -1685,10 +1640,7 @@
         private Guna.UI2.WinForms.Guna2Panel RM_Panel_DateTime;
         private Guna.UI2.WinForms.Guna2HtmlLabel RM_TimeLbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel RM_DateLbl;
-        private Guna.UI2.WinForms.Guna2HtmlLabel RM_TimeTitleLbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel RM_DateTitleLbl;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2VSeparator guna2vSeparator3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private System.Windows.Forms.Timer RM_Timer;
     }
